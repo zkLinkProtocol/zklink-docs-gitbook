@@ -1,10 +1,8 @@
 # Deposit
 
-
 zkLink supports account abstraction (AA) wallets and externally owned account (EOA) wallets, with either EVM addresses (20 bytes) or nonEVM addresses (currently Starknet address only, with 32 bytes).
 
-
-**Users can deposit to zkLink from the following address:**
+#### **Users can deposit to zkLink from the following address:**
 
 1. EOA wallet on EVM
 2. EOA wallet on nonEVM
@@ -13,65 +11,52 @@ zkLink supports account abstraction (AA) wallets and externally owned account (E
 5. CEX address on EVM (custodial, and usually only supports standard transfer contract calls)
 6. CEX address on nonEVM (custodial, and usually only supports standard transfer contract calls)
 
----
-**The scenarios of receiver address on zkLink are:**
+***
+
+#### **The scenarios of receiver address on zkLink are:**
 
 1. EOA on EVM
 2. EOA on nonEVM
 3. AA wallet on EVM
 4. AA wallet on nonEVM
 
----
-**Thus the accordingly call functions are as followed:**
+***
 
-<span className="highlight">A: directly call zkLink deposit function</span>
+#### **Thus the accordingly call functions are as followed:**
 
-Note: supports both AA wallets and EOA wallets; it is required that the from_address can directly sign zkLink deposit transactions.
+A: directly call zkLink deposit function
 
-<span className="highlight">B: call transfer to user AA wallet</span>
+Note: supports both AA wallets and EOA wallets; it is required that the from\_address can directly sign zkLink deposit transactions.
+
+B: call transfer to user AA wallet
 
 Note: supports AA wallets that adopt the zkLink auto transfer function only, such as UniPass.
 
-<span className="highlight">C: call transfer to proxy deposit contract, and then automatically deposit to zkLink contract</span>
+C: call transfer to proxy deposit contract, and then automatically deposit to zkLink contract
 
 Example scenarios:
-1. The from_address is not authorized to define the signature message. For example, a CEX user intends to withdraw directly from Binance to ZKEX.
-2. The address format of the to_address on zkLink and the from_address is different. For example, a user intends to deposit from a Starknet address to a EVM compatible AA wallet address.
 
-![Proxy Deposit Flow](../img/proxy_deposit_flow.png)
+1. The from\_address is not authorized to define the signature message. For example, a CEX user intends to withdraw directly from Binance to ZKEX.
+2. The address format of the to\_address on zkLink and the from\_address is different. For example, a user intends to deposit from a Starknet address to a EVM compatible AA wallet address.
 
----
+![Proxy Deposit Flow](../img/proxy\_deposit\_flow.png)
+
+***
+
 ## Exhaustive Scenarios
 
-<table>
-    <tr>
-        <td></td><td></td><td colspan="4" align="center">Receiver Address</td>
-    </tr>  
-    <tr>
-        <th></th><th></th><th align="center">AA Wallet - EVM (20 bytes)</th><th align="center">AA Wallet - nonEVM (Starknet 32 bytes)</th><th align="center">EOA EVM (20 bytes)</th><th align="center">EOA nonEVM (32 bytes)</th>
-    </tr>
-    <tr>
-        <td rowspan="6">Sender Address</td><td align="center">EOA - EVM</td><td align="center">ABC</td><td align="center">AC</td><td align="center">AC</td><td align="center">AC</td>
-    </tr>
-    <tr>
-        <td align="center">EOA - nonEVM</td><td align="center">AC</td><td align="center">ABC</td><td align="center">AC</td><td align="center">AC</td>
-    </tr>
-    <tr>
-        <td align="center">owned AA Wallet - EVM</td><td align="center">ABC</td><td align="center">AC</td><td align="center">AC</td><td align="center">AC</td>
-    </tr>
-    <tr>
-        <td align="center">owned AA Wallet - nonEVM</td><td align="center">AC</td><td align="center">ABC</td><td align="center">AC</td><td align="center">AC</td>
-    </tr>
-    <tr>
-        <td align="center">CEX - EVM</td><td align="center">BC</td><td align="center">C</td><td align="center">C</td><td align="center">C</td>
-    </tr>
-    <tr>
-        <td align="center">CEX - nonEVM</td><td align="center">C</td><td align="center">BC</td><td align="center">C</td><td align="center">C</td>
-    </tr>
-</table>
+|                          |           |      Receiver Address      |                                        |                    |                       |
+| ------------------------ | --------- | :------------------------: | -------------------------------------- | ------------------ | --------------------- |
+|                          |           | AA Wallet - EVM (20 bytes) | AA Wallet - nonEVM (Starknet 32 bytes) | EOA EVM (20 bytes) | EOA nonEVM (32 bytes) |
+| Sender Address           | EOA - EVM |             ABC            | AC                                     | AC                 | AC                    |
+| EOA - nonEVM             | AC        |             ABC            | AC                                     | AC                 |                       |
+| owned AA Wallet - EVM    | ABC       |             AC             | AC                                     | AC                 |                       |
+| owned AA Wallet - nonEVM | AC        |             ABC            | AC                                     | AC                 |                       |
+| CEX - EVM                | BC        |              C             | C                                      | C                  |                       |
+| CEX - nonEVM             | C         |             BC             | C                                      | C                  |                       |
 
+***
 
----
 Below are 2 typical operational processes using [ZKEX.com](http://zkex.com/) as an example (the first dApp using zkLink infrastructure):
 
 ## Example 1
@@ -80,7 +65,7 @@ A Unipass AA wallet user intends to deposit a Token (ABC) deployed on Ethereum f
 
 Step 1: On the zkex deposit page, locate ABC with the deposit address (0xabc...);
 
-Step 2: Copy the address to the Binance withdrawal page and await for approval from Binance; 
+Step 2: Copy the address to the Binance withdrawal page and await for approval from Binance;
 
 Step 3: Wait for confirmation from zkex.
 
