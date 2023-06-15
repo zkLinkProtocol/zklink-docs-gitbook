@@ -38,7 +38,7 @@ Example scenarios:
 1. The from_address is not authorized to define the signature message. For example, a CEX user intends to withdraw directly from Binance to ZKEX.
 2. The address format of the to_address on zkLink and the from_address is different. For example, a user intends to deposit from a Starknet address to a EVM compatible AA wallet address.
 
-![Proxy Deposit Flow](../../static/img/tech/proxy_deposit_flow.png)
+![Proxy Deposit Flow](../img/proxy_deposit_flow.png))
 
 ---
 ## Exhaustive Scenarios

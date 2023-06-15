@@ -1,9 +1,3 @@
----
-sidebar_position: 6
-title: ' '
-
----
-
 # Withdraw
 
 ---
@@ -56,4 +50,4 @@ Note:
     mapping(uint16 => mapping(address => mapping(address => uint128))) internal brokerAllowances;
 ```
 
-![Fast Withdraw Flow](../../static/img/tech/fast_withdraw_flow.jpg)
+![Fast Withdraw Flow](../img/fast_withdraw_flow.jpg)

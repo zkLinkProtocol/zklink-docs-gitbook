@@ -1,9 +1,3 @@
----
-sidebar_position: 6
-title: ' '
-
----
-
 # Wallet Integration & AA Wallet
 
 ---
@@ -28,7 +22,7 @@ title: ' '
     - AA wallets that adopt the zkLink auto transfer function can [directly call transfer to AA wallet](/docs/streamline/deposit#example-1).
 
 
-![AA wallet flow](../../static/img/tech/AA_flow.png)
+![AA wallet flow](../img/AA_flow.png)
 
 ## AA Wallet Security
 
