@@ -1,7 +1,5 @@
 # Introduction
 
-***
-
 zkLink is a **unified multi-chain trading infrastructure** secured with **zk-SNARKS**, empowering the next-generation of decentralized trading products such as order book DEX, NFT marketplaces, and more.
 
 zkLink builds a ZK-Rollup middleware that natively connects to various L1s and L2s, and provides an array of high-level APIs. Developers can easily deploy trading dApps with high customizability and access to aggregated liquidity, while their end users can benefit from seamless multi-chain trading experience. Moreover, zkLink also supports OFT (Omnichain Fungible Token) issuing and bridging.
@@ -37,3 +35,4 @@ Data transmission have emerged as the most vulnerable component of cross-chain t
 * **High customizability:** developers can choose which networks to connect, which to put DA on, and tailor specific functions.
 * **High performance:** 1000+ TPS to bridge the gap between high-frequency traders' needs and on-chain products.
 * **High efficiency:** the app-specific circuit is considerably smaller than general-purpose zk circuits, resulting in lower computational resource and on-chain gas consumption.
+

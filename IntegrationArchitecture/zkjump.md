@@ -5,8 +5,6 @@ title: ' '
 
 # Lightweight Integration
 
-***
-
 > 💡 A case study of zkJump.io to showcase lightweight integration
 
 ![zkJump Integration](../img/zkjump\_integration.png)
@@ -25,3 +23,4 @@ The contract is developed and maintained by zkJump, with the following functions
 
 * Collect cross-chain transfer fees
 * Integrate to on-chain DEXs. For example, tokens swapped in Uniswap could be directly transferred to the destined chain via zkJump integrated on Uniswap
+

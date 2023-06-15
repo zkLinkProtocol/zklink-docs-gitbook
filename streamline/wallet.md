@@ -1,7 +1,5 @@
 # Wallet Integration & AA Wallet
 
-***
-
 > 💡Account abstraction unifies contract accounts and EOAs. Integrating AA wallets brings better user experience to dApps built on top of zkLink. Smart contract wallets are much more flexible than EOAs, allowing users to control their accounts by smart contract rather than simply a private key, and to define their account logic such as permission controls, transaction limits, wallet recovery, etc,.
 
 > Taking UniPass as an example, UniPass offers a user-friendly experience for managing smart contract wallets using email and password. We believe this is crucial for users who are not yet familiar with crypto.
@@ -27,3 +25,4 @@
 AA wallets integrating to zkLink must meet Dunkirk Test requirement, i.e., assets security is not dependent to agency, and users can still retrieve assets even when the wallet service provider goes down.
 
 In the [case study of Unipass](https://docs.wallet.unipass.id/architecture/email-on-chain-verification), users can download an open-source front-end or use a web form with IPFS hosting to recover their account and migrate to EOAs if the Unipass server fails.
+

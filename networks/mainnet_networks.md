@@ -1,4 +1,3 @@
-# Connected Networks
+# Mainnet: Connected Networks
 
----
 > 💡Coming soon

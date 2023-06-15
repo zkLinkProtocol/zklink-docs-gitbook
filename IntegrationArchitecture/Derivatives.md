@@ -5,8 +5,6 @@ title: ' '
 
 # Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)
 
-***
-
 > 💡 A case study of ZKEX 3.0: a multi-chain derivatives & spot exchange with a unified account
 
 The graphic below outlines how to integrate zkLink functional components in a decentralized way. This highly flexible integration model enhances dApps’ business customizability and autonomous cost management.
@@ -25,3 +23,4 @@ The graphic below outlines how to integrate zkLink functional components in a de
 * High-performing risk engine for perpetual contracts
 * Unified accounts for perpetual contracts and spot trading for better UX and higher capital efficiency
 * Cross-margin for perpetual contracts
+

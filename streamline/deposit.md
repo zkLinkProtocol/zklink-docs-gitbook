@@ -11,16 +11,12 @@ zkLink supports account abstraction (AA) wallets and externally owned account (E
 5. CEX address on EVM (custodial, and usually only supports standard transfer contract calls)
 6. CEX address on nonEVM (custodial, and usually only supports standard transfer contract calls)
 
-***
-
 #### **The scenarios of receiver address on zkLink are:**
 
 1. EOA on EVM
 2. EOA on nonEVM
 3. AA wallet on EVM
 4. AA wallet on nonEVM
-
-***
 
 #### **Thus the accordingly call functions are as followed:**
 
@@ -41,7 +37,7 @@ Example scenarios:
 
 ![Proxy Deposit Flow](../img/proxy\_deposit\_flow.png)
 
-***
+
 
 ## Exhaustive Scenarios
 
@@ -54,8 +50,6 @@ Example scenarios:
 | owned AA Wallet - nonEVM | AC        |             ABC            | AC                                     | AC                 |                       |
 | CEX - EVM                | BC        |              C             | C                                      | C                  |                       |
 | CEX - nonEVM             | C         |             BC             | C                                      | C                  |                       |
-
-***
 
 Below are 2 typical operational processes using [ZKEX.com](http://zkex.com/) as an example (the first dApp using zkLink infrastructure):
 
@@ -87,3 +81,4 @@ Note:
 
 1. A user may deposit to ZKEX from another MetaMask address. In this case, ZKEX can provide a separate deposit page to assist in signing the zkLink deposit with a third address.
 2. If the token is deployed on a non EVM-compatible network, the deposit will need to go through a proxy deposit contract.
+

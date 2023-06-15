@@ -1,7 +1,5 @@
 # Testnet: dApps & Deployment Addresses
 
-***
-
 `Deploy Time`: May-15-2023 03:09:23 AM +UTC
 
 `Tag`: `Latest`
