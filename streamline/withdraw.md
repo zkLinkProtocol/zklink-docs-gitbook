@@ -6,21 +6,17 @@ There are 4 types of the withdraw function : withdraw, forced withdraw (permissi
 ---
 ## Withdraw Calls
 
-- Layer1 operations
-    - Forced Withdraw
-        - call zklink forced_withdraw function
-    - Dunkirk Exit
-        - call zklink dunkirk_exit function (when zkLink enters Dunkirk mode)
-- Layer2 operations
-    - Withdraw
-        - EVM signature:  ECDSA(EIP712,secp256k1) & EDDSA(alt_babyjubjub)
-        - nonEVM signature: ECDSA ([Stark Curve](https://docs.starkware.co/starkex/crypto/stark-curve.html)) & EDDSA ([alt_babyjubjub](https://docs.rs/sapling-crypto_ce/latest/sapling_crypto_ce/alt_babyjubjub/index.html))
-    - Proxy Withdraw
-        - EVM signature：ECDSA(EIP712,secp256k1) & EDDSA(alt_babyjubjub)
-        - nonEVM signature: ECDSA ([Stark Curve](https://docs.starkware.co/starkex/crypto/stark-curve.html)) & EDDSA ([alt_babyjubjub](https://docs.rs/sapling-crypto_ce/latest/sapling_crypto_ce/alt_babyjubjub/index.html))
-        - proxy withdraw applies to:
-            - address that can not generate pubkeyhash. For example, a user mistakenly transfers tokens to a smart contract address that does not support generation of pubkeyhash. To withdraw the token from Layer2 to Layer1 in such a case, a third party proxy is required to send the withdraw request . Noted that the to_address must be a smart contract address.
 
+|           | EVM Signature | NonEvm Signature | Comment |
+|-----------|--------|---------|---------|
+|Forced Withdraw | • `ECDSA`([secp256k1](https://en.bitcoin.it/wiki/Secp256k1))  | • `ECDSA`([Stark Curve](https://docs.starkware.co/starkex/crypto/stark-curve.html))  | On-chain transaction that needs to be initiated towards the according networks |
+|Dunkirk Exit      | • `ECDSA`([secp256k1](https://en.bitcoin.it/wiki/Secp256k1)) | • `ECDSA`([Stark Curve](https://docs.starkware.co/starkex/crypto/stark-curve.html))  | On-chain transaction that needs to be initiated towards the according networks |
+|Withdraw      | • `ECDSA`([EIP712](https://eips.ethereum.org/EIPS/eip-712), [secp256k1](https://en.bitcoin.it/wiki/Secp256k1))  <br/> • `EDDSA`([alt_babyjubjub](https://docs.rs/sapling-crypto_ce/latest/sapling_crypto_ce/alt_babyjubjub/index.html)) | • `ECDSA` ([Stark Curve](https://docs.starkware.co/starkex/crypto/stark-curve.html))&nbsp;&nbsp;&nbsp; <br/> • `EDDSA` ([alt_babyjubjub](https://docs.rs/sapling-crypto_ce/latest/sapling_crypto_ce/alt_babyjubjub/index.html))| zkLink L2 operation that requires two signatures: ECDSA for verification from dApp-end, and EDDSA for circuit verification |
+|Proxy Withdraw      | • `ECDSA`([EIP712](https://eips.ethereum.org/EIPS/eip-712), [secp256k1](https://en.bitcoin.it/wiki/Secp256k1))  <br/> • `EDDSA`([alt_babyjubjub](https://docs.rs/sapling-crypto_ce/latest/sapling_crypto_ce/alt_babyjubjub/index.html)) | • `ECDSA` ([Stark Curve](https://docs.starkware.co/starkex/crypto/stark-curve.html))  <br/> • `EDDSA` ([alt_babyjubjub](https://docs.rs/sapling-crypto_ce/latest/sapling_crypto_ce/alt_babyjubjub/index.html))| zkLink L2 operation that requires two signatures: ECDSA for verification from dApp-end, and EDDSA for circuit verification |
+|Comment | Ethereum, zkSync, Scroll, Linea, BSC, Polygon, Avalanche, etc,. | In the current version, the only non-EVM network that zkLink supports is Starknet |
+
+**Note:**
+- `proxy withdraw` applies to accounts that can not generate pubkeyhash. For example, a user mistakenly transfers tokens to a smart contract address that does not support pubkeyhash generation. To withdraw the token from Layer2 to Layer1 in such a case, a third party proxy is required to send the withdraw request . Noted that the to_address must be a smart contract address.
 
 ## Fast Withdraw
 
