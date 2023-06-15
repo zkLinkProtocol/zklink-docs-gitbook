@@ -1,6 +1,7 @@
 # Table of contents
 
-* [👋 Welcome to A Product](README.md)
+* [zklink-docs-gitbook](README.md)
+* [👋 Welcome to A Product](welcome-to-a-product.md)
 
 ## Overview
 
