@@ -41,15 +41,7 @@ Example scenarios:
 
 ## Exhaustive Scenarios
 
-|                          |           |      Receiver Address      |                                        |                    |                       |
-| ------------------------ | --------- | :------------------------: | -------------------------------------- | ------------------ | --------------------- |
-|                          |           | AA Wallet - EVM (20 bytes) | AA Wallet - nonEVM (Starknet 32 bytes) | EOA EVM (20 bytes) | EOA nonEVM (32 bytes) |
-| Sender Address           | EOA - EVM |             ABC            | AC                                     | AC                 | AC                    |
-| EOA - nonEVM             | AC        |             ABC            | AC                                     | AC                 |                       |
-| owned AA Wallet - EVM    | ABC       |             AC             | AC                                     | AC                 |                       |
-| owned AA Wallet - nonEVM | AC        |             ABC            | AC                                     | AC                 |                       |
-| CEX - EVM                | BC        |              C             | C                                      | C                  |                       |
-| CEX - nonEVM             | C         |             BC             | C                                      | C                  |                       |
+<table><thead><tr><th width="255"></th><th width="113"></th><th width="149" align="center">Receiver Address</th><th width="100"></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td align="center">AA Wallet - EVM (20 bytes)</td><td>AA Wallet - nonEVM (Starknet 32 bytes)</td><td>EOA EVM (20 bytes)</td><td>EOA nonEVM (32 bytes)</td></tr><tr><td>Sender Address</td><td>EOA - EVM</td><td align="center">ABC</td><td>AC</td><td>AC</td><td>AC</td></tr><tr><td>EOA - nonEVM</td><td>AC</td><td align="center">ABC</td><td>AC</td><td>AC</td><td></td></tr><tr><td>owned AA Wallet - EVM</td><td>ABC</td><td align="center">AC</td><td>AC</td><td>AC</td><td></td></tr><tr><td>owned AA Wallet - nonEVM</td><td>AC</td><td align="center">ABC</td><td>AC</td><td>AC</td><td></td></tr><tr><td>CEX - EVM</td><td>BC</td><td align="center">C</td><td>C</td><td>C</td><td></td></tr><tr><td>CEX - nonEVM</td><td>C</td><td align="center">BC</td><td>C</td><td>C</td><td></td></tr></tbody></table>
 
 Below are 2 typical operational processes using [ZKEX.com](http://zkex.com/) as an example (the first dApp using zkLink infrastructure):
 
