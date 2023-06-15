@@ -13,7 +13,7 @@ The graphic below outlines how to integrate zkLink functional components in a de
 
 
 
-![ZKEX 3.0 Integration](../../static/img/integration/zkex3integration.png)
+![ZKEX 3.0 Integration](../img/zkex3integration.png)
 
 ## Integration Features
 

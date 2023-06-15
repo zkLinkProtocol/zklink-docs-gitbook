@@ -11,7 +11,7 @@ title: ' '
 The graphic below illustrates an example integration of zkLink infrastructure with ZKEX2.0, and demonstrates how to quickly deploy a decentralized multi-chain spot exchange based on the CLOB model (Central Limit Order Book).
 
 
-![ZKEX 2.0 Integration](../../static/img/integration/zkex2integration.png)
+![ZKEX 2.0 Integration](../img/zkex2integration.png)
 
 
 ## Integration Features

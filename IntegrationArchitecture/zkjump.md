@@ -10,7 +10,7 @@ title: ' '
 > 💡 A case study of zkJump.io to showcase lightweight integration
 
 
-![zkJump Integration](../../static/img/integration/zkjump_integration.png)
+![zkJump Integration](../img/zkjump_integration.png)
 
 
 ## zkJump Server
