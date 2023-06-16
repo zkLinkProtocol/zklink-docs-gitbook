@@ -8,7 +8,7 @@ There are 4 types of the withdraw function : withdraw, forced withdraw (permissi
 
 **Note:**
 
-* `proxy withdraw` applies to accounts that can not generate pubkeyhash. For example, a user mistakenly transfers tokens to a smart contract address that does not support pubkeyhash generation. To withdraw the token from Layer2 to Layer1 in such a case, a third party proxy is required to send the withdraw request . Noted that the to\_address must be THE smart contract address.
+* `proxy withdraw` applies to accounts that can not generate pubkeyhash. For example, a user mistakenly transfers tokens to a smart contract address that does not support pubkeyhash generation. To withdraw the token from Layer2 to Layer1 in such a case, a third party proxy is required to send the withdraw request. Noted that the to\_address must be THE smart contract address.
 
 ## Fast Withdraw
 
