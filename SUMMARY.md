@@ -1,8 +1,8 @@
 # Table of contents
 
-* [The Future is zk-Linked.](README.md)
-  * [Introduction](the-future-is-zk-linked./introduction.md)
-  * [Architecture](the-future-is-zk-linked./architecture.md)
+* [The Future is zk-Linked](README.md)
+  * [Introduction](the-future-is-zk-linked/introduction.md)
+  * [Architecture](the-future-is-zk-linked/architecture.md)
 * [Network Information](network-information/README.md)
   * [Mainnet: Connected Networks](networks/mainnet\_networks.md)
   * [Mainnet: dApps & Deployment Addresses](networks/mainnet\_addresses.md)
