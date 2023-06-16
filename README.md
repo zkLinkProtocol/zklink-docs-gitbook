@@ -17,20 +17,19 @@ zkLink builds a ZK-Rollup middleware that natively connects to various L1s and L
 
 ## Benefits of using zkLink infra
 
-1. ### Asset Aggregation
-
 ### Asset Aggregation
 
 1. **Multi-chain Token Listing and Trading:** list and trade tokens across various L1s and L2s, including FTs and NFTs, without a bridge to mitigate cross-chain risks and fees.
 2. **Multi-chain Token Portfolio Management:** a single wallet to manage multi-chain portfolios, just as in a centralized exchange.
 
-### 2.Liquidity Aggregation
+### Liquidity Aggregation
 
-* **Token Merge:** tokens issued on different blockchains by the same entity (e.g., USDT ERC20, USDT SPL, USDT BEP20) will be merged into a single token (USDT) within the zkLink rollup network.
-* **Stablecoin Liquidity Unification:** USD, a unified pricing currency, is introduced within the zkLink system, which eliminates disparities among fiat-backed stablecoins from different chains. The auto-conversion from selected stablecoins (USDC, USDP, BUSD, etc,.) to USD is optional for dApps.
+1. **Token Merge:** tokens issued on different blockchains by the same entity (e.g., USDT ERC20, USDT SPL, USDT BEP20) will be merged into a single token (USDT) within the zkLink rollup network.
+2. **Stablecoin Liquidity Unification:** USD, a unified pricing currency, is introduced within the zkLink system, which eliminates disparities among fiat-backed stablecoins from different chains. The auto-conversion from selected stablecoins (USDC, USDP, BUSD, etc,.) to USD is optional for dApps.
 
 ### App-specific Zero-knowledge Circuit
 
-* **High customizability:** developers can choose which networks to connect, which to put DA on, and tailor specific functions.
-* **High performance:** 1000+ TPS to bridge the gap between high-frequency traders' needs and on-chain products.
-* **High efficiency:** the app-specific circuit is considerably smaller than general-purpose zk circuits, resulting in lower computational resource and on-chain gas consumption.
+1. **High customizability:** developers can choose which networks to connect, which to put DA on, and tailor specific functions.
+2. **High performance:** 1000+ TPS to bridge the gap between high-frequency traders' needs and on-chain products.
+3. **High efficiency:** the app-specific circuit is considerably smaller than general-purpose zk circuits, resulting in lower computational resource and on-chain gas consumption.
+
