@@ -3,6 +3,7 @@
 ## Welcome
 
 * [Introduction](README.md)
+* [Architecture](architecture.md)
 
 ## Network Information
 
