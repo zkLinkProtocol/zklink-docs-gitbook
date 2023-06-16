@@ -1,20 +1,27 @@
 # Table of contents
 
-* [Welcome](README.md)
-  * [Introduction](Introduction.md)
-  * [Architecture](the-future-is-zk-linked/architecture.md)
-* [Network Information](network-information/README.md)
-  * [Mainnet: Connected Networks](networks/mainnet\_networks.md)
-  * [Mainnet: dApps & Deployment Addresses](networks/mainnet\_addresses.md)
-  * [Testnet: Connected Networks](networks/testnet\_networks.md)
-  * [Testnet: dApps & Deployment Addresses](networks/testnet\_addresses.md)
-* [Wallet & User Fund Streamline](wallet-and-user-fund-streamline/README.md)
-  * [Deposit](streamline/deposit.md)
-  * [Withdraw](streamline/withdraw.md)
-  * [Wallet Integration & AA Wallet](streamline/wallet.md)
-* [Integration Architecture](integration-architecture/README.md)
-  * [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](IntegrationArchitecture/Derivatives.md)
-  * [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
-  * [Lightweight Integration](IntegrationArchitecture/zkjump.md)
-* [Audits](Audits.md)
+## Welcome
+* [Introduction](Introduction.md)
+* [Architecture](the-future-is-zk-linked/architecture.md)
+
+## Network Information
+* [Mainnet: Connected Networks](networks/mainnet\_networks.md)
+* [Mainnet: dApps & Deployment Addresses](networks/mainnet\_addresses.md)
+* [Testnet: Connected Networks](networks/testnet\_networks.md)
+* [Testnet: dApps & Deployment Addresses](networks/testnet\_addresses.md)
+  
+## Wallet & User Fund Streamline
+* [Deposit](streamline/deposit.md)
+* [Withdraw](streamline/withdraw.md)
+* [Wallet Integration & AA Wallet](streamline/wallet.md)
+  
+## Integration Architecture
+* [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](IntegrationArchitecture/Derivatives.md)
+* [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
+* [Lightweight Integration](IntegrationArchitecture/zkjump.md)
+
+## Tokenomics
 * [Tokenomics](tokenomics.md)
+
+## Reference
+* [Audits](Audits.md)
