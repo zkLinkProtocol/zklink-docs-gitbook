@@ -2,7 +2,7 @@
 
 > 💡Account abstraction unifies contract accounts and EOAs. Integrating AA wallets brings better user experience to dApps built on top of zkLink. Smart contract wallets are much more flexible than EOAs, allowing users to control their accounts by smart contract rather than simply a private key, and to define their account logic such as permission controls, transaction limits, wallet recovery, etc,.
 
-> Taking UniPass as an example, UniPass offers a user-friendly experience for managing smart contract wallets using email and password. We believe this is crucial for users who are not yet familiar with crypto.
+Taking UniPass as an example, UniPass offers a user-friendly experience for managing smart contract wallets using email and password. We believe this is crucial for users who are not yet familiar with crypto.
 
 ## Required Conditions
 

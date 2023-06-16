@@ -18,17 +18,19 @@ zkLink supports account abstraction (AA) wallets and externally owned account (E
 3. AA wallet on EVM
 4. AA wallet on nonEVM
 
-#### **Thus the accordingly call functions are as followed:**
+## **Deposit Functions**
 
-A: directly call zkLink deposit function
+#### **The accordingly call functions are as followed:**
+
+`A: directly call zkLink deposit function`
 
 Note: supports both AA wallets and EOA wallets; it is required that the from\_address can directly sign zkLink deposit transactions.
 
-B: call transfer to user AA wallet
+`B: call transfer to user AA wallet`
 
 Note: supports AA wallets that adopt the zkLink auto transfer function only, such as UniPass.
 
-C: call transfer to proxy deposit contract, and then automatically deposit to zkLink contract
+`C: call transfer to proxy deposit contract, and then automatically deposit to zkLink contract`
 
 Example scenarios:
 
@@ -37,15 +39,13 @@ Example scenarios:
 
 ![Proxy Deposit Flow](../img/proxy\_deposit\_flow.png)
 
-
-
 ## Exhaustive Scenarios
 
-<table><thead><tr><th width="255"></th><th width="113"></th><th width="149" align="center">Receiver Address</th><th width="100"></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td align="center">AA Wallet - EVM (20 bytes)</td><td>AA Wallet - nonEVM (Starknet 32 bytes)</td><td>EOA EVM (20 bytes)</td><td>EOA nonEVM (32 bytes)</td></tr><tr><td>Sender Address</td><td>EOA - EVM</td><td align="center">ABC</td><td>AC</td><td>AC</td><td>AC</td></tr><tr><td>EOA - nonEVM</td><td>AC</td><td align="center">ABC</td><td>AC</td><td>AC</td><td></td></tr><tr><td>owned AA Wallet - EVM</td><td>ABC</td><td align="center">AC</td><td>AC</td><td>AC</td><td></td></tr><tr><td>owned AA Wallet - nonEVM</td><td>AC</td><td align="center">ABC</td><td>AC</td><td>AC</td><td></td></tr><tr><td>CEX - EVM</td><td>BC</td><td align="center">C</td><td>C</td><td>C</td><td></td></tr><tr><td>CEX - nonEVM</td><td>C</td><td align="center">BC</td><td>C</td><td>C</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="256"></th><th width="113"></th><th width="149" align="center"></th><th width="100"></th><th></th></tr></thead><tbody><tr><td></td><td>AA Wallet - EVM (20 bytes)</td><td align="center">AA Wallet - nonEVM (Starknet 32 bytes)</td><td>EOA EVM (20 bytes)</td><td>EOA nonEVM (32 bytes)</td></tr><tr><td>EOA - EVM</td><td>ABC</td><td align="center">AC</td><td>AC</td><td>AC</td></tr><tr><td>EOA - nonEVM</td><td>AC</td><td align="center">ABC</td><td>AC</td><td>AC</td></tr><tr><td>owned AA Wallet - EVM</td><td>ABC</td><td align="center">AC</td><td>AC</td><td>AC</td></tr><tr><td>owned AA Wallet - nonEVM</td><td>AC</td><td align="center">ABC</td><td>AC</td><td>AC</td></tr><tr><td>CEX - EVM</td><td>BC</td><td align="center">C</td><td>C</td><td>C</td></tr><tr><td>CEX - nonEVM</td><td>C</td><td align="center">BC</td><td>C</td><td>C</td></tr></tbody></table>
 
 Below are 2 typical operational processes using [ZKEX.com](http://zkex.com/) as an example (the first dApp using zkLink infrastructure):
 
-## Example 1
+### Example 1
 
 A Unipass AA wallet user intends to deposit a Token (ABC) deployed on Ethereum from a CEX (such as Binance):
 
@@ -55,13 +55,13 @@ Step 2: Copy the address to the Binance withdrawal page and await for approval f
 
 Step 3: Wait for confirmation from zkex.
 
-Note:
-
+{% hint style="info" %}
 1. Since the Unipass AA wallet is compatible with proxy deposit and is deployed on the EVM (the same network with ABC), the deposit address copied to Binance is actually the Unipass AA wallet address.
 2. If the token ABC is deployed on StarkNet, which differs from the network of the user's AA wallet, then a proxy deposit contract address would be generated on Starknet to assist the ABC deposit.
 3. Why not directly call deposit on zkLink? This is because in many cases, the withdrawal address does not support user-defined contract calls (zklink deposit function), especially on CEXs, who generally only support the most basic transfer calls.
+{% endhint %}
 
-## Example 2
+### Example 2
 
 A MetaMask user intends to deposit the token ABC on EVM from its MetaMask address:
 
@@ -69,8 +69,8 @@ Step 1: On the zkex deposit page, locate ABC and select "Personal Wallet" as the
 
 Step 2: Only wait for the deposit transaction to be submitted and confirmed on-chain (it required 36 block on Ethereum).
 
-Note:
-
+{% hint style="info" %}
 1. A user may deposit to ZKEX from another MetaMask address. In this case, ZKEX can provide a separate deposit page to assist in signing the zkLink deposit with a third address.
 2. If the token is deployed on a non EVM-compatible network, the deposit will need to go through a proxy deposit contract.
+{% endhint %}
 
