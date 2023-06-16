@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
-  * [Introduction](the-future-is-zk-linked/introduction.md)
+  * [Introduction](Introduction.md)
   * [Architecture](the-future-is-zk-linked/architecture.md)
 * [Network Information](network-information/README.md)
   * [Mainnet: Connected Networks](networks/mainnet\_networks.md)
