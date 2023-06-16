@@ -2,7 +2,7 @@
 
 zkLink supports account abstraction (AA) wallets and externally owned account (EOA) wallets, with either EVM addresses (20 bytes) or nonEVM addresses (currently Starknet address only, with 32 bytes).
 
-#### **Users can deposit to zkLink from the following address:**
+### **Users can deposit to zkLink from the following address:**
 
 1. EOA wallet on EVM
 2. EOA wallet on nonEVM
@@ -11,7 +11,7 @@ zkLink supports account abstraction (AA) wallets and externally owned account (E
 5. CEX address on EVM (custodial, and usually only supports standard transfer contract calls)
 6. CEX address on nonEVM (custodial, and usually only supports standard transfer contract calls)
 
-#### **The scenarios of receiver address on zkLink are:**
+### **The scenarios of receiver address on zkLink are:**
 
 1. EOA on EVM
 2. EOA on nonEVM
@@ -20,7 +20,7 @@ zkLink supports account abstraction (AA) wallets and externally owned account (E
 
 ## **Deposit Functions**
 
-#### **The accordingly call functions are as followed:**
+### **The accordingly call functions are as followed:**
 
 `A: directly call zkLink deposit function`
 
