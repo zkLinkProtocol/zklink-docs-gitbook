@@ -35,4 +35,3 @@ Data transmission have emerged as the most vulnerable component of cross-chain t
 * **High customizability:** developers can choose which networks to connect, which to put DA on, and tailor specific functions.
 * **High performance:** 1000+ TPS to bridge the gap between high-frequency traders' needs and on-chain products.
 * **High efficiency:** the app-specific circuit is considerably smaller than general-purpose zk circuits, resulting in lower computational resource and on-chain gas consumption.
-
