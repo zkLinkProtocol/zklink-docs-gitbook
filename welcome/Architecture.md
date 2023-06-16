@@ -17,7 +17,7 @@ The list above is not comprehensive. The purpose is to deploy zkLink main contra
 
 ## Roles in the zkLink Ecosystem
 
-| User                    | Users of dApps that are deployed on the zkLink infrastructure. 👉 [User Interactions](architecture.md#user-interactions)                                                                                                                                                |
+| User                    | Users of dApps that are deployed on the zkLink infrastructure. 👉 [User Interactions](Architecture.md#user-interactions)                                                                                                                                                |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | dApp Developers         | Developers who build dApps and can also act as Sequencers. In some cases, dApp developers may not need to run their own Sequencer, as the zkLink team provides a shared Sequencer service.                                                                              |
 | Layer1s and Layer2s     | Various Layer1 and Layer2 ecosystems that zkLink connects to can be combined into a single network module. zkLink service can be customized and deployed on any compatible network module. 👉 [Connected Network](../networks/testnet\_networks.md)                     |
