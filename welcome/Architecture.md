@@ -24,7 +24,7 @@ Unless otherwise specified, the “Layer1” mentioned in this documentation ref
 
 <details>
 
-<summary>EVM-incompatible ZK-Rollup VM</summary>
+<summary>EVM-incompatible ZK-Rollup VMs</summary>
 
 `Starknet`, etc,.
 
