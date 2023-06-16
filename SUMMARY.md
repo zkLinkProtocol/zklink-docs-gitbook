@@ -23,5 +23,5 @@
 * [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
 * [Lightweight Integration](IntegrationArchitecture/zkjump.md)
 
-## [Audits](Audits.md)
+### [Audits](Audits.md)
 ## [Tokenomics](tokenomics.md)
