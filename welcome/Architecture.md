@@ -2,16 +2,47 @@
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-`Note:` unless otherwise specified, the “Layer1” mentioned in this documentation refers to the various ecosystems that zkLink connects to, including but not limited to:
+## Connected Networks
 
-1. EVM-compatible public chains such as Ethereum mainnet, Binance Smart Chain, Polygon, Avalanche, etc,.
-2. EVM-compatible ZK-Rollup VM including zkSync, Scroll, Linea, Polygon ZKVM, Taiko
-3. EVM-incompatible ZK-Rollup VM: Starknet
-4. EVM-compatible Optimistic-Rollups: Arbitrum, Optimism
+Unless otherwise specified, the “Layer1” mentioned in this documentation refers to the various ecosystems that zkLink connects to, including but not limited to:
+
+<details>
+
+<summary>EVM-compatible public chains</summary>
+
+Ethereum mainnet, Binance Smart Chain, Polygon, Avalanche, etc,.
+
+</details>
+
+<details>
+
+<summary>EVM-compatible ZK-Rollup VMs</summary>
+
+zkSync, Scroll, Linea, Polygon ZKVM, Taiko, etc,.
+
+</details>
+
+<details>
+
+<summary>EVM-incompatible ZK-Rollup VM</summary>
+
+Starknet etc,.
+
+</details>
+
+<details>
+
+<summary>EVM-compatible Optimistic-Rollups</summary>
+
+Arbitrum, Optimism, etc,.
+
+</details>
 
 The list above is not comprehensive. The purpose is to deploy zkLink main contract only on secure and reliable ecosystems recognized by community. Emails suggesting new networks that zkLink should be connected to are welcomed.
 
-`Note:` to avoid misunderstanding, we use “zkLink Layer2” or “zkLink off-chain rollup service” to refer to the infrastructure that zkLink developed. Although zkLink is more like a Layer3 network considering other Layer2s such as Starknet or zkSync that zkLink connects to, we identify zkLink as a Layer2 solution.
+{% hint style="info" %}
+To avoid misunderstanding, we use "zkLink Layer2" or "zkLink off-chain rollup service" to refer to the infrastructure that zkLink developed. Although zkLink is more like a Layer3 network considering other Layer2s such as Starknet or zkSync that zkLink connects to, we identify zkLink as a Layer2 solution.
+{% endhint %}
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
@@ -28,7 +59,7 @@ The list above is not comprehensive. The purpose is to deploy zkLink main contra
 
 ## User Interactions
 
-1. Users interact with dApps’ front-end. In the backstage, tokens deposited to the dApp will be locked in the zkLink contract (which may be exclusively deployed for a specific dApp). Users need to wait for a certain period of time (determined by the source chain) before the dApp receives this deposit.
+1. Users interact with dApps' front-end. In the backstage, tokens deposited to the dApp will be locked in the zkLink contract (which may be exclusively deployed for a specific dApp). Users need to wait for a certain period of time (determined by the source chain) before the dApp receives this deposit.
 2. Once the dApp confirms the deposit, the user will be able to see it in their balance and use other dApp features. In the case of ZKEX.com, users can do multi-chain spot trading or open positions in perpetual contracts after receiving the deposit. Read Deposit Flow for more details.
 3. Users can withdraw tokens at any time. They can either request on the dApp’s front-end or directly submit the withdrawal request to zkLink main contract. Read Withdraw Flow for more details.
 
