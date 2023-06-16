@@ -24,16 +24,16 @@ The record of prepayment information is stored in Layer1 smart contracts. When a
 {% endhint %}
 
 ```
-	/// @dev Accept infos of fast withdraw of account
-    /// uint32 is the account id
-    /// byte32 is keccak256(abi.encodePacked(receiver, tokenId, amount, withdrawFeeRate, nonce))
-    /// address is the accepter
-    mapping(uint32 => mapping(bytes32 => address)) public accepts;
+/// @dev Accept infos of fast withdraw of account
+/// uint32 is the account id
+/// byte32 is keccak256(abi.encodePacked(receiver, tokenId, amount, withdrawFeeRate, nonce))
+/// address is the accepter
+mapping(uint32 => mapping(bytes32 => address)) public accepts;
 
-    /// @dev Broker allowance used in accept, accepter can authorize broker to do accept
-    /// @dev Similar to the allowance of transfer in ERC20
-    /// @dev The struct of this map is (tokenId => accepter => broker => allowance)
-    mapping(uint16 => mapping(address => mapping(address => uint128))) internal brokerAllowances;
+/// @dev Broker allowance used in accept, accepter can authorize broker to do accept
+/// @dev Similar to the allowance of transfer in ERC20
+/// @dev The struct of this map is (tokenId => accepter => broker => allowance)
+mapping(uint16 => mapping(address => mapping(address => uint128))) internal brokerAllowances;
 ```
 
 ![Withdraw & Fast Withdraw Flow](../img/fast\_withdraw\_flow.jpg)
