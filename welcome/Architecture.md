@@ -10,7 +10,7 @@ Unless otherwise specified, the “Layer1” mentioned in this documentation ref
 
 <summary>EVM-compatible public chains</summary>
 
-Ethereum mainnet, Binance Smart Chain, Polygon, Avalanche, etc,.
+`Ethereum Mainnet`, `BNB Chain`, `Polygon`, `Avalanche`, etc,.
 
 </details>
 
