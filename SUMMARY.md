@@ -7,11 +7,11 @@
 ## Network Information
 
 * Connected Networks
-  * [Mainnet](networks/mainnet\_networks.md)
-  * [Testnet](networks/testnet\_networks.md)
+  * [Mainnet](networks/mainnet_networks.md)
+  * [Testnet](networks/testnet_networks.md)
 * dApps & Deployment Addresses
-  * [Mainnet](networks/mainnet\_addresses.md)
-  * [Testnet](networks/testnet\_addresses.md)
+  * [Mainnet](networks/mainnet_addresses.md)
+  * [Testnet](networks/testnet_addresses.md)
   
 ## Wallet & User Fund Streamline
 * [Deposit](streamline/deposit.md)
