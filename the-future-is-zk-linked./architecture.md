@@ -1,6 +1,6 @@
 # Architecture
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 Note： unless otherwise specified, the “Layer1” mentioned in this documentation refers to the various ecosystems that zkLink connects to, including but not limited to:
 
@@ -13,14 +13,14 @@ The list above is not comprehensive. The purpose is to deploy zkLink main contra
 
 Note: to avoid misunderstanding, we use “zkLink Layer2” or “zkLink off-chain rollup service” to refer to the infrastructure that zkLink developed. Although zkLink is more like a Layer3 network considering other Layer2s such as Starknet or zkSync that zkLink connects to, we identify zkLink as a Layer2 solution.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Roles in the zkLink Ecosystem
 
 | User                    | Users of dApps that are deployed on the zkLink infrastructure. 👉 [User Interactions](architecture.md#user-interactions)                                                                                                                                                |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | dApp Developers         | Developers who build dApps and can also act as Sequencers. In some cases, dApp developers may not need to run their own Sequencer, as the zkLink team provides a shared Sequencer service.                                                                              |
-| Layer1s and Layer2s     | Various Layer1 and Layer2 ecosystems that zkLink connects to can be combined into a single network module. zkLink service can be customized and deployed on any compatible network module. 👉 [Connected Network](networks/testnet\_networks.md)                        |
+| Layer1s and Layer2s     | Various Layer1 and Layer2 ecosystems that zkLink connects to can be combined into a single network module. zkLink service can be customized and deployed on any compatible network module. 👉 [Connected Network](../networks/testnet\_networks.md)                     |
 | Data Availability Layer | Different DA solutions are available including internal and external DAs. zkLink provides multiple options for developers to choose from. 👉 Data Availability                                                                                                          |
 | Light Oracle Network    | In certain network configurations, zkLink architecture requires the assistance of a light oracle network for inter-chain communication. This is dependent on the specific version of zkLink rollup and the combination of connected ecosystems.                         |
 | Community Participants  | <p>- Validators: coordinate with provers and upload ZKPs on-chain; receive incentives;<br>- Provers: generate zero-knowledge proofs to receive incentives;<br>- zkLink DAO: conduct governance activities for the stability of zkLink protocol; receive incentives.</p> |
