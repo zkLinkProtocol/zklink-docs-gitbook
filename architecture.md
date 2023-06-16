@@ -11,13 +11,9 @@ Note： unless otherwise specified, the “Layer1” mentioned in this documenta
 3. EVM-incompatible ZK-Rollup VM: Starknet
 4. EVM-compatible Optimistic-Rollups: Arbitrum, Optimism
 
+The list above is not comprehensive. The purpose is to deploy zkLink main contract only on secure and reliable ecosystems recognized by community. Emails suggesting new networks that zkLink should be connected to are welcomed. 
+
 Note: to avoid misunderstanding, we use “zkLink Layer2” or “zkLink off-chain rollup service” to refer to the infrastructure that zkLink developed. Although zkLink is more like a Layer3 network considering other Layer2s such as Starknet or zkSync that zkLink connects to, we identify zkLink as a Layer2 solution.
-
-
-- 1 ethereum mainnet，bsc, polygon,avax 等evm兼容的公链
-- 2 evm兼容的zkrollup vm,包括 zksync，scroll，linea，polygon zkvm,Taiko
-- 3 EVM 不兼容的 zkrollup vm, 目前仅包括 StarkNet
-- 4 EVM 兼容的OP rollup,目前包括 arbtrium，optimism
 
 
 
