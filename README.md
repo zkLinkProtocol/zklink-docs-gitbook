@@ -9,18 +9,22 @@ description: >-
 
 zkLink builds a ZK-Rollup middleware that natively connects to various L1s and L2s, and provides an array of high-level APIs. Developers can easily deploy trading dApps with high customizability and access to aggregated liquidity, while their end users can benefit from seamless multi-chain trading experience. Moreover, zkLink also supports OFT (Omnichain Fungible Token) issuing and bridging.
 
+
+
 ## What problems does zkLink solve?
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><h3><strong>Liquidity Fragmentation</strong></h3><p></p><p>The emergence of high-performance chains and zkEVMs has resulted in liquidity silos as a side-effect, leading to low capital utilization rates and making it hard for users to hold or trade across distinct ecosystems.</p></td><td></td><td></td></tr><tr><td><h3><strong>Navigation Complexity</strong></h3><p></p><p>Currently the process to trade multi-chain tokens is laborious and costly, involving stablecoins as an intermediary and cross-chain bridges. The unwieldy user experience often deters traders from investigating new DeFi projects and applications.</p></td><td></td><td></td></tr><tr><td><h3><strong>Security Risks During Inter-Chain Transactions</strong></h3><p>Data transmission have emerged as the most vulnerable component of cross-chain trading, including bridges and chain-interoperability process whose security depends on a multi-sig committees. Security concern hinders users enthusiasm to explore new ecosystems other than Ethereum.</p></td><td></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><h3><strong>Liquidity Fragmentation</strong></h3></td><td>The emergence of high-performance chains and zkEVMs has resulted in liquidity silos as a side-effect, leading to low capital utilization rates and making it hard for users to hold or trade across distinct ecosystems.</td><td></td></tr><tr><td><h3><strong>Navigation Complexity</strong></h3></td><td>Currently the process to trade multi-chain tokens is laborious and costly, involving stablecoins as an intermediary and cross-chain bridges. The unwieldy user experience often deters traders from investigating new DeFi projects and applications.</td><td></td></tr><tr><td><h3><strong>Security Risks During Inter-Chain Transactions</strong></h3></td><td>Data transmission have emerged as the most vulnerable component of cross-chain trading, including bridges and chain-interoperability process whose security depends on a multi-sig committees. Security concern hinders users enthusiasm to explore new ecosystems other than Ethereum.</td><td></td></tr></tbody></table>
 
 ## Benefits of using zkLink infra
 
+1. ### Asset Aggregation
+
 ### Asset Aggregation
 
-* **Multi-chain Token Listing and Trading:** list and trade tokens across various L1s and L2s, including FTs and NFTs, without a bridge to mitigate cross-chain risks and fees.
-* **Multi-chain Token Portfolio Management:** a single wallet to manage multi-chain portfolios, just as in a centralized exchange.
+1. **Multi-chain Token Listing and Trading:** list and trade tokens across various L1s and L2s, including FTs and NFTs, without a bridge to mitigate cross-chain risks and fees.
+2. **Multi-chain Token Portfolio Management:** a single wallet to manage multi-chain portfolios, just as in a centralized exchange.
 
-### Liquidity Aggregation
+### 2.Liquidity Aggregation
 
 * **Token Merge:** tokens issued on different blockchains by the same entity (e.g., USDT ERC20, USDT SPL, USDT BEP20) will be merged into a single token (USDT) within the zkLink rollup network.
 * **Stablecoin Liquidity Unification:** USD, a unified pricing currency, is introduced within the zkLink system, which eliminates disparities among fiat-backed stablecoins from different chains. The auto-conversion from selected stablecoins (USDC, USDP, BUSD, etc,.) to USD is optional for dApps.
