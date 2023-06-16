@@ -48,7 +48,7 @@ To avoid misunderstanding, we use "zkLink Layer2" or "zkLink off-chain rollup se
 
 ## Roles in the zkLink Ecosystem
 
-<table data-header-hidden><thead><tr><th width="236"></th><th></th></tr></thead><tbody><tr><td>User</td><td>Users of dApps that are deployed on the zkLink infrastructure. 👉 <a href="Architecture.md#user-interactions">User Interactions</a></td></tr><tr><td>dApp Developers</td><td>Developers who build dApps and can also act as Sequencers. In some cases, dApp developers may not need to run their own Sequencer, as the zkLink team provides a shared Sequencer service.</td></tr><tr><td>Collection of target chains</td><td>Various Layer1 and Layer2 ecosystems that zkLink connects can be combined into a single network module. zkLink service can be customized and deployed on any compatible network module. 👉 <a href="../networks/testnet_networks.md">Connected Network</a></td></tr><tr><td>Data Availability Layer</td><td>Different DA solutions are available including internal and external DAs. zkLink provides multiple options for developers to choose from. 👉 Data Availability</td></tr><tr><td>Light Oracle Network</td><td>In certain network configurations, zkLink architecture requires the assistance of a light oracle network for inter-chain communication. This is dependent on the specific version of zkLink rollup and the combination of connected ecosystems.</td></tr><tr><td>Community Participants</td><td>- Validators: coordinate with provers and upload ZKPs on-chain; receive incentives;<br>- Provers: generate zero-knowledge proofs to receive incentives;<br>- zkLink DAO: conduct governance activities for the stability of zkLink protocol; receive incentives.</td></tr><tr><td>zkLink Team</td><td>Develop, iterate, and maintain the zkLink protocol; coordinate with dApps and the community.</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="229"></th><th></th></tr></thead><tbody><tr><td>User</td><td>Users of dApps that are deployed on the zkLink infrastructure. 👉 <a href="Architecture.md#user-interactions">User Interactions</a></td></tr><tr><td>dApp Developers</td><td>Developers who build dApps and can also act as Sequencers. In some cases, dApp developers may not need to run their own Sequencer, as the zkLink team provides a shared Sequencer service.</td></tr><tr><td>Collection of target chains</td><td>Various Layer1 and Layer2 ecosystems that zkLink connects can be combined into a single network module. zkLink service can be customized and deployed on any compatible network module. 👉 <a href="../networks/testnet_networks.md">Connected Network</a></td></tr><tr><td>Data Availability Layer</td><td>Different DA solutions are available including internal and external DAs. zkLink provides multiple options for developers to choose from. 👉 Data Availability</td></tr><tr><td>Light Oracle Network</td><td>In certain network configurations, zkLink architecture requires the assistance of a light oracle network for inter-chain communication. This is dependent on the specific version of zkLink rollup and the combination of connected ecosystems.</td></tr><tr><td>Community Participants</td><td>- Validators: coordinate with provers and upload ZKPs on-chain; receive incentives;<br>- Provers: generate zero-knowledge proofs to receive incentives;<br>- zkLink DAO: conduct governance activities for the stability of zkLink protocol; receive incentives.</td></tr><tr><td>zkLink Team</td><td>Develop, iterate, and maintain the zkLink protocol; coordinate with dApps and the community.</td></tr></tbody></table>
 
 ## User Interactions
 
@@ -61,31 +61,32 @@ To avoid misunderstanding, we use "zkLink Layer2" or "zkLink off-chain rollup se
 1. Tokens might not necessarily be deposited directly from the user account into the zkLink main contract; developers can deploy separate proxy deposit contracts for higher flexibility. For example, zkJump deploys a proxy deposit contract and realizes bridging fee collection.
 2. In some cases users will also interact directly with zkLink: forced withdraw (users initiate forced withdraw directly to zkLink Layer1 contract), and Dunkirk exit (users directly withdraw tokens from zkLink main contract when zkLink enters Dunkirk mode, which is irreversible)
 
-{% hint style="success" %}
+{% hint style="info" %}
 About Dunkirk: the “Dunkirk Asset Recovery” program has been publicly tested to simulate the extreme case: when zkLink server is down, users can retrieve their assets via the open-source recovery program.
 {% endhint %}
 
 ## Developer Integrations
 
-#### Understand the development needs
+### Understand the development needs
 
 * zkLink is a unified multi-chain trading infrastructure secured with zk-SNARKS;
 * zkLink excels at peer-to-peer trading scenarios, particularly order book trading;
 * zkLink currently supports spot trading and derivative trading;
 * zkLink currently supports depositing and merging of OFT, enabling OFT cross-chain transfers:
-  * for example, USDC is issues on both Ethereum and BSC, and can be deposited to zkLink from either chain; users can deposit from Ethereum and withdraw to BSC;
-  * merge: the same kind of token on different chains are automatically merged into a unified one on zkLink;
+  1. for example, USDC is issues on both Ethereum and BSC, and can be deposited to zkLink from either chain; users can deposit from Ethereum and withdraw to BSC;
+  2. merge: the same kind of token on different chains are automatically merged into a unified one on zkLink;
 * zkLink will soon support the issuance and trading of NFTs;
 * zkLink is not designed for direct integration with on-chain DeFi protocols or other Layer1 smart contracts. As an independent rollup infrastructure, zkLink acquires cost advantages at the expense of composability.
 
-#### Explore integration examples
+### Explore integration examples
 
-1. [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](../IntegrationArchitecture/Derivatives.md)
-2. [Simple Integration (Multi-Chain Spot Exchange)](../IntegrationArchitecture/spot.md)
-3. [Lightweight Integration](../IntegrationArchitecture/zkjump.md)
+* [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](../IntegrationArchitecture/Derivatives.md)
+* [Simple Integration (Multi-Chain Spot Exchange)](../IntegrationArchitecture/spot.md)
+* [Lightweight Integration](../IntegrationArchitecture/zkjump.md)
 
-#### Steps to develop on zkLink
+### Steps to develop on zkLink
 
 1. Contact the zkLink team (dev@zklink.org) about integration details;
 2. Stake a certain amount of tokens with the zkLink DAO to gain access to Sequencer system (optional; you can also opt for the shared Sequencer service);
 3. Launch your product once everything is set up.
+
