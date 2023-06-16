@@ -1,8 +1,8 @@
 # Table of contents
 
 ## Welcome
-* [Introduction](Introduction.md)
-* [Architecture](the-future-is-zk-linked/architecture.md)
+* [Introduction](welcome/Introduction.md)
+* [Architecture](welcome/Architecture.md)
 
 ## Network Information
 
@@ -27,4 +27,4 @@
 * [Tokenomics](tokenomics.md)
 
 ## Reference
-* [Audits](Audits.md)
+* [Audits](reference/Audits.md)
