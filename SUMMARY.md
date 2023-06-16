@@ -5,10 +5,13 @@
 * [Architecture](the-future-is-zk-linked/architecture.md)
 
 ## Network Information
-* [Mainnet: Connected Networks](networks/mainnet\_networks.md)
-* [Mainnet: dApps & Deployment Addresses](networks/mainnet\_addresses.md)
-* [Testnet: Connected Networks](networks/testnet\_networks.md)
-* [Testnet: dApps & Deployment Addresses](networks/testnet\_addresses.md)
+
+* Connected Networks
+  * [Mainnet](networks/mainnet\_networks.md)
+  * [Testnet](networks/testnet\_networks.md)
+* dApps & Deployment Addresses
+  * [Mainnet](networks/mainnet\_addresses.md)
+  * [Testnet](networks/testnet\_addresses.md)
   
 ## Wallet & User Fund Streamline
 * [Deposit](streamline/deposit.md)
