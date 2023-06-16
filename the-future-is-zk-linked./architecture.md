@@ -1,8 +1,8 @@
 # Architecture
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-Note： unless otherwise specified, the “Layer1” mentioned in this documentation refers to the various ecosystems that zkLink connects to, including but not limited to:
+`Note:` unless otherwise specified, the “Layer1” mentioned in this documentation refers to the various ecosystems that zkLink connects to, including but not limited to:
 
 1. EVM-compatible public chains such as Ethereum mainnet, Binance Smart Chain, Polygon, Avalanche, etc,.
 2. EVM-compatible ZK-Rollup VM including zkSync, Scroll, Linea, Polygon ZKVM, Taiko
@@ -11,9 +11,9 @@ Note： unless otherwise specified, the “Layer1” mentioned in this documenta
 
 The list above is not comprehensive. The purpose is to deploy zkLink main contract only on secure and reliable ecosystems recognized by community. Emails suggesting new networks that zkLink should be connected to are welcomed.
 
-Note: to avoid misunderstanding, we use “zkLink Layer2” or “zkLink off-chain rollup service” to refer to the infrastructure that zkLink developed. Although zkLink is more like a Layer3 network considering other Layer2s such as Starknet or zkSync that zkLink connects to, we identify zkLink as a Layer2 solution.
+`Note:` to avoid misunderstanding, we use “zkLink Layer2” or “zkLink off-chain rollup service” to refer to the infrastructure that zkLink developed. Although zkLink is more like a Layer3 network considering other Layer2s such as Starknet or zkSync that zkLink connects to, we identify zkLink as a Layer2 solution.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Roles in the zkLink Ecosystem
 
@@ -32,12 +32,10 @@ Note: to avoid misunderstanding, we use “zkLink Layer2” or “zkLink off-cha
 2. Once the dApp confirms the deposit, the user will be able to see it in their balance and use other dApp features. In the case of ZKEX.com, users can do multi-chain spot trading or open positions in perpetual contracts after receiving the deposit. Read Deposit Flow for more details.
 3. Users can withdraw tokens at any time. They can either request on the dApp’s front-end or directly submit the withdrawal request to zkLink main contract. Read Withdraw Flow for more details.
 
-Note:
+`Note`
 
 1. Tokens might not necessarily be deposited directly from the user account into the zkLink main contract; developers can deploy separate proxy deposit contracts for higher flexibility. For example, zkJump deploys a proxy deposit contract and realizes bridging fee collection.
 2. In some cases users will also interact directly with zkLink: forced withdraw (users initiate forced withdraw directly to zkLink Layer1 contract), and Dunkirk exit (users directly withdraw tokens from zkLink main contract when zkLink enters Dunkirk mode, which is irreversible)
-
-💡 About Dunkirk: the “Dunkirk Asset Recovery” program has been publicly tested to simulate the extreme case: when zkLink server is down, users can retrieve their assets via the open-source recovery program.
 
 {% hint style="success" %}
 About Dunkirk: the “Dunkirk Asset Recovery” program has been publicly tested to simulate the extreme case: when zkLink server is down, users can retrieve their assets via the open-source recovery program.
@@ -45,7 +43,7 @@ About Dunkirk: the “Dunkirk Asset Recovery” program has been publicly tested
 
 ## Developer Intergrations
 
-Understand the development needs：
+#### Understand the development needs
 
 * zkLink is a unified multi-chain trading infrastructure secured with zk-SNARKS;
 * zkLink excels at peer-to-peer trading scenarios, particularly order book trading;
@@ -56,13 +54,13 @@ Understand the development needs：
 * zkLink will soon support the issuance and trading of NFTs;
 * zkLink is not designed for direct integration with on-chain DeFi protocols or other Layer1 smart contracts. As an independent rollup infrastructure, zkLink acquires cost advantages at the expense of composability.
 
-Explore integration examples:
+#### Explore integration examples
 
 1. ZKEX 3.0
 2. ZKEX 2.0
 3. zkJump
 
-Steps to develop on zkLink:
+#### Steps to develop on zkLink
 
 1. Contact the zkLink team about integration details;
 2. Stake a certain amount of tokens with the zkLink DAO to gain access to Sequencer system (optional; you can also opt for the shared Sequencer service);
