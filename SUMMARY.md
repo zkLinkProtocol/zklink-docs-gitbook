@@ -1,6 +1,6 @@
 # Table of contents
 
-* [The Future is zk-Linked](README.md)
+* [Welcome](README.md)
   * [Introduction](the-future-is-zk-linked/introduction.md)
   * [Architecture](the-future-is-zk-linked/architecture.md)
 * [Network Information](network-information/README.md)
