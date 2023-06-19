@@ -30,6 +30,6 @@
 
 * [Tokenomics](tokenomics.md)
 
-## Reference
+## Appendix
 
 * [Audits](reference/Audits.md)
