@@ -1,4 +1,4 @@
-# Architecture
+# Protocol Overview
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -89,4 +89,72 @@ About Dunkirk: the “Dunkirk Asset Recovery” program has been publicly tested
 1. Contact the zkLink team (dev@zklink.org) about integration details;
 2. Stake a certain amount of tokens with the zkLink DAO to gain access to Sequencer system (optional; you can also opt for the shared Sequencer service);
 3. Launch your product once everything is set up.
+
+## Network Collections
+
+👉 [Currently Connected Networks](../networks/testnet\_networks.md)
+
+zkLink supports diversified deployment of the following collections:
+
+* \[Ethereum mainnet] + \[ZK-Rollup VMs deployed on Ethereum mainnet];
+* \[Ethereum mainnet] + \[Rollup VMs deployed on Ethereum mainnet];
+* \[Ethereum mainnet] + \[other mainstream alt EVM compatible Ecosystems] + \[Rollup VMs deployed on Ethereum mainnet];
+
+{% hint style="info" %}
+Currently zkLink is not connected to other public chain in non-EVM ecosystems, such as Solana, Algorand, etc,.
+{% endhint %}
+
+The required network module for different deployment collections varies. For example, with the first and second deployment collections above, the involvement of the light oracle network is optional, and the network configuration can be adjusted according to specific requirement of dApps.&#x20;
+
+## Data Availability Layer
+
+There are three scenarios of zkLink DA deployment: internal DA, external DA, and the mixture of both internal and external DA.&#x20;
+
+{% tabs %}
+{% tab title="Internal Data Availability" %}
+Currently the classic zkLink architecture is to choose one or more target chains to put DA on, i.e., internal DA, which is recognized as the more secure DA option.
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="External Data Availability" %}
+Different types of dApps may have various requirement for DA. There are several options in the data availability layer of zkLink protocol, including but not limited to DAC (data availability committee), EigenDA, and Celestia.
+{% endtab %}
+{% endtabs %}
+
+## Community Participants
+
+### Validator
+
+**How to become a validator?**
+
+* stake a certain amount of token;
+* own a server that meets the performance requirement to run the circuit.
+
+**What will a validator do?**
+
+* listen to on-chain events (the Layer2 block data committed by dApps);
+* maintain the circuit state tree, generate data needed in ZKP generation and assort it to provers.
+
+**What incentives will a validator get?**
+
+* a validator bids for the right to construct the entire block;
+* if a validator fails to submit the ZKP within the time limit, the according incentives will be deducted and even the stakes will be confiscated.
+
+### Prover
+
+> 💡 In zkLink design, a Prover is more like an affiliate of the Validator system and does not directly interact with zkLink protocol.
+
+**How to become a prover**
+
+* authorized by the Validator system;
+* own a server that meets the performance requirement.
+
+**What will a prover do?**
+
+* run the Prover program, which may be bound to one or more validators
+
+## zkLink DAO
+
+> 💡 Check [Tokenomics](broken-reference) for detailed information
 
