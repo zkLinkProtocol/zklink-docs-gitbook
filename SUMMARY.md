@@ -3,7 +3,7 @@
 ## Welcome
 
 * [Introduction](README.md)
-* [Architecture](welcome/Architecture.md)
+* [Protocol Overview](welcome/Architecture.md)
 
 ## Network Information
 
@@ -20,7 +20,7 @@
 * [Withdraw](streamline/withdraw.md)
 * [Wallet Integration & AA Wallet](streamline/wallet.md)
 
-## Integration Architecture
+## Integration Cases
 
 * [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](IntegrationArchitecture/Derivatives.md)
 * [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
