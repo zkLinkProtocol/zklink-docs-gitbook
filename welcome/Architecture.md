@@ -154,7 +154,7 @@ Different types of dApps may have various requirement for DA. There are several 
 
 * run the Prover program, which may be bound to one or more validators
 
-## zkLink DAO
+### zkLink DAO
 
 > 💡 Check [Tokenomics](broken-reference) for detailed information
 
