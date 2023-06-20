@@ -1,7 +1,7 @@
 # FAQ
 
 {% tabs %}
-{% tab title="What’s the difference between “multi-chain” and “cross-chain”" %}
+{% tab title="What’s the difference between “multi-chain” and “cross-chain”？" %}
 zkLink is a “bridge-less” “multi-chain” trading layer, which is natively connected to multiple L1s and L2s.
 
 “Cross-chain”, on the other hand, usually refers to bridges that “transfer” tokens from one chain or the other (wrapped) or transactions.
