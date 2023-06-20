@@ -1,4 +1,4 @@
-#zkJump Architecture
+# zkJump Architecture
 
 zkJump is a OFT cross-chain protocol on top of zkLink infrastructure that supports:
 
