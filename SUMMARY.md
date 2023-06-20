@@ -33,3 +33,4 @@
 ## Appendix
 
 * [Audits](reference/Audits.md)
+* [FAQ](appendix/faq.md)
