@@ -38,10 +38,10 @@ Unless otherwise specified, the “Layer1” mentioned in this documentation ref
 
 </details>
 
-The list above is not comprehensive. The purpose is to deploy zkLink main contract only on secure and reliable ecosystems recognized by community. Emails suggesting new networks that zkLink should be connected to are welcomed.
+The list above is not comprehensive. The purpose is to deploy zkLink main contract only on secure and reliable ecosystems recognized by the community. We welcome emails suggesting new networks to connect to.
 
 {% hint style="info" %}
-To avoid misunderstanding, we use "zkLink Layer2" or "zkLink off-chain rollup service" to refer to the infrastructure that zkLink developed. Although zkLink is more like a Layer3 network considering other Layer2s such as Starknet or zkSync that zkLink connects to, we identify zkLink as a Layer2 solution.
+To avoid misunderstanding, we use "zkLink Layer2" or "zkLink off-chain rollup service" to refer to the infrastructure that zkLink developed. Although zkLink is more like a Layer 2.5 network considering other Layer2s such as Starknet or zkSync that zkLink connects to, we identify zkLink as a hybrid of layer2 and layer3.
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
@@ -101,14 +101,14 @@ zkLink supports diversified deployment of the following collections:
 * \[Ethereum mainnet] + \[other mainstream alt EVM compatible Ecosystems] + \[Rollup VMs deployed on Ethereum mainnet];
 
 {% hint style="info" %}
-Currently zkLink is not connected to other public chain in non-EVM ecosystems, such as Solana, Algorand, etc,.
+Currently, zkLink is not connected to other public chains in non-EVM ecosystems, such as Solana, Algorand, etc.
 {% endhint %}
 
-The required network module for different deployment collections varies. For example, with the first and second deployment collections above, the involvement of the light oracle network is optional, and the network configuration can be adjusted according to specific requirement of dApps.&#x20;
+The required network module for different deployment collections varies. For example, with the first and second deployment collections above, the involvement of the light oracle network is optional, and the network configuration can be adjusted according to the specific requirement of dApps.&#x20;
 
 ## Data Availability Layer
 
-There are three scenarios of zkLink DA deployment: internal DA, external DA, and the mixture of both internal and external DA.&#x20;
+There are three scenarios of zkLink DA deployment: internal DA, external DA, and a mixture of both internal and external DA.&#x20;
 
 {% tabs %}
 {% tab title="Internal Data Availability" %}
@@ -118,7 +118,7 @@ Currently the classic zkLink architecture is to choose one or more target chains
 
 {% tabs %}
 {% tab title="External Data Availability" %}
-Different types of dApps may have various requirement for DA. There are several options in the data availability layer of zkLink protocol, including but not limited to DAC (data availability committee), EigenDA, and Celestia.
+Different types of dApps may have various requirements for DA. There are several options in the data availability layer of zkLink protocol, including but not limited to DAC (data availability committee), EigenDA, and Celestia.
 {% endtab %}
 {% endtabs %}
 
@@ -128,7 +128,7 @@ Different types of dApps may have various requirement for DA. There are several 
 
 **How to become a validator?**
 
-* stake a certain amount of token;
+* tokens take a certain amount of token;
 * own a server that meets the performance requirement to run the circuit.
 
 **What will a validator do?**
