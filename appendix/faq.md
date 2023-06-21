@@ -4,7 +4,7 @@
 
 zkLink is a “bridge-less” “multi-chain” trading layer natively connected to multiple L1s and L2s.
 
-“Cross-chain”, on the other hand, usually refers to bridges that “transfer” tokens from one chain or the other (wrapped) or transactions.
+“Cross-chain”, on the other hand, usually refers to bridges that “transfer” tokens from one chain to the other as wrapped tokens.
 
 zkLink is a “multi-chain” design and can realize “cross-chain” as a side function.
 
