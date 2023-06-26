@@ -24,7 +24,7 @@ wherein:
 
 1. dApps have to stake ZKL to gain access to manager contract;
 2. validators have to stake ZKL as a guarantee deposit, and help generate zero-knowledge proofs to receive ZKL as rewards;
-3. Users of the zkLink Eco dApps will be motivated to purchase and hold ZKL to unlock perks and special user rights such as trading fee discount;
+3. Users of the zkLink Eco dApps will be motivated to purchase and hold ZKL to unlock perks and special user rights such as trading fee discounts;
 4. ZKL holders can stake ZKL to obtain veZKL to initiate proposals, and vote on the proposals to govern the development of the protocol.
 
 <figure><img src=".gitbook/assets/ZKL_governance.png" alt=""><figcaption></figcaption></figure>

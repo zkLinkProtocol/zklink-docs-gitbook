@@ -18,7 +18,7 @@ zkLink builds a ZK-Rollup middleware that natively connects to various L1s and L
 ### Liquidity Aggregation
 
 * **Token Merge:** tokens issued on different blockchains by the same entity (e.g., USDT ERC20, USDT SPL, USDT BEP20) will be merged into a single token (USDT) within the zkLink rollup network.
-* **Stablecoin Liquidity Unification:** USD, a unified pricing currency, is introduced within the zkLink system, which eliminates disparities among fiat-backed stablecoins from different chains. The auto-conversion from selected stablecoins (USDC, USDP, BUSD, etc,.) to USD is optional for dApps.
+* **Stablecoin Liquidity Unification:** USD, a unified pricing currency, is introduced within the zkLink system, which eliminates disparities among fiat-backed stablecoins from different chains. The auto-conversion from selected stablecoins (USDC, USDP, BUSD, etc.) to USD is optional for dApps.
 
 ### App-specific Zero-knowledge Circuit
 

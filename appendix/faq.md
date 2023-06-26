@@ -18,7 +18,7 @@ Moreover, the security of zkLink is tested and proved by the market. In the “z
 
 #### What is SNARK?
 
-SNARK stands for "Succinct Non-interactive ARgument of Knowledge", which is a technology implementation of zero-knowledge proofs. There is already plenty public information and theses available on this topic.
+SNARK stands for "Succinct Non-interactive ARgument of Knowledge", which is a technology implementation of zero-knowledge proofs. There is already plenty of public information and theses available on this topic.
 
 #### How to get involved?
 

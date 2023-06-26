@@ -14,7 +14,7 @@ The graphic below outlines how to integrate zkLink functional components in a de
 ## Integration Features
 
 * Autonomous account state-tree maintenance and on-chain event monitoring, eliminating the dependence on third-party services and ensuring stronger business reliability
-* Independent transaction ordering and block generation logic defining according to specific business logic
+* Independent transaction ordering and block generation logic defined according to specific business logic
 * Autonomous data commitment to the Data Availability Layer (DA): The gas fees of on-chain data commitment are directly paid by the dApps, enabling proactive management of network operational costs
 
 ## Functions of ZKEX 3.0 Integration

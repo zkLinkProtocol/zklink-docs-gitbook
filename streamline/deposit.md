@@ -35,7 +35,7 @@ Note: supports AA wallets that adopt the zkLink auto transfer function only, suc
 Example scenarios:
 
 1. The from\_address is not authorized to define the signature message. For example, a CEX user intends to withdraw directly from Binance to ZKEX.
-2. The address format of the to\_address on zkLink and the from\_address is different. For example, a user intends to deposit from a Starknet address to a EVM compatible AA wallet address.
+2. The address format of the to\_address on zkLink and the from\_address is different. For example, a user intends to deposit from a Starknet address to an EVM compatible AA wallet address.
 
 ![Proxy Deposit Flow](../img/proxy\_deposit\_flow.png)
 
@@ -49,25 +49,25 @@ Below are 2 typical operational processes using [ZKEX.com](http://zkex.com/) as 
 
 A Unipass AA wallet user intends to deposit a Token (ABC) deployed on Ethereum from a CEX (such as Binance):
 
-Step 1: On the zkex deposit page, locate ABC with the deposit address (0xabc...);
+Step 1: On the ZKEX deposit page, locate ABC with the deposit address (0xabc...);
 
-Step 2: Copy the address to the Binance withdrawal page and await for approval from Binance;
+Step 2: Copy the address to the Binance withdrawal page and await approval from Binance;
 
-Step 3: Wait for confirmation from zkex.
+Step 3: Wait for confirmation from ZKEX.
 
 {% hint style="info" %}
-1. Since the Unipass AA wallet is compatible with proxy deposit and is deployed on the EVM (the same network with ABC), the deposit address copied to Binance is actually the Unipass AA wallet address.
+1. Since the Unipass AA wallet is compatible with proxy deposit and is deployed on the EVM (the same network as ABC), the deposit address copied to Binance is actually the Unipass AA wallet address.
 2. If the token ABC is deployed on StarkNet, which differs from the network of the user's AA wallet, then a proxy deposit contract address would be generated on Starknet to assist the ABC deposit.
-3. Why not directly call deposit on zkLink? This is because in many cases, the withdrawal address does not support user-defined contract calls (zklink deposit function), especially on CEXs, who generally only support the most basic transfer calls.
+3. Why not directly call deposit on zkLink? This is because in many cases, the withdrawal address does not support user-defined contract calls (zkLink deposit function), especially on CEXs, who generally only support the most basic transfer calls.
 {% endhint %}
 
 ### Example 2
 
 A MetaMask user intends to deposit the token ABC on EVM from its MetaMask address:
 
-Step 1: On the zkex deposit page, locate ABC and select "Personal Wallet" as the fund source (it may vary if it is a deposit from CEX). Enter the amount, sign in MetaMask, and call zkLink deposit function;
+Step 1: On the ZKEX deposit page, locate ABC and select "Personal Wallet" as the fund source (it may vary if it is a deposit from CEX). Enter the amount, sign in MetaMask, and call zkLink deposit function;
 
-Step 2: Only wait for the deposit transaction to be submitted and confirmed on-chain (it required 36 block on Ethereum).
+Step 2: Only wait for the deposit transaction to be submitted and confirmed on-chain (it required 36 blocks on Ethereum).
 
 {% hint style="info" %}
 1. A user may deposit to ZKEX from another MetaMask address. In this case, ZKEX can provide a separate deposit page to assist in signing the zkLink deposit with a third address.

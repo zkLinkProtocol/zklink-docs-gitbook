@@ -2,7 +2,7 @@
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-## Types of Networks that zkLink supports
+## Types of Networks that zkLink Supports
 
 Unless otherwise specified, the “Layer1” mentioned in this documentation refers to the various ecosystems that zkLink connects to, including but not limited to:
 
@@ -10,7 +10,7 @@ Unless otherwise specified, the “Layer1” mentioned in this documentation ref
 
 <summary>EVM-compatible public chains</summary>
 
-`Ethereum Mainnet`, `BNB Chain`, `Polygon`, `Avalanche`, etc,.
+`Ethereum Mainnet`, `BNB Chain`, `Polygon`, `Avalanche`, etc.
 
 </details>
 
@@ -18,7 +18,7 @@ Unless otherwise specified, the “Layer1” mentioned in this documentation ref
 
 <summary>EVM-compatible ZK-Rollup VMs</summary>
 
-`zkSync`, `Scroll`, `Linea`, `Polygon` `ZKVM`, `Taiko`, etc,.
+`zkSync`, `Scroll`, `Linea`, `Polygon` `ZKVM`, `Taiko`, etc.
 
 </details>
 
@@ -26,7 +26,7 @@ Unless otherwise specified, the “Layer1” mentioned in this documentation ref
 
 <summary>EVM-incompatible ZK-Rollup VMs</summary>
 
-`Starknet`, etc,.
+`Starknet`, etc.
 
 </details>
 
@@ -34,7 +34,7 @@ Unless otherwise specified, the “Layer1” mentioned in this documentation ref
 
 <summary>EVM-compatible Optimistic-Rollups</summary>
 
-`Arbitrum`, `Optimism`, etc,.
+`Arbitrum`, `Optimism`, etc.
 
 </details>
 
@@ -87,7 +87,7 @@ About Dunkirk: the “Dunkirk Asset Recovery” program has been publicly tested
 ### Steps to develop on zkLink
 
 1. Contact the zkLink team (dev@zklink.org) about integration details;
-2. Stake a certain amount of tokens with the zkLink DAO to gain access to Sequencer system (optional; you can also opt for the shared Sequencer service);
+2. Stake a certain amount of tokens with the zkLink DAO to gain access to the Sequencer system (optional; you can also opt for the shared Sequencer service);
 3. Launch your product once everything is set up.
 
 ## Network Collections
