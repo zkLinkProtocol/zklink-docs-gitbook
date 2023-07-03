@@ -28,7 +28,11 @@
 
 ## APIs
 
-* [Server](apis/server.md)
+* [JSON-RPC API](apis/json-rpc-api.md)
+* [JSON-RPC Errors](apis/json-rpc-errors.md)
+* [Layer2 Transaction](apis/layer2-transaction.md)
+* [Layer1 Transaction](apis/layer1-transaction.md)
+* [State Update](apis/state-update.md)
 
 ## Tokenomics
 
