@@ -44,9 +44,9 @@ The zkLink API follows the JSON-RPC standard and is accessed via POST.
 
 
 
+## JSON-RPC API METHODS <a href="#json-rpc-methods" id="json-rpc-methods"></a>
 
-
-## getSupportChains
+### getSupportChains
 
 Get the configuration of all supported chains.
 
@@ -97,7 +97,7 @@ The request returns an array `ChainResp:`
 | gasTokenId        | the id of the gas token, defined by zkLink                                        |
 | validator         | validator address                                                                 |
 
-## getSupportTokens
+### getSupportTokens
 
 Get the data of all tokens with on-chain contract addresses.
 
