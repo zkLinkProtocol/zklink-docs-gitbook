@@ -4,7 +4,7 @@ dApps can get account status, send transactions, and call other functions via zk
 
 The zkLink API follows the JSON-RPC standard and is accessed via POST.
 
-## API Overview
+## API OVERVIEW
 
 ### Networks
 
