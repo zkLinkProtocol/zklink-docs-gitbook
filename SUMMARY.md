@@ -20,7 +20,6 @@
 * [Withdraw](streamline/withdraw.md)
 * [Wallet Integration & AA Wallet](streamline/wallet.md)
 
-
 ## Integration Cases
 
 * [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](IntegrationArchitecture/Derivatives.md)
@@ -28,7 +27,8 @@
 * [Lightweight Integration](IntegrationArchitecture/zkjump.md)
 
 ## APIs
-* Server
+
+* [Server](apis/server.md)
 
 ## Tokenomics
 
