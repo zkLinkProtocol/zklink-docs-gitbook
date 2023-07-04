@@ -42,6 +42,10 @@ Get the configuration of all supported chains.
 
 {% tabs %}
 {% tab title="Request" %}
+**Parameters**
+
+None
+
 ```json
 {
     "id": 1,
@@ -191,7 +195,7 @@ Get the block info by block height.
 
 {% tabs %}
 {% tab title="Request" %}
-Parameters：
+**Parameters**
 
 * `blockNumber`: the block height, and returns the latest block height if null
 * `includeTx` : whether contains transaction details: returns transaction hash if false. only successful transactions will be included in a block. call `getTransactionByHash` to query the failed transactions.
