@@ -917,7 +917,7 @@ Get account info by address or account id.
 {% tab title="Request" %}
 **Parameters**
 
-1. **Address|AccountID - Address(20Bytes or 32Bytes) or integer account id.**
+1. Address|AccountID - Address(20Bytes or 32Bytes) or integer account id.
 
 ```json
 {
@@ -932,9 +932,9 @@ Get account info by address or account id.
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+1. AccountInfoResp
 ```json
-Returns
-AccountInfoResp
 {
     "jsonrpc": "2.0",
     "result": {
