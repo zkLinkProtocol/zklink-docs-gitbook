@@ -930,7 +930,7 @@ Get account info by address or account id.
 {% tab title="Response" %}
 **Returns**
 
-1. AccountInfoResp
+AccountInfoResp
 
 ```json
 {
