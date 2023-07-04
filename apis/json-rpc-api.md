@@ -1,6 +1,6 @@
 # JSON-RPC API
 
-dApps can get account status, send transactions, and call other functions via zkLink API.&#x20;
+dApps can get account status, send transactions, and call other functions via zkLink API.
 
 The zkLink API follows the JSON-RPC standard and is accessed via POST.
 
@@ -8,33 +8,31 @@ The zkLink API follows the JSON-RPC standard and is accessed via POST.
 
 {% tabs %}
 {% tab title="Networks" %}
-* [getSupportChains](server.md#getsupportchains): get the configuration of all supported chains.
-* [getSupportTokens](server.md#getsupporttokens): get the data of all tokens with on-chain contract addresses.
-* [getLatestBlockNumber](server.md#getlatestblocknumber): get the latest block height info.
-* [getTokenReserve](server.md#gettokenreserve): get the withdrawable limit of a token on a certain L1 chain.
+* [getSupportChains](json-rpc-api.md#getsupportchains): get the configuration of all supported chains.
+* [getSupportTokens](json-rpc-api.md#getsupporttokens): get the data of all tokens with on-chain contract addresses.
+* [getLatestBlockNumber](json-rpc-api.md#getlatestblocknumber): get the latest block height info.
+* [getTokenReserve](json-rpc-api.md#gettokenreserve): get the withdrawable limit of a token on a certain L1 chain.
 {% endtab %}
 
 {% tab title="Block" %}
-* [getBlockByNumber](server.md#getblockbynumber): get the block info by block height.
-* [getBlockOnChainNumber](server.md#getblockonchainnumber): get the transaction information in a block that is executed on L1 blockchains.&#x20;
+* [getBlockByNumber](json-rpc-api.md#getblockbynumber): get the block info by block height.
+* [getBlockOnChainNumber](json-rpc-api.md#getblockonchainnumber): get the transaction information in a block that is executed on L1 blockchains.
 {% endtab %}
 
 {% tab title="Account" %}
-* [getAccount](server.md#getaccount): get account info by address or account id.
-* [getAccountBalances](server.md#getaccountbalances): get the balance info of an account.
-* [getAccountOrderSlots](server.md#getaccountorderslots): get the order slot of an account.
-* [getAccountSnapshot](server.md#getaccountsnapshot): get the account states of a certain block height, including the basic info, balance info, and order slot info.
+* [getAccount](json-rpc-api.md#getaccount): get account info by address or account id.
+* [getAccountBalances](json-rpc-api.md#getaccountbalances): get the balance info of an account.
+* [getAccountOrderSlots](json-rpc-api.md#getaccountorderslots): get the order slot of an account.
+* [getAccountSnapshot](json-rpc-api.md#getaccountsnapshot): get the account states of a certain block height, including the basic info, balance info, and order slot info.
 {% endtab %}
 
 {% tab title="Transaction" %}
-* [getTransactionByHash](server.md#gettransactionbyhash): get transaction info.
-* [getAccountTransactionHistory](server.md#getaccounttransactionhistory): get account history in descending order of the transaction id in the database.
-* [getFastWithdrawTxs](server.md#getfastwithdrawtxs): get transaction info of fast\_withdraw transactions.
+* [getTransactionByHash](json-rpc-api.md#gettransactionbyhash): get transaction info.
+* [getAccountTransactionHistory](json-rpc-api.md#getaccounttransactionhistory): get account history in descending order of the transaction id in the database.
+* [getFastWithdrawTxs](json-rpc-api.md#getfastwithdrawtxs): get transaction info of fast\_withdraw transactions.
 * sendTransaction
 {% endtab %}
 {% endtabs %}
-
-
 
 ## JSON-RPC API METHODS <a href="#json-rpc-methods" id="json-rpc-methods"></a>
 
@@ -78,7 +76,7 @@ Get the configuration of all supported chains.
 
 It returns an array `ChainResp:`
 
-<table><thead><tr><th width="285">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>defined by zkLink</td></tr><tr><td>chainType</td><td>uint8</td><td>defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>the chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>the address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>the address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>String</td><td>the url of L1 RPC</td></tr><tr><td>gasTokenId</td><td>uint32</td><td>the id of the gas token, defined by zkLink </td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>validator address</td></tr></tbody></table>
+<table><thead><tr><th width="285">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>defined by zkLink</td></tr><tr><td>chainType</td><td>uint8</td><td>defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>the chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>the address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>the address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>String</td><td>the url of L1 RPC</td></tr><tr><td>gasTokenId</td><td>uint32</td><td>the id of the gas token, defined by zkLink</td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>validator address</td></tr></tbody></table>
 
 ### getSupportTokens
 
@@ -131,15 +129,15 @@ It returns a `HashMap<TokenId,TokenResp>`, which has a unique token id and is us
 
 #### **TokenResp**
 
-<table><thead><tr><th width="316">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>token id</td></tr><tr><td>symbol</td><td>token symbol</td></tr><tr><td>usdPrice</td><td>token price</td></tr><tr><td>chains</td><td><code>HashMap&#x3C;ChainId,ChainTokenResp></code> that includes the contract addresses on each chain </td></tr></tbody></table>
+<table><thead><tr><th width="316">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>token id</td></tr><tr><td>symbol</td><td>token symbol</td></tr><tr><td>usdPrice</td><td>token price</td></tr><tr><td>chains</td><td><code>HashMap&#x3C;ChainId,ChainTokenResp></code> that includes the contract addresses on each chain</td></tr></tbody></table>
 
-#### &#x20;**ChainTokenResp**
+#### **ChainTokenResp**
 
 <table><thead><tr><th width="318">Field</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>defined by zkLink</td></tr><tr><td>address</td><td>the on-chain contract address of the token</td></tr><tr><td>decimals</td><td>the decimals of the token on L1</td></tr><tr><td>fastWithdraw</td><td>whether the token supports fast withdraw</td></tr></tbody></table>
 
 The decimal is the accuracy of the token on L1, which is not always 18 (6 for USDC and 18 for ZKL), and varies on different chains for the same token (6 for USDC on Ethereum and 18 for USDC on BSC).
 
-&#x20;When a user deposits to zkLink from connected networks, the front-end needs to calculate the amount required for calling the contract according to the accuracy:
+When a user deposits to zkLink from connected networks, the front-end needs to calculate the amount required for calling the contract according to the accuracy:
 
 ```json
 var amount_of_user_input = 1.0 // input from the user
@@ -196,8 +194,8 @@ Get the block info by block height.
 Parameters：
 
 * `blockNumber`: the block height, and returns the latest block height if null
-* `includeTx` : whether contains transaction details: returns transaction hash if false. only successful transactions will be included in a block. call `getTransactionByHash` to query the failed transactions.&#x20;
-* `includeUpdate`: whether contains the state change by transactions; valid only when `includeTx` is true.&#x20;
+* `includeTx` : whether contains transaction details: returns transaction hash if false. only successful transactions will be included in a block. call `getTransactionByHash` to query the failed transactions.
+* `includeUpdate`: whether contains the state change by transactions; valid only when `includeTx` is true.
 
 ```json
 {
@@ -724,7 +722,7 @@ It returns `BlockResp`
 
 #### **BlockResp**
 
-<table><thead><tr><th width="250">Field</th><th>Description</th></tr></thead><tbody><tr><td>number</td><td>the block height</td></tr><tr><td>commitment</td><td>the commitment of the block, similar to the block hash of Ethereum</td></tr><tr><td>rootHash</td><td>the root hash of the state tree</td></tr><tr><td>feeAccountId</td><td>the id of the fee account</td></tr><tr><td>blockSize</td><td>the maximum chunk number that a block can contain</td></tr><tr><td>opsCompositionNumber</td><td>the vk of generating ZKPs </td></tr><tr><td>timestamp</td><td>the block timestamp</td></tr><tr><td>transactions</td><td>returns <code>[TxHash]</code> when <code>includeTx</code> is false, <code>TxResp</code> when true; ordered by transaction execution: the ones executed first come first in the array</td></tr></tbody></table>
+<table><thead><tr><th width="250">Field</th><th>Description</th></tr></thead><tbody><tr><td>number</td><td>the block height</td></tr><tr><td>commitment</td><td>the commitment of the block, similar to the block hash of Ethereum</td></tr><tr><td>rootHash</td><td>the root hash of the state tree</td></tr><tr><td>feeAccountId</td><td>the id of the fee account</td></tr><tr><td>blockSize</td><td>the maximum chunk number that a block can contain</td></tr><tr><td>opsCompositionNumber</td><td>the vk of generating ZKPs</td></tr><tr><td>timestamp</td><td>the block timestamp</td></tr><tr><td>transactions</td><td>returns <code>[TxHash]</code> when <code>includeTx</code> is false, <code>TxResp</code> when true; ordered by transaction execution: the ones executed first come first in the array</td></tr></tbody></table>
 
 #### **TxResp**
 
@@ -899,12 +897,10 @@ It returns `BlockOnChainResp`
 
 #### **OnChainResp**
 
-<table><thead><tr><th width="168">Field</th><th>Description</th></tr></thead><tbody><tr><td>chain_id</td><td>the chain id defined by zkLink</td></tr><tr><td>tx_hash</td><td>the hash of the transaction on L1 blockchains </td></tr></tbody></table>
+<table><thead><tr><th width="168">Field</th><th>Description</th></tr></thead><tbody><tr><td>chain_id</td><td>the chain id defined by zkLink</td></tr><tr><td>tx_hash</td><td>the hash of the transaction on L1 blockchains</td></tr></tbody></table>
 
 {% hint style="info" %}
-Noted that since blocks are committed to and executed on L1 blockchains in batches, the on-chain data of blocks in the same batch is the same. For example, when blocks \[4906, 4910] are in the same batch, their on-chain transaction info is the same. &#x20;
-
-
+Noted that since blocks are committed to and executed on L1 blockchains in batches, the on-chain data of blocks in the same batch is the same. For example, when blocks \[4906, 4910] are in the same batch, their on-chain transaction info is the same.
 
 Commitment and batching are asynchronous. For example, when the current block height is 1000, the committed block height can be 980, and the verified block height can be 950. The API caller should query the on-chain infor by the committed and verified block height via `getLatestBlockNumber`. For example, when the latest verified block height is 950, the return of the on-chain block info that is after 950 must be null.
 {% endhint %}
@@ -933,7 +929,9 @@ Get account info by address or account id.
 
 {% tab title="Response" %}
 **Returns**
+
 1. AccountInfoResp
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -967,7 +965,7 @@ Get the balance info of an account.
 
 {% tabs %}
 {% tab title="Request" %}
-params:&#x20;
+params:
 
 * `accountId`: account id
 * `subAccountId`: optional, the id of the subaccount; null if the query requests the balance of all subaccounts.
@@ -1008,7 +1006,7 @@ Get the order slot of an account.
 
 {% tabs %}
 {% tab title="Request" %}
-params:&#x20;
+params:
 
 * `accountId`: account id
 * `subAccountId`: optional, the id of the subaccount; null if the query requests the balance of all subaccounts.
@@ -1050,11 +1048,11 @@ It returns a nest `HashMap<SubAccountId,<SlotId, TidyOrder>>`
 
 Get the withdrawable limit of a token on a certain L1 chain. There are 3 cases:
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>Case 1</td><td><p><strong>User Input:</strong></p><p>Token: <code>ZKL</code></p><p>Withdraw to: <code>ETH</code></p><p></p><p><strong>The maximum ZKL that the user can withdraw:</strong></p><p>RPC-API tokenId: <code>ZKL, false</code></p></td><td></td></tr><tr><td>Case 2</td><td><p><strong>User Input:</strong></p><p>Token: <code>USDC</code></p><p>Withdraw to: <code>ETH</code></p><p></p><p><strong>The maximum USDC that the user can withdraw:</strong></p><p>RPC-API tokenId: <code>USDC, false</code></p></td><td></td></tr><tr><td>Case 3</td><td><p><strong>User Input:</strong></p><p>Token: <code>USD</code></p><p>Withdraw to: <code>ETH</code></p><p>Withdraw as: <code>USDC</code></p><p></p><p><strong>The maximum USDC that the user can withdraw:</strong></p><p>RPC-API tokenId: <code>USDC, true</code></p></td><td></td></tr></tbody></table>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>Case 1</td><td><p><strong>User Input:</strong></p><p>Token: <code>ZKL</code></p><p>Withdraw to: <code>ETH</code></p><p><strong>The maximum ZKL that the user can withdraw:</strong></p><p>RPC-API tokenId: <code>ZKL, false</code></p></td><td></td></tr><tr><td>Case 2</td><td><p><strong>User Input:</strong></p><p>Token: <code>USDC</code></p><p>Withdraw to: <code>ETH</code></p><p><strong>The maximum USDC that the user can withdraw:</strong></p><p>RPC-API tokenId: <code>USDC, false</code></p></td><td></td></tr><tr><td>Case 3</td><td><p><strong>User Input:</strong></p><p>Token: <code>USD</code></p><p>Withdraw to: <code>ETH</code></p><p>Withdraw as: <code>USDC</code></p><p><strong>The maximum USDC that the user can withdraw:</strong></p><p>RPC-API tokenId: <code>USDC, true</code></p></td><td></td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Request" %}
-params:&#x20;
+params:
 
 * `tokenId`: tokenId
 * `mapping`: whether to query mapping, valid only when tokenId corresponds to USD stable.
@@ -1101,7 +1099,7 @@ getAccountSnapshot is introduced to request the account states of a certain bloc
 
 {% tabs %}
 {% tab title="Request" %}
-params:&#x20;
+params:
 
 * `accountAddress` or `accountId`
 * `subAccountId`: optional, the id of the subaccount; null if the query requests the balance of all subaccounts.
@@ -1167,7 +1165,7 @@ Get transaction info.
 
 {% tabs %}
 {% tab title="Request" %}
-params:&#x20;
+params:
 
 * `txHash`
 * `includeUpdate`: whether to include the state change by the transaction
@@ -1253,7 +1251,7 @@ Get account history in descending order of the transaction id in the database. C
 
 {% tabs %}
 {% tab title="Request" %}
-params:&#x20;
+params:
 
 * `Deposit`, `Withdraw` or `Transfer`
 * account address
@@ -1378,9 +1376,9 @@ Get transaction info of fast\_withdraw transactions.
 
 {% tabs %}
 {% tab title="Request" %}
-params:&#x20;
+params:
 
-* `lastTxTimestamp`: ISO 8601 standard with date, time and time zone;&#x20;
+* `lastTxTimestamp`: ISO 8601 standard with date, time and time zone;
 * `maxTxs`: the max value of the number of fast\_withdraw in the return.
 
 ```json
@@ -1437,12 +1435,8 @@ It returns `Vec<FastWithdrawTxResp>`.
 
 <table><thead><tr><th width="267">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>transaction hash on zkLink</td></tr><tr><td>tx</td><td>zkLink transaction</td></tr><tr><td>executedTimestamp</td><td>the execution timestamp of the transaction</td></tr></tbody></table>
 
-zkLink will scan the `maxTxs` number of executed withdraw transactions, and returns the fast\_withdraw transactions among which; thus the number of returns might be less than `maxTxs`, even be 0.&#x20;
+zkLink will scan the `maxTxs` number of executed withdraw transactions, and returns the fast\_withdraw transactions among which; thus the number of returns might be less than `maxTxs`, even be 0.
 
 In the first scan, `lastTxTimestamp` can be set as 0 to scan from the beginning. Then the `executedTimestamp` of the last record can be used as the `lastTxTimestamp` of the next scan.
 
-\
-
-
-
-
+\\
