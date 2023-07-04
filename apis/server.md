@@ -78,7 +78,7 @@ Get the configuration of all supported chains.
 
 It returns an array `ChainResp:`
 
-<table><thead><tr><th width="285">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>defined by zkLink</td></tr><tr><td>chainType</td><td>uint32</td><td>defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>the chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>the address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>the address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>String</td><td>the url of L1 RPC</td></tr><tr><td>gasTokenId</td><td>uint32</td><td>the id of the gas token, defined by zkLink </td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>validator address</td></tr></tbody></table>
+<table><thead><tr><th width="285">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>defined by zkLink</td></tr><tr><td>chainType</td><td>uint8</td><td>defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>the chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>the address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>the address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>String</td><td>the url of L1 RPC</td></tr><tr><td>gasTokenId</td><td>uint32</td><td>the id of the gas token, defined by zkLink </td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>validator address</td></tr></tbody></table>
 
 ### getSupportTokens
 
@@ -915,7 +915,9 @@ Get account info by address or account id.
 
 {% tabs %}
 {% tab title="Request" %}
-params: can be either account address or account id
+**Parameters**
+
+1. **Address|AccountID - Address(20Bytes or 32Bytes) or integer account id.**
 
 ```json
 {
@@ -931,6 +933,8 @@ params: can be either account address or account id
 
 {% tab title="Response" %}
 ```json
+Returns
+AccountInfoResp
 {
     "jsonrpc": "2.0",
     "result": {
@@ -948,8 +952,6 @@ params: can be either account address or account id
 ```
 {% endtab %}
 {% endtabs %}
-
-It returns `AccountInfoResp`
 
 #### **AccountInfoResp**
 
