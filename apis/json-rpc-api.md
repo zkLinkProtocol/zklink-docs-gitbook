@@ -30,7 +30,7 @@ The zkLink API follows the JSON-RPC standard and is accessed via POST.
 * [getTransactionByHash](json-rpc-api.md#gettransactionbyhash): get transaction info.
 * [getAccountTransactionHistory](json-rpc-api.md#getaccounttransactionhistory): get account history in descending order of the transaction id in the database.
 * [getFastWithdrawTxs](json-rpc-api.md#getfastwithdrawtxs): get transaction info of fast\_withdraw transactions.
-* sendTransaction
+* [sendTransaction](json-rpc-api.md#sendtransaction): submit L2 transaction and return transaction hash.
 {% endtab %}
 {% endtabs %}
 
@@ -57,6 +57,10 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`ChainResp`
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -78,9 +82,9 @@ None
 {% endtab %}
 {% endtabs %}
 
-It returns an array `ChainResp:`
+**ChainResp**
 
-<table><thead><tr><th width="285">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>defined by zkLink</td></tr><tr><td>chainType</td><td>uint8</td><td>defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>the chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>the address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>the address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>String</td><td>the url of L1 RPC</td></tr><tr><td>gasTokenId</td><td>uint32</td><td>the id of the gas token, defined by zkLink</td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>validator address</td></tr></tbody></table>
+<table><thead><tr><th width="225.21167883211677">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>defined by zkLink</td></tr><tr><td>chainType</td><td>uint8</td><td>defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>the chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>the address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>the address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>string</td><td>the url of L1 RPC</td></tr><tr><td>gasTokenId</td><td>uint32</td><td>the id of the gas token, defined by zkLink</td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>validator address</td></tr></tbody></table>
 
 ### getSupportTokens
 
@@ -88,6 +92,10 @@ Get the data of all tokens with on-chain contract addresses.
 
 {% tabs %}
 {% tab title="Request" %}
+**Parameters**
+
+None
+
 ```json
 {
     "id": 1,
@@ -99,6 +107,10 @@ Get the data of all tokens with on-chain contract addresses.
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`HashMap<TokenId,TokenResp>`
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -133,11 +145,11 @@ It returns a `HashMap<TokenId,TokenResp>`, which has a unique token id and is us
 
 #### **TokenResp**
 
-<table><thead><tr><th width="316">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>token id</td></tr><tr><td>symbol</td><td>token symbol</td></tr><tr><td>usdPrice</td><td>token price</td></tr><tr><td>chains</td><td><code>HashMap&#x3C;ChainId,ChainTokenResp></code> that includes the contract addresses on each chain</td></tr></tbody></table>
+<table><thead><tr><th width="259.07751937984494">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>token id</td></tr><tr><td>symbol</td><td>token symbol</td></tr><tr><td>usdPrice</td><td>token price</td></tr><tr><td>chains</td><td><code>HashMap&#x3C;ChainId,ChainTokenResp></code> that includes the contract addresses on each chain</td></tr></tbody></table>
 
 #### **ChainTokenResp**
 
-<table><thead><tr><th width="318">Field</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>defined by zkLink</td></tr><tr><td>address</td><td>the on-chain contract address of the token</td></tr><tr><td>decimals</td><td>the decimals of the token on L1</td></tr><tr><td>fastWithdraw</td><td>whether the token supports fast withdraw</td></tr></tbody></table>
+<table><thead><tr><th width="255.19691119691117">Field</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>defined by zkLink</td></tr><tr><td>address</td><td>the on-chain contract address of the token</td></tr><tr><td>decimals</td><td>the decimals of the token on L1</td></tr><tr><td>fastWithdraw</td><td>whether the token supports fast withdraw</td></tr></tbody></table>
 
 The decimal is the accuracy of the token on L1, which is not always 18 (6 for USDC and 18 for ZKL), and varies on different chains for the same token (6 for USDC on Ethereum and 18 for USDC on BSC).
 
@@ -157,6 +169,10 @@ Get the latest block height info.
 
 {% tabs %}
 {% tab title="Request" %}
+**Parameters**
+
+None
+
 ```json
 {
     "id": 1,
@@ -168,6 +184,10 @@ Get the latest block height info.
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`BlockNumberResp`
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -183,11 +203,9 @@ Get the latest block height info.
 {% endtab %}
 {% endtabs %}
 
-It returns a `BlockNumberResp`
-
 #### **BlockNumberResp**
 
-<table><thead><tr><th width="250">Field</th><th>Description</th></tr></thead><tbody><tr><td>lastBlockNumber</td><td>the block height of the latest batch</td></tr><tr><td>timestamp</td><td>the timestamp of the last block</td></tr><tr><td>committed</td><td>the block height of the latest block committed to L1</td></tr><tr><td>verified</td><td>the block height of the latest block executed on L1</td></tr></tbody></table>
+<table><thead><tr><th width="234.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>lastBlockNumber</td><td>the block height of the latest batch</td></tr><tr><td>timestamp</td><td>the timestamp of the last block</td></tr><tr><td>committed</td><td>the block height of the latest block committed to L1</td></tr><tr><td>verified</td><td>the block height of the latest block executed on L1</td></tr></tbody></table>
 
 ### getBlockByNumber
 
@@ -216,6 +234,10 @@ Get the block info by block height.
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`BlockResp`
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -722,21 +744,19 @@ Get the block info by block height.
 {% endtab %}
 {% endtabs %}
 
-It returns `BlockResp`
-
 #### **BlockResp**
 
-<table><thead><tr><th width="250">Field</th><th>Description</th></tr></thead><tbody><tr><td>number</td><td>the block height</td></tr><tr><td>commitment</td><td>the commitment of the block, similar to the block hash of Ethereum</td></tr><tr><td>rootHash</td><td>the root hash of the state tree</td></tr><tr><td>feeAccountId</td><td>the id of the fee account</td></tr><tr><td>blockSize</td><td>the maximum chunk number that a block can contain</td></tr><tr><td>opsCompositionNumber</td><td>the vk of generating ZKPs</td></tr><tr><td>timestamp</td><td>the block timestamp</td></tr><tr><td>transactions</td><td>returns <code>[TxHash]</code> when <code>includeTx</code> is false, <code>TxResp</code> when true; ordered by transaction execution: the ones executed first come first in the array</td></tr></tbody></table>
+<table><thead><tr><th width="280.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>number</td><td>the block height</td></tr><tr><td>commitment</td><td>the commitment of the block, similar to the block hash of Ethereum</td></tr><tr><td>rootHash</td><td>the root hash of the state tree</td></tr><tr><td>feeAccountId</td><td>the id of the fee account</td></tr><tr><td>blockSize</td><td>the maximum chunk number that a block can contain</td></tr><tr><td>opsCompositionNumber</td><td>the vk of generating ZKPs</td></tr><tr><td>timestamp</td><td>the block timestamp</td></tr><tr><td>transactions</td><td>returns <code>[TxHash]</code> when <code>includeTx</code> is false, <code>TxResp</code> when true; ordered by transaction execution: the ones executed first come first in the array</td></tr></tbody></table>
 
 #### **TxResp**
 
-<table><thead><tr><th width="250">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>the transaction hash</td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>receipt</td><td><code>TxReceiptResp</code>, optional, since the transactions in a block always succeed, this field is ignored in <code>BlockResp</code></td></tr><tr><td>updates</td><td><code>[StateUpdateResp]</code>, ordered by <code>updateId</code>: the ones executed first come first in the array</td></tr></tbody></table>
+<table><thead><tr><th width="234.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>the transaction hash</td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>receipt</td><td><code>TxReceiptResp</code>, optional, since the transactions in a block always succeed, this field is ignored in <code>BlockResp</code></td></tr><tr><td>updates</td><td><code>[StateUpdateResp]</code>, ordered by <code>updateId</code>: the ones executed first come first in the array</td></tr></tbody></table>
 
-#### **TxReceiptResp**
+**TxReceiptResp**
 
-<table><thead><tr><th width="191">Field</th><th>Description</th></tr></thead><tbody><tr><td>executed</td><td>whether the transaction is executed</td></tr><tr><td>success</td><td>the result of execution, must be false if <code>executed</code> is false</td></tr><tr><td>failReason</td><td>the reason why the transaction fails. null if <code>success</code> is false</td></tr><tr><td>block</td><td>the block height of the transaction, 0 if <code>success</code> is false</td></tr><tr><td>index</td><td>the index of the transaction in a block, 0 if <code>success</code> is false</td></tr></tbody></table>
+<table><thead><tr><th width="245.39130434782612">Field</th><th>Description</th></tr></thead><tbody><tr><td>executed</td><td>whether the transaction is executed</td></tr><tr><td>success</td><td>the result of execution, must be false if <code>executed</code> is false</td></tr><tr><td>failReason</td><td>the reason why the transaction fails. null if <code>success</code> is false</td></tr><tr><td>block</td><td>the block height of the transaction, 0 if <code>success</code> is false</td></tr><tr><td>index</td><td>the index of the transaction in a block, 0 if <code>success</code> is false</td></tr></tbody></table>
 
-#### **TxReceiptResp**
+**StateUpdateResp**
 
 The success of transaction execution will lead to the change of the state tree:
 
@@ -745,11 +765,11 @@ The success of transaction execution will lead to the change of the state tree:
 * BalanceUpdate: change in account balance and nonce
 * OrderUpdate: change in account slot
 
-#### **AccountCreate**
+**AccountCreate**
 
-<table><thead><tr><th width="191">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>AccountCreate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the id of the new account</td></tr><tr><td>address</td><td>the account address</td></tr></tbody></table>
+<table><thead><tr><th width="254.39130434782612">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>AccountCreate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the id of the new account</td></tr><tr><td>address</td><td>the account address</td></tr></tbody></table>
 
-For example:
+Example:
 
 ```json
 {
@@ -767,11 +787,11 @@ Transactions that may generate `AccountCreate` include:
 * Transfer
 {% endhint %}
 
-#### AccountChangePubkeyUpdate
+**AccountChangePubkeyUpdate**
 
 <table><thead><tr><th width="191">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>AccountChangePubkeyUpdate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the account id</td></tr><tr><td>oldPubkeyHash</td><td>the old pubkeyHash</td></tr><tr><td>newPubkeyHash</td><td>the new pubkeyHash</td></tr><tr><td>oldNonce</td><td>the old nonce</td></tr><tr><td>newNonce</td><td>the new nonce</td></tr></tbody></table>
 
-For example:
+Example:
 
 ```json
 {
@@ -789,11 +809,11 @@ For example:
 only `ChangePubKey` will generate `AccountChangePubkeyUpdate`
 {% endhint %}
 
-#### **BalanceUpdate**
+**BalanceUpdate**
 
 <table><thead><tr><th width="191">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>BalanceUpdate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the account id</td></tr><tr><td>subAccountId</td><td>the id of the sub account</td></tr><tr><td>coinId</td><td>token id</td></tr><tr><td>oldBalance</td><td>the balance of the sub account before change</td></tr><tr><td>newBalance</td><td>the balance of the sub account after change</td></tr><tr><td>oldNonce</td><td>the old nonce</td></tr><tr><td>newNonce</td><td>the new nonce</td></tr></tbody></table>
 
-For example:
+Example:
 
 ```json
 {
@@ -813,15 +833,15 @@ For example:
 All `ZkLinkTx` will generate `BalanceUpdate`
 {% endhint %}
 
-#### **OrderUpdate**
+**OrderUpdate**
 
-<table><thead><tr><th width="191">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>OrderUpdate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the account id</td></tr><tr><td>subAccountId</td><td>the id of the sub account</td></tr><tr><td>coinId</td><td>token id</td></tr><tr><td>oldTidyOrder</td><td>the <code>TidyOrder</code> before change</td></tr><tr><td>newTidyOrder</td><td>the <code>TidyOrder</code> after change</td></tr></tbody></table>
+<table><thead><tr><th width="268.3913043478261">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>OrderUpdate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the account id</td></tr><tr><td>subAccountId</td><td>the id of the sub account</td></tr><tr><td>coinId</td><td>token id</td></tr><tr><td>oldTidyOrder</td><td>the <code>TidyOrder</code> before change</td></tr><tr><td>newTidyOrder</td><td>the <code>TidyOrder</code> after change</td></tr></tbody></table>
 
 **TidyOrder**
 
-<table><thead><tr><th width="206">Field</th><th>Description</th></tr></thead><tbody><tr><td>nonce</td><td>slot nonce</td></tr><tr><td>residue</td><td>slot residue</td></tr></tbody></table>
+<table><thead><tr><th width="271.5270935960591">Field</th><th>Description</th></tr></thead><tbody><tr><td>nonce</td><td>slot nonce</td></tr><tr><td>residue</td><td>slot residue</td></tr></tbody></table>
 
-For example:
+Example:
 
 ```json
 {
@@ -851,6 +871,10 @@ Get transaction information in a block executed on L1 blockchains. Every block w
 
 {% tabs %}
 {% tab title="Request" %}
+**Parameters**
+
+* `chain_id`
+
 ```json
 {
     "id": 1,
@@ -862,6 +886,10 @@ Get transaction information in a block executed on L1 blockchains. Every block w
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`BlockOnChainResp`
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -893,8 +921,6 @@ Get transaction information in a block executed on L1 blockchains. Every block w
 {% endtab %}
 {% endtabs %}
 
-It returns `BlockOnChainResp`
-
 #### **BlockOnChainResp**
 
 <table><thead><tr><th width="168">Field</th><th>Description</th></tr></thead><tbody><tr><td>committed</td><td>transaction info committed to L1, with type <code>OnChainResp</code></td></tr><tr><td>verified</td><td>transaction info executed on L1, with type <code>OnChainResp</code></td></tr></tbody></table>
@@ -917,7 +943,7 @@ Get account info by address or account id.
 {% tab title="Request" %}
 **Parameters**
 
-1. Address|AccountID - Address(20Bytes or 32Bytes) or integer account id.
+* Address|AccountID - Address(20Bytes or 32Bytes) or integer account id.
 
 ```json
 {
@@ -934,7 +960,7 @@ Get account info by address or account id.
 {% tab title="Response" %}
 **Returns**
 
-AccountInfoResp
+`AccountInfoResp`
 
 ```json
 {
@@ -969,7 +995,7 @@ Get the balance info of an account.
 
 {% tabs %}
 {% tab title="Request" %}
-params:
+**Parameters:**
 
 * `accountId`: account id
 * `subAccountId`: optional, the id of the subaccount; null if the query requests the balance of all subaccounts.
@@ -988,6 +1014,10 @@ params:
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`HashMap<SubAccountId,<TokenId,Balance>>`
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -1002,15 +1032,13 @@ params:
 {% endtab %}
 {% endtabs %}
 
-It returns a nest `HashMap<SubAccountId,<TokenId,Balance>>`
-
 ### getAccountOrderSlots
 
 Get the order slot of an account.
 
 {% tabs %}
 {% tab title="Request" %}
-params:
+**Parameters**
 
 * `accountId`: account id
 * `subAccountId`: optional, the id of the subaccount; null if the query requests the balance of all subaccounts.
@@ -1029,6 +1057,10 @@ params:
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`HashMap<SubAccountId,<SlotId, TidyOrder>>`
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -1046,8 +1078,6 @@ params:
 {% endtab %}
 {% endtabs %}
 
-It returns a nest `HashMap<SubAccountId,<SlotId, TidyOrder>>`
-
 ### getTokenReserve
 
 Get the withdrawable limit of a token on a certain L1 chain. There are 3 cases:
@@ -1056,7 +1086,7 @@ Get the withdrawable limit of a token on a certain L1 chain. There are 3 cases:
 
 {% tabs %}
 {% tab title="Request" %}
-params:
+**Parameters**
 
 * `tokenId`: tokenId
 * `mapping`: whether to query mapping, valid only when tokenId corresponds to USD stable.
@@ -1075,6 +1105,10 @@ params:
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`HashMap<ChainId, Balance>`
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -1087,8 +1121,6 @@ params:
 ```
 {% endtab %}
 {% endtabs %}
-
-It returns `HashMap<ChainId, Balance>`
 
 ### getAccountSnapshot
 
@@ -1103,7 +1135,7 @@ getAccountSnapshot is introduced to request the account states of a certain bloc
 
 {% tabs %}
 {% tab title="Request" %}
-params:
+**Parameters:**
 
 * `accountAddress` or `accountId`
 * `subAccountId`: optional, the id of the subaccount; null if the query requests the balance of all subaccounts.
@@ -1124,6 +1156,10 @@ params:
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`AccountSnapshotResp`
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -1157,8 +1193,6 @@ params:
 {% endtab %}
 {% endtabs %}
 
-It returns `AccountSnapshotResp`
-
 #### AccountSnapshotResp
 
 <table><thead><tr><th width="266">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>account id</td></tr><tr><td>address</td><td>account address</td></tr><tr><td>nonce</td><td>account nonce</td></tr><tr><td>pubKeyHash</td><td>account pubKeyHash</td></tr><tr><td>subAccountNonces</td><td>nonce of the subaccount, HashMap&#x3C;SubAccountId,Nonce></td></tr><tr><td>balances</td><td><code>HashMap&#x3C;SubAccountId,&#x3C;TokenId,Balance>></code></td></tr><tr><td>orderSlots</td><td><code>HashMap&#x3C;SubAccountId,&#x3C;SlotId, TidyOrder>></code></td></tr><tr><td>blockNumber</td><td>the block height of the snapshot</td></tr></tbody></table>
@@ -1169,7 +1203,7 @@ Get transaction info.
 
 {% tabs %}
 {% tab title="Request" %}
-params:
+**Parameters:**
 
 * `txHash`
 * `includeUpdate`: whether to include the state change by the transaction
@@ -1188,6 +1222,10 @@ params:
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`TxResp`\*since the transaction may fail, the `TxResp` will also include `receipt`.
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -1247,15 +1285,13 @@ params:
 {% endtab %}
 {% endtabs %}
 
-It returns `TxResp`; since the transaction may fail, the `TxResp` will also include `receipt`.
-
 ### getAccountTransactionHistory
 
 Get account history in descending order of the transaction id in the database. Current only `Deposit`, `Withdraw`, and `Transfer` are supported.
 
 {% tabs %}
 {% tab title="Request" %}
-params:
+**Parameters**
 
 * `Deposit`, `Withdraw` or `Transfer`
 * account address
@@ -1276,6 +1312,10 @@ params:
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`Page<ZkLinkTxHistory>`
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -1356,15 +1396,13 @@ params:
 {% endtab %}
 {% endtabs %}
 
-It returns `Page<ZkLinkTxHistory>`.
-
 #### **Page\<ZkLinkTxHistory>**
 
-<table><thead><tr><th width="261">Field</th><th>Description</th></tr></thead><tbody><tr><td>totalPageNum</td><td>the number of pages</td></tr><tr><td>pageIndex</td><td>index of the current page</td></tr><tr><td>pageSize</td><td>the size of the page</td></tr><tr><td>pageData</td><td>page data<code>[ZkLinkTxHistory]</code></td></tr></tbody></table>
+<table><thead><tr><th width="241.48806941431673">Field</th><th>Description</th></tr></thead><tbody><tr><td>totalPageNum</td><td>the number of pages</td></tr><tr><td>pageIndex</td><td>index of the current page</td></tr><tr><td>pageSize</td><td>the size of the page</td></tr><tr><td>pageData</td><td>page data<code>[ZkLinkTxHistory]</code></td></tr></tbody></table>
 
 #### **ZkLinkHistory**
 
-<table><thead><tr><th width="282">Field</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td><p>chain id defined by zkLink</p><ul><li>Deposit: the chain that the deposit is from</li><li>Transfer and Withdraw: no specific meaning</li></ul></td></tr><tr><td>fromAccount</td><td><p>address of from_account</p><ul><li>Deposit: the L1 address that the deposit is from</li><li>Transfer: the from_address of the transfer</li><li>Withdraw: the from_address of the withdraw</li></ul></td></tr><tr><td>toAccount</td><td><p>address of to_account</p><ul><li>Deposit: L2 address that the deposit is to</li><li>Transfer: the to_address of the transfer</li><li>Withdraw: the L1 address that the withdraw is to</li></ul></td></tr><tr><td>amount</td><td><p>the amount of the transaction</p><ul><li>Deposit: the amount of the deposit</li><li>Transfer: the amount of the transfer</li><li>Withdraw: the amount of the withdraw</li></ul></td></tr><tr><td>nonce</td><td><p>the nonce of the transaction</p><ul><li>Deposit: the serialId of L1 event</li><li>Transfer and Withdraw: the nonce of the transaction</li></ul></td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>txHash</td><td>the hash of the transaction</td></tr><tr><td>txReceipt</td><td><code>TxReceiptResp</code></td></tr><tr><td>createdAt</td><td>the time that the transaction is received by zkLink</td></tr></tbody></table>
+<table><thead><tr><th width="227.62655601659753">Field</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td><p>chain id defined by zkLink</p><ul><li>Deposit: the chain that the deposit is from</li><li>Transfer and Withdraw: no specific meaning</li></ul></td></tr><tr><td>fromAccount</td><td><p>address of from_account</p><ul><li>Deposit: the L1 address that the deposit is from</li><li>Transfer: the from_address of the transfer</li><li>Withdraw: the from_address of the withdraw</li></ul></td></tr><tr><td>toAccount</td><td><p>address of to_account</p><ul><li>Deposit: L2 address that the deposit is to</li><li>Transfer: the to_address of the transfer</li><li>Withdraw: the L1 address that the withdraw is to</li></ul></td></tr><tr><td>amount</td><td><p>the amount of the transaction</p><ul><li>Deposit: the amount of the deposit</li><li>Transfer: the amount of the transfer</li><li>Withdraw: the amount of the withdraw</li></ul></td></tr><tr><td>nonce</td><td><p>the nonce of the transaction</p><ul><li>Deposit: the serialId of L1 event</li><li>Transfer and Withdraw: the nonce of the transaction</li></ul></td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>txHash</td><td>the hash of the transaction</td></tr><tr><td>txReceipt</td><td><code>TxReceiptResp</code></td></tr><tr><td>createdAt</td><td>the time that the transaction is received by zkLink</td></tr></tbody></table>
 
 {% hint style="info" %}
 Deposit: returns the transaction history of which the account address equals to\_address;
@@ -1380,9 +1418,9 @@ Get transaction info of fast\_withdraw transactions.
 
 {% tabs %}
 {% tab title="Request" %}
-params:
+**Parameters:**
 
-* `lastTxTimestamp`: ISO 8601 standard with date, time and time zone;
+* `lastTxTimestamp`: ISO 8601 standard with date, time, and time zone;
 * `maxTxs`: the max value of the number of fast\_withdraw in the return.
 
 ```json
@@ -1399,6 +1437,10 @@ params:
 {% endtab %}
 
 {% tab title="Response" %}
+**Returns**
+
+`Vec<FastWithdrawTxResp>`
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -1433,14 +1475,104 @@ params:
 {% endtab %}
 {% endtabs %}
 
-It returns `Vec<FastWithdrawTxResp>`.
-
 #### **FastWithdrawTxResp**
 
-<table><thead><tr><th width="267">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>transaction hash on zkLink</td></tr><tr><td>tx</td><td>zkLink transaction</td></tr><tr><td>executedTimestamp</td><td>the execution timestamp of the transaction</td></tr></tbody></table>
+<table><thead><tr><th width="284.6573875802998">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>transaction hash on zkLink</td></tr><tr><td>tx</td><td>zkLink transaction</td></tr><tr><td>executedTimestamp</td><td>the execution timestamp of the transaction</td></tr></tbody></table>
 
 zkLink will scan the `maxTxs` number of executed withdraw transactions, and returns the fast\_withdraw transactions among which; thus the number of returns might be less than `maxTxs`, even be 0.
 
 In the first scan, `lastTxTimestamp` can be set as 0 to scan from the beginning. Then the `executedTimestamp` of the last record can be used as the `lastTxTimestamp` of the next scan.
 
-\\
+### sendTransaction
+
+Submit L2 transaction and return transaction hash.
+
+{% tabs %}
+{% tab title="Request" %}
+**Parameters:**
+
+* `ZkLinkTx`: [L2 transaction](layer2-transaction.md)
+* EthereumSignature: layer1 signature with type Option\<TxLayer1Signature>; required for Layer2 transactions apart from `ChangePubKey` or `OrderMatching`.
+* submitterSignature: `Option<TxSignature>`, required only when the transaction involves subaccounts (except #0 subaccount); `submitterSignature` is a zk signature to `tx` hash.
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "sendTransaction",
+    "params": [
+        {
+            "accountId": 8,
+            "fromSubAccountId": 3,
+            "toSubAccountId": 3,
+            "from": "0x3498F456645270eE003441df82C718b56c0e6666",
+            "to": "0xbfDa941Bd2a0eddB57b10f8E8d3486A738B92cCC",
+            "tokenId": 3,
+            "amount": "998000000000000000",
+            "fee": "3000000000000000",
+            "ts": 1646101085,
+            "nonce": 1,
+            "type": "Transfer",
+            "token": 3,
+            "signature": {
+                "pubKey": "0dd4f603531bd78bbecd005d9e7cc62a794dcfadceffe03e269fbb6b72e9c724",
+                "signature": "892c622afac908201df54a3cfdecf8eba46d5411bdc29365f5536f024c195f2893d6313a6371fe1659830e2560c1eaedbafcc835837593d017cd557074f0bb03"
+            }
+        },
+        {
+            "type": "EthereumSignature",
+            "signature": "0xc29d647a5e9e078c66594f04881c34d6b57e1085ab825f17ffb1d0fe233e9834191b374daaaf1e44e5749f6cf44f2143799373fc5e7e844d48fec5e6bc08f0651b"
+        },
+      	null
+    ]
+}
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x3210bb3d6719d730b30c4c9a0086d507040e25f83bea4ff4b8c2c91bf8e8c4f9"
+}
+```
+{% endtab %}
+{% endtabs %}
+
+#### **TxLayer1Signature**
+
+L1 signatures apply [EIP-191](https://eips.ethereum.org/EIPS/eip-191) specification with zkLink `Eth sig message`.
+
+<table><thead><tr><th width="206">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td><p>the type of the signature</p><ul><li>EthereumSignature: Ethereum ECDSA signature</li><li>EIP1271Signature: Ethereum <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md">EIP1271</a> signature</li></ul></td></tr><tr><td>signature</td><td>signature output, a hex string</td></tr></tbody></table>
+
+Examples:
+
+```json
+{
+  "type": "EthereumSignature",
+  "signature": "0xc29d647a5e9e078c66594f04881c34d6b57e1085ab825f17ffb1d0fe233e9834191b374daaaf1e44e5749f6cf44f2143799373fc5e7e844d48fec5e6bc08f0651b"
+}
+```
+
+```json
+{
+  "type": "EIP1271Signature",
+  "signature": "0xc29d647a5e9e078c66594f04881c34d6b57e1085ab825f17ffb1d0fe233e9834191b374daaaf1e44e5749f6cf44f2143799373fc5e7e844d48fec5e6bc08f0651b"
+}
+```
+
+#### **TxSignature**
+
+Signatures for L2 transactions use zkLink `Encode`.&#x20;
+
+<table><thead><tr><th width="158">Field</th><th>Description</th></tr></thead><tbody><tr><td>pubKey</td><td>the public key of ，a hex string without <code>0x</code> prefix</td></tr><tr><td>signature</td><td>signature output, a hex string without <code>0x</code> prefix</td></tr></tbody></table>
+
+Example:
+
+```json
+{
+  "pubKey": "0dd4f603531bd78bbecd005d9e7cc62a794dcfadceffe03e269fbb6b72e9c724",
+  "signature": "892c622afac908201df54a3cfdecf8eba46d5411bdc29365f5536f024c195f2893d6313a6371fe1659830e2560c1eaedbafcc835837593d017cd557074f0bb03"
+}
+```
