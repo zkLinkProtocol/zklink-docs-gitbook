@@ -16,9 +16,9 @@
 
 ## Wallet & User Fund Streamline
 
-* [Deposit](streamline/deposit.md)
 * [Withdraw](streamline/withdraw.md)
 * [Wallet Integration & AA Wallet](streamline/wallet.md)
+* [Deposit](streamline/deposit.md)
 
 ## Integration Cases
 
