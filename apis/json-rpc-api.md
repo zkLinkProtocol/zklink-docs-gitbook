@@ -84,7 +84,7 @@ None
 
 **ChainResp**
 
-<table><thead><tr><th width="225.21167883211677">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>defined by zkLink</td></tr><tr><td>chainType</td><td>uint8</td><td>defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>the chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>the address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>the address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>string</td><td>the url of L1 RPC</td></tr><tr><td>gasTokenId</td><td>uint32</td><td>the id of the gas token, defined by zkLink</td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>validator address</td></tr></tbody></table>
+<table><thead><tr><th width="225.21167883211677">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>Defined by zkLink</td></tr><tr><td>chainType</td><td>uint8</td><td>Defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>The chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>The address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>The address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>string</td><td>The url of L1 RPC</td></tr><tr><td>gasTokenId</td><td>uint32</td><td>The id of the gas token, defined by zkLink</td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>Validator address</td></tr></tbody></table>
 
 ### getSupportTokens
 
@@ -145,11 +145,11 @@ It returns a `HashMap<TokenId,TokenResp>`, which has a unique token id and is us
 
 #### **TokenResp**
 
-<table><thead><tr><th width="259.07751937984494">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>token id</td></tr><tr><td>symbol</td><td>token symbol</td></tr><tr><td>usdPrice</td><td>token price</td></tr><tr><td>chains</td><td><code>HashMap&#x3C;ChainId,ChainTokenResp></code> that includes the contract addresses on each chain</td></tr></tbody></table>
+<table><thead><tr><th width="259.07751937984494">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>Token id</td></tr><tr><td>symbol</td><td>Token symbol</td></tr><tr><td>usdPrice</td><td>Token price</td></tr><tr><td>chains</td><td><code>HashMap&#x3C;ChainId,ChainTokenResp></code> that includes the contract addresses on each chain</td></tr></tbody></table>
 
 #### **ChainTokenResp**
 
-<table><thead><tr><th width="255.19691119691117">Field</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>defined by zkLink</td></tr><tr><td>address</td><td>the on-chain contract address of the token</td></tr><tr><td>decimals</td><td>the decimals of the token on L1</td></tr><tr><td>fastWithdraw</td><td>whether the token supports fast withdraw</td></tr></tbody></table>
+<table><thead><tr><th width="255.19691119691117">Field</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>Defined by zkLink</td></tr><tr><td>address</td><td>The on-chain contract address of the token</td></tr><tr><td>decimals</td><td>The decimals of the token on L1</td></tr><tr><td>fastWithdraw</td><td>Whether the token supports fast withdraw</td></tr></tbody></table>
 
 The decimal is the accuracy of the token on L1, which is not always 18 (6 for USDC and 18 for ZKL), and varies on different chains for the same token (6 for USDC on Ethereum and 18 for USDC on BSC).
 
@@ -205,7 +205,7 @@ None
 
 #### **BlockNumberResp**
 
-<table><thead><tr><th width="234.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>lastBlockNumber</td><td>the block height of the latest batch</td></tr><tr><td>timestamp</td><td>the timestamp of the last block</td></tr><tr><td>committed</td><td>the block height of the latest block committed to L1</td></tr><tr><td>verified</td><td>the block height of the latest block executed on L1</td></tr></tbody></table>
+<table><thead><tr><th width="234.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>lastBlockNumber</td><td>The block height of the latest batch</td></tr><tr><td>timestamp</td><td>The timestamp of the last block</td></tr><tr><td>committed</td><td>The block height of the latest block committed to L1</td></tr><tr><td>verified</td><td>The block height of the latest block executed on L1</td></tr></tbody></table>
 
 ### getBlockByNumber
 
@@ -746,15 +746,15 @@ Get the block info by block height.
 
 #### **BlockResp**
 
-<table><thead><tr><th width="280.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>number</td><td>the block height</td></tr><tr><td>commitment</td><td>the commitment of the block, similar to the block hash of Ethereum</td></tr><tr><td>rootHash</td><td>the root hash of the state tree</td></tr><tr><td>feeAccountId</td><td>the id of the fee account</td></tr><tr><td>blockSize</td><td>the maximum chunk number that a block can contain</td></tr><tr><td>opsCompositionNumber</td><td>the vk of generating ZKPs</td></tr><tr><td>timestamp</td><td>the block timestamp</td></tr><tr><td>transactions</td><td>returns <code>[TxHash]</code> when <code>includeTx</code> is false, <code>TxResp</code> when true; ordered by transaction execution: the ones executed first come first in the array</td></tr></tbody></table>
+<table><thead><tr><th width="280.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>number</td><td>The block height</td></tr><tr><td>commitment</td><td>The commitment of the block, similar to the block hash of Ethereum</td></tr><tr><td>rootHash</td><td>The root hash of the state tree</td></tr><tr><td>feeAccountId</td><td>The id of the fee account</td></tr><tr><td>blockSize</td><td>The maximum chunk number that a block can contain</td></tr><tr><td>opsCompositionNumber</td><td>The vk of generating ZKPs</td></tr><tr><td>timestamp</td><td>The block timestamp</td></tr><tr><td>transactions</td><td>Returns <code>[TxHash]</code> when <code>includeTx</code> is false, <code>TxResp</code> when true; ordered by transaction execution: the ones executed first come first in the array</td></tr></tbody></table>
 
 #### **TxResp**
 
-<table><thead><tr><th width="234.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>the transaction hash</td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>receipt</td><td><code>TxReceiptResp</code>, optional, since the transactions in a block always succeed, this field is ignored in <code>BlockResp</code></td></tr><tr><td>updates</td><td><code>[StateUpdateResp]</code>, ordered by <code>updateId</code>: the ones executed first come first in the array</td></tr></tbody></table>
+<table><thead><tr><th width="234.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>The transaction hash</td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>receipt</td><td><code>TxReceiptResp</code>, optional, since the transactions in a block always succeed, this field is ignored in <code>BlockResp</code></td></tr><tr><td>updates</td><td><code>[StateUpdateResp]</code>, ordered by <code>updateId</code>: the ones executed first come first in the array</td></tr></tbody></table>
 
 **TxReceiptResp**
 
-<table><thead><tr><th width="245.39130434782612">Field</th><th>Description</th></tr></thead><tbody><tr><td>executed</td><td>whether the transaction is executed</td></tr><tr><td>success</td><td>the result of execution, must be false if <code>executed</code> is false</td></tr><tr><td>failReason</td><td>the reason why the transaction fails. null if <code>success</code> is false</td></tr><tr><td>block</td><td>the block height of the transaction, 0 if <code>success</code> is false</td></tr><tr><td>index</td><td>the index of the transaction in a block, 0 if <code>success</code> is false</td></tr></tbody></table>
+<table><thead><tr><th width="245.39130434782612">Field</th><th>Description</th></tr></thead><tbody><tr><td>executed</td><td>Whether the transaction is executed</td></tr><tr><td>success</td><td>The result of execution, must be false if <code>executed</code> is false</td></tr><tr><td>failReason</td><td>The reason why the transaction fails. null if <code>success</code> is false</td></tr><tr><td>block</td><td>The block height of the transaction, 0 if <code>success</code> is false</td></tr><tr><td>index</td><td>The index of the transaction in a block, 0 if <code>success</code> is false</td></tr></tbody></table>
 
 **StateUpdateResp**
 
@@ -767,7 +767,7 @@ The success of transaction execution will lead to the change of the state tree:
 
 **AccountCreate**
 
-<table><thead><tr><th width="254.39130434782612">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>AccountCreate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the id of the new account</td></tr><tr><td>address</td><td>the account address</td></tr></tbody></table>
+<table><thead><tr><th width="254.39130434782612">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>AccountCreate</td></tr><tr><td>updateId</td><td>The position of the update in the block</td></tr><tr><td>accountId</td><td>The id of the new account</td></tr><tr><td>address</td><td>The account address</td></tr></tbody></table>
 
 Example:
 
@@ -789,7 +789,7 @@ Transactions that may generate `AccountCreate` include:
 
 **AccountChangePubkeyUpdate**
 
-<table><thead><tr><th width="191">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>AccountChangePubkeyUpdate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the account id</td></tr><tr><td>oldPubkeyHash</td><td>the old pubkeyHash</td></tr><tr><td>newPubkeyHash</td><td>the new pubkeyHash</td></tr><tr><td>oldNonce</td><td>the old nonce</td></tr><tr><td>newNonce</td><td>the new nonce</td></tr></tbody></table>
+<table><thead><tr><th width="265.3913043478261">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>AccountChangePubkeyUpdate</td></tr><tr><td>updateId</td><td>The position of the update in the block</td></tr><tr><td>accountId</td><td>The account id</td></tr><tr><td>oldPubkeyHash</td><td>The old pubkeyHash</td></tr><tr><td>newPubkeyHash</td><td>The new pubkeyHash</td></tr><tr><td>oldNonce</td><td>The old nonce</td></tr><tr><td>newNonce</td><td>The new nonce</td></tr></tbody></table>
 
 Example:
 
@@ -811,7 +811,7 @@ only `ChangePubKey` will generate `AccountChangePubkeyUpdate`
 
 **BalanceUpdate**
 
-<table><thead><tr><th width="191">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>BalanceUpdate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the account id</td></tr><tr><td>subAccountId</td><td>the id of the sub account</td></tr><tr><td>coinId</td><td>token id</td></tr><tr><td>oldBalance</td><td>the balance of the sub account before change</td></tr><tr><td>newBalance</td><td>the balance of the sub account after change</td></tr><tr><td>oldNonce</td><td>the old nonce</td></tr><tr><td>newNonce</td><td>the new nonce</td></tr></tbody></table>
+<table><thead><tr><th width="276.3913043478261">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>BalanceUpdate</td></tr><tr><td>updateId</td><td>The position of the update in the block</td></tr><tr><td>accountId</td><td>The account id</td></tr><tr><td>subAccountId</td><td>The id of the sub account</td></tr><tr><td>coinId</td><td>Token id</td></tr><tr><td>oldBalance</td><td>The balance of the sub account before change</td></tr><tr><td>newBalance</td><td>The balance of the sub account after change</td></tr><tr><td>oldNonce</td><td>The old nonce</td></tr><tr><td>newNonce</td><td>The new nonce</td></tr></tbody></table>
 
 Example:
 
@@ -835,11 +835,11 @@ All `ZkLinkTx` will generate `BalanceUpdate`
 
 **OrderUpdate**
 
-<table><thead><tr><th width="268.3913043478261">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>OrderUpdate</td></tr><tr><td>updateId</td><td>the position of the update in the block</td></tr><tr><td>accountId</td><td>the account id</td></tr><tr><td>subAccountId</td><td>the id of the sub account</td></tr><tr><td>coinId</td><td>token id</td></tr><tr><td>oldTidyOrder</td><td>the <code>TidyOrder</code> before change</td></tr><tr><td>newTidyOrder</td><td>the <code>TidyOrder</code> after change</td></tr></tbody></table>
+<table><thead><tr><th width="268.3913043478261">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>OrderUpdate</td></tr><tr><td>updateId</td><td>The position of the update in the block</td></tr><tr><td>accountId</td><td>The account id</td></tr><tr><td>subAccountId</td><td>The id of the sub account</td></tr><tr><td>coinId</td><td>Token id</td></tr><tr><td>oldTidyOrder</td><td>The <code>TidyOrder</code> before change</td></tr><tr><td>newTidyOrder</td><td>The <code>TidyOrder</code> after change</td></tr></tbody></table>
 
 **TidyOrder**
 
-<table><thead><tr><th width="271.5270935960591">Field</th><th>Description</th></tr></thead><tbody><tr><td>nonce</td><td>slot nonce</td></tr><tr><td>residue</td><td>slot residue</td></tr></tbody></table>
+<table><thead><tr><th width="271.5270935960591">Field</th><th>Description</th></tr></thead><tbody><tr><td>nonce</td><td>Slot nonce</td></tr><tr><td>residue</td><td>Slot residue</td></tr></tbody></table>
 
 Example:
 
@@ -923,11 +923,11 @@ Get transaction information in a block executed on L1 blockchains. Every block w
 
 #### **BlockOnChainResp**
 
-<table><thead><tr><th width="168">Field</th><th>Description</th></tr></thead><tbody><tr><td>committed</td><td>transaction info committed to L1, with type <code>OnChainResp</code></td></tr><tr><td>verified</td><td>transaction info executed on L1, with type <code>OnChainResp</code></td></tr></tbody></table>
+<table><thead><tr><th width="168">Field</th><th>Description</th></tr></thead><tbody><tr><td>committed</td><td>Transaction info committed to L1, with type <code>OnChainResp</code></td></tr><tr><td>verified</td><td>Transaction info executed on L1, with type <code>OnChainResp</code></td></tr></tbody></table>
 
 #### **OnChainResp**
 
-<table><thead><tr><th width="168">Field</th><th>Description</th></tr></thead><tbody><tr><td>chain_id</td><td>the chain id defined by zkLink</td></tr><tr><td>tx_hash</td><td>the hash of the transaction on L1 blockchains</td></tr></tbody></table>
+<table><thead><tr><th width="168">Field</th><th>Description</th></tr></thead><tbody><tr><td>chain_id</td><td>The chain id defined by zkLink</td></tr><tr><td>tx_hash</td><td>The hash of the transaction on L1 blockchains</td></tr></tbody></table>
 
 {% hint style="info" %}
 Noted that since blocks are committed to and executed on L1 blockchains in batches, the on-chain data of blocks in the same batch is the same. For example, when blocks \[4906, 4910] are in the same batch, their on-chain transaction info is the same.
@@ -983,7 +983,7 @@ Get account info by address or account id.
 
 #### **AccountInfoResp**
 
-<table><thead><tr><th width="316">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>account id</td></tr><tr><td>address</td><td>account address</td></tr><tr><td>nonce</td><td>account nonce</td></tr><tr><td>pubKeyHash</td><td>account pubKeyHash</td></tr><tr><td>subAccountNonces</td><td>nonce of the subaccount, HashMap&#x3C;SubAccountId,Nonce></td></tr></tbody></table>
+<table><thead><tr><th width="316">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>Account id</td></tr><tr><td>address</td><td>Account address</td></tr><tr><td>nonce</td><td>Account nonce</td></tr><tr><td>pubKeyHash</td><td>Account pubKeyHash</td></tr><tr><td>subAccountNonces</td><td>Nonce of the subaccount, HashMap&#x3C;SubAccountId,Nonce></td></tr></tbody></table>
 
 {% hint style="info" %}
 `pubKeyHash` being `0x0000000000000000000000000000000000000000` means unactivated account.
@@ -1195,7 +1195,7 @@ getAccountSnapshot is introduced to request the account states of a certain bloc
 
 #### AccountSnapshotResp
 
-<table><thead><tr><th width="266">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>account id</td></tr><tr><td>address</td><td>account address</td></tr><tr><td>nonce</td><td>account nonce</td></tr><tr><td>pubKeyHash</td><td>account pubKeyHash</td></tr><tr><td>subAccountNonces</td><td>nonce of the subaccount, HashMap&#x3C;SubAccountId,Nonce></td></tr><tr><td>balances</td><td><code>HashMap&#x3C;SubAccountId,&#x3C;TokenId,Balance>></code></td></tr><tr><td>orderSlots</td><td><code>HashMap&#x3C;SubAccountId,&#x3C;SlotId, TidyOrder>></code></td></tr><tr><td>blockNumber</td><td>the block height of the snapshot</td></tr></tbody></table>
+<table><thead><tr><th width="306.9699570815451">Field</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>Account id</td></tr><tr><td>address</td><td>Account address</td></tr><tr><td>nonce</td><td>Account nonce</td></tr><tr><td>pubKeyHash</td><td>Account pubKeyHash</td></tr><tr><td>subAccountNonces</td><td>Nonce of the subaccount, HashMap&#x3C;SubAccountId,Nonce></td></tr><tr><td>balances</td><td><code>HashMap&#x3C;SubAccountId,&#x3C;TokenId,Balance>></code></td></tr><tr><td>orderSlots</td><td><code>HashMap&#x3C;SubAccountId,&#x3C;SlotId, TidyOrder>></code></td></tr><tr><td>blockNumber</td><td>The block height of the snapshot</td></tr></tbody></table>
 
 ### getTransactionByHash
 
@@ -1398,11 +1398,11 @@ Get account history in descending order of the transaction id in the database. C
 
 #### **Page\<ZkLinkTxHistory>**
 
-<table><thead><tr><th width="241.48806941431673">Field</th><th>Description</th></tr></thead><tbody><tr><td>totalPageNum</td><td>the number of pages</td></tr><tr><td>pageIndex</td><td>index of the current page</td></tr><tr><td>pageSize</td><td>the size of the page</td></tr><tr><td>pageData</td><td>page data<code>[ZkLinkTxHistory]</code></td></tr></tbody></table>
+<table><thead><tr><th width="241.48806941431673">Field</th><th>Description</th></tr></thead><tbody><tr><td>totalPageNum</td><td>The number of pages</td></tr><tr><td>pageIndex</td><td>Index of the current page</td></tr><tr><td>pageSize</td><td>The size of the page</td></tr><tr><td>pageData</td><td>Page data<code>[ZkLinkTxHistory]</code></td></tr></tbody></table>
 
 #### **ZkLinkHistory**
 
-<table><thead><tr><th width="227.62655601659753">Field</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td><p>chain id defined by zkLink</p><ul><li>Deposit: the chain that the deposit is from</li><li>Transfer and Withdraw: no specific meaning</li></ul></td></tr><tr><td>fromAccount</td><td><p>address of from_account</p><ul><li>Deposit: the L1 address that the deposit is from</li><li>Transfer: the from_address of the transfer</li><li>Withdraw: the from_address of the withdraw</li></ul></td></tr><tr><td>toAccount</td><td><p>address of to_account</p><ul><li>Deposit: L2 address that the deposit is to</li><li>Transfer: the to_address of the transfer</li><li>Withdraw: the L1 address that the withdraw is to</li></ul></td></tr><tr><td>amount</td><td><p>the amount of the transaction</p><ul><li>Deposit: the amount of the deposit</li><li>Transfer: the amount of the transfer</li><li>Withdraw: the amount of the withdraw</li></ul></td></tr><tr><td>nonce</td><td><p>the nonce of the transaction</p><ul><li>Deposit: the serialId of L1 event</li><li>Transfer and Withdraw: the nonce of the transaction</li></ul></td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>txHash</td><td>the hash of the transaction</td></tr><tr><td>txReceipt</td><td><code>TxReceiptResp</code></td></tr><tr><td>createdAt</td><td>the time that the transaction is received by zkLink</td></tr></tbody></table>
+<table><thead><tr><th width="227.62655601659753">Field</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td><p>Chain id defined by zkLink</p><ul><li>Deposit: the chain that the deposit is from</li><li>Transfer and Withdraw: no specific meaning</li></ul></td></tr><tr><td>fromAccount</td><td><p>Address of from_account</p><ul><li>Deposit: the L1 address that the deposit is from</li><li>Transfer: the from_address of the transfer</li><li>Withdraw: the from_address of the withdraw</li></ul></td></tr><tr><td>toAccount</td><td><p>Address of to_account</p><ul><li>Deposit: L2 address that the deposit is to</li><li>Transfer: the to_address of the transfer</li><li>Withdraw: the L1 address that the withdraw is to</li></ul></td></tr><tr><td>amount</td><td><p>The amount of the transaction</p><ul><li>Deposit: the amount of the deposit</li><li>Transfer: the amount of the transfer</li><li>Withdraw: the amount of the withdraw</li></ul></td></tr><tr><td>nonce</td><td><p>The nonce of the transaction</p><ul><li>Deposit: the serialId of L1 event</li><li>Transfer and Withdraw: the nonce of the transaction</li></ul></td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>txHash</td><td>The hash of the transaction</td></tr><tr><td>txReceipt</td><td><code>TxReceiptResp</code></td></tr><tr><td>createdAt</td><td>The time that the transaction is received by zkLink</td></tr></tbody></table>
 
 {% hint style="info" %}
 Deposit: returns the transaction history of which the account address equals to\_address;
@@ -1477,7 +1477,7 @@ Get transaction info of fast\_withdraw transactions.
 
 #### **FastWithdrawTxResp**
 
-<table><thead><tr><th width="284.6573875802998">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>transaction hash on zkLink</td></tr><tr><td>tx</td><td>zkLink transaction</td></tr><tr><td>executedTimestamp</td><td>the execution timestamp of the transaction</td></tr></tbody></table>
+<table><thead><tr><th width="284.6573875802998">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>Transaction hash on zkLink</td></tr><tr><td>tx</td><td>zkLink transaction</td></tr><tr><td>executedTimestamp</td><td>The execution timestamp of the transaction</td></tr></tbody></table>
 
 zkLink will scan the `maxTxs` number of executed withdraw transactions, and returns the fast\_withdraw transactions among which; thus the number of returns might be less than `maxTxs`, even be 0.
 
@@ -1544,7 +1544,7 @@ Submit L2 transaction and return transaction hash.
 
 L1 signatures apply [EIP-191](https://eips.ethereum.org/EIPS/eip-191) specification with zkLink `Eth sig message`.
 
-<table><thead><tr><th width="206">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td><p>the type of the signature</p><ul><li>EthereumSignature: Ethereum ECDSA signature</li><li>EIP1271Signature: Ethereum <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md">EIP1271</a> signature</li></ul></td></tr><tr><td>signature</td><td>signature output, a hex string</td></tr></tbody></table>
+<table><thead><tr><th width="185">Field</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td><p>The type of the signature</p><ul><li>EthereumSignature: Ethereum ECDSA signature</li><li>EIP1271Signature: Ethereum <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md">EIP1271</a> signature</li></ul></td></tr><tr><td>signature</td><td>Signature output, a hex string</td></tr></tbody></table>
 
 Examples:
 
@@ -1566,7 +1566,7 @@ Examples:
 
 Signatures for L2 transactions use zkLink `Encode`.&#x20;
 
-<table><thead><tr><th width="158">Field</th><th>Description</th></tr></thead><tbody><tr><td>pubKey</td><td>the public key of ，a hex string without <code>0x</code> prefix</td></tr><tr><td>signature</td><td>signature output, a hex string without <code>0x</code> prefix</td></tr></tbody></table>
+<table><thead><tr><th width="158">Field</th><th>Description</th></tr></thead><tbody><tr><td>pubKey</td><td>The public key of ，a hex string without <code>0x</code> prefix</td></tr><tr><td>signature</td><td>Signature output, a hex string without <code>0x</code> prefix</td></tr></tbody></table>
 
 Example:
 
