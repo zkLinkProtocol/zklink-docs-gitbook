@@ -10,10 +10,11 @@
 * [Connected Networks](network-information/connected-networks/README.md)
   * [Mainnet](networks/mainnet\_networks.md)
   * [Testnet](networks/testnet\_networks.md)
-* [dApps & Deployment Addresses](network-information/dapps-and-deployment-addresses/README.md)
+* [DApps & Deployment Addresses](network-information/dapps-and-deployment-addresses/README.md)
   * [Mainnet](networks/mainnet\_addresses.md)
   * [Testnet](networks/testnet\_addresses.md)
-
+* [Token Contract Address]
+  
 ## Wallet & User Fund Streamline
 
 * [Withdraw](streamline/withdraw.md)
