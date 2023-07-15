@@ -1,5 +1,7 @@
 # Testnet
 
+> 💡Multiple dApps may share one network, and one dApp may have multiple versions in different networks.
+
 {% tabs %}
 {% tab title="ZKEX" %}
 `Deploy Time`: Jul-07-2023 06:58:12 AM +UTC
