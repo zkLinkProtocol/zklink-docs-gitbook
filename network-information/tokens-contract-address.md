@@ -8,7 +8,7 @@ description: >-
 
 ## Mainnet
 
-#### USDC
+### USDC
 
 | Blockchain        | Address                                                                                                                     | Decimals |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -20,7 +20,7 @@ description: >-
 | Linea             | -                                                                                                                           | -        |
 | Arbitrum One      | [0xaf88d065e77c8cc2239327c5edb3a432268e5831](https://arbiscan.io/token/0xaf88d065e77c8cc2239327c5edb3a432268e5831)          | 6        |
 
-#### USDT
+### USDT
 
 | Blockchain        | Address                                                                                                                | Decimals |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -32,19 +32,19 @@ description: >-
 | Linea             | -                                                                                                                      | -        |
 | Arbitrum One      | [0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9](https://arbiscan.io/token/0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9)     | 6        |
 
-#### WBTC
+### WBTC
 
 | Blockchain        | Address                                                                                                                     | Decimals |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Polygon           | [0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6](https://polygonscan.com/token/0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6)      | 8        |
 | Avalanche C-Chain | [0x50b7545627a5162f82a992c33b87adc75187b218](https://snowtrace.io/token/0x50b7545627a5162f82a992c33b87adc75187b218)         | 8        |
-| BinanceSmartChain | [0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c](https://bscscan.com/token/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c)          | 18       |
+| BinanceSmartChain | -                                                                                                                           | 18       |
 | Ethereum          | [0x2260fac5e5542a773aa44fbcfedf7c193bc2c599](https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599)         | 8        |
 | ZkSync Era        | [0xBBeB516fb02a01611cBBE0453Fe3c580D7281011](https://explorer.zksync.io/address/0xBBeB516fb02a01611cBBE0453Fe3c580D7281011) | 8        |
 | Linea             | -                                                                                                                           | -        |
 | Arbitrum One      | [0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f](https://arbiscan.io/token/0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f)          | 8        |
 
-#### DAI
+### DAI
 
 | Blockchain        | Address                                                                                                                | Decimals |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------- | -------- |
