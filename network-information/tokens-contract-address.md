@@ -14,7 +14,7 @@ description: >-
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Polygon           | [0x2791bca1f2de4661ed88a30c99a7a9449aa84174](https://polygonscan.com/token/0x2791bca1f2de4661ed88a30c99a7a9449aa84174)      | 6        |
 | Avalanche C-Chain | [0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E](https://snowtrace.io/token/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E)         | 6        |
-| BinanceSmartChain | [0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d](https://bscscan.com/token/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d)          | 18       |
+| BinanceSmartChain | -                                                                                                                           |          |
 | Ethereum          | [0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48)         | 6        |
 | ZkSync Era        | [0x3355df6D4c9C3035724Fd0e3914dE96A5a83aaf4](https://explorer.zksync.io/address/0x3355df6D4c9C3035724Fd0e3914dE96A5a83aaf4) | 6        |
 | Linea             | -                                                                                                                           | -        |
@@ -36,13 +36,13 @@ description: >-
 
 | Blockchain        | Address                                                                                                             | Decimals |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------- | -------- |
-| Polygon           | -                                                                                                                   | 8        |
-| Avalanche C-Chain | -                                                                                                                   | 8        |
-| BinanceSmartChain | -                                                                                                                   | 18       |
+| Polygon           | -                                                                                                                   |          |
+| Avalanche C-Chain | -                                                                                                                   |          |
+| BinanceSmartChain | -                                                                                                                   |          |
 | Ethereum          | [0x2260fac5e5542a773aa44fbcfedf7c193bc2c599](https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599) | 8        |
-| ZkSync Era        | -                                                                                                                   | 8        |
+| ZkSync Era        | -                                                                                                                   |          |
 | Linea             | -                                                                                                                   | -        |
-| Arbitrum One      | -                                                                                                                   | 8        |
+| Arbitrum One      | -                                                                                                                   |          |
 
 ### DAI
 
