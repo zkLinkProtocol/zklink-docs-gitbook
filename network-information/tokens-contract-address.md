@@ -1,7 +1,7 @@
 ---
 description: >-
-  This page lists the contract information for tokens that can be deposited
-  during the zkLink mainnet phase.
+  This page lists the contract information for tokens that can be deposited to
+  zkLink mainnet.
 ---
 
 # Tokens Contract Address
