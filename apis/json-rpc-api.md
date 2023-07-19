@@ -72,6 +72,7 @@ None
         "mainContract":"0x03855e8120691526f82085453AEefac3f6A484F1",
         "layerZeroContract": "0xcb45b54BA16fBdc7092E56938225a11799eb1124",
         "web3Url": "https://rpc-mumbai.maticvigil.com",
+        "feeCap": 1000000000000000000,
         "gasTokenId": 33,
         "validator": "0x526212fbd41080b455ae81014b5b6bf859c30094"
       }
@@ -84,7 +85,7 @@ None
 
 **ChainResp**
 
-<table><thead><tr><th width="225.21167883211677">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>Defined by zkLink</td></tr><tr><td>chainType</td><td>uint8</td><td>Defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>The chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>The address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>The address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>string</td><td>The url of L1 RPC</td></tr><tr><td>gasTokenId</td><td>uint32</td><td>The id of the gas token, defined by zkLink</td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>Validator address</td></tr></tbody></table>
+<table><thead><tr><th width="225.21167883211677">Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>chainId</td><td>uint32</td><td>Defined by zkLink</td></tr><tr><td>chainType</td><td>uint8</td><td>Defined by zkLink {0:"EVM", 1:"STARKNET"}</td></tr><tr><td>layerOneChainId</td><td>uint32</td><td>The chain ID of L1 blockchains</td></tr><tr><td>mainContract</td><td>address(EVM|StarkNet)</td><td>The address of zkLink main contract that interacts with the rest module contracts</td></tr><tr><td>layerZeroContract</td><td>address(EVM|StarkNet)</td><td>The address of layerZero bridge that syncs L1 states</td></tr><tr><td>web3Url</td><td>string</td><td>The url of L1 RPC</td></tr><tr><td>feeCap</td><td>unit</td><td>The max transaction fee when L1 RPC send the transaction </td></tr><tr><td>gasTokenId</td><td>uint32</td><td>The id of the gas token, defined by zkLink</td></tr><tr><td>validator</td><td>address(EVM|StarkNet)</td><td>Validator address</td></tr></tbody></table>
 
 ### getSupportTokens
 
@@ -264,6 +265,7 @@ Get the block info by block height.
           "serialId": 22,
           "ethHash": "0x6ac27ec5de06c51dc9f167aa13424d08026953c9706d39c72d64cabe59ad7266"
         },
+        "executedTimestamp":1689731233,
         "updates": [
           {
             "type": "AccountCreate",
@@ -308,6 +310,7 @@ Get the block info by block height.
           "serialId": 28,
           "ethHash": "0x57b1fda1f7dd3aac85af60dc69300e0209c0a6abadc047a8f88e0a894220ba82"
         },
+        "executedTimestamp":1689731234,
         "updates": [
           {
             "type": "BalanceUpdate",
@@ -354,6 +357,7 @@ Get the block info by block height.
           },
           "ts": 1677821209
         },
+        "executedTimestamp":1689731235,
         "updates": [
           {
             "type": "AccountChangePubkeyUpdate",
@@ -406,6 +410,7 @@ Get the block info by block height.
           },
           "ts": 1677821506
         },
+         "executedTimestamp":1689731236,
         "updates": [
           {
             "type": "BalanceUpdate",
@@ -463,6 +468,7 @@ Get the block info by block height.
           "withdrawFeeRatio": 2000,
           "ts": 1677830493
         },
+        "executedTimestamp":1689731237,
         "updates": [
           {
             "type": "BalanceUpdate",
@@ -519,6 +525,7 @@ Get the block info by block height.
           },
           "ts": 1677836553
         },
+        "executedTimestamp":1689731238,
         "updates": [
           {
             "type": "BalanceUpdate",
@@ -615,6 +622,7 @@ Get the block info by block height.
             "signature": "34e768dce60268f702b9a9ca68cb19d6785d2d1da8d7c799a29aa45e8c8bd9096c20cbf518c95fce2b2b58329492c35896162fe9cb1ff13f6e3a946b15bb2202"
           }
         },
+        "executedTimestamp":1689731239,
         "updates": [
           {
             "type": "OrderUpdate",
@@ -746,17 +754,15 @@ Get the block info by block height.
 
 #### **BlockResp**
 
-<table><thead><tr><th width="280.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>number</td><td>The block height</td></tr><tr><td>commitment</td><td>The commitment of the block, similar to the block hash of Ethereum</td></tr><tr><td>rootHash</td><td>The root hash of the state tree</td></tr><tr><td>feeAccountId</td><td>The id of the fee account</td></tr><tr><td>blockSize</td><td>The maximum chunk number that a block can contain</td></tr><tr><td>opsCompositionNumber</td><td>The vk of generating ZKPs</td></tr><tr><td>timestamp</td><td>The block timestamp</td></tr><tr><td>transactions</td><td>Returns <code>[TxHash]</code> when <code>includeTx</code> is false, <code>TxResp</code> when true; ordered by transaction execution: the ones executed first come first in the array</td></tr></tbody></table>
+<table><thead><tr><th width="280.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>number</td><td>The block height</td></tr><tr><td>commitment</td><td>The commitment of the block, similar to the block hash of Ethereum</td></tr><tr><td>rootHash</td><td>The root hash of the state tree</td></tr><tr><td>feeAccountId</td><td>The id of the fee account</td></tr><tr><td>blockSize</td><td>The maximum chunk number that a block can contain</td></tr><tr><td>opsCompositionNumber</td><td>The vk of generating ZKPs</td></tr><tr><td>timestamp</td><td>The block timestamp</td></tr><tr><td>transactions</td><td>Returns <code>[BlockTxResp]</code> when <code>includeTx</code> is false, <code>TxResp</code> when true; ordered by transaction execution: the ones executed first come first in the array</td></tr></tbody></table>
 
-#### **TxResp**
+#### **BlockTxResp**
 
-<table><thead><tr><th width="234.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>The transaction hash</td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>receipt</td><td><code>TxReceiptResp</code>, optional, since the transactions in a block always succeed, this field is ignored in <code>BlockResp</code></td></tr><tr><td>updates</td><td><code>[StateUpdateResp]</code>, ordered by <code>updateId</code>: the ones executed first come first in the array</td></tr></tbody></table>
+<table><thead><tr><th width="234.55555555555554">Field</th><th>Description</th></tr></thead><tbody><tr><td>txHash</td><td>The transaction hash</td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>executedTimestamp</td><td>The unix timestamp of transaction execution</td></tr><tr><td>updates</td><td><code>[StateUpdateResp]</code>, ordered by <code>updateId</code>: the ones executed first come first in the array</td></tr></tbody></table>
 
-**TxReceiptResp**
 
-<table><thead><tr><th width="245.39130434782612">Field</th><th>Description</th></tr></thead><tbody><tr><td>executed</td><td>Whether the transaction is executed</td></tr><tr><td>success</td><td>The result of execution, must be false if <code>executed</code> is false</td></tr><tr><td>failReason</td><td>The reason why the transaction fails. null if <code>success</code> is false</td></tr><tr><td>block</td><td>The block height of the transaction, 0 if <code>success</code> is false</td></tr><tr><td>index</td><td>The index of the transaction in a block, 0 if <code>success</code> is false</td></tr></tbody></table>
 
-**StateUpdateResp**
+#### **StateUpdateResp**
 
 The success of transaction execution will lead to the change of the state tree:
 
@@ -864,6 +870,39 @@ Example:
 {% hint style="info" %}
 Only `OrderMatching` will generate `OrderUpdate`
 {% endhint %}
+
+### getPendingBlock
+
+Get info of transactions waiting to be batched.
+
+{% tabs %}
+{% tab title="Request" %}
+**Parameters**
+
+* transaction execution time, the timestamp in the return can only be bigger than it.
+* `includeTx`: whether to include transaction details. False: return transaction hash only. Only successful transactions will be batched in the block. Call `getTransactionByHash` to query failed transaction details.
+* `includeUpdate`: whether to include the state change by the transaction. Valid only when `includeTx` is true.&#x20;
+
+```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "getPendingBlock",
+    "params": [
+      1689731233,
+      true,
+      true
+    ]
+}
+```
+{% endtab %}
+
+{% tab title="Response" %}
+**Returns**
+
+`Vec<BlockTxResp>:` transactions that are executed but not batched yet, where those executed first come first. 100 transactions max. The max transaction time can be used as a parameter for the next round of query.
+{% endtab %}
+{% endtabs %}
 
 ### getBlockOnChainNumber
 
@@ -1249,6 +1288,7 @@ Get transaction info.
         },
         "receipt": {
             "executed": true,
+                "executedTimestamp": 1689731233,
             "success": true,
             "failReason": null,
             "block": 3947,
@@ -1284,6 +1324,14 @@ Get transaction info.
 ```
 {% endtab %}
 {% endtabs %}
+
+#### TxResp
+
+<table><thead><tr><th width="251">Field</th><th>Decription</th></tr></thead><tbody><tr><td>txHash</td><td>The trasnaction hash</td></tr><tr><td>tx</td><td><code>ZkLinkTx</code></td></tr><tr><td>receipt</td><td>The execution receipt of the transaction</td></tr><tr><td>updates</td><td><code>[StateUpdateResp]</code> that is ordered by <code>updateId</code>: the ones generated first come first in the array </td></tr></tbody></table>
+
+**TxReceiptResp**
+
+<table><thead><tr><th width="251">Field</th><th>Decription</th></tr></thead><tbody><tr><td>executed</td><td>Whether the transaction is executed</td></tr><tr><td>executedTimestamp</td><td>The unix timestamp of exection time. Null if <code>executed</code> is false</td></tr><tr><td>success</td><td>The result of the transaction. If <code>executed</code> is false, it must be false</td></tr><tr><td>failReason</td><td>The reason of failure of the transaction. Null if <code>success</code> is True.</td></tr><tr><td>block</td><td>The block height of the transaction. 0 if <code>success</code> is False.</td></tr><tr><td>index</td><td>The index of the transaction in the block. 0 if <code>success</code> is False.</td></tr></tbody></table>
 
 ### getAccountTransactionHistory
 
@@ -1579,4 +1627,4 @@ Example:
 
 
 
-`version: 4457a91`
+`version: 7df6cd1`

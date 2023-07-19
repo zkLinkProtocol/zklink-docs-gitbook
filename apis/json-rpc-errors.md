@@ -40,5 +40,5 @@ When using some APIs that involve querying account status such as getAccount, ge
 Transaction fees are related to Layer2 token price, which is stable over a period of time (for example, half an hour). If the price is updated just after `get_tx_fee`, `tx_submit` may fail. In this case, the initiator need to re-query the transaction fee and then try to submit the transaction again.\
 
 
-`version: 4457a91`
+`version: 7df6cd1`
 
