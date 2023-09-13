@@ -13,7 +13,6 @@
 * [DApps & Deployment Addresses](network-information/dapps-and-deployment-addresses/README.md)
   * [Mainnet](networks/mainnet\_addresses.md)
   * [Testnet](networks/testnet\_addresses.md)
-* [Tokens Contract Address](network-information/tokens-contract-address.md)
 
 ## Wallet & User Fund Streamline
 
