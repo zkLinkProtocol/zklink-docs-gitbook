@@ -909,7 +909,7 @@ Modify the insurance fund account
 
 5 bytes in total
 
-#### MarginInfo
+#### marginInfo
 
 Modify the margin info in the specified index.
 
@@ -920,7 +920,7 @@ Modify the margin info in the specified index.
 <tr><td>ratio</td><td>the ratio, 100 means 0.1%</td></tr>
 </tbody></table>
 
-##### **Example**
+##### Example
 
 ```json
 {
@@ -942,7 +942,7 @@ Modify the margin info in the specified index.
 | ratio    | 1 byte                                              |
 
 
-#### ContractInfo
+#### contractInfo
 
 Modify the info of every contract pair.
 
@@ -954,7 +954,7 @@ Modify the info of every contract pair.
 <tr><td>maintenanceMarginRate</td><td>The maintenance margin rate, 100 means 0.1%</td></tr>
 </tbody></table>
 
-##### **Example**
+##### Example
 
 ```json
 {
