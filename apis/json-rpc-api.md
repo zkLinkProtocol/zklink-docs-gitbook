@@ -1540,8 +1540,8 @@ Submit L2 transaction and return transaction hash.
 **Parameters:**
 
 * `ZkLinkTx`: [L2 transaction](layer2-transaction.md)
-* EthereumSignature: layer1 signature with type Option\<TxLayer1Signature>; required for Layer2 transactions apart from `ChangePubKey` or `OrderMatching`.
-* submitterSignature: `Option<TxSignature>`, required only when the transaction involves subaccounts (except #0 subaccount); `submitterSignature` is a zk signature to `tx` hash.
+* Layer1Signature: layer1 signature with type Option\<TxLayer1Signature>; required for Layer2 transactions apart from `ChangePubKey` or `OrderMatching`.
+* submitterSignature: `Option<ZkLinkSignature>`, required only when the transaction involves subaccounts (except #0 subaccount); `submitterSignature` is a zk signature to `tx` hash.
 
 ```json
 {
@@ -1610,17 +1610,20 @@ Examples:
 }
 ```
 
-#### **TxSignature**
+#### **ZkLinkSignature**
 
 Signatures for L2 transactions use zkLink `Encode`.&#x20;
 
-<table><thead><tr><th width="158">Field</th><th>Description</th></tr></thead><tbody><tr><td>pubKey</td><td>The public key of ，a hex string without <code>0x</code> prefix</td></tr><tr><td>signature</td><td>Signature output, a hex string without <code>0x</code> prefix</td></tr></tbody></table>
+<table><thead><tr><th width="158">Field</th><th>Description</th></tr></thead><tbody>
+<tr><td>pubKey</td><td>The public key of ，a hex string with <code>0x</code> prefix</td></tr>
+<tr><td>signature</td><td>Signature output, a hex string without <code>0x</code> prefix</td></tr>
+</tbody></table>
 
 Example:
 
 ```json
 {
-  "pubKey": "0dd4f603531bd78bbecd005d9e7cc62a794dcfadceffe03e269fbb6b72e9c724",
+  "pubKey": "0x0dd4f603531bd78bbecd005d9e7cc62a794dcfadceffe03e269fbb6b72e9c724",
   "signature": "892c622afac908201df54a3cfdecf8eba46d5411bdc29365f5536f024c195f2893d6313a6371fe1659830e2560c1eaedbafcc835837593d017cd557074f0bb03"
 }
 ```
