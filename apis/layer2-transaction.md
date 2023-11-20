@@ -483,15 +483,15 @@ Automatic deleveraging
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
 <tr><td>type</td>   <td>AutoDeleveraging</td></tr>
 <tr><td>accountId</td> <td>Account id</td></tr>
-<tr><td>subAccountId</td><td>subaccount id</td></tr>
-<tr><td>subAccountNonce</td><td>the nonce of subaccount</td></tr>
-<tr><td>oraclePrices</td><td>the <code>OraclePrices</code>, which contains a list of <code>ContractPrices</code> and list of <code>MarginPrice</code> </td></tr>
-<tr><td>adlAccountId</td><td>the ADL account id</tr>
-<tr><td>pairId</td><td>the pair id, for example the id of BTC-USDT pair</td></tr>
-<tr><td>adlSize</td><td>the ADL size</td></tr>
-<tr><td>adlPrice</td><td>the ADL price</td></tr>
-<tr><td>fee</td><td>the fee</td></tr>
-<tr><td>feeToken</td><td>the token id of the fee</td></tr>
+<tr><td>subAccountId</td><td>Subaccount id</td></tr>
+<tr><td>subAccountNonce</td><td>The nonce of subaccount</td></tr>
+<tr><td>oraclePrices</td><td>The <code>OraclePrices</code>, which contains a list of <code>ContractPrice</code> and list of <code>MarginPrice</code> </td></tr>
+<tr><td>adlAccountId</td><td>The ADL account id</tr>
+<tr><td>pairId</td><td>The pair id, for example the id of BTC-USDT pair</td></tr>
+<tr><td>adlSize</td><td>The ADL size</td></tr>
+<tr><td>adlPrice</td><td>The ADL price</td></tr>
+<tr><td>fee</td><td>The fee</td></tr>
+<tr><td>feeToken</td><td>The token id of the fee</td></tr>
 <tr><td>signature</td><td><code>ZkLinkSignature</code>, the pub key hash corresponding to the signature must be aligned with the initiator account</td></tr>
 </tbody></table>
 
@@ -499,8 +499,8 @@ Automatic deleveraging
 <table><thead>
 <tr><th width="190">Field</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td>pairId</td><td>the pair id of trade pair, for example the id of BTC-USDT pair</td></tr>
-<tr><td>marketPrice</td><td>the market price of the associated pair</td></tr>
+<tr><td>pairId</td><td>The pair id of trade pair, for example the id of BTC-USDT pair</td></tr>
+<tr><td>marketPrice</td><td>The market price of the associated pair</td></tr>
 </tbody></table>
 
 #### ContractPrice encode
@@ -515,16 +515,16 @@ Automatic deleveraging
 
 <table><thead>
 <tr><th width="190">Field</th><th>Description</th></tr></thead><tbody>
-<tr><td>tokenId</td><td>the token id of trade pair</td></tr>
-<tr><td>marketPrice</td><td>the market price of the associated token</td></tr>
+<tr><td>tokenId</td><td>The token id of trade pair</td></tr>
+<tr><td>marketPrice</td><td>The market price of the associated token</td></tr>
 </tbody></table>
 
 #### MarginPrice encode
 
-| Name        | Rule                                                                                   |
-|-------------|----------------------------------------------------------------------------------------|
-| tokenId     | 2 byte, change to `u16`, then encode in big endian mode                                |
-| marketPrice | 15 bytes, encode to big endian bytes, then pass to the`pad_front` function in Rust SDK |
+| Name        | Rule                                                                                  |
+|-------------|---------------------------------------------------------------------------------------|
+| tokenId     | 2 byte, change to `u16`, then encode in big endian                                    |
+| marketPrice | 15 bytes, encode in big endian, then pass to the`pad_front` function in Rust SDK |
 
 
 ### OraclePrices
@@ -532,10 +532,9 @@ Automatic deleveraging
 <table><thead>
 <tr><th width="190">Field</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td>contractPrices</td><td>the list of <code>ContractPrice</code></td></tr>
-<tr><td>spotPriceInfo</td><td>the list of <code>MarginPrice</code></td></tr>
+<tr><td>contractPrices</td><td>The list of <code>ContractPrice</code></td></tr>
+<tr><td>spotPriceInfo</td><td>The list of <code>MarginPrice</code></td></tr>
 </tbody></table>
-
 
 
 ### **Example**
@@ -598,13 +597,13 @@ Contract matching
 <table><thead>
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
 <tr><td>type</td><td>ContractMatching</td></tr>
-<tr><td>accountId</td><td>Initiator's account id. Only specific accounts can initiate this type of transaction on Layer2</td></tr>
-<tr><td>subAccountId</td><td>Initiator's subaccount id</td></tr>
-<tr><td>maker</td>the maker list of <code>Contract</code></tr>
-<tr><td>taker</td>the taker of <code>Contract</code></tr>
-<tr><td>fee</td><td>the fee</td></tr>
-<tr><td>feeToken</td><td>the token id of the fee</td></tr>
-<tr><td>signature</td><td><code>ZkLinkSignature</code>, the pub key hash corresponding to the signature must be aligned with the initiator account</td></tr>
+<tr><td>accountId</td><td>The account id</td></tr>
+<tr><td>subAccountId</td><td>The subaccount id</td></tr>
+<tr><td>maker</td>The maker list of <code>Contract</code></tr>
+<tr><td>taker</td>The taker of <code>Contract</code></tr>
+<tr><td>fee</td><td>The fee</td></tr>
+<tr><td>feeToken</td><td>The token id of the fee</td></tr>
+<tr><td>signature</td><td><code>ZkLinkSignature</code>, the pub key hash corresponding to the signature must be aligned with the account</td></tr>
 </tbody></table>
 
 ### **Example**
@@ -665,15 +664,15 @@ Contract matching
 
 ### Contract
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
-<tr><td>accountId</td><td>Initiator's account id.</td></tr>
-<tr><td>subAccountId</td><td>Initiator's subaccount id</td></tr>
+<tr><td>accountId</td><td>The account id.</td></tr>
+<tr><td>subAccountId</td><td>The subaccount id</td></tr>
 <tr><td>slotId</td><td>Slot id</td></tr>
 <tr><td>nonce</td><td>Slot nonce </td></tr>
-<tr><td>pairId</td><td> The id of trade pair, for example the id of BTC-USDT pair </td></tr>
+<tr><td>pairId</td><td>The id of trade pair, for example the id of BTC-USDT pair </td></tr>
 <tr><td>size</td><td>Position size</td></tr>
 <tr><td>price</td><td>Price</td></tr>
 <tr><td>direction</td><td>1: Long, 0: Short</td></tr>
-<tr><td>feeRates</td><td>the fee list of [maker, taker], 100 means 1.0%</td></tr>
+<tr><td>feeRates</td><td>The fee list of [maker, taker], 100 means 1.0%</td></tr>
 <tr><td>hasSubsidy</td><td>1: true, 0: false, the submitter needs to pay the transaction fee to the maker, if the maker's "hasSubsidy" is true.  </td></tr>
 <tr><td>signature</td><td><code>ZkLinkSignature</code>, the pub key hash corresponding to the signature must be aligned with the initiator account</td></tr>
 </tbody></table>
@@ -706,21 +705,21 @@ Contract matching
 | feeToken     | 2 bytes                                 |
 
 41 bytes in total, where the `maker` and `taker` encode as bellow:
-* [encode](#contract-encode) the items in `maker` into a bytes list in order
-* [encode](#contract-encode) the taker and append to the bytes list
-* pass the bytes list to the `rescue_hash_orders` function in SDK, and get the 31 bytes result
+* [Encode](#contract-encode) the items in `maker` into a bytes list in order;
+* [Encode](#contract-encode) the taker and append to the bytes list;
+* pass the bytes list to the `rescue_hash_orders` function in SDK, and get the 31 bytes result.
 
 ## **Funding**
 
 ### Payload
 <table><thead>
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
-<td>accountId</td><td>Target account ID of Funding</td></tr>
-<tr><td>subAccountId</td><td>Target subaccount ID of Funding</td></tr>
-<tr><td>subAccountNonce</td><td>Target's subaccount nonce</td></tr>
+<td>accountId</td><td>The account ID of Funding</td></tr>
+<tr><td>subAccountId</td><td>The subaccount ID of Funding</td></tr>
+<tr><td>subAccountNonce</td><td>The subaccount nonce</td></tr>
 <tr><td>fundingAccountIds</td><td>The account id list of funding</td></tr>
-<tr><td>fee</td><td>the fee</td></tr>
-<tr><td>feeToken</td><td>the token id of the fee</td></tr>
+<tr><td>fee</td><td>The fee</td></tr>
+<tr><td>feeToken</td><td>The token id of the fee</td></tr>
 <tr><td>signature</td><td><code>ZkLinkSignature</code>, the pub key hash corresponding to the signature must be aligned with the initiator account</td></tr>
 </tbody></table>
 
@@ -758,8 +757,8 @@ Contract matching
 | feeToken | 2 bytes                                                |
 
 The encoding process of `fundingAccountIds` is as blew:
-* If the length is 1, encode the item directly in big endian.
-* If the length > 1, encode the item in big endian into a bytes list in order.
+* If the length is 1, encode the item directly in big endian;
+* If the length > 1, encode the item in big endian into a bytes list in order;
 * Pass the bytes list to the `rescue_hash` function in Rust SDK, and get the 31 bytes result.
 
 ## **Liquidation**
@@ -768,14 +767,14 @@ The encoding process of `fundingAccountIds` is as blew:
 <table><thead>
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
 <tr><td>type</td><td>Liquidation</td></tr>
-<tr><td>accountId</td><td>Initiator's account id. Only specific accounts can initiate this type of transaction on Layer2</td></tr>
-<tr><td>subAccountId</td><td>Initiator's subaccount id</td></tr>
+<tr><td>accountId</td><td>The account id of Liquidation</td></tr>
+<tr><td>subAccountId</td><td>The subaccount id</td></tr>
 <tr><td>subAccountIdNonce</td><td>The Nonce of subaccount id </td></tr>
 <tr><td>oraclePrices</td><td><code>oraclePrices</code> which contains a list of <code>ContractPrice </code> and a list of <code>MarginPrice</code></td></tr>
 <tr><td>liquidationAccountId</td><td>The account id of liquidation</td></tr>
-<tr><td>fee</td><td>the fee</td></tr>
-<tr><td>feeToken</td><td>the token id of the fee</td></tr>
-<tr><td>signature</td><td><code>ZkLinkSignature</code>, the pub key hash corresponding to the signature must be aligned with the initiator account</td></tr>
+<tr><td>fee</td><td>The fee</td></tr>
+<tr><td>feeToken</td><td>The token id of the fee</td></tr>
+<tr><td>signature</td><td><code>ZkLinkSignature</code>, the pub key hash corresponding to the signature must be aligned with the account id</td></tr>
 </tbody></table>
 
 ### **Example**
@@ -824,11 +823,12 @@ The encoding process of `fundingAccountIds` is as blew:
 | feeToken | 2 bytes                                 |
 
 49 bytes in total, where the `oraclePrices` encode process is as blew:
-* Encode the `oraclePrices` into a bytes list in order.
+* Encode the `oraclePrices` into a bytes list in order;
 * Pass the bytes list to the SDK `rescue_hash` function then get the 31 bytes result.
 
 ## **UpdateGlobalVar**
 
+This transaction is used to update the global variable settings.
 
 ### Payload
 
@@ -837,8 +837,8 @@ The encoding process of `fundingAccountIds` is as blew:
 <tr><td>type</td>   <td>UpdateGlobalVar</td></tr>
 <tr><td>fromChainId</td><td>The layer2 chain id</td></tr>
 <tr><td>subAccountId</td><td>The subaccount id</td></tr>
-<tr><td>parameter</td><code>Parameter</code></tr>
-<tr><td>seriaId</td><td>the serial id</td></tr>
+<tr><td>parameter</td>The <code>Parameter</code> used to update the global variable</tr>
+<tr><td>seriaId</td><td>The serial id</td></tr>
 </tbody></table>
 
 ### Encode
@@ -855,9 +855,11 @@ The encoding process of `fundingAccountIds` is as blew:
 
 #### feeAccount
 
+Modify the collect-fee account.
+
 <table><thead>
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
-<tr><td>feeAccount</td><td>the fee Account</td></tr>
+<tr><td>feeAccount</td><td>The fee Account</td></tr>
 </tbody></table>
 
 ##### **Example**
@@ -880,6 +882,8 @@ The encoding process of `fundingAccountIds` is as blew:
 5 bytes in total
 
 #### insuranceFundAccount
+
+Modify the insurance fund account
 
 <table><thead>
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
@@ -905,62 +909,78 @@ The encoding process of `fundingAccountIds` is as blew:
 
 5 bytes in total
 
-#### initialMarginRate
+#### MarginInfo
+
+Modify the margin info in the specified index.
 
 <table><thead>
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
-<tr><td>pairId</td><td>The id of trade Pair</td></tr>
-<tr><td>rate</td><td>the fee rate, 100 means 0.1%</td></tr>
+<tr><td>marginId</td><td>The margin id</td></tr>
+<tr><td>tokenId</td><td>The token id</td></tr>
+<tr><td>ratio</td><td>the ratio, 100 means 0.1%</td></tr>
 </tbody></table>
 
 ##### **Example**
 
 ```json
 {
-  "initialMarginRate": {
-    "pairId": 1,
-    "rate": 2
+  "marginInfo": {
+    "marginId": 1,
+    "tokenId": 2,
+    "ratio": 100
   }
 }
 ```
 
 ##### Encode
 
-| Name   | Rule                           |
-|--------|--------------------------------|
-| type   | 1 byte, `0x02`                  |
-| pariId | 1 bytes, downcast to u8 as 1 byte |
-| rate   | 2 bytes                        |
+| Name     | Rule                                                |
+|----------|-----------------------------------------------------|
+| type     | 1 byte, `0x02`                                      |
+| marginId | 1 bytes                                             |
+| tokenId  | 2 bytes, downcast to u16, then encode in big endian |
+| ratio    | 1 byte                                              |
 
-#### maintenanceMarginRate
+
+#### ContractInfo
+
+Modify the info of every contract pair.
 
 <table><thead>
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
 <tr><td>pairId</td><td>The id of trade Pair</td></tr>
-<tr><td>rate</td><td>the fee rate, 100 means 0.1%</td></tr>
+<tr><td>symbol</td><td>The symbol of the contract</td></tr>
+<tr><td>initialMarginRate</td><td>The initial margin rate of the contract, 100 means 0.1%</td></tr>
+<tr><td>maintenanceMarginRate</td><td>The maintenance margin rate, 100 means 0.1%</td></tr>
 </tbody></table>
 
 ##### **Example**
 
 ```json
 {
-  "maintenanceMarginRate": {
-    "pairId": 1,
-    "rate": 2
+  "contractInfo": {
+    "pairId": 0,
+    "symbol": "BTCUSDC",
+    "initialMarginRate": 2,
+    "maintenanceMarginRate": 2
   }
 }
 ```
 
 ##### Encode
 
-| Name   | Rule                            |
-|--------|---------------------------------|
-| type   | 1 byte, `0x03`                  |
-| pariId | 1 bytes, downcast to u8 as 1 byte |
-| rate   | 2 bytes                         |
+| Name                  | Rule                                                      |
+|-----------------------|-----------------------------------------------------------|
+| type                  | 1 byte, `0x03`                                            |
+| pariId                | 1 bytes, downcast to u8 as 1 byte                         |
+| symbol                | 15 bytes, expand to 15 bytes with `0x00` at the beginning |
+| initialMarginRate     | 2 bytes                                                   |
+| maintenanceMarginRate | 2 bytes                                                   |
 
 
 #### fundingInfos
+
+Update the funding rates to accumulated funding rates of the Global Vars for all position(contract pair) in this period
 
 <table><thead>
 <tr><th width="255">Field</th><th>Description</th></tr></thead><tbody>
@@ -1014,8 +1034,8 @@ and the encode rule of `fundingInfo` is as blew:
 ##### Encode
 | Name        | Rule                                 |
 |-------------|--------------------------------------|
-| type | 1 byte, `0x05`                        |
-|fundingRates | 18 bytes * the length of fundingRates, encode `fundingInfo` in order |
+| type | 1 byte, `0x04`                        |
+|infos | 18 bytes * the length of fundingRates, encode `fundingInfo` in order |
 
 # BigUint pack algorithm
 The integer is composed of `mantissa` and `exponent` part of encoding, and pack algorithm is:
