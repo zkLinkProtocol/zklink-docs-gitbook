@@ -104,305 +104,52 @@ The transaction L1 signature, for the ethereum, there are two types signatures [
 | type      | String | the type of signature              |
 | signature | String | signature string, starts with `0x` |
 
-where the `type` can be:
-* EthereumSignature: the ethereum ECDSA signature
-* EIP1271Signature: the ethereum EIP1271 signature
-* StarkSignature: the starknet ECDSA signature
+where the `type` can be `EthereumSignature`
+
+{% tabs %}
+
+{% tab title = "EthereumSignature" %}
+
+The ethereum ECDSA signature, for example:
 
 ```json
 {
-  "type": "EthereumSignature",
-  "signature": "0xc29d647a5e9e078c66594f04881c34d6b57e1085ab825f17ffb1d0fe233e9834191b374daaaf1e44e5749f6cf44f2143799373fc5e7e844d48fec5e6bc08f0651b"
+   "type": "EthereumSignature",
+   "signature": "0xc29d647a5e9e078c66594f04881c34d6b57e1085ab825f17ffb1d0fe233e9834191b374daaaf1e44e5749f6cf44f2143799373fc5e7e844d48fec5e6bc08f0651b"
 }
 ```
+
+{% endtab %}
+
+
+{% tab title = "EIP1271Signature" %}
+
+The ethereum EIP1271 signature, for example:
 
 ```json
 {
-  "type": "EIP1271Signature",
-  "signature": "0xc29d647a5e9e078c66594f04881c34d6b57e1085ab825f17ffb1d0fe233e9834191b374daaaf1e44e5749f6cf44f2143799373fc5e7e844d48fec5e6bc08f0651b"
+   "type": "EIP1271Signature",
+   "signature": "0xc29d647a5e9e078c66594f04881c34d6b57e1085ab825f17ffb1d0fe233e9834191b374daaaf1e44e5749f6cf44f2143799373fc5e7e844d48fec5e6bc08f0651b"
 }
 ```
+
+{% endtab %}
+
+{% tab title = "StarkSignature" %}
+
+The starknet ECDSA signature
 
 ```json
 {
-  "type": "StarkSignature",
-  "signature": "0xc29d647a5e9e078c66594f04881c34d6b57e1085ab825f17ffb1d0fe233e9834191b374daaaf1e44e5749f6cf44f2143799373fc5e7e844d48fec5e6bc08f0651b"
+   "type": "StarkSignature",
+   "signature": "0xc29d647a5e9e078c66594f04881c34d6b57e1085ab825f17ffb1d0fe233e9834191b374daaaf1e44e5749f6cf44f2143799373fc5e7e844d48fec5e6bc08f0651b"
 }
 ```
 
+{% endtab %}
+
+{% endtabs %}
 
 
-## Contract
 
-Contract is the order in pertetual contract
-
-| Name         | Type                                | Description                                                                        |
-|--------------|-------------------------------------|------------------------------------------------------------------------------------|
-| accountId    | [AccountId](#AccountId)             | account id                                                                         |
-| subAccountId | [SubAccountId](#SubAccountId)       | sub account id                                                                     |
-| slotId       | [SlotId](#SlotId)                   | slot id                                                                            |
-| nonce        | [Nonce](#Nonce)                     | nonce                                                                              |
-| pairId       | [PairId](#PairId)                   | the pair id                                                                        |
-| size         | BigUint                             | position size                                                                      |
-| price        | BigUint                             | price                                                                              |
-| direction    | u8                                  | 1: long, 0: short                                                                  |
-| feeRates     | [u8, u8]                            | The fee rates of [maker, taker]，100 means 1.00%                                    |
-| hasSubsidy   | u8                                  | 1: true, 0: false, if the maker has subsidy, the submitter will give maker subsidy |
-| signature    | [ZkLinkSignature](#ZkLinkSignature) | ZkLink L2 signature                                                                |
-
-
-```json
-{
-      "accountId": 0,
-      "subAccountId": 0,
-      "slotId": 0,
-      "nonce": 0,
-      "pairId": 0,
-      "size": "0",
-      "price": "0",
-      "direction": 0,
-      "feeRates": [
-        0,
-        0
-      ],
-      "hasSubsidy": 0,
-      "signature": {
-        "pubKey": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "signature": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-      }
-    }
-```
-
-
-## FundingInfo
-
-The funding info in pertetual contract
-
-| Name        | Type              | Description                                            |
-|-------------|-------------------|--------------------------------------------------------|
-| pairId      | [PairId](#PairId) | the pair id                                            |
-| price       | BigUint           | Mark price of the trading pair                         |
-| fundingRate | i16               | The numerator of funding rate(the denominator is `10^6`） |
-
-For example:
-
-```json
-{
-  "pairId": 1,
-  "price": "100",
-  "fundingRate": 2
-}
-```
-
-## ContractPrice
-
-| Name        | Type              | Description                     |
-|-------------|-------------------|---------------------------------|
-| pairId      | [PairId](#PairId) | The pair id                     |
-| marketPrice | BigUint           | The market price of the pair id |
-
-```json
-{
-  "pairId": 1,
-  "marketPrice": "100"
-}
-```
-
-## MarginPrice
-
-| Name       | Type                | Description                   |
-|------------|---------------------|-------------------------------|
-| tokenId    | [TokenId](#tokenId) | The token id                  |
-| marketPrice | BigUint             | The market price of the token |
-
-
-## SpotPriceInfo
-
-| Name        | Type                | Description               |
-|-------------|---------------------|---------------------------|
-| tokenId     | [TokenId](#TokenId) | The token id              |
-| marketPrice | BigUint             | THe market price of token |
-
-For example:
-```json
-{
-  "tokenId": 1,
-  "price": "100"
-}
-```
-
-
-# OraclePrices
-
-```json
-{
-  "contractPrices": [
-    {
-      "pairId": 1,
-      "marketPrice": "100"
-    }
-  ],
-  "marginPrices": [
-    {
-      "tokenId": 1,
-      "price": "100"
-    }
-  ]
-}
-```
-
-| 字段             | 类型                                    | 描述                  |
-|----------------|---------------------------------------|---------------------|
-| contractPrices | [ContractPrices](#ContractPrice) list | contract price list |
-| marginPrices   | [MarginPrice](#MarginPrice) list      | margin price list   |
-
-# Parameter
-
-This is the parameter in [UpdateGlobalVar]() which contains 6 types of data
-
-1. feeAccount
-
-Modify the collect-fee account.
- 
-   | Name       | Type                    | Description        |
-   |------------|-------------------------|--------------------|
-   | feeAccount | [AccountId](#AccountId) | The fee account id |
-
-For Example:
-
-```json
-{
-  "feeAccount": {
-    "accountId": 1
-  }
-}
-```
-
-2. insuranceFundAccount
-
-Modify the insurance fund account
-
-```json
- {
-    "insuranceFundAccount": {
-      "accountId": 1
-    }
-}
-```
-| 字段        | 类型                        | 描述                 |
-|-----------|---------------------------|--------------------|
-| accountId | [AccountId](#AccountId)  | The account id of  insuranceFundAccount|
-
-
-3. marginInfo
-
-Modify the margin info in the specified index.
-
-| 字段        | 类型                    | 描述                        |
-|-----------|-----------------------|---------------------------|
-| marginId | [MarginId](#MarginId) | The margin id             |
-|tokenId | [TokenId](#TokenId)   | The Token id              |
-|ratio | u8                    | the ratio, 100 means 1.0% |
-
-For example:
-
-```json
-{
-  "marginInfo": {
-      "marginId": 1,
-      "tokenId": 1,
-      "ratio": 9
-    }
-}
-```
-
-4. contractInfo
-
-Modify the info of every prepatual contract pair.
-
-| Name                  | Type              | Description                                             |
-|-----------------------|-------------------|---------------------------------------------------------|
-| pairId                | [PairId](#PairId) | The pair id                                             |
-| symbol                | String            | The symbol of the contract                              |
-| initialMarginRate     | u16               | The initial margin rate of the contract, 100 means 0.1% |
-| maintenanceMarginRate | u16               | The maintenance margin rate, 100 means 0.1%             |
-
-```json
-{
-  "initialMarginRate": {
-      "pairId": 1,
-      "symbol": "BTCUSDC",
-      "initialMarginRate": 2,
-      "maintenanceMarginRate": 2
-    }
-}
-```
-
-5. fundingInfos
-
-Update the funding rates to accumulated funding rates of the Global Vars for all position(contract pair) in this period
-
-| Name  | Type                             | Description       |
-|-------|----------------------------------|-------------------|
-| infos | [FundingInfo](#FundingInfo) list | funding info list |
-
-where `FundingInfo` is
-
-| Name  | Type               | Description                      |
-|-------|--------------------|----------------------------------|
-|pairId | [PairId](#PairId)  | The pair id                      |
-|price | BigUint            | the mark price of the trade pair |
-|fundingRate | i16          |the fee funding rate, the actual result needs to be divided by `10^6`|
-
-For example:
-
-```json
-{
-  "fundingInfos": {
-    "infos": [
-      {
-        "pairId": 0,
-        "price": "0",
-        "fundingRate": 0
-      },
-      {
-        "pairId": 0,
-        "price": "0",
-        "fundingRate": 0
-      }
-    ]
-  }
-}
-```
-
-5. 更新所有合约对的的资金费率为累积资金费率
-
-```json
-{
-  "fundingInfos": {
-    "infos": [
-      {
-        "pairId": 0,
-        "price": "0",
-        "fundingRate": 0
-      },
-      {
-        "pairId": 0,
-        "price": "0",
-        "fundingRate": 0
-      }
-    ]
-  }
-}
-```
-| 字段        | 类型                    | 描述     |
-|-----------|-----------------------|--------|
-|infos| [FundingInfo](#FundingInfo)列表| 资金费率列表 |
-
-encode:
-
-| 字段       | 规则          |
-|----------|-------------|
-| type     | **5**, 1 字节 |
-|fundingRates| 18字节*列表长度   |
 
