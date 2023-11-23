@@ -1,6 +1,6 @@
 Layer-2 transfer
 
-| Name                                       | Type                               | Mandatory                        | Description                                                                                                                                     |
+| Name                                       | Type                               | Required                        | Description                                                                                                                                     |
 |--------------------------------------------|------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | type                                       | String                             | yes                              | The value is "Transfer"                                                                                                                         |
 | accountId                                  | AccountId                          | yes                              | Account ID of the from_account                                                                                                                  |

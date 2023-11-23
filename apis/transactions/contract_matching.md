@@ -1,6 +1,6 @@
 Contract matching
 
-| Name         | Type            | Mandatory | Description                                                                      |
+| Name         | Type            | Required | Description                                                                      |
 |--------------|-----------------|-----------|----------------------------------------------------------------------------------|
 | type         | String          | yes       | The value is "ContractMatching"                                                  |
 | accountId    | AccountId       | yes       | The account id                                                                   |

@@ -1,6 +1,6 @@
 TODO: describe the full exit transaction
 
-| Name          | Type         | Mandatory | Description                                                          |
+| Name          | Type         | Required | Description                                                          |
 |---------------|--------------|-----------|----------------------------------------------------------------------|
 | type          | String       | yes       | The value is "FullExit"                                              |
 | toChainId     | ChainId      | yes       | The chain id defined by zkLink, to which the user wish to withdrawal |

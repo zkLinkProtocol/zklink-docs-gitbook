@@ -1,6 +1,6 @@
 Order Matching
 
-| Name               | Type              | Mandatory | Description                                                                                                                                                                                                                  |
+| Name               | Type              | Required | Description                                                                                                                                                                                                                  |
 |--------------------|-------------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | type               | String            | yes       | OrderMatching                                                                                                                                                                                                                |
 | accountId          | AccountId         | yes       | Initiator's account id. Only specific accounts can initiate this type of transaction on Layer2                                                                                                                               |
@@ -15,7 +15,7 @@ Order Matching
 
 where the type `Order` is
 
-| Name         | Type                                                | Mandatory | Description        |
+| Name         | Type                                                | Required | Description        |
 |--------------|-----------------------------------------------------|-----------|--------------------|
 | accountId    | [Accountid](./data_types.md#AccountId)             | yes       | The Account id     |
 | subAccountId | [SubAccountId](./data_types.md#SubAccountId)       | yes       | The sub-account id |

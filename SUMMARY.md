@@ -40,6 +40,7 @@
   * [Funding](apis/transactions/funding.md)
   * [Liquidation](apis/transactions/liquidation.md)
   * [UpdateGlobalVar](apis/transactions/update_global_var.md)
+  * [old 2](apis/layer2-transaction.md)
 * Json Rpc
   * [JSON-RPC API](apis/json-rpc-api.md)
   * [JSON-RPC Errors](apis/json-rpc-errors.md)
@@ -53,3 +54,4 @@
 
 * [Audits](reference/Audits.md)
 * [FAQ](appendix/faq.md)
+* [glossary](appendix/glossary.md)

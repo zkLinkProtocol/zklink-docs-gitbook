@@ -74,7 +74,7 @@ the type is string, it is the  hexadecimal serialized string  of `[u8; 32]` star
 `0x052fdba72bbb6fcc10940fc22dc76e459dda32604a17a920b8f2d2d0f0caff8f`
 
 ### PubKeyHash
-The hash of public key of layer2, it is the  hexadecimal serialized string  of `[u8; 20]`, for example:
+The public key hash of Zklink layer side, it is the  hexadecimal serialized string  of `[u8; 20]`, for example:
 
 `0x3cfdecf8eba46d5411bdc29365f5536f024c195f`
 
@@ -99,7 +99,7 @@ For example:
 ### TxLayer1Signature
 The transaction L1 signature, for the ethereum, there are two types signatures [EIP-191](https://eips.ethereum.org/EIPS/eip-191) and [EIP1271](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md).
 
-| Name      | Type   | Mandatory | Description                        |
+| Name      | Type   | Required | Description                        |
 |-----------|--------|-----------|------------------------------------|
 | type      | String | yes       | the type of signature              |
 | signature | String | yes       | signature string, starts with `0x` |

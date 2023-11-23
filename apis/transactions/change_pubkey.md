@@ -1,6 +1,6 @@
 Modifies the public key hash of the Layer2 account.
 
-| Name         | Type                                          | Mandatory | Description                                                                                                                                                         |
+| Name         | Type                                          | Required | Description                                                                                                                                                         |
 |--------------|-----------------------------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | type         | String                                        | yes       | The value is "ChangePubKey"                                                                                                                                         |
 | chainId      | ChainId                                       | yes       | ID defined by zkLink, for example, when the user performs ChangePubKey on ETH, the front-end needs to set this value to the Ethereum ID defined by zkLink on Layer2 |
@@ -19,7 +19,7 @@ where the `ChangePubKeyAuthData` is an Enum which contains 3 types: `EthECDSA`, 
 {% tabs %}
 {% tab title="EthECDSA" %}
 
-| Name         | Type   | Mandatory | Description                   |
+| Name         | Type   | Required | Description                   |
 |--------------|--------|-----------|-------------------------------|
 | type         | String | yes       | The value is "EthECDSA"        |
 | ethSignature | String | yes       | eth signature with `0x` prefix |
@@ -65,7 +65,7 @@ For Example:
 
 {% tab title="EthCreate2" %}
 
-| Name           | Type          | Mandatory | Description                           |
+| Name           | Type          | Required | Description                           |
 |----------------|---------------|-----------|---------------------------------------|
 | type           | String        | yes       | The value is "EthCreate2"             |
 | creatorAddress | String        | yes       | creator address                       |
@@ -102,7 +102,7 @@ For Example:
 
 {% tab title="Onchain" %}
 
-| Name | Type   | Mandatory | Description            |
+| Name | Type   | Required | Description            |
 |------|--------|-----------|------------------------|
 | type | String | yes       | The value is "Onchain" |
 

@@ -1,6 +1,6 @@
 This transaction is used to update the global variable settings.
 
-| Name         | Type                    | Mandatory | Description                                |
+| Name         | Type                    | Required | Description                                |
 |--------------|-------------------------|-----------|--------------------------------------------|
 | type         | String                  | yes       | The value is "UpdateGlovalVar "            |
 | fromChainId  | ChainId                 | yes       | The layer2 chain id                        |
@@ -15,7 +15,7 @@ There are 5 parameters, different operations correspond to different parameters:
 
 Modify the collect-fee account.
 
-| Name       | Type                    | Mandatory | Description        |
+| Name       | Type                    | Required | Description        |
 |------------|-------------------------|-----------|--------------------|
 | feeAccount | [AccountId](#AccountId)| yes       | The fee account id |
  
@@ -41,7 +41,7 @@ For example:
 
 Modify the insurance fund account
 
-| Name       | Type                     | Mandatory | Description        |
+| Name       | Type                     | Required | Description        |
 |-----------|--------------------------|-----------|--------------------|
 | accountId | [AccountId](#AccountId)  | yes       | The account id of  insuranceFundAccount|
 
@@ -67,7 +67,7 @@ For Example:
 
 Modify the margin info in the specified index.
 
-| Name     | Type                       | Mandatory | Description        |
+| Name     | Type                       | Required | Description        |
 |----------|----------------------------|-----|---------------------------|
 | marginId | [MarginId](#MarginId)      | yes | The margin id             |
 | tokenId  | [TokenId](#TokenId)        | yes | The Token id              |
@@ -98,7 +98,7 @@ For example
 
 Modify the info of every prepatual contract pair.
 
-| Name                  | Type     | Mandatory         | Description                                             |
+| Name                  | Type     | Required         | Description                                             |
 |-----------------------|-------------------|------------|---------------------------------------------------------|
 | pairId                | [PairId](#PairId) | yes | The pair id                                             |
 | symbol                | String            | yes | The symbol of the contract                              |
@@ -128,7 +128,7 @@ Modify the info of every prepatual contract pair.
 {% tab title="fundingInfos" %}
 Update the funding rates to accumulated funding rates of the Global Vars for all position(contract pair) in this period
 
-| Name          | Type  | Mandatory | Description       |
+| Name          | Type  | Required | Description       |
 |---------------|-------|-----------|-------------------|
 | infos         | array | yes       | funding info list |
 | > pairId      | [PairId](#PairId) | yes       | The pair id                                                           |

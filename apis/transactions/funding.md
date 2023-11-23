@@ -1,5 +1,5 @@
 
-| Name              | Type            | Mandatory | Description                    |
+| Name              | Type            | Required | Description                    |
 |-------------------|-----------------|-----------|--------------------------------|
 | type              | String          | yes       | The value is "Funding"         |
 | accountId         | AccountId       | yes       | The account ID of Funding      |

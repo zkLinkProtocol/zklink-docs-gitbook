@@ -1,6 +1,6 @@
 Withdraw from zkLink L2 to connected networks.
 
-| Name             | Type            | Mandatory | Description                                                                                           |
+| Name             | Type            | Required | Description                                                                                           |
 |------------------|-----------------|-----------|-------------------------------------------------------------------------------------------------------|
 | type             | String          | yes       | The value is "Withdraw"                                                                               |
 | toChainId        |                 | yes       | The target chain of the withdrawal                                                                    |

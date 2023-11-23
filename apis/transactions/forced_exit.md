@@ -1,7 +1,7 @@
 
 Forced withdraw from Layer2
 
-| Name                  | Type            | Mandatory | Description                                                                                   |
+| Name                  | Type            | Required | Description                                                                                   |
 |-----------------------|-----------------|-----------|-----------------------------------------------------------------------------------------------|
 | type                  | String          | yes       | The value is "ForcedExit"                                                                     |
 | toChainId             | ChainId         | yes       | The target chain of the withdrawal                                                            |
