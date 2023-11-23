@@ -19,17 +19,17 @@
 * [ZkLinkSignature](#ZkLinkSignature)
 
 
- <span id="ChainId">**ChainId**</span>
+### ChainId
 
 The chain id defined by ZkLink, the type is `u8`
 
-## AccountId
+### AccountId
 The account id defined by ZkLink, the type is `u32`
 
-## SubAccountId
+### SubAccountId
 The subaccount id defined by ZkLink, the type is`u8`
 
-## TokenId
+### TokenId
 The type is`u32`, different token contract addresses correspond to different token ids.
 There are many stablecoins, for example, USDC or BUSD are equivalent to USD.
 In order to aggregate the liquidity of these stablecoins, zkLink created a virtual USD token on L2.
@@ -45,40 +45,40 @@ Conversely, when withdrawing USD, users can choose to withdraw an equivalent amo
 | 32-65535 | other token id                                     |
 
 
-## SlotId
+### SlotId
 The id of slot in [Order](#Order), the type is `u32`.
 
-## PairId
+### PairId
 The trading pair ID of the pertetual contract, the type is `u16`. The PairId is defined by decentralized exchange, not defined by ZkLink.
 
-## MarginId
+### MarginId
 The margin ID of the pertetual contract, the type is `u8`.
 
-## Nonce
+### Nonce
 The nonce type in transaction and account, the type is `u32`
 
-## ChainType
+### ChainType
 
 * 0: EVM
 * 1: StarkNet
 
-## TxHash
+### TxHash
 Transaction Hash, it is the unique address of a transaction that acts as a record or proof that the transaction has taken place.
 It is the  hexadecimal serialized string  of `[u8; 32]` starting with `0x`, for example：
 
 `0x7264f1d95b5339f77f2b24939bada1cbca183c77110e514159bbcfad3aa303d2`
 
-## H256
+### H256
 the type is string, it is the  hexadecimal serialized string  of `[u8; 32]` starting with `0x`, for example:
 
 `0x052fdba72bbb6fcc10940fc22dc76e459dda32604a17a920b8f2d2d0f0caff8f`
 
-## PubKeyHash
+### PubKeyHash
 The hash of public key of layer2, it is the  hexadecimal serialized string  of `[u8; 20]`, for example:
 
 `0x3cfdecf8eba46d5411bdc29365f5536f024c195f`
 
-## ZkLinkSignature
+### ZkLinkSignature
 The L2 transaction signature.
 
 | Name      | Type   | Description                                                                                                        |
@@ -96,15 +96,15 @@ For example:
 ```
 
 
-## TxLayer1Signature
+### TxLayer1Signature
 The transaction L1 signature, for the ethereum, there are two types signatures [EIP-191](https://eips.ethereum.org/EIPS/eip-191) and [EIP1271](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md).
 
-| Name      | Type   | Description                        |
-|-----------|--------|------------------------------------|
-| type      | String | the type of signature              |
-| signature | String | signature string, starts with `0x` |
+| Name      | Type   | Mandatory | Description                        |
+|-----------|--------|-----------|------------------------------------|
+| type      | String | yes       | the type of signature              |
+| signature | String | yes       | signature string, starts with `0x` |
 
-where the `type` can be `EthereumSignature`
+where the `type` can be `EthereumSignature`, `EIP1271Signature` and `StarkSignature`:
 
 {% tabs %}
 
@@ -137,7 +137,7 @@ The ethereum EIP1271 signature, for example:
 
 {% tab title="StarkSignature" %}
 
-The starknet ECDSA signature
+The starknet ECDSA signature, for example:
 
 ```json
 {
