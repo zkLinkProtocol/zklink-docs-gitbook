@@ -108,7 +108,7 @@ where the `type` can be `EthereumSignature`
 
 {% tabs %}
 
-{% tab title = "EthereumSignature" %}
+{% tab title="EthereumSignature" %}
 
 The ethereum ECDSA signature, for example:
 
@@ -122,7 +122,7 @@ The ethereum ECDSA signature, for example:
 {% endtab %}
 
 
-{% tab title = "EIP1271Signature" %}
+{% tab title="EIP1271Signature" %}
 
 The ethereum EIP1271 signature, for example:
 
@@ -135,7 +135,7 @@ The ethereum EIP1271 signature, for example:
 
 {% endtab %}
 
-{% tab title = "StarkSignature" %}
+{% tab title="StarkSignature" %}
 
 The starknet ECDSA signature
 

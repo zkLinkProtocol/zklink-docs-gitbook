@@ -13,7 +13,7 @@ This transaction is used to update the global variable settings.
 There are 5 parameters, different operations correspond to different parameters:
 
 {% tabs %}
-{% tab title = "feeAccount" %}
+{% tab title="feeAccount" %}
 
 Modify the collect-fee account.
 
@@ -39,7 +39,7 @@ For example:
 
 {% endtab %}
 
-{% tab title = "insuranceFundAccount" %}
+{% tab title="insuranceFundAccount" %}
 
 Modify the insurance fund account
 
@@ -65,7 +65,7 @@ For Example:
 {% endtab %}
 
 
-{% tab title = "marginInfo" %}
+{% tab title="marginInfo" %}
 
 Modify the margin info in the specified index.
 
@@ -96,7 +96,7 @@ For example
 {% endtab %}
 
 
-{% tab title = "contractInfo" %}
+{% tab title="contractInfo" %}
 
 Modify the info of every prepatual contract pair.
 
@@ -127,7 +127,7 @@ Modify the info of every prepatual contract pair.
 {% endtab %}
 
 
-{% tab title = "fundingInfos" %}
+{% tab title="fundingInfos" %}
 Update the funding rates to accumulated funding rates of the Global Vars for all position(contract pair) in this period
 
 | Name          | Type  | Mandatory | Description       |
@@ -171,7 +171,7 @@ For example:
 ## sign updateGlobalVar
 
 {% tabs %}
-{% tab title = "Golang" %}
+{% tab title="Golang" %}
 ```golang
 
 ```
@@ -179,7 +179,7 @@ For example:
 For more detail please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
 {% endtab %}
 
-{%tab title = "javascript" %}
+{%tab title="javascript" %}
 
 ```javascript
 

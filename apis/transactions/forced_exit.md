@@ -44,7 +44,7 @@ For example:
 ## sign ForcedExit
 
 {% tabs %}
-{% tab title = "Golang" %}
+{% tab title="Golang" %}
 ```golang
 func SignForcedExit() {
     privateKey := "0xbe725250b123a39dab5b7579334d5888987c72a58f4508062545fe6e08ca94f4"
@@ -77,7 +77,7 @@ func SignForcedExit() {
 For more detail please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
 {% endtab %}
 
-{% tab title = "javascript" %}
+{% tab title="javascript" %}
 
 ```javascript
 import init, *  as wasm  from "/path/to/zklink-sdk-web.js";

@@ -38,7 +38,7 @@ For example:
 
 ## sign Transfer
 {% tabs %}
-{% tab title = "Golang" %}
+{% tab title="Golang" %}
 ```go
 import (
 	"math/big"
@@ -78,7 +78,7 @@ func SignTransfer() {
 For more details please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
 {% endtab %}
 
-{% tab title = "Javascript" }
+{% tab title="Javascript" }
 
 ```javascript
 import init, *  as wasm  from "./web-dist/zklink-sdk-web.js";

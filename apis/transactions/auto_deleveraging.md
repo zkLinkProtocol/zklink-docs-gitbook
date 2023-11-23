@@ -19,7 +19,7 @@ Automatic deleveraging
 where the `ContractPrice` and `SpotPriceInfo` defined as below:
 
 {% tabs %}
-{% tab title = "ContractPrice" %}
+{% tab title="ContractPrice" %}
 
 | Name        | Type    | Mandatory | Description                                                    |
 |-------------|---------|-----------|----------------------------------------------------------------|
@@ -28,7 +28,7 @@ where the `ContractPrice` and `SpotPriceInfo` defined as below:
 
 {% endtab %}
 
-{% tab title = "SpotPriceInfo" %}
+{% tab title="SpotPriceInfo" %}
 
 | Name        | Type    | Mandatory | Description                                                    |
 |-------------|---------|-----------|----------------------------------------------------------------|
@@ -77,7 +77,7 @@ For example:
 ## Sign autoDeleveraging
 
 {% tabs %}
-{% tab title = "Golang" %}
+{% tab title="Golang" %}
 ```golang
 
 ```
@@ -85,7 +85,7 @@ For example:
 For more detail please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
 {% endtab %}
 
-{%tab title = "javascript" %}
+{%tab title="javascript" %}
 
 ```javascript
 

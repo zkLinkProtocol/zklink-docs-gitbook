@@ -16,6 +16,29 @@ Modifies the public key hash of the Layer2 account.
 | signature    | ZkLinkSignatur                                | yes       |  the public key hash corresponding to the signature must be aligned with the newPkHash |
 | ts           | u32                                           | yes       | Timestamp of the API call, used as front-end request id to generate transaction hash |
 
+where `ChangePubKeyAuthData` is an Enum which contains 3 types: `EthECDSA`, `EthCreate2`, `Onchain`
+
+{% tabs %}
+{% tab title="EthECDSA" %}
+
+| Name         | Type   | Mandatory | Description                    |
+|--------------|--------|-----------|--------------------------------|
+| type         | String | yes       | The value is `EthECDSA`        |
+| ethSignature | String | yes       | eth signature with `0x` prefix |
+
+Refer to [EIP712](https://eips.ethereum.org/EIPS/eip-712) to create the signature content in this way, where the domain is:
+
+```json
+{
+  "name":"ZkLink", // constaint
+  "version":"1", // constaint
+  "chainId":13, // this this the L1 chain id, not the one defined by zkLink
+  "verifyingContract":"0x388c818ca8b9251b393131c08a736a67ccb19297" // this is the zkLink contract address on L1
+}
+```
+
+> Note: Different chain has different `chainId` and `verifyingContract`, you can get the chain information from rpc interface `getSupportChains`.
+
 For Example:
 
 ```json
@@ -40,81 +63,85 @@ For Example:
 }
 ```
 
-## ChangePubKeyAuthData
-Enum which contains 3 types: `EthECDSA`, `EthCreate2`, `Onchain`
+{% endtab %}
 
-{% tabs %}
-{% tab title="EthECDSA" %}
+{% tab title="EthCreate2" %}
 
-| Name         | Type   | Description                            |
-|--------------|--------|----------------------------------------|
-| type         | String | The name of type with value `EthECDSA` |
-| ethSignature | String | eth signature with `0x` prefix         |
+| Name           | Type          | Mandatory | Description                           |
+|----------------|---------------|-----------|---------------------------------------|
+| type           | String        | yes       | The value is `EthCreate2`             |
+| creatorAddress | String        | yes       | creator address                       |
+| saltArg        | [H256](#H256) | yes       | the salt argument when create address |
+| codeHash       | [H256](#H256) | yes       | code hash                             |
 
-For example:
-  ```json
-  {
-  "type":"EthECDSA",
-  "ethSignature":  "0x36a83c6358c55870f2da3a9a7abcbace3016debd6e6982e7fc9aace159592d2b6f42eb5a20b166e1b73193019c63c57cf90b7c2b531f6c5ec572f622e66b4a9e1c"
-}
-  ```
-Refer to [EIP712](https://eips.ethereum.org/EIPS/eip-712) to create the signature content in this way, where the domain is:
+For Example:
 
 ```json
 {
-  "name":"ZkLink", // constaint
-  "version":"1", // constaint
-  "chainId":13, // this this the L1 chain id, not the one defined by zkLink
-  "verifyingContract":"0x388c818ca8b9251b393131c08a736a67ccb19297" // this is the zkLink contract address on L1
-}
-```
-
-> Note: Different chain has different `chainId` and `verifyingContract`, you can get the chain information from rpc interface `getSupportChains`.
-
-{% endtab %}
-
-
-{% tab title = "EthCreate2" }
-
-| 字段             | 类型            | 描述                                       |
-|----------------|---------------|------------------------------------------|
-| type           | String        | The name of type with value `EthCreate2` |
-| creatorAddress | String        | creator address                          |
-| saltArg        | [H256](#H256) | the salt argument when create address    |
-| codeHash       | [H256](#H256) | code hash                                |
-
-For example
-
-  ```json
-  {
+  "type": "ChangePubKey",
+  "chainId": 1,
+  "accountId": 39,
+  "subAccountId": 1,
+  "newPkHash": "0xbfb4f4a68dc9e49f7785082a8c12354ed663b6e0",
+  "feeToken": 1,
+  "fee": "1285000000000000",
+  "nonce": 0,
+  "signature": {
+    "pubKey": "0xed53a138751ed1e456f46e74eff3463d2420e488a4f608bde0f28d13c7104d29",
+    "signature": "3b91c0421df4295281596746722ae20ccf270c5fc0561f93a0219db1faea6518f033e778dd552f90a9a6afd06427428b2ac4ea6f6893a3f162b32683d1108a02"
+  },
+  "ethAuthData": {
     "type":"EthCreate2",
     "creatorAddress":"0x388c818ca8b9251b393131c08a736a67ccb19297",
     "saltArg":"0x66b8e2fa879542a0c32c77e137ab830c3345788a2696999afbd07acabab8ad81",
     "codeHash":"0xfb57f5a066444ff426f4433344fd2e179843fd9069c06eb3b4ecc74e8b599410"
-  }
-  ```
+  },
+  "ts": 1675650037
+}
+```
+
 {% endtab %}
 
-{% tab title = "Onchain" %}
+{% tab title="Onchain" %}
 
-| Name | Type   | Description                           |
-|------|--------|---------------------------------------|
-| type | String | the name of type with value `Onchain` |
+| Name | Type   | Mandatory | Description                           |
+|------|--------|-----------|---------------------------------------|
+| type | String | yes       | the name of type with value `Onchain` |
 
-  ```json
-  {
-    "type": "Onchain"
-  }
-  ```
+For Example:
+
+```json
+{
+  "type": "ChangePubKey",
+  "chainId": 1,
+  "accountId": 39,
+  "subAccountId": 1,
+  "newPkHash": "0xbfb4f4a68dc9e49f7785082a8c12354ed663b6e0",
+  "feeToken": 1,
+  "fee": "1285000000000000",
+  "nonce": 0,
+  "signature": {
+    "pubKey": "0xed53a138751ed1e456f46e74eff3463d2420e488a4f608bde0f28d13c7104d29",
+    "signature": "3b91c0421df4295281596746722ae20ccf270c5fc0561f93a0219db1faea6518f033e778dd552f90a9a6afd06427428b2ac4ea6f6893a3f162b32683d1108a02"
+  },
+  "ethAuthData": {
+      "type": "Onchain"
+  },
+  "ts": 1675650037
+}
+```
+
 {% endtab %}
+
 {% endtabs %}
+
 
 ## sign
 
 {% tabs %}
 {% tab title="Golang" %}
 
-```golang
+```go
 import (
     time
     fmt
@@ -159,7 +186,7 @@ For more detail please refer to [Golang example](https://github.com/zkLinkProtoc
 
 {% endtab %}
 
-{% tab title = "Javascript" %}
+{% tab title="Javascript" %}
 ```js
 import init, *  as wasm  from "/path/to/zklink-sdk-web.js";
 
@@ -190,10 +217,11 @@ async function testEcdsaAuth() {
         console.error(error);
     }
 }
-
 ```
+
 For more detail please refer to [javascript example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Javascript)
-{% tab %}
+
+{% endtab %}
 
 {% endtabs %}
 

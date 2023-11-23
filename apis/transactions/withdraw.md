@@ -98,7 +98,7 @@ func SignWithdraw() {
 For more details please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
 
 {% endtab %}
-{% tab title = "javascript" %}
+{% tab title="javascript" %}
 ```javascript
 import init, *  as wasm  from "/path/to/zklink-sdk-web.js";
 

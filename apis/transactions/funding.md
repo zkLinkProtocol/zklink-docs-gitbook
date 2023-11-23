@@ -34,7 +34,7 @@ For example:
 ## Sign Funding
 
 {% tabs %}
-{% tab title = "Golang" %}
+{% tab title="Golang" %}
 ```golang
 
 ```
@@ -42,7 +42,7 @@ For example:
 For more detail please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
 {% endtab %}
 
-{%tab title = "javascript" %}
+{%tab title="javascript" %}
 
 ```javascript
 

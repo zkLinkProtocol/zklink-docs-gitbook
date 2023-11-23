@@ -17,14 +17,14 @@
 where the type `ContractPrices`  and `SpotPriceInfo` are as follows::
 
 {% tabs %}
-{% tab title = "ContractPrice" %}
+{% tab title="ContractPrice" %}
 
 | Name        | Type              | Description                     |
 |-------------|-------------------|---------------------------------|
 | pairId      | [PairId](#PairId) | The pair id                     |
 | marketPrice | BigUint           | The market price of the pair id |
 
-{% endtab title = "SpotPriceInfo" %}
+{% endtab title="SpotPriceInfo" %}
 
 | Name       | Type                | Description                   |
 |------------|---------------------|-------------------------------|
@@ -68,7 +68,7 @@ For example:
 ## Sign Liquidation
 
 {% tabs %}
-{% tab title = "Golang" %}
+{% tab title="Golang" %}
 ```golang
 
 ```
@@ -76,7 +76,7 @@ For example:
 For more detail please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
 {% endtab %}
 
-{%tab title = "javascript" %}
+{% tab title="javascript" %}
 
 ```javascript
 
