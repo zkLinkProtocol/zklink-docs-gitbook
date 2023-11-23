@@ -1,5 +1,3 @@
-## OrderMatching
-
 Order Matching
 
 | Name               | Type              | Mandatory | Description                                                                                                                                                                                                                  |
@@ -87,7 +85,7 @@ For example:
 {% tabs %}
 {% tab title="Golang" %}
 
-```golang
+```go
 import (
 	"math/big"
 	"fmt"
@@ -162,13 +160,14 @@ func SignOrderMatching() {
 }
 ```
 For more detail please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
+
 {% endtab %}
 
-{ % tab title="javascript" %}
+{% tab title="javascript" %}
 ```javascript
 import init, *  as wasm  from "/path/to/zklink-sdk-web.js";
 
-async function main() {
+async function sign_order_matching() {
     await init();
     try {
         let signer = new wasm.JsonRpcSigner();
@@ -194,9 +193,9 @@ async function main() {
         console.error(error);
     }
 }
-
-main();
 ```
+
+For more detail please refer to [javascript example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Javascript)
 
 {% endtab %}
 

@@ -28,23 +28,22 @@
 
 ## APIs
 * [data types](apis/data_types.md)
-### Transaction
-* [Deposit](apis/transactions/deposit.md)
-* [FullExit](apis/transactions/full_exit.md)
-* [ChangePubKey](apis/transactions/change_pubkey.md)
-* [Withdraw](apis/transactions/withdraw.md)
-* [ForcedExit](apis/transactions/forced_exit.md)
-* [OrderMatching](apis/transactions/order_matching.md)
-* [AutoDeleveraging](apis/transactions/auto_deleveraging.md)
-* [ContractMatching](apis/transactions/contract_matching.md)
-* [Funding](apis/transactions/funding.md)
-* [Liquidation](apis/transactions/liquidation.md)
-* [UpdateGlobalVar](apis/transactions/update_global_var.md)
-
-### Json Rpc
-* [JSON-RPC API](apis/json-rpc-api.md)
-* [JSON-RPC Errors](apis/json-rpc-errors.md)
-* [State Update](apis/state-update.md)
+* Transaction
+  * [Deposit](apis/transactions/deposit.md)
+  * [FullExit](apis/transactions/full_exit.md)
+  * [ChangePubKey](apis/transactions/change_pubkey.md)
+  * [Withdraw](apis/transactions/withdraw.md)
+  * [ForcedExit](apis/transactions/forced_exit.md)
+  * [OrderMatching](apis/transactions/order_matching.md)
+  * [AutoDeleveraging](apis/transactions/auto_deleveraging.md)
+  * [ContractMatching](apis/transactions/contract_matching.md)
+  * [Funding](apis/transactions/funding.md)
+  * [Liquidation](apis/transactions/liquidation.md)
+  * [UpdateGlobalVar](apis/transactions/update_global_var.md)
+* Json Rpc
+  * [JSON-RPC API](apis/json-rpc-api.md)
+  * [JSON-RPC Errors](apis/json-rpc-errors.md)
+  * [State Update](apis/state-update.md)
 
 ## Tokenomics
 

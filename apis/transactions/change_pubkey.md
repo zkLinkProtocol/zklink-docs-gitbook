@@ -1,5 +1,3 @@
-# ChangePubKey
-
 Modifies the public key hash of the Layer2 account.
 
 | Name         | Type                                          | Mandatory | Description                                                                                                                                                         |
@@ -16,14 +14,14 @@ Modifies the public key hash of the Layer2 account.
 | signature    | ZkLinkSignatur                                | yes       |  the public key hash corresponding to the signature must be aligned with the newPkHash |
 | ts           | u32                                           | yes       | Timestamp of the API call, used as front-end request id to generate transaction hash |
 
-where `ChangePubKeyAuthData` is an Enum which contains 3 types: `EthECDSA`, `EthCreate2`, `Onchain`
+where the `ChangePubKeyAuthData` is an Enum which contains 3 types: `EthECDSA`, `EthCreate2`, `Onchain`
 
 {% tabs %}
 {% tab title="EthECDSA" %}
 
-| Name         | Type   | Mandatory | Description                    |
-|--------------|--------|-----------|--------------------------------|
-| type         | String | yes       | The value is `EthECDSA`        |
+| Name         | Type   | Mandatory | Description                   |
+|--------------|--------|-----------|-------------------------------|
+| type         | String | yes       | The value is "EthECDSA"        |
 | ethSignature | String | yes       | eth signature with `0x` prefix |
 
 Refer to [EIP712](https://eips.ethereum.org/EIPS/eip-712) to create the signature content in this way, where the domain is:
@@ -69,7 +67,7 @@ For Example:
 
 | Name           | Type          | Mandatory | Description                           |
 |----------------|---------------|-----------|---------------------------------------|
-| type           | String        | yes       | The value is `EthCreate2`             |
+| type           | String        | yes       | The value is "EthCreate2"             |
 | creatorAddress | String        | yes       | creator address                       |
 | saltArg        | [H256](#H256) | yes       | the salt argument when create address |
 | codeHash       | [H256](#H256) | yes       | code hash                             |
@@ -104,9 +102,9 @@ For Example:
 
 {% tab title="Onchain" %}
 
-| Name | Type   | Mandatory | Description                           |
-|------|--------|-----------|---------------------------------------|
-| type | String | yes       | the name of type with value `Onchain` |
+| Name | Type   | Mandatory | Description            |
+|------|--------|-----------|------------------------|
+| type | String | yes       | The value is "Onchain" |
 
 For Example:
 

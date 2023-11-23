@@ -1,4 +1,3 @@
-# Transfer
 Layer-2 transfer
 
 | Name                                       | Type                               | Mandatory                        | Description                                                                                                                                     |

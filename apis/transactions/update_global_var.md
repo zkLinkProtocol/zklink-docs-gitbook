@@ -1,5 +1,3 @@
-## UpdateGlobalVar
-
 This transaction is used to update the global variable settings.
 
 | Name         | Type                    | Mandatory | Description                                |
@@ -172,7 +170,7 @@ For example:
 
 {% tabs %}
 {% tab title="Golang" %}
-```golang
+```go
 
 ```
 

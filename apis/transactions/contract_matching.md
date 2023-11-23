@@ -1,4 +1,3 @@
-# ContractMatching
 Contract matching
 
 | Name         | Type            | Mandatory | Description                                                                      |
@@ -89,7 +88,7 @@ For example:
 
 {% tabs %}
 {% tab title="Golang" %}
-```golang
+```go
 
 ```
 

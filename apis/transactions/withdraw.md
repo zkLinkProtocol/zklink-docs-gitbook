@@ -1,5 +1,3 @@
-## Withdraw
-
 Withdraw from zkLink L2 to connected networks.
 
 | Name             | Type            | Mandatory | Description                                                                                           |
@@ -46,7 +44,7 @@ For Example:
 
 {% tabs %}
 {% tab title="Golang" %}
-```golang
+```go
 import (
 	"math/big"
 	"fmt"

@@ -1,4 +1,3 @@
-## **Liquidation**
 
 | Name                 | Type            | Mandatory | Description                                                   |
 |----------------------|-----------------|-----------|---------------------------------------------------------------|
@@ -14,7 +13,7 @@
 | feeToken             | TokenId         | yes       | The token id of the fee                                       |
 | signature            | ZkLinkSignature | yes       | The ZkLink L2 signature of Liquidation                        |
 
-where the type `ContractPrices`  and `SpotPriceInfo` are as follows::
+where the type `ContractPrices`  and `SpotPriceInfo` are as follows:
 
 {% tabs %}
 {% tab title="ContractPrice" %}
@@ -24,7 +23,9 @@ where the type `ContractPrices`  and `SpotPriceInfo` are as follows::
 | pairId      | [PairId](#PairId) | The pair id                     |
 | marketPrice | BigUint           | The market price of the pair id |
 
-{% endtab title="SpotPriceInfo" %}
+{% endtab  %}
+
+{% tab title="SpotPriceInfo" %}
 
 | Name       | Type                | Description                   |
 |------------|---------------------|-------------------------------|
@@ -32,6 +33,7 @@ where the type `ContractPrices`  and `SpotPriceInfo` are as follows::
 | marketPrice | BigUint             | The market price of the token |
 
 {% endtab %}
+{% endtabs %}
 
 For example:
 
@@ -69,7 +71,7 @@ For example:
 
 {% tabs %}
 {% tab title="Golang" %}
-```golang
+```go
 
 ```
 

@@ -1,4 +1,3 @@
-## Deposit
 
 Deposit from Layer 1 to [zkLink layer，详情]().
 

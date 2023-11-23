@@ -1,4 +1,3 @@
-## ForcedExit
 
 Forced withdraw from Layer2
 
@@ -45,7 +44,7 @@ For example:
 
 {% tabs %}
 {% tab title="Golang" %}
-```golang
+```go
 func SignForcedExit() {
     privateKey := "0xbe725250b123a39dab5b7579334d5888987c72a58f4508062545fe6e08ca94f4"
     address := sdk.ZkLinkAddress("0xAFAFf3aD1a0425D792432D9eCD1c3e26Ef2C42E9")

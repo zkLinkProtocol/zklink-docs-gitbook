@@ -1,6 +1,4 @@
-## FullExit
-
-TODO: 
+TODO: describe the full exit transaction
 
 | Name          | Type         | Mandatory | Description                                                          |
 |---------------|--------------|-----------|----------------------------------------------------------------------|
