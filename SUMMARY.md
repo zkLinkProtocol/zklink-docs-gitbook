@@ -26,26 +26,38 @@
 * [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
 * [Lightweight Integration](IntegrationArchitecture/zkjump.md)
 
-## APIs
-
-* [data types](apis/data\_types.md)
-* [Transaction](apis/transaction/README.md)
-  * [Deposit](apis/transactions/deposit.md)
-  * [FullExit](apis/transactions/full\_exit.md)
-  * [ChangePubKey](apis/transactions/change\_pubkey.md)
-  * [Withdraw](apis/transactions/withdraw.md)
-  * [ForcedExit](apis/transactions/forced\_exit.md)
-  * [OrderMatching](apis/transactions/order\_matching.md)
-  * [AutoDeleveraging](apis/transactions/auto\_deleveraging.md)
-  * [ContractMatching](apis/transactions/contract\_matching.md)
-  * [Funding](apis/transactions/funding.md)
-  * [Liquidation](apis/transactions/liquidation.md)
-  * [UpdateGlobalVar](apis/transactions/update\_global\_var.md)
-  * [old 2](apis/layer2-transaction.md)
-* [Json Rpc](apis/json-rpc/README.md)
-  * [JSON-RPC API](apis/json-rpc-api.md)
-  * [JSON-RPC Errors](apis/json-rpc-errors.md)
-  * [State Update](apis/state-update.md)
+## Developer 
+* Overview
+* Get Started
+* API & SDK
+  * [data types](apis/data_types.md)
+  * Transaction
+    * [Deposit](apis/transactions/deposit.md)
+    * [FullExit](apis/transactions/full_exit.md)
+    * [ChangePubKey](apis/transactions/change_pubkey.md)
+    * [Withdraw](apis/transactions/withdraw.md)
+    * [ForcedExit](apis/transactions/forced_exit.md)
+    * [OrderMatching](apis/transactions/order_matching.md)
+    * [AutoDeleveraging](apis/transactions/auto_deleveraging.md)
+    * [ContractMatching](apis/transactions/contract_matching.md)
+    * [Funding](apis/transactions/funding.md)
+    * [Liquidation](apis/transactions/liquidation.md)
+    * [UpdateGlobalVar](apis/transactions/update_global_var.md)
+  * [Sign](apis/sign/README.md)
+    * [private key and sign](apis/sign/private_key.md)
+    * [encode](apis/sign/encode/README.md)
+      * [ChangePubKey](apis/sign/encode/chaneg_pubkey.md)
+      * [Withdraw](apis/sign/encode/withdraw.md)
+      * [ForcedExit](apis/sign/encode/forced_exit.md)
+      * [OrderMatching](apis/sign/encode/order_matching.md)
+      * [ContractMatching](apis/sign/encode/contract_matching.md)
+      * [Funding](apis/sign/encode/funding.md)
+      * [Liquidation](apis/sign/encode/liquidation.md)
+      * [UpdateGlobalVar](apis/sign/encode/update_global_var.md)
+  * Json Rpc
+    * [JSON-RPC API](apis/json-rpc-api.md)
+    * [JSON-RPC Errors](apis/json-rpc-errors.md)
+    * [State Update](apis/state-update.md)
 
 ## Tokenomics
 

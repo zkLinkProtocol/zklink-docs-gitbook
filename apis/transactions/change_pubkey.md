@@ -222,5 +222,3 @@ For more detail please refer to [javascript example](https://github.com/zkLinkPr
 {% endtab %}
 
 {% endtabs %}
-
-curl -x Post body {} http://xxx.com/xx
