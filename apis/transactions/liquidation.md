@@ -72,7 +72,65 @@ For example:
 {% tabs %}
 {% tab title="Golang" %}
 ```go
+import (
+    fmt
+    sdk "github.com/zkLinkProtocol/zklink_sdk/generated/uniffi/zklink_sdk"
+)
 
+func HighLevelLiquidation() {
+    privateKey := "0xbe725250b123a39dab5b7579334d5888987c72a58f4508062545fe6e08ca94f4"
+
+    contract_price1 := sdk.ContractPrice{
+        sdk.PairId(1),
+        *big.NewInt(656566),
+    }
+
+    contract_price2 := sdk.ContractPrice{
+        sdk.PairId(3),
+        *big.NewInt(52552131),
+    }
+    var contract_prices = make([]sdk.ContractPrice,2)
+    contract_prices[0] = contract_price1
+    contract_prices[1] = contract_price2
+
+    margin_price1 := sdk.SpotPriceInfo {
+       sdk.TokenId(17),
+       *big.NewInt(3236653653635635),
+    }
+    margin_price2 := sdk.SpotPriceInfo {
+      sdk.TokenId(18),
+      *big.NewInt(549574875297),
+    }
+
+    var margin_prices = make([]sdk.SpotPriceInfo,2)
+    margin_prices[0] = margin_price1
+    margin_prices[1] = margin_price2
+
+    builder := sdk.LiquidationBuilder {
+        sdk.AccountId(1),
+        sdk.SubAccountId(1),
+        sdk.Nonce(9),
+        contract_prices,
+        margin_prices,
+        sdk.AccountId(3),
+       *big.NewInt(5545),
+        sdk.TokenId(17),
+    }
+
+    tx := sdk.NewLiquidation(builder)
+    signer, err := sdk.NewSigner(privateKey)
+    if err != nil {
+        return
+    }
+    txSignature, err := signer.SignLiquidation(tx)
+    if err != nil {
+        return
+    }
+    fmt.Println("L1 signature: %s", txSignature.Layer1Signature)
+    fmt.Println("signed Tx: %s", txSignature.Tx)
+    submitterSignature, err := signer.SubmitterSignature(txSignature.Tx)
+    fmt.Println("submitter signature: %s, %s", submitterSignature.PubKey, submitterSignature.Signature)
+}
 ```
 
 For more detail please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK

@@ -43,9 +43,8 @@
     * [Funding](apis/transactions/funding.md)
     * [Liquidation](apis/transactions/liquidation.md)
     * [UpdateGlobalVar](apis/transactions/update_global_var.md)
-  * [Sign](apis/sign/README.md)
-    * [private key and sign](apis/sign/private_key.md)
-    * [encode](apis/sign/encode/README.md)
+  * [Private Key & Signature](apis/sign/private_key.md)
+    * [Encode]
       * [ChangePubKey](apis/sign/encode/chaneg_pubkey.md)
       * [Withdraw](apis/sign/encode/withdraw.md)
       * [ForcedExit](apis/sign/encode/forced_exit.md)

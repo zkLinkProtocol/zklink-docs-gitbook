@@ -1,5 +1,3 @@
-Contract matching
-
 | Name         | Type            | Required | Description                                                                      |
 |--------------|-----------------|-----------|----------------------------------------------------------------------------------|
 | type         | String          | yes       | The value is "ContractMatching"                                                  |
@@ -89,7 +87,88 @@ For example:
 {% tabs %}
 {% tab title="Golang" %}
 ```go
+import (
+    fmt
+    sdk "github.com/zkLinkProtocol/zklink_sdk/generated/uniffi/zklink_sdk"
+)
 
+func SignContractMatching() {
+    privateKey := "0xbe725250b123a39dab5b7579334d5888987c72a58f4508062545fe6e08ca94f4"
+
+	taker_contract_builder := sdk.ContractBuilder {
+        sdk.AccountId(1),
+        sdk.SubAccountId(1),
+        sdk.SlotId(2),
+        sdk.Nonce(10),
+        sdk.PairId(1),
+        *big.NewInt(45454),
+        *big.NewInt(113),
+        true,
+        5,
+        3,
+        false,
+    }
+
+    taker_contract := sdk.NewContract(taker_contract_builder)
+
+    maker_contract1_builder := sdk.ContractBuilder {
+        sdk.AccountId(3),
+        sdk.SubAccountId(1),
+        sdk.SlotId(2),
+        sdk.Nonce(6),
+        sdk.PairId(1),
+        *big.NewInt(43434),
+        *big.NewInt(6767),
+        true,
+        1,
+        2,
+        false,
+    }
+
+    maker_contract2_builder := sdk.ContractBuilder {
+        sdk.AccountId(5),
+        sdk.SubAccountId(1),
+        sdk.SlotId(2),
+        sdk.Nonce(100),
+        sdk.PairId(1),
+        *big.NewInt(45656),
+        *big.NewInt(343),
+        true,
+        8,
+        20,
+        true,
+    }
+
+    maker_contract1 := sdk.NewContract(maker_contract1_builder)
+    maker_contract2 := sdk.NewContract(maker_contract2_builder)
+    var makers []*sdk.Contract
+    makers = make([]*sdk.Contract,2)
+    makers[0] = maker_contract1
+    makers[1] = maker_contract2
+
+    builder := sdk.ContractMatchingBuilder {
+        sdk.AccountId(1),
+        sdk.SubAccountId(1),
+        taker_contract,
+        makers,
+       *big.NewInt(5545),
+        sdk.TokenId(17),
+    }
+
+    tx := sdk.NewContractMatching(builder)
+    signer, err := sdk.NewSigner(privateKey)
+    if err != nil {
+        return
+    }
+    txSignature, err := signer.SignContractMatching(tx)
+    if err != nil {
+        return
+    }
+    fmt.Println("L1 signature: %s", txSignature.Layer1Signature)
+    fmt.Println("signed Tx: %s", txSignature.Tx)
+    submitterSignature, err := signer.SubmitterSignature(txSignature.Tx)
+    fmt.Println("submitter signature: %s, %s", submitterSignature.PubKey, submitterSignature.Signature)
+}
 ```
 
 For more detail please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK

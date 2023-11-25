@@ -166,23 +166,3 @@ For example:
 
 {% endtabs %}
 
-## sign updateGlobalVar
-
-{% tabs %}
-{% tab title="Golang" %}
-```go
-
-```
-
-For more detail please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
-{% endtab %}
-
-{%tab title="javascript" %}
-
-```javascript
-
-```
-
-For more detail please refer to [javascript example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Javascript)
-{% endtab %}
-{% endtabs %}
