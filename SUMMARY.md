@@ -31,7 +31,7 @@
 * [Overview](developer/overview.md)
 * [Get Started](developer/get-started.md)
 * [API & SDK](developer/api-and-sdk/README.md)
-  * [data types](developer/api-and-sdk/data\_types.md)
+  * [Data Types](developer/api-and-sdk/data\_types.md)
   * [Transaction](developer/api-and-sdk/transaction/README.md)
     * [Deposit](developer/api-and-sdk/transaction/deposit.md)
     * [FullExit](developer/api-and-sdk/transaction/full\_exit.md)
