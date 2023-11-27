@@ -1,14 +1,18 @@
 
-| Name              | Type            | Required | Description                    |
-|-------------------|-----------------|-----------|--------------------------------|
-| type              | String          | yes       | The value is "Funding"         |
-| accountId         | AccountId       | yes       | The account ID of Funding      |
-| subAccountId      | SubAccountId    | yes       | The subaccount ID of Funding   |
-| subAccountNonce   | Nonce           | yes       | The subaccount nonce           |
-| fundingAccountIds | AccountId list  | yes       | The account id list of funding |
-| fee               | BigUint         | yes       | The fee                        |
-| feeToken          | TokenId         | yes       | The token id of the fee        |
-| signature         | ZkLinkSignature | yes       | The Zklink L2 signature        |
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody>
+<tr><td> type              </td><td> String          </td><td> yes       </td><td> The value is "Funding"         </td></tr>
+<tr><td> accountId         </td><td> <a href="../data_types.md#accountid">AccountId</a> </td><td> yes       </td><td> The account ID of Funding      </td></tr>
+<tr><td> subAccountId      </td><td> <a href="../data_types.md#subaccountid">SubAccountId    </a></td><td> yes       </td><td> The subaccount ID of Funding   </td></tr>
+<tr><td> subAccountNonce   </td><td> <a href="../data_types.md#nonce">Nonce</a></td><td> yes       </td><td> The subaccount nonce           </td></tr>
+<tr><td> fundingAccountIds </td><td> <a href="../data_types.md#accountid">AccountId</a> array  </td><td> yes       </td><td> The account id list of funding </td></tr>
+<tr><td> fee               </td><td> BigUint         </td><td> yes       </td><td> The fee                        </td></tr>
+<tr><td> feeToken          </td><td> <a href="../data_types.md#tokenid">TokenId         </a></td><td> yes       </td><td> The token id of the fee        </td></tr>
+<tr><td> signature         </td><td> <a href="../data_types.md#zklinksignature">ZkLinkSignature</a></td><td> yes       </td><td> The Zklink L2 signature        </td></tr>
+</tbody>
+</table>
+
 
 For example:
 

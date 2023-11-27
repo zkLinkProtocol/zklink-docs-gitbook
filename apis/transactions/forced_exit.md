@@ -1,21 +1,24 @@
 
 Forced withdraw from Layer2
 
-| Name                  | Type            | Required | Description                                                                                   |
-|-----------------------|-----------------|-----------|-----------------------------------------------------------------------------------------------|
-| type                  | String          | yes       | The value is "ForcedExit"                                                                     |
-| toChainId             | ChainId         | yes       | The target chain of the withdrawal                                                            |
-| initiatorAccountId    | AccountId       | yes       | Account ID of the transaction initiator                                                       |
-| initiatorSubAccountId | SubAccountId    | yes       | Subaccount ID of the transaction initiator                                                    |
-| initiatorNonce        | Nonce           | yes       | Nonce of the transaction initiator's subaccount                                               |
-| target                | String          | yes       | The account address of the forced withdraw, the token on Layer 1 is also sent to this address |
-| targetSubAccountId    | AccountId       | yes       | Subaccount ID of the account of the forced withdraw                                           |
-| l2SourceToken         | TokenId         | yes       | The token deducted from the account of the forced withdraw                                    |
-| l1TargetToken         | TokenId         | yes       | This token sent to the to_address on L1                                                       |
-| exitAmount            | BigUint         | yes       | Withdrawal amount                                                                             |
-| withdrawToL1          | u8              | yes       | 1: true, 0: false. withdraw to L1 or not                                                      |
-| ts                    | u32             | yes       | Timestamp of the API call, used as front-end request id to generate transaction hash          |
-| signature             | ZkLinkSignature | yes       | the public key hash corresponding to the signature must be aligned with the initiator account |
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody>
+<tr><td> type                  </td><td> String          </td><td> yes       </td><td> The value is "ForcedExit"                                                                     </td></tr>
+<tr><td> toChainId             </td><td> <a href="../data_types.md#chainid">ChainId</a> </td><td> yes       </td><td> The target chain of the withdrawal                                                            </td></tr>
+<tr><td> initiatorAccountId    </td><td> <a href="../data_types.md#accountid">AccountId</a></td><td> yes       </td><td> Account ID of the transaction initiator                                                       </td></tr>
+<tr><td> initiatorSubAccountId </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a></td><td> yes       </td><td> Subaccount ID of the transaction initiator                                                    </td></tr>
+<tr><td> initiatorNonce        </td><td> <a href="../data_types.md#nonce">Nonce</a></td><td> yes       </td><td> Nonce of the transaction initiator's subaccount                                               </td></tr>
+<tr><td> target                </td><td> String          </td><td> yes       </td><td> The account address of the forced withdraw, the token on Layer 1 is also sent to this address </td></tr>
+<tr><td> targetSubAccountId    </td><td> <a href="../data_types.md#accountid">AccountId</a></td><td> yes       </td><td> Subaccount ID of the account of the forced withdraw                                           </td></tr>
+<tr><td> l2SourceToken         </td><td> <a href="../data_types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token deducted from the account of the forced withdraw                                    </td></tr>
+<tr><td> l1TargetToken         </td><td> <a href="../data_types.md#tokenid">TokenId</a></td><td> yes       </td><td> This token sent to the to_address on L1                                                       </td></tr>
+<tr><td> exitAmount            </td><td> BigUint         </td><td> yes       </td><td> Withdrawal amount                                                                             </td></tr>
+<tr><td> withdrawToL1          </td><td> u8              </td><td> yes       </td><td> 1: true, 0: false. withdraw to L1 or not                                                      </td></tr>
+<tr><td> ts                    </td><td> u32             </td><td> yes       </td><td> Timestamp of the API call, used as front-end request id to generate transaction hash          </td></tr>
+<tr><td> signature             </td><td> <a href="../data_types.md#zklinksignature">ZkLinkSignature </a></td><td> yes       </td><td> the public key hash corresponding to the signature must be aligned with the initiator account </td></tr>
+</tbody>
+</table>
 
 For example: 
 

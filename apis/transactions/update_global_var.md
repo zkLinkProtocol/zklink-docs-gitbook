@@ -1,14 +1,17 @@
 This transaction is used to update the global variable settings.
 
-| Name         | Type                    | Required | Description                                |
-|--------------|-------------------------|-----------|--------------------------------------------|
-| type         | String                  | yes       | The value is "UpdateGlovalVar "            |
-| fromChainId  | ChainId                 | yes       | The layer2 chain id                        |
-| subAccountId | SubAccountId            | yes       | The subaccount id                          |
-| parameter    | [Parameter](#parameter) | yes       | Different operation has different variable |
-| seriaId      | u64                     | yes       | The serial id                              |
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody>
+<tr><td> type         </td><td> String                  </td><td> yes       </td><td> The value is "UpdateGlovalVar "            </td></tr>
+<tr><td> fromChainId  </td><td> <a href="../data_types.md#chainid">ChainId</a>                 </td><td> yes       </td><td> The layer2 chain id                        </td></tr>
+<tr><td> subAccountId </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a>            </td><td> yes       </td><td> The subaccount id                          </td></tr>
+<tr><td> parameter    </td><td> <a name="parameter" href="#">Parameter</a> </td><td> yes       </td><td> Different operation has different variable </td></tr>
+<tr><td> seriaId      </td><td> u64                     </td><td> yes       </td><td> The serial id                              </td></tr>
+</tbody>
+</table>
 
-There are 5 parameters, different operations correspond to different parameters:
+<a id="parameter">There are 5 parameters</a>, different operations correspond to different parameters:
 
 {% tabs %}
 {% tab title="feeAccount" %}

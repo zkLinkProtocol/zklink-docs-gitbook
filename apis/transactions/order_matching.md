@@ -1,34 +1,41 @@
 Order Matching
 
-| Name               | Type              | Required | Description                                                                                                                                                                                                                  |
-|--------------------|-------------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| type               | String            | yes       | OrderMatching                                                                                                                                                                                                                |
-| accountId          | AccountId         | yes       | Initiator's account id. Only specific accounts can initiate this type of transaction on Layer2                                                                                                                               |
-| subAccountId       | SubAccountId      | yes       | Initiator's subaccount id                                                                                                                                                                                                    |
-| taker              | Order             | yes       | taker order                                                                                                                                                                                                                  |
-| maker              | Order             | yes       | maker order                                                                                                                                                                                                                  |
-| feeToken           | TokenId           | yes       | Fee token, deducted from the initiator's subaccount                                                                                                                                                                          |
-| fee                | BigUint           | yes       | Fee returned via the <code>estimateTransactionFee</code> API. The value should be packable                                                                                                                                   |
-| expectBaseAmount   | BigUint           | yes       | The maximum amount of base token that the initiator expects to be traded in this order matching, which cannot exceed the maximum amount that the maker and taker can actually trade. The value does not need to be packable  |
-| expectQuoteAmount  | BigUint           | yes       | The maximum amount of quote token that the initiator expects to be traded in this order matching, which cannot exceed the maximum amount that the maker and taker can actually trade. The value does not need to be packable |
-| signature          | ZklinkSignature   | yes       | The pub key hash corresponding to the signature must be aligned with the initiator account                                                                                                                                       |
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody>
+<tr><td> type               </td><td> String            </td><td> yes       </td><td> OrderMatching                                                                                                                                                                                                                </td></tr>
+<tr><td> accountId          </td><td> <a href="../data_types.md#accountid">AccountId</a>         </td><td> yes       </td><td> Initiator's account id. Only specific accounts can initiate this type of transaction on Layer2                                                                                                                               </td></tr>
+<tr><td> subAccountId       </td><td> <a href="../data_types.md#accountid">SubAccountId</a></td><td> yes       </td><td> Initiator's subaccount id                                                                                                                                                                                                    </td></tr>
+<tr><td> taker              </td><td> <a name="order" href="order">Order</a></td><td> yes       </td><td> taker order                                                                                                                                                                                                                  </td></tr>
+<tr><td> maker              </td><td> <a name="order" href="#">Order</a></td><td> yes       </td><td> maker order                                                                                                                                                                                                                  </td></tr>
+<tr><td> feeToken           </td><td> <a href="../data_types.md#tokenid">TokenId</a></td><td> yes       </td><td> Fee token, deducted from the initiator's subaccount                                                                                                                                                                          </td></tr>
+<tr><td> fee                </td><td> BigUint           </td><td> yes       </td><td> Fee returned via the <code>estimateTransactionFee</code> API. The value should be packable                                                                                                                                   </td></tr>
+<tr><td> expectBaseAmount   </td><td> BigUint           </td><td> yes       </td><td> The maximum amount of base token that the initiator expects to be traded in this order matching, which cannot exceed the maximum amount that the maker and taker can actually trade. The value does not need to be packable  </td></tr>
+<tr><td> expectQuoteAmount  </td><td> BigUint           </td><td> yes       </td><td> The maximum amount of quote token that the initiator expects to be traded in this order matching, which cannot exceed the maximum amount that the maker and taker can actually trade. The value does not need to be packable </td></tr>
+<tr><td> signature          </td><td> <a href="../data_types.md#zklinksignature">ZkLinkSignature</a></td><td> yes       </td><td> The pub key hash corresponding to the signature must be aligned with the initiator account                                                                                                                                   </td></tr>
+</tbody>
+</table>
 
-where the type `Order` is
 
-| Name         | Type                                                | Required | Description        |
-|--------------|-----------------------------------------------------|-----------|--------------------|
-| accountId    | [Accountid](./data_types.md#AccountId)             | yes       | The Account id     |
-| subAccountId | [SubAccountId](./data_types.md#SubAccountId)       | yes       | The sub-account id |
-| slotId       | [SlotId](./data_types.md#SlotId)                   | yes       | slot id            |
-| nonce        | [Nonce](./data_types.md#Nonce)                     | yes       | slot nonce         |
-| baseTokenId  | [TokenId](./data_types.md#TokenId)                 | yes       | the base token, for example `BTC` in BTC/USDT pair                             |
-| quoteTokenId | [TokenId](./data_types.md#TokenId)                 | yes       | The quote token, for example `USDT` in BTC/USDT pair                           |
-| amount       | String                                              | yes       | The string format of BigUint, the amount request in this order                 |
-| price        | String                                              | yes       | The string format of BigUint, the price request in this order                  |
-| isSell       | u8                                                  | yes       | 1:seller, 0: buyer                                                             |
-| feeRates     | [u8, u8]                                            | yes       | the fee of [maker, taker], 100 means 1.0%, the maximum 2.56%                   |
-| hasSubsidy   | u8                                                  | yes       | 1: true, 0: false. If maker has subsidy, the submitter will give maker subsidy |
-| signature    | [ZkLinkSignature](./data_types.md#ZkLinkSignature) | yes       | The ZkLink signature of this order |
+<a id="order>where the type `Order` is</a>
+
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody>
+<tr><td> accountId    </td><td> <a href="../data_types.md#accountid">Accountid</a>             </td><td> yes       </td><td> The Account id     </td></tr>
+<tr><td> subAccountId </td><td> <a href="../data_types.md#SubAccountId">SubAccountId</a>       </td><td> yes       </td><td> The sub-account id </td></tr>
+<tr><td> slotId       </td><td> <a href="../data_types.md#SlotId">SlotId</a>                   </td><td> yes       </td><td> slot id            </td></tr>
+<tr><td> nonce        </td><td> <a href="../data_types.md#Nonce">Nonce</a>                     </td><td> yes       </td><td> slot nonce         </td></tr>
+<tr><td> baseTokenId  </td><td> <a href="../data_types.md#TokenId">TokenId</a>                 </td><td> yes       </td><td> the base token, for example `BTC` in BTC/USDT pair                             </td></tr>
+<tr><td> quoteTokenId </td><td> <a href="../data_types.md#TokenId">TokenId</a>                 </td><td> yes       </td><td> The quote token, for example `USDT` in BTC/USDT pair                           </td></tr>
+<tr><td> amount       </td><td> String                                             </td><td> yes       </td><td> The string format of BigUint, the amount request in this order                 </td></tr>
+<tr><td> price        </td><td> String                                              </td><td> yes       </td><td> The string format of BigUint, the price request in this order                  </td></tr>
+<tr><td> isSell       </td><td> u8                                                  </td><td> yes       </td><td> 1:seller, 0: buyer                                                             </td></tr>
+<tr><td> feeRates     </td><td> [u8, u8]                                            </td><td> yes       </td><td> the fee of [maker, taker], 100 means 1.0%, the maximum 2.56%                   </td></tr>
+<tr><td> hasSubsidy   </td><td> u8                                                  </td><td> yes       </td><td> 1: true, 0: false. If maker has subsidy, the submitter will give maker subsidy </td></tr>
+<tr><td> signature    </td><td> <a href="../data_types.md#ZkLinkSignature">ZkLinkSignature</a> </td><td> yes        </td><td> The ZkLink signature of this order </td></tr>
+</tbody>
+</table>
 
 For example:
 

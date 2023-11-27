@@ -1,15 +1,19 @@
 
-| Name          | Type         | Required | Description                                                          |
-|---------------|--------------|-----------|----------------------------------------------------------------------|
-| type          | String       | yes       | The value is "FullExit"                                              |
-| toChainId     | ChainId      | yes       | The chain id defined by zkLink, to which the user wish to withdrawal |
-| accountId     | AccountId    | yes       | The id of the withdrawal account                                     |
-| subAccountId  | SubAccountId | yes       | The id of the subaccount for withdrawal                              |
-| exitAddress   | String       | yes       | The Layer1 address of the recipient                                  |
-| l2SourceToken | TokenId      | yes       | The token deducted from the withdrawal account on Layer 2            |
-| l1TargetToken | TokenId      | yes       | The token received by the recipient on Layer 1                       |
-| serialId      | u64          | yes       | The serial number of the event, used as nonce                        |
-| ethHash       | TxHash       | yes       | The transaction hash that generated this event on Layer 1            |
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody>
+
+<tr><td> type          </td><td> String       </td><td> yes       </td><td> The value is "FullExit"                                              </td></tr>
+<tr><td> toChainId     </td><td> <a href="../data_types.md#chainid">ChainId</a>      </td><td> yes       </td><td> The chain id defined by zkLink, to which the user wish to withdrawal </td></tr>
+<tr><td> accountId     </td><td> <a href="../data_types.md#accountid">AccountId    </a></td><td> yes       </td><td> The id of the withdrawal account                                     </td></tr>
+<tr><td> subAccountId  </td><td> <a href="../data_types.md#subaccountid">SubAccountId </a></td><td> yes       </td><td> The id of the subaccount for withdrawal                              </td></tr>
+<tr><td> exitAddress   </td><td> String       </td><td> yes       </td><td> The Layer1 address of the recipient                                  </td></tr>
+<tr><td> l2SourceToken </td><td> <a href="../data_types.md#tokenid">TokenId      </a></td><td> yes       </td><td> The token deducted from the withdrawal account on Layer 2            </td></tr>
+<tr><td> l1TargetToken </td><td> <a href="../data_types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token received by the recipient on Layer 1                       </td></tr>
+<tr><td> serialId      </td><td> u64          </td><td> yes       </td><td> The serial number of the event, used as nonce                        </td></tr>
+<tr><td> ethHash       </td><td> <a href="../data_types.md#txhash">TxHash</a></td><td> yes       </td><td> The transaction hash that generated this event on Layer 1            </td></tr>
+</tbody>
+</table>
 
 For example:
 

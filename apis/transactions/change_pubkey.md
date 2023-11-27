@@ -1,18 +1,21 @@
 Modifies the public key hash of the Layer2 account.
 
-| Name         | Type                                          | Required | Description                                                                                                                                                         |
-|--------------|-----------------------------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| type         | String                                        | yes       | The value is "ChangePubKey"                                                                                                                                         |
-| chainId      | ChainId                                       | yes       | ID defined by zkLink, for example, when the user performs ChangePubKey on ETH, the front-end needs to set this value to the Ethereum ID defined by zkLink on Layer2 |
-| accountId    | AccountId                                     | yes       | Target account ID of ChangePubKey                                                                                                                                   |
-| subAccountId | SubAccountId                                  | yes       | Target subaccount ID of ChangePubKey, the fee will be deducted from this subaccount                                                                                 |
-| newPkHash    | PubkeyHash                                    | yes       | New public key hash                                                                                                                                                 |
-| nonce        | Nonce                                         | yes       |Current nonce of the target account |
-| feeToken     | TokenId                                       | yes       | The token used as the fee token|
-| fee          | BigUint                                       | yes       | Fee obtained via <code>estimateTransactionFee</code> API, the value should be packable |
-| ethAuthData  | [ChangePubKeyAuthData](#changepubkeyauthdata) | yes       |ChangePubKeyAuthData to set the public key |
-| signature    | ZkLinkSignatur                                | yes       |  the public key hash corresponding to the signature must be aligned with the newPkHash |
-| ts           | u32                                           | yes       | Timestamp of the API call, used as front-end request id to generate transaction hash |
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody>
+<tr><td> type         </td><td> String                                        </td><td> yes       </td><td> The value is "ChangePubKey"                                                                                                                                         </td></tr>
+<tr><td> chainId      </td><td> ChainId                                       </td><td> yes       </td><td> ID defined by zkLink, for example, when the user performs ChangePubKey on ETH, the front-end needs to set this value to the Ethereum ID defined by zkLink on Layer2 </td></tr>
+<tr><td> accountId    </td><td> AccountId                                     </td><td> yes       </td><td> Target account ID of ChangePubKey                                                                                                                                   </td></tr>
+<tr><td> subAccountId </td><td> SubAccountId                                  </td><td> yes       </td><td> Target subaccount ID of ChangePubKey, the fee will be deducted from this subaccount                                                                                 </td></tr>
+<tr><td> newPkHash    </td><td> PubkeyHash                                    </td><td> yes       </td><td> New public key hash                                                                                                                                                 </td></tr>
+<tr><td> nonce        </td><td> Nonce                                         </td><td> yes       </td><td> Current nonce of the target account </td></tr>
+<tr><td> feeToken     </td><td> TokenId                                       </td><td> yes       </td><td> The token used as the fee token</td></tr>
+<tr><td> fee          </td><td> BigUint                                       </td><td> yes       </td><td> Fee obtained via <code>estimateTransactionFee</code> API, the value should be packable </td></tr>
+<tr><td> ethAuthData  </td><td> [ChangePubKeyAuthData](#changepubkeyauthdata) </td><td> yes       </td><td> ChangePubKeyAuthData to set the public key </td></tr>
+<tr><td> signature    </td><td> ZkLinkSignatur                                </td><td> yes       </td><td>  the public key hash corresponding to the signature must be aligned with the newPkHash </td></tr>
+<tr><td> ts           </td><td> u32                                           </td><td> yes       </td><td> Timestamp of the API call, used as front-end request id to generate transaction hash </td></tr>
+</tbody>
+</table>
 
 where the `ChangePubKeyAuthData` is an Enum which contains 3 types: `EthECDSA`, `EthCreate2`, `Onchain`
 

@@ -1,18 +1,21 @@
-Layer-2 transfer
+L2 transfer
 
-| Name                                       | Type                               | Required                        | Description                                                                                                                                     |
-|--------------------------------------------|------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| type                                       | String                             | yes                              | The value is "Transfer"                                                                                                                         |
-| accountId                                  | AccountId                          | yes                              | Account ID of the from_account                                                                                                                  |
-| fromSubAccountId                           | SubAccountId                       | yes                              | Subaccount ID of the from_account                                                                                                               |
-| toSubAccountId                             | SubAccountId                       | yes                              | Sub-account ID of the to_account                                                                                                                |
-| to                                         | String                             | yes                              | Account address of the to_account, if the account does not exist, a new account will be automatically created on zkLink Layer2 for this address |
-| token                                      | TokenId                            | yes                              | Token ID                                                                                                                                        |
-| amount                                     | BigUint                            | yes                              | Token amount, the value must be packable                                                                                                        |
-| fee                                        | BugUint                            | yes                              | Fee returned by <code>estimateTransactionFee</code> API, the value should be packable                                                           |
-| nonce| Nonce | yes | Current nonce of the account                                                                                                                    |
-|signature | ZkLinkSignature | yes | the public key hash corresponding to the signature must be aligned with the from_account|
-| ts                                         | u32                                | yes                              | Timestamp of the API call, used as front-end request id to generate transaction hash                                                            |
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody>
+<tr><td> type                                       </td><td> String                             </td><td> yes                              </td><td> The value is "Transfer"                                                                                                                         </td></tr>
+<tr><td> accountId                                  </td><td> <a href="../data_types.md#accountid">AccountId</a>                          </td><td> yes                              </td><td> Account ID of the from_account                                                                                                                  </td></tr>
+<tr><td> fromSubAccountId                           </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a>                       </td><td> yes                              </td><td> Subaccount ID of the from_account                                                                                                               </td></tr>
+<tr><td> toSubAccountId                             </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a>                       </td><td> yes                              </td><td> Sub-account ID of the to_account                                                                                                                </td></tr>
+<tr><td> to                                         </td><td> String                             </td><td> yes                              </td><td> Account address of the to_account, if the account does not exist, a new account will be automatically created on zkLink Layer2 for this address </td></tr>
+<tr><td> token                                      </td><td> <a href="../data_types.md#tokenid">TokenId</a>                            </td><td> yes                              </td><td> Token ID                                                                                                                                        </td></tr>
+<tr><td> amount                                     </td><td> BigUint                            </td><td> yes                              </td><td> Token amount, the value must be packable                                                                                                        </td></tr>
+<tr><td> fee                                        </td><td> BugUint                            </td><td> yes                              </td><td> Fee returned by <code>estimateTransactionFee</code> API, the value should be packable                                                           </td></tr>
+<tr><td> nonce </td><td> <a href="../data_types.md#nonce">Nonce</a> </td><td> yes </td><td> Current nonce of the account                                                                                                                    |
+<tr><td>signature </td><td> <a href="../data_types.md#ZkLinkSignature">ZkLinkSignature</a> </td><td> yes </td><td> the public key hash corresponding to the signature must be aligned with the from_account </td></tr>
+<tr><td> ts                                         </td><td> u32                                </td><td> yes                              </td><td> Timestamp of the API call, used as front-end request id to generate transaction hash                                                            </td></tr>
+</tbody>
+</table>
 
 For example:
 
