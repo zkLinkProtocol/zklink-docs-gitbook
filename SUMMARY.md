@@ -45,7 +45,7 @@
     * [Liquidation](developer/api-and-sdk/transaction/liquidation.md)
     * [UpdateGlobalVar](developer/api-and-sdk/transaction/update\_global\_var.md)
   * [Private Key & Signature](developer/api-and-sdk/private-key-and-signature/private\_key.md)
-    * [\[Encode\]](developer/api-and-sdk/private-key-and-signature/encode/README.md)
+    * [Encode](developer/api-and-sdk/private-key-and-signature/encode/README.md)
       * [ChangePubKey](developer/api-and-sdk/private-key-and-signature/encode/chaneg\_pubkey.md)
       * [Withdraw](developer/api-and-sdk/private-key-and-signature/encode/withdraw.md)
       * [ForcedExit](developer/api-and-sdk/private-key-and-signature/encode/forced\_exit.md)
