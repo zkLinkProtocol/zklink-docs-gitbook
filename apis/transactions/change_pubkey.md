@@ -68,12 +68,12 @@ For Example:
 
 {% tab title="EthCreate2" %}
 
-| Name           | Type          | Required | Description                           |
-|----------------|---------------|-----------|---------------------------------------|
-| type           | String        | yes       | The value is "EthCreate2"             |
-| creatorAddress | String        | yes       | creator address                       |
-| saltArg        | [H256](#H256) | yes       | the salt argument when create address |
-| codeHash       | [H256](#H256) | yes       | code hash                             |
+| Name           | Type   | Required | Description                                            |
+|----------------|--------|-----------|--------------------------------------------------------|
+| type           | String | yes       | The value is "EthCreate2"                              |
+| creatorAddress | String | yes       | creator address                                        |
+| saltArg        | String | yes       | The salt argument when create address, H256 hex string |
+| codeHash       | String | yes       | code hash, H256 hex string                             |
 
 For Example:
 
