@@ -41,7 +41,7 @@ For Example:
 |-----------|----------------------------------------|--------------------|
 | type          | String                                 | Update name        |
 | updateId      | i32                                    | Update Id          |
-| accountId     | [AccountId](data_types.md#AccountId)   | account id         |
+| accountId     | [AccountId](data_types.md#AccountId)   | Account id         |
 | oldPubkeyHash | [PubkeyHash](data_types.md#PubkeyHash) | The old pubkeyHash |
 | newPubkeyHash | [PubkeyHash](data_types.md#PubkeyHash) | The new pubkeyHash |
 | oldNonce      | [Nonce](data_types.md#Nonce)           | The old nonce      |
@@ -75,9 +75,9 @@ For example:
 | updateId     | i32                                        | The update id                 |
 | accountId    | [AccountId](data_tpes.md#AccountId)        | The account id                |
 | subAccountId | [SubAccountId](data_types.md#SubAccountId) | The subaccount id             |
-| coinId       | [TokenId](data_types.md#TokenId)           | token id                      |
-| oldBalance   | String                                     | the old balance of subaccount |
-| newBalance   | String                                     | the new balance of subaccount |
+| coinId       | [TokenId](data_types.md#TokenId)           | The token id                  |
+| oldBalance   | String                                     | The old balance of subaccount |
+| newBalance   | String                                     | The new balance of subaccount |
 | oldNonce     | [Nonce](data_types.md#Nonce)               | The old nonce of subaccount   |
 | newNonce     | [Nonce](data_types.md#Nonce)               | The new nonce of subaccount   |
 
@@ -108,8 +108,6 @@ For example
 ```
 
 {% endtab %}
-* 
-
 
 {% tab title="OrderUpdate" %}
 
@@ -119,16 +117,16 @@ For example
 | updateId     | i32                                        | Update id       |
 | accountId    | [AccountId](basic_type.md#AccountId)       | Account id      |
 | subAccountId | [SubAccountId](data_types.md#SubAccountId) | Subaccount id   |
-| slotId       | [SlotId](data_types.md#SlotId)             | slot id         |
-| oldTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | old`TidyOrder`  |
-| newTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | new `TidyOrder` |
+| slotId       | [SlotId](data_types.md#SlotId)             | Slot id         |
+| oldTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | Old`TidyOrder`  |
+| newTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | New `TidyOrder` |
 
 where ResponseTidyOrder is
 
 | Name         | Type                                       | Description                                                  |
 |--------------|--------------------------------------------|--------------------------------------------------------------|
-| nonce   | [Nonce](#Nonce) | the slot nonce of order                                      |
-| residue | String          | the string format of BigDecimal, the residue balance of slot |
+| nonce   | [Nonce](#Nonce) | The slot nonce of order                                      |
+| residue | String          | The string format of BigDecimal, the residue balance of slot |
 
 Transaction that generate `OrderUpdate`:
 
