@@ -1,5 +1,8 @@
 # Websocket
-Currently, there is only public channel. In the public channel, when the client successfully connects to the ZkLink node, the server will return a message with ID 0, which contains the `listen_key` automatically created by the server for the connection:
+Currently, there is only public channel.
+
+## Connect
+In the public channel, when the client successfully connects to the ZkLink node, the server will return a message with ID 0, which contains the `listen_key` automatically created by the server for the connection:
 
 ```json
 { "result": 
@@ -20,7 +23,7 @@ The server will send `ping` frame to the client every two minutes, and the clien
 * full exit event： `fullExitEvent@{sub_account_id}`, for example when `sub_account_id` is `1`， the topic will be `fullExitEvent@1`.
 
 
-## Subscribe、Unsubscribe Topics
+## Subscribe & Unsubscribe Topics
 
 The client can subscribe and unsubscribe to topics at any time after connecting, and only needs to send a request to the service:
 
@@ -56,23 +59,25 @@ The client can use the `listen_key`(returned when the Websocket first connection
 
 When the Websocket connection corresponding to `listen_key` is disconnected, `null` is returned.
 
-## Event Push
+## Data Push
 
 ### Transaction Execution Results
 
-| 字段                 | 类型                                      | Describe                                                                                               |
-|--------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------|
-| type               | String                                  | Event type                                                                                             |
-| tx_hash            | [TxHash](../data_types.md#TxHash)       | The tx hash on L1                                                                                      |
-| tx                 | [ZklinkTx](../transaction)              | [Transaction](../transaction) detail                                                                   |
-| receipt            | struct                                  | The transaction status after received                                                                  |
-| > executed         | bool                                    | The transaction finished executing or not                                                              |
-| >executedTimestamp | Option<u64>                             | The Unix microsecond timestamp when transaction excute, when executed is false, the value will be null |
-| >success           | bool                                    | The transaction executed successfull or not                                                            |
-| >failReason        | Option<String>                          | The reason that transaction execute fail, the value will be null if transaction execute success        |
-| >block             | Option<u32>                             | Block height that contains the transaction, it will be null if success is false                        |
-| >index             | Option<u32>                             | The transaction index in the block, if value will be null if success is false                          |
-| updates    | [StateUpdate](../state-update.md) array | Update event                                                                                           |
+ topic: `txExecuteResult@{sub_account_id}`
+
+| Name                 | Type                                        | Describe                                                                                               |
+|----------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| type                 | String                                      | Event type                                                                                             |
+| tx_hash              | [TxHash](../data_types.md#TxHash)           | The tx hash on L1                                                                                      |
+| tx                   | [ZklinkTx](../transaction)                  | [Transaction](../transaction) detail                                                                   |
+| receipt              | struct                                      | The transaction status after received                                                                  |
+| \> executed          | bool                                        | The transaction finished executing or not                                                              |
+| \> executedTimestamp | Option<u64>                                 | The Unix microsecond timestamp when transaction excute, when executed is false, the value will be null |
+| \> success           | bool                                        | The transaction executed successfull or not                                                            |
+| \> failReason        | Option<String>                              | The reason that transaction execute fail, the value will be null if transaction execute success        |
+| \> block             | Option<u32>                                 | Block height that contains the transaction, it will be null if success is false                        |
+| \> index             | Option<u32>                                 | The transaction index in the block, if value will be null if success is false                          |
+| updates              | [StateUpdateResp](../state-update.md) array | Update event                                                                                           |
 
 
 ```json
@@ -142,6 +147,8 @@ When the Websocket connection corresponding to `listen_key` is disconnected, `nu
 ```
 
 ### Full Exit Event
+
+topic: fullExitEvent@{sub_account_id}
 
 | Name    | Type                              | Description          |
 |---------|-----------------------------------|----------------------|
