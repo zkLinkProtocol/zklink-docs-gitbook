@@ -6,7 +6,7 @@ Deposit from Layer 1 to [zkLink layer](deposit.md).
 <table>
 <thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
 <tbody>
-<tr></tr><td> type          </td><td> String                                 </td><td> yes       </td><td> The value is "Depsite"                                                                          </td></tr>
+<tr></tr><td> type          </td><td> String                                 </td><td> yes       </td><td> The value is "Deposit"                                                                          </td></tr>
 <tr></tr><td> fromChainId   </td><td> <a href="../data_types.md#chainid">ChainId</a>    </td><td> yes       </td><td> The chain id defined  by zkLink, the chain that the deposit is initiated on                     </td></tr>
 <tr></tr><td> from          </td><td> String                                 </td><td> yes       </td><td> The initiator address of the deposit                                                            </td></tr>
 <tr></tr><td> to            </td><td> String                                 </td><td> yes       </td><td> The recipient of the deposit. An account will be created if it does not exist on zkLink Layer 2 </td></tr>

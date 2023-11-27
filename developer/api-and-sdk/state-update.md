@@ -1,6 +1,162 @@
 # State Update
 
-Updates are generated after zkLinkTx execution, details can be found in [StateUpdateResp](./json-rpc/json-rpc-api.md#txresp). Parsing the updates can get some data that is only known after the transaction is executed, such as the actual withdraw amount of FullExit.
+Updates are generated after zkLinkTx execution, details can be found in [StateUpdateResp](./json-rpc/json-rpc-api.md#txresp). Parsing the updates can get some data that is only known after the transaction is executed, such as the actual withdraw amount of FullExit. There are 4 types of Update:
+
+1. `AccountCreate`: A new account created on the state tree;
+2. `AccountChangePubkeyUpdate`: The `pubkey` and `nonce` changed;
+3. `BalanceUpdate`: The assets of account and `nonce` changed;
+4. `OrderUpdate`: The order slot of the account has changed.
+
+{% tabs %}
+{% tab title="AccountCreate" %}
+
+| Name      | Type                                 | Description         |
+|-----------|--------------------------------------|---------------------|
+| type      | String                               | Update Name         |
+| updateId  | i32                                  | Update id           |
+| accountId | [AccountId](data_types.md#AccountId) | The new accout id   |
+| address   | String                               | The account address |
+
+The transactions that create `AccountCreate`:
+
+* [Deposit](./transaction/deposit.md)
+* [Transfer](./transaction/transfer.md)
+
+For Example:
+
+```json
+{
+  "type": "AccountCreate",
+   "updateId": 40,
+   "accountId": 42,
+   "address": "0xe4efc3d7b69a19d3ae574cbc2915ddf598efe43f"
+}
+```
+
+{% endtab %}
+
+{% tab title="AccountChangePubkeyUpdate" %}
+
+| Name      | Type                                   | Description        |
+|-----------|----------------------------------------|--------------------|
+| type          | String                                 | Update name        |
+| updateId      | i32                                    | Update Id          |
+| accountId     | [AccountId](data_types.md#AccountId)   | account id         |
+| oldPubkeyHash | [PubkeyHash](data_types.md#PubkeyHash) | The old pubkeyHash |
+| newPubkeyHash | [PubkeyHash](data_types.md#PubkeyHash) | The new pubkeyHash |
+| oldNonce      | [Nonce](data_types.md#Nonce)           | The old nonce      |
+| newNonce      | [Nonce](data_types.md#Nonce)           | The new nonce      |
+
+The transactions that create `AccountChangePubkeyUpdate`:
+
+* [ChangePubKey](transaction#changepubkey)
+
+For example:
+
+```json
+{
+  "type": "AccountChangePubkeyUpdate",
+  "updateId": 10,
+  "accountId": 39,
+  "oldPubkeyHash": "0x0000000000000000000000000000000000000000",
+  "newPubkeyHash": "0xbfb4f4a68dc9e49f7785082a8c12354ed663b6e0",
+  "oldNonce": 0,
+  "newNonce": 1
+}
+```
+  
+{% endtab %}
+
+{% tab title="BalanceUpdate" %}
+
+| Name         | Type                                       | Description                   |
+|--------------|--------------------------------------------|-------------------------------|
+| type         | String                                     | The update name               |
+| updateId     | i32                                        | The update id                 |
+| accountId    | [AccountId](data_tpes.md#AccountId)        | The account id                |
+| subAccountId | [SubAccountId](data_types.md#SubAccountId) | The subaccount id             |
+| coinId       | [TokenId](data_types.md#TokenId)           | token id                      |
+| oldBalance   | String                                     | the old balance of subaccount |
+| newBalance   | String                                     | the new balance of subaccount |
+| oldNonce     | [Nonce](data_types.md#Nonce)               | The old nonce of subaccount   |
+| newNonce     | [Nonce](data_types.md#Nonce)               | The new nonce of subaccount   |
+
+Transaction that generate `BalanceUpdate`:
+
+* [ChangePubKey](./transaction/change_pubkey.md)
+* [Deposit](./transaction/deposit.md)
+* [ForcedExit](./transaction/forced_exit.md)
+* [FullExit](./transaction/full_exit.md)
+* [Transfer](./transaction/transfer.md)
+* [Withdraw](./transaction/withdraw.md)
+* [OrderMatching](./transaction/order_matching.md)
+
+For example
+
+```json
+{
+  "type": "BalanceUpdate",
+  "updateId": 1,
+  "accountId": 2,
+  "subAccountId": 1,
+  "coinId": 18,
+  "oldBalance": "66517000000000000",
+  "newBalance": "66518000000000000",
+  "oldNonce": 66518,
+  "newNonce": 66519
+}
+```
+
+{% endtab %}
+* 
+
+
+{% tab title="OrderUpdate" %}
+
+| Name         | Type                                       | Description     |
+|--------------|--------------------------------------------|-----------------|
+| type         | String                                     | Update name     |
+| updateId     | i32                                        | Update id       |
+| accountId    | [AccountId](basic_type.md#AccountId)       | Account id      |
+| subAccountId | [SubAccountId](data_types.md#SubAccountId) | Subaccount id   |
+| slotId       | [SlotId](data_types.md#SlotId)             | slot id         |
+| oldTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | old`TidyOrder`  |
+| newTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | new `TidyOrder` |
+
+where ResponseTidyOrder is
+
+| Name         | Type                                       | Description                                                  |
+|--------------|--------------------------------------------|--------------------------------------------------------------|
+| nonce   | [Nonce](#Nonce) | the slot nonce of order                                      |
+| residue | String          | the string format of BigDecimal, the residue balance of slot |
+
+Transaction that generate `OrderUpdate`:
+
+* [OrderMatching](./transaction/order_matching.md)
+
+For Example:
+
+```json
+{
+  "type": "OrderUpdate",
+  "updateId": 30,
+  "accountId": 11,
+  "subAccountId": 1,
+  "slotId": 27,
+  "oldTidyOrder": {
+    "nonce": 14,
+    "residue": "4607200000000000000000"
+  },
+  "newTidyOrder": {
+    "nonce": 14,
+    "residue": "4233800000000000000000"
+  }
+}
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ## Deposit
 
