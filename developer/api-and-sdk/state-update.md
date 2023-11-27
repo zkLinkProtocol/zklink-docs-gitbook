@@ -1,6 +1,6 @@
 # State Update
 
-Updates are generated after zkLinkTx execution, details can be found in [StateUpdateResp](json-rpc-api.md#txresp). Parsing the updates can get some data that is only known after the transaction is executed, such as the actual withdraw amount of FullExit.
+Updates are generated after zkLinkTx execution, details can be found in [StateUpdateResp](./json-rpc/json-rpc-api.md#txresp). Parsing the updates can get some data that is only known after the transaction is executed, such as the actual withdraw amount of FullExit.
 
 ## Deposit
 

@@ -54,10 +54,11 @@
       * [Funding](developer/api-and-sdk/private-key-and-signature/encode/funding.md)
       * [Liquidation](developer/api-and-sdk/private-key-and-signature/encode/liquidation.md)
       * [UpdateGlobalVar](developer/api-and-sdk/private-key-and-signature/encode/update\_global\_var.md)
+  * [State Update](developer/api-and-sdk/state-update.md)
   * [Json Rpc](developer/api-and-sdk/json-rpc/README.md)
     * [JSON-RPC API](developer/api-and-sdk/json-rpc/json-rpc-api.md)
     * [JSON-RPC Errors](developer/api-and-sdk/json-rpc/json-rpc-errors.md)
-    * [State Update](developer/api-and-sdk/json-rpc/state-update.md)
+  * [Websocket](developer/api-and-sdk/websocket/README.md)
 
 ## Tokenomics
 
