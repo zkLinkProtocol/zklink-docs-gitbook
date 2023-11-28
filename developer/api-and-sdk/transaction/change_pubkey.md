@@ -1,10 +1,10 @@
-Modifies the public key hash of the Layer2 account.
+Modifies the public key hash of the Layer3 account.
 
 <table>
 <thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
 <tbody>
 <tr><td> type         </td><td> String                                        </td><td> yes       </td><td> The value is "ChangePubKey"                                                                                                                                         </td></tr>
-<tr><td> chainId      </td><td> <a href="../data_types.md#chainid">ChainId</a>                                       </td><td> yes       </td><td> ID defined by zkLink, for example, when the user performs ChangePubKey on ETH, the front-end needs to set this value to the Ethereum ID defined by zkLink on Layer2 </td></tr>
+<tr><td> chainId      </td><td> <a href="../data_types.md#chainid">ChainId</a>                                       </td><td> yes       </td><td> ID defined by zkLink, for example, when the user performs ChangePubKey on ETH, the front-end needs to set this value to the Ethereum ID defined by zkLink on Layer3 </td></tr>
 <tr><td> accountId    </td><td> <a href="../data_types.md#accountid">AccountId</a>                                     </td><td> yes       </td><td> Target account ID of ChangePubKey                                                                                                                                   </td></tr>
 <tr><td> subAccountId </td><td> <a href="../data_types.md#subaccount">SubAccountId</a>                                  </td><td> yes       </td><td> Target subaccount ID of ChangePubKey, the fee will be deducted from this subaccount                                                                                 </td></tr>
 <tr><td> newPkHash    </td><td> <a href="../data_types.md#pubkeyhash">PubkeyHash</a>                                    </td><td> yes       </td><td> New public key hash                                                                                                                                                 </td></tr>

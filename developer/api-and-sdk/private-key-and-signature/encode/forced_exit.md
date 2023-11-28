@@ -6,7 +6,7 @@
 <tr><td>initiatorSubAccountId</td><td>1 byte</td></tr>
 <tr><td>target</td><td>20 bytes</td></tr>
 <tr><td>targetSubAccountId</td><td>1 byte</td></tr>
-<tr><td>l2SourceToken</td><td>2 bytes</td></tr>
+<tr><td>l3SourceToken</td><td>2 bytes</td></tr>
 <tr><td>l1TargetToken</td><td>2 bytes</td></tr>
 <tr><td>initiatorNonce</td><td>4 bytes</td></tr>
 <tr><td>exitAmount</td><td>Refer to the SDK <strong>serializeAmountFull</strong>, 16 bytes</td></tr>

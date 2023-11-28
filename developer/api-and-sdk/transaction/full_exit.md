@@ -8,7 +8,7 @@
 <tr><td> accountId     </td><td> <a href="../data_types.md#accountid">AccountId    </a></td><td> yes       </td><td> The id of the withdrawal account                                     </td></tr>
 <tr><td> subAccountId  </td><td> <a href="../data_types.md#subaccountid">SubAccountId </a></td><td> yes       </td><td> The id of the subaccount for withdrawal                              </td></tr>
 <tr><td> exitAddress   </td><td> String       </td><td> yes       </td><td> The Layer1 address of the recipient                                  </td></tr>
-<tr><td> l2SourceToken </td><td> <a href="../data_types.md#tokenid">TokenId      </a></td><td> yes       </td><td> The token deducted from the withdrawal account on Layer 2            </td></tr>
+<tr><td> l2SourceToken </td><td> <a href="../data_types.md#tokenid">TokenId      </a></td><td> yes       </td><td> The token deducted from the withdrawal account on Layer3            </td></tr>
 <tr><td> l1TargetToken </td><td> <a href="../data_types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token received by the recipient on Layer 1                       </td></tr>
 <tr><td> serialId      </td><td> u64          </td><td> yes       </td><td> The serial number of the event, used as nonce                        </td></tr>
 <tr><td> ethHash       </td><td> <a href="../data_types.md#txhash">TxHash</a></td><td> yes       </td><td> The transaction hash that generated this event on Layer 1            </td></tr>

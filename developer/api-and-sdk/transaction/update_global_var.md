@@ -4,7 +4,7 @@ This transaction is used to update the global variable settings.
 <thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
 <tbody>
 <tr><td> type         </td><td> String                  </td><td> yes       </td><td> The value is "UpdateGlovalVar "            </td></tr>
-<tr><td> fromChainId  </td><td> <a href="../data_types.md#chainid">ChainId</a>                 </td><td> yes       </td><td> The layer2 chain id                        </td></tr>
+<tr><td> fromChainId  </td><td> <a href="../data_types.md#chainid">ChainId</a>                 </td><td> yes       </td><td> The layer3 chain id                        </td></tr>
 <tr><td> subAccountId </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a>            </td><td> yes       </td><td> The subaccount id                          </td></tr>
 <tr><td> parameter    </td><td> <a name="parameter" href="#">Parameter</a> </td><td> yes       </td><td> Different operation has different variable </td></tr>
 <tr><td> seriaId      </td><td> u64                     </td><td> yes       </td><td> The serial id                              </td></tr>

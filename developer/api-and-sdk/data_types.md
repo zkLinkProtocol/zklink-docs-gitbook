@@ -32,8 +32,8 @@ The subaccount id defined by ZkLink, the type is`u8`
 ### TokenId
 The type is`u32`, different token contract addresses correspond to different token ids.
 There are many stablecoins, for example, USDC or BUSD are equivalent to USD.
-In order to aggregate the liquidity of these stablecoins, zkLink created a virtual USD token on L2.
-Users deposite USDC or BUSD at L1 and can choose to receive the same amount of USD at L2.
+In order to aggregate the liquidity of these stablecoins, zkLink created a virtual USD token on L3.
+Users deposite USDC or BUSD at L1 and can choose to receive the same amount of USD at L3.
 Conversely, when withdrawing USD, users can choose to withdraw an equivalent amount of USDC or BUSD to L1.
 
 | TokenId  | description                                        |
@@ -79,7 +79,7 @@ The public key hash of Zklink layer side, it is the  hexadecimal serialized stri
 `0x3cfdecf8eba46d5411bdc29365f5536f024c195f`
 
 ### ZkLinkSignature
-The L2 transaction signature.
+The L3 transaction signature.
 
 | Name      | Type   | Description                                                                                                        |
 |-----------|--------|--------------------------------------------------------------------------------------------------------------------|

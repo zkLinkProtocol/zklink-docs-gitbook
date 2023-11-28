@@ -29,7 +29,7 @@ where the `Contract` is the order in perpetual contract
 <tr><td> direction    </td><td> u8                                            </td><td> 1: long, 0: short                                                                  </td></tr>
 <tr><td> feeRates     </td><td> [u8, u8]                                      </td><td> The fee rates of [maker, taker]，100 means 1.00%                                    </td></tr>
 <tr><td> hasSubsidy   </td><td> u8                                            </td><td> 1: true, 0: false, if the maker has subsidy, the submitter will give maker subsidy </td></tr>
-<tr><td> signature    </td><td> <a ref="../data_types.md#ZkLinkSignature">ZkLinkSignature</a>           </td><td> ZkLink L2 signature                                                                </td></tr>
+<tr><td> signature    </td><td> <a ref="../data_types.md#ZkLinkSignature">ZkLinkSignature</a>           </td><td> ZkLink L3 signature                                                                </td></tr>
 </tbody>
 </table>
 

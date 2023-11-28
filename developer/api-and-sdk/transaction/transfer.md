@@ -1,4 +1,4 @@
-L2 transfer
+L3 transfer
 
 <table>
 <thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
@@ -7,7 +7,7 @@ L2 transfer
 <tr><td> accountId                                  </td><td> <a href="../data_types.md#accountid">AccountId</a>                          </td><td> yes                              </td><td> Account ID of the from_account                                                                                                                  </td></tr>
 <tr><td> fromSubAccountId                           </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a>                       </td><td> yes                              </td><td> Subaccount ID of the from_account                                                                                                               </td></tr>
 <tr><td> toSubAccountId                             </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a>                       </td><td> yes                              </td><td> Sub-account ID of the to_account                                                                                                                </td></tr>
-<tr><td> to                                         </td><td> String                             </td><td> yes                              </td><td> Account address of the to_account, if the account does not exist, a new account will be automatically created on zkLink Layer2 for this address </td></tr>
+<tr><td> to                                         </td><td> String                             </td><td> yes                              </td><td> Account address of the to_account, if the account does not exist, a new account will be automatically created on zkLink Layer3 for this address </td></tr>
 <tr><td> token                                      </td><td> <a href="../data_types.md#tokenid">TokenId</a>                            </td><td> yes                              </td><td> Token ID                                                                                                                                        </td></tr>
 <tr><td> amount                                     </td><td> BigUint                            </td><td> yes                              </td><td> Token amount, the value must be packable                                                                                                        </td></tr>
 <tr><td> fee                                        </td><td> BugUint                            </td><td> yes                              </td><td> Fee returned by <code>estimateTransactionFee</code> API, the value should be packable                                                           </td></tr>

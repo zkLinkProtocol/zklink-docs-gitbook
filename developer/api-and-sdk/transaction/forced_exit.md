@@ -1,5 +1,5 @@
 
-Forced withdraw from Layer2
+Forced withdraw from Layer3
 
 <table>
 <thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>

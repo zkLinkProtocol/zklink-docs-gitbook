@@ -12,7 +12,7 @@
 <tr><td> liquidationAccountId </td><td> <a href="../data_types.md#accountid">AccountId</a></td><td> yes       </td><td> The account id of liquidation                                 </td></tr>
 <tr><td> fee                  </td><td> BugUint         </td><td> yes       </td><td> The fee amount                                                </td></tr>
 <tr><td> feeToken             </td><td> <a href="../data_types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token id of the fee                                       </td></tr>
-<tr><td> signature            </td><td> <a href="../data_types.md#zklinksignature">ZkLinkSignature</a></td><td> yes       </td><td> The ZkLink L2 signature of Liquidation                        </td></tr>
+<tr><td> signature            </td><td> <a href="../data_types.md#zklinksignature">ZkLinkSignature</a></td><td> yes       </td><td> The ZkLink L3 signature of Liquidation                        </td></tr>
 
 </tbody>
 </table>
