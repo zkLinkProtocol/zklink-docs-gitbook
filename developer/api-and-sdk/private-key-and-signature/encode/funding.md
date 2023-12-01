@@ -21,8 +21,8 @@ The encoding process of `fundingAccountIds` is as blew:
 For the `fundingAccountIds` length is 1:
 
 ```json
-
 {
+  "type": "Funding",
   "accountId": 1,
   "subAccountId": 2,
   "subAccountNonce": 3,
@@ -39,13 +39,14 @@ For the `fundingAccountIds` length is 1:
 the encode result is:
 
 ```json
-
+[13, 0, 0, 0, 1, 2, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 0]
 ```
 
 For the `fundingAccountIds` length is larger than 1:
 
 ```json
 {
+  "type": "Funding",
   "accountId": 1,
   "subAccountId": 2,
   "subAccountNonce": 3,
@@ -57,10 +58,5 @@ For the `fundingAccountIds` length is larger than 1:
     "signature": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
   }
 }
-```
-
-the encode result will be:
-
-```json
-
+encode_bytes = [13, 0, 0, 0, 1, 2, 0, 0, 0, 3, 229, 21, 12, 161, 198, 143, 182, 230, 55, 168, 20, 44, 52, 201, 150, 10, 189, 128, 111, 32, 198, 206, 155, 157, 175, 56, 77, 76, 234, 70, 83, 0, 0, 0, 0]
 ```

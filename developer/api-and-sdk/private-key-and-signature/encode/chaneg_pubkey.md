@@ -22,11 +22,11 @@
   "type": "ChangePubKey",
   "chainId": 1,
   "accountId": 39,
-  "subAccountId": 1,
+  "subAccountId": 2,
   "newPkHash": "0xbfb4f4a68dc9e49f7785082a8c12354ed663b6e0",
-  "feeToken": 1,
+  "feeToken": 3,
   "fee": "1285000000000000",
-  "nonce": 0,
+  "nonce": 4,
   "signature": {
     "pubKey": "0xed53a138751ed1e456f46e74eff3463d2420e488a4f608bde0f28d13c7104d29",
     "signature": "3b91c0421df4295281596746722ae20ccf270c5fc0561f93a0219db1faea6518f033e778dd552f90a9a6afd06427428b2ac4ea6f6893a3f162b32683d1108a02"
@@ -37,10 +37,5 @@
   },
   "ts": 1675650037
 }
-```
-
-the encode result will be:
-
-```json
-
+encode_bytes = [6, 1, 0, 0, 0, 39, 2, 191, 180, 244, 166, 141, 201, 228, 159, 119, 133, 8, 42, 140, 18, 53, 78, 214, 99, 182, 224, 0, 3, 160, 172, 0, 0, 0, 4, 99, 224, 99, 245]
 ```

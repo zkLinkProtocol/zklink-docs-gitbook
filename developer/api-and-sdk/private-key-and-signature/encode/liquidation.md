@@ -37,35 +37,30 @@
 ```json
 {
   "type": "Liquidation",
-  "accountId": 0,
-  "subAccountId": 0,
-  "subAccountNonce": 0,
+  "accountId": 1,
+  "subAccountId": 2,
+  "subAccountNonce": 3,
   "oraclePrices": {
     "contractPrices": [
       {
         "pairId": 1,
-        "marketPrice": "100"
+        "marketPrice": "123"
       }
     ],
     "marginPrices": [
       {
         "tokenId": 1,
-        "price": "100"
+        "price": "456"
       }
     ]
   },
-  "liquidationAccountId": 0,
-  "fee": "0",
-  "feeToken": 0,
+  "liquidationAccountId": 3,
+  "fee": "1450",
+  "feeToken": 3,
   "signature": {
     "pubKey": "0x0000000000000000000000000000000000000000000000000000000000000000",
     "signature": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
   }
 }
-```
-
-the encode result is
-
-```json
-
+encode_bytes = [10, 0, 0, 0, 1, 2, 0, 0, 0, 3, 141, 200, 177, 63, 187, 15, 209, 184, 131, 185, 181, 117, 121, 115, 86, 252, 98, 58, 122, 70, 129, 240, 191, 202, 67, 248, 16, 60, 117, 39, 91, 0, 0, 0, 3, 0, 3, 181, 64]
 ```

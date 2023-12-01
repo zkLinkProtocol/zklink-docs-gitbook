@@ -36,9 +36,9 @@ For the auto deleveraging as below:
 ```json
 {
   "type": "AutoDeleveraging",
-  "accountId": 0,
-  "subAccountId": 0,
-  "subAccountNonce": 0,
+  "accountId": 1,
+  "subAccountId": 1,
+  "subAccountNonce": 2,
   "oraclePrices": {
     "contractPrices": [
       {
@@ -48,26 +48,21 @@ For the auto deleveraging as below:
     ],
     "marginPrices": [
       {
-        "tokenId": 1,
-        "price": "100"
+        "tokenId": 2,
+        "price": "200"
       }
     ]
   },
-  "adlAccountId": 0,
-  "pairId": 0,
-  "adlSize": "0",
-  "adlPrice": "0",
-  "fee": "100",
-  "feeToken": 1,
+  "adlAccountId": 2,
+  "pairId": 4,
+  "adlSize": "10",
+  "adlPrice": "200",
+  "fee": "120",
+  "feeToken": 4,
   "signature": {
     "pubKey": "0x43cbec0bf142a942df9db99d27bd4ceeb8f4e75f9444b4cee4e3170965854404",
     "signature": "366e759d61a5052073e13147ed3e8e1642dfea10cd423bbb9a795932a15a4c122fa5e71c35a7d59198fa2d7ed28bb1f44e5c5392049607347855243ddc027d00"
   }
 }
-```
-
-the encode result will be:
-
-```json
-
+encode_bytes = [11, 0, 0, 0, 1, 1, 0, 0, 0, 2, 2, 43, 79, 252, 219, 58, 192, 163, 157, 224, 84, 133, 108, 165, 194, 196, 21, 224, 35, 204, 189, 183, 18, 177, 165, 127, 136, 194, 46, 70, 172, 0, 0, 0, 2, 4, 0, 0, 0, 1, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 4, 15, 0]
 ```

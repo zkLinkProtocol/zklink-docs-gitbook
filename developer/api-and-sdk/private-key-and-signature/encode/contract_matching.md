@@ -36,21 +36,21 @@
 ```json
 {
   "type": "ContractMatching",
-  "accountId": 0,
-  "subAccountId": 0,
+  "accountId": 1,
+  "subAccountId": 2,
   "maker": [
     {
-      "accountId": 0,
-      "subAccountId": 0,
-      "slotId": 0,
-      "nonce": 0,
-      "pairId": 0,
-      "size": "0",
-      "price": "0",
+      "accountId": 1,
+      "subAccountId": 2,
+      "slotId": 1,
+      "nonce": 2,
+      "pairId": 3,
+      "size": "100",
+      "price": "200",
       "direction": 0,
       "feeRates": [
-        0,
-        0
+        10,
+        20
       ],
       "hasSubsidy": 0,
       "signature": {
@@ -60,17 +60,17 @@
     }
   ],
   "taker": {
-    "accountId": 0,
-    "subAccountId": 0,
-    "slotId": 0,
-    "nonce": 0,
-    "pairId": 0,
-    "size": "0",
-    "price": "0",
-    "direction": 0,
+    "accountId": 2,
+    "subAccountId": 3,
+    "slotId": 2,
+    "nonce": 3,
+    "pairId": 4,
+    "size": "100",
+    "price": "200",
+    "direction": 1,
     "feeRates": [
-      0,
-      0
+      100,
+      200
     ],
     "hasSubsidy": 0,
     "signature": {
@@ -78,17 +78,12 @@
       "signature": "366e759d61a5052073e13147ed3e8e1642dfea10cd423bbb9a795932a15a4c122fa5e71c35a7d59198fa2d7ed28bb1f44e5c5392049607347855243ddc027d00"
     }
   },
-  "fee": "0",
-  "feeToken": 0,
+  "fee": "100",
+  "feeToken": 2,
   "signature": {
-    "pubKey": "0x1234567bf142a942df9db99d27bd4ceeb8f4e75f9444b4cee4e3170965854404",
+    "pubKey": "0x54dc0c0bf142a942df9db99d27bd4ceeb8f4e75f9444b4cee4e3170965854404",
     "signature": "1234567861a5052073e13147ed3e8e1642dfea10cd423bbb9a795932a15a4c122fa5e71c35a7d59198fa2d7ed28bb1f44e5c5392049607347855243ddc027d00"
   }
 }
-```
-
-the encode result will be:
-
-```json
-
+encode_bytes = [9, 0, 0, 0, 1, 2, 94, 132, 152, 149, 63, 148, 7, 42, 244, 97, 249, 239, 244, 227, 182, 160, 60, 184, 251, 76, 217, 159, 248, 7, 140, 72, 246, 187, 137, 19, 213, 0, 2, 12, 128]
 ```

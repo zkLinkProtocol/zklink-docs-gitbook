@@ -69,6 +69,108 @@ where `fundingInfo` encode rule is:
 
 # Example
 
-```json
+With FundingInfo encode:
 
+```json
+{
+  "fromChainId": 1,
+  "subAccountId": 1,
+  "parameter": {
+    "fundingInfos": {
+      "infos": [
+        {
+          "pairId": 0,
+          "price": "1000000000000000000",
+          "fundingRate": 32767
+        },
+        {
+          "pairId": 1,
+          "price": "1000000000000000",
+          "fundingRate": 0
+        },
+        {
+          "pairId": 2,
+          "price": "1000000000000",
+          "fundingRate": -1
+        },
+        {
+          "pairId": 3,
+          "price": "1000000000",
+          "fundingRate": 1
+        }
+      ]
+    }
+  },
+  "serialId": 0
+}
+encode_bytes = [12, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 13, 224, 182, 179, 167, 100, 0, 0, 127, 255, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 141, 126, 164, 198, 128, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 232, 212, 165, 16, 0, 128, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 154, 202, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+```
+
+With FeeAccount encode:
+
+```json
+{
+  "fromChainId": 1,
+  "subAccountId": 1,
+  "parameter": {
+    "feeAccount": {
+      "accountId": 10
+    }
+  },
+  "serialId": 0
+}
+encode_bytes = [12, 1, 1, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0]
+```
+
+with insuranceFundAccount encode:
+
+```json
+{
+  "fromChainId": 1,
+  "subAccountId": 1,
+  "parameter": {
+    "insuranceFundAccount": {
+      "accountId": 9
+    }
+  },
+  "serialId": 0
+}
+encode_bytes = [12, 1, 1, 1, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0]
+```
+
+With MarginInfo encode:
+
+```json
+{
+  "fromChainId": 1,
+  "subAccountId": 1,
+  "parameter": {
+    "marginInfo": {
+      "marginId": 1,
+      "tokenId": 9,
+      "ratio": 0
+    }
+  },
+  "serialId": 0
+}
+encode_bytes = [12, 1, 1, 2, 1, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+```
+
+With ContractInfo encode:
+
+```json
+{
+  "fromChainId": 1,
+  "subAccountId": 1,
+  "parameter": {
+    "contractInfo": {
+      "pairId": 2,
+      "symbol": "BTCUSDC",
+      "initialMarginRate": 6,
+      "maintenanceMarginRate": 8
+    }
+  },
+  "serialId": 0
+}
+encode_bytes = [12, 1, 1, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 66, 84, 67, 85, 83, 68, 67, 0, 6, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0]
 ```
