@@ -14,7 +14,7 @@ Updates are generated after zkLinkTx execution, details can be found in [StateUp
 |-----------|--------------------------------------|---------------------|
 | type      | String                               | Update Name         |
 | updateId  | i32                                  | Update id           |
-| accountId | [AccountId](data_types.md#AccountId) | The new accout id   |
+| accountId | [AccountId](basic-types.md#AccountId) | The new accout id   |
 | address   | String                               | The account address |
 
 The transactions that create `AccountCreate`:
@@ -41,11 +41,11 @@ For Example:
 |-----------|----------------------------------------|--------------------|
 | type          | String                                 | Update name        |
 | updateId      | i32                                    | Update Id          |
-| accountId     | [AccountId](data_types.md#AccountId)   | Account id         |
-| oldPubkeyHash | [PubkeyHash](data_types.md#PubkeyHash) | The old pubkeyHash |
-| newPubkeyHash | [PubkeyHash](data_types.md#PubkeyHash) | The new pubkeyHash |
-| oldNonce      | [Nonce](data_types.md#Nonce)           | The old nonce      |
-| newNonce      | [Nonce](data_types.md#Nonce)           | The new nonce      |
+| accountId     | [AccountId](basic-types.md#AccountId)   | Account id         |
+| oldPubkeyHash | [PubkeyHash](basic-types.md#PubkeyHash) | The old pubkeyHash |
+| newPubkeyHash | [PubkeyHash](basic-types.md#PubkeyHash) | The new pubkeyHash |
+| oldNonce      | [Nonce](basic-types.md#Nonce)           | The old nonce      |
+| newNonce      | [Nonce](basic-types.md#Nonce)           | The new nonce      |
 
 The transactions that create `AccountChangePubkeyUpdate`:
 
@@ -74,12 +74,12 @@ For example:
 | type         | String                                     | The update name               |
 | updateId     | i32                                        | The update id                 |
 | accountId    | [AccountId](data_tpes.md#AccountId)        | The account id                |
-| subAccountId | [SubAccountId](data_types.md#SubAccountId) | The subaccount id             |
-| coinId       | [TokenId](data_types.md#TokenId)           | The token id                  |
+| subAccountId | [SubAccountId](basic-types.md#SubAccountId) | The subaccount id             |
+| coinId       | [TokenId](basic-types.md#TokenId)           | The token id                  |
 | oldBalance   | String                                     | The old balance of subaccount |
 | newBalance   | String                                     | The new balance of subaccount |
-| oldNonce     | [Nonce](data_types.md#Nonce)               | The old nonce of subaccount   |
-| newNonce     | [Nonce](data_types.md#Nonce)               | The new nonce of subaccount   |
+| oldNonce     | [Nonce](basic-types.md#Nonce)               | The old nonce of subaccount   |
+| newNonce     | [Nonce](basic-types.md#Nonce)               | The new nonce of subaccount   |
 
 Transaction that generate `BalanceUpdate`:
 
@@ -116,8 +116,8 @@ For example
 | type         | String                                     | Update name     |
 | updateId     | i32                                        | Update id       |
 | accountId    | [AccountId](basic_type.md#AccountId)       | Account id      |
-| subAccountId | [SubAccountId](data_types.md#SubAccountId) | Subaccount id   |
-| slotId       | [SlotId](data_types.md#SlotId)             | Slot id         |
+| subAccountId | [SubAccountId](basic-types.md#SubAccountId) | Subaccount id   |
+| slotId       | [SlotId](basic-types.md#SlotId)             | Slot id         |
 | oldTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | Old`TidyOrder`  |
 | newTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | New `TidyOrder` |
 

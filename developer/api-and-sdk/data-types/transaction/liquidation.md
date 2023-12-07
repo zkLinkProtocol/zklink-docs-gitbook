@@ -3,16 +3,16 @@
 <tbody>
 
 <tr><td> type                 </td><td> String          </td><td> yes       </td><td> The value is "Liquidation"                                    </td></tr>
-<tr><td> accountId            </td><td> <a href="../data_types.md#accountid">AccountId</a>       </td><td> yes       </td><td> The account id of Liquidation                                 </td></tr>
-<tr><td> subAccountId         </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a></td><td> yes       </td><td> The subaccount id                                             </td></tr>
-<tr><td> subAccountIdNonce    </td><td> <a href="../data_types.md#nonce">Nonce</a></td><td> yes       </td><td> The Nonce of subaccount id                                    </td></tr>
+<tr><td> accountId            </td><td> <a href="../basic-types.md#accountid">AccountId</a>       </td><td> yes       </td><td> The account id of Liquidation                                 </td></tr>
+<tr><td> subAccountId         </td><td> <a href="../basic-types.md#subaccountid">SubAccountId</a></td><td> yes       </td><td> The subaccount id                                             </td></tr>
+<tr><td> subAccountIdNonce    </td><td> <a href="../basic-types.md#nonce">Nonce</a></td><td> yes       </td><td> The Nonce of subaccount id                                    </td></tr>
 <tr><td> oraclePrices         </td><td> struct          </td><td> yes       </td><td> contains all infomation about contract price and margin price </td></tr>
 <tr><td> > contractPrices     </td><td> array           </td><td> yes       </td><td> <a name="a1" href="#">ContractPrice</a> array                                       </td></tr>                                  
 <tr><td> > marginPrices       </td><td> array           </td><td> yes       </td><td> <a name="a2" href="#">SpotPriceInfo</a> array                                       </td></tr>                                 
-<tr><td> liquidationAccountId </td><td> <a href="../data_types.md#accountid">AccountId</a></td><td> yes       </td><td> The account id of liquidation                                 </td></tr>
+<tr><td> liquidationAccountId </td><td> <a href="../basic-types.md#accountid">AccountId</a></td><td> yes       </td><td> The account id of liquidation                                 </td></tr>
 <tr><td> fee                  </td><td> BugUint         </td><td> yes       </td><td> The fee amount                                                </td></tr>
-<tr><td> feeToken             </td><td> <a href="../data_types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token id of the fee                                       </td></tr>
-<tr><td> signature            </td><td> <a href="../data_types.md#zklinksignature">ZkLinkSignature</a></td><td> yes       </td><td> The ZkLink L3 signature of Liquidation                        </td></tr>
+<tr><td> feeToken             </td><td> <a href="../basic-types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token id of the fee                                       </td></tr>
+<tr><td> signature            </td><td> <a href="../basic-types.md#zklinksignature">ZkLinkSignature</a></td><td> yes       </td><td> The ZkLink L3 signature of Liquidation                        </td></tr>
 
 </tbody>
 </table>

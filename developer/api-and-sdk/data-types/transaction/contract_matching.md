@@ -2,13 +2,13 @@
 <thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
 <tbody>
 <tr><td> type         </td><td> String          </td><td> yes       </td><td> The value is "ContractMatching"                                                  </td></tr>
-<tr><td> accountId    </td><td> <a href="../data_types.md#accountid">AccountId</a>       </td><td> yes       </td><td> The account id                                                                   </td></tr>
-<tr><td> subAccountId </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a>    </td><td> yes       </td><td> The subaccount id                                                                </td></tr>
+<tr><td> accountId    </td><td> <a href="../basic-types.md#accountid">AccountId</a>       </td><td> yes       </td><td> The account id                                                                   </td></tr>
+<tr><td> subAccountId </td><td> <a href="../basic-types.md#subaccountid">SubAccountId</a>    </td><td> yes       </td><td> The subaccount id                                                                </td></tr>
 <tr><td> maker        </td><td> Contract list   </td><td> yes       </td><td> The maker list                                                                   </td></tr>
 <tr><td> taker        </td><td> Contract    </td><td> yes       </td><td> The taker                                                                        </td></tr>
 <tr><td> fee          </td><td> BitUint         </td><td> yes       </td><td> The fee amount of ContractMatching                                               </td></tr>
-<tr><td> feeToken     </td><td> <a href="../data_types.md#tokenid">TokenId</a>         </td><td> yes       </td><td> The token id of the fee                                                          </td></tr>
-<tr><td> signature    </td><td> <a href="../data_types.md#zklinksignature">ZkLinkSignature</a> </td><td> yes       </td><td> the pub key hash corresponding to the signature must be aligned with the account </td></tr>
+<tr><td> feeToken     </td><td> <a href="../basic-types.md#tokenid">TokenId</a>         </td><td> yes       </td><td> The token id of the fee                                                          </td></tr>
+<tr><td> signature    </td><td> <a href="../basic-types.md#zklinksignature">ZkLinkSignature</a> </td><td> yes       </td><td> the pub key hash corresponding to the signature must be aligned with the account </td></tr>
 </tbody>
 </table>
 
@@ -19,17 +19,17 @@ where the `Contract` is the order in perpetual contract
 <table>
 <thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
 <tbody>
-<tr><td> accountId    </td><td> <a ref="../data_types.md#accountid">AccountId</a>       </td><td> account id                                                                         </td></tr>
-<tr><td> subAccountId </td><td> <a ref="../data_types.md#SubAccountId">SubAccountId</a>  </td><td> sub account id                                                                     </td></tr>
+<tr><td> accountId    </td><td> <a ref="../basic-types.md#accountid">AccountId</a>       </td><td> account id                                                                         </td></tr>
+<tr><td> subAccountId </td><td> <a ref="../basic-types.md#SubAccountId">SubAccountId</a>  </td><td> sub account id                                                                     </td></tr>
 <tr><td> slotId       </td><td> <a ref="../data_types#slotid">SlotId</a>            </td><td> slot id                                                                            </td></tr>
 <tr><td> nonce        </td><td> <a ref="../data_types#nonce">Nonce</a>               </td><td> nonce                                                                              </td></tr>
-<tr><td> pairId       </td><td> <a ref="../data_types.md#PairId">PairId</a>             </td><td> the pair id                                                                        </td></tr>
+<tr><td> pairId       </td><td> <a ref="../basic-types.md#PairId">PairId</a>             </td><td> the pair id                                                                        </td></tr>
 <tr><td> size         </td><td> BigUint                                       </td><td> position size                                                                      </td></tr>
 <tr><td> price        </td><td> BigUint                                       </td><td> price                                                                              </td></tr>
 <tr><td> direction    </td><td> u8                                            </td><td> 1: long, 0: short                                                                  </td></tr>
 <tr><td> feeRates     </td><td> [u8, u8]                                      </td><td> The fee rates of [maker, taker]，100 means 1.00%                                    </td></tr>
 <tr><td> hasSubsidy   </td><td> u8                                            </td><td> 1: true, 0: false, if the maker has subsidy, the submitter will give maker subsidy </td></tr>
-<tr><td> signature    </td><td> <a ref="../data_types.md#ZkLinkSignature">ZkLinkSignature</a>           </td><td> ZkLink L3 signature                                                                </td></tr>
+<tr><td> signature    </td><td> <a ref="../basic-types.md#ZkLinkSignature">ZkLinkSignature</a>           </td><td> ZkLink L3 signature                                                                </td></tr>
 </tbody>
 </table>
 

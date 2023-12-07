@@ -5,18 +5,18 @@ Withdraw from zkLink L2 to connected networks.
 <tbody>
 <tr><td> type             </td><td> String          </td><td> yes       </td><td> The value is "Withdraw"                                                                               </td></tr>
 <tr><td> toChainId        </td><td>                 </td><td> yes       </td><td> The target chain of the withdrawal                                                                    </td></tr>
-<tr><td> accountId        </td><td> <a href="../data_types.md#accountid">AccountId</a>       </td><td> yes       </td><td> TheID of the withdraw account                                                                         </td></tr>
-<tr><td> subAccountId     </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a>    </td><td> yes       </td><td> The ID of the withdraw subaccount                                                                     </td></tr>
+<tr><td> accountId        </td><td> <a href="../basic-types.md#accountid">AccountId</a>       </td><td> yes       </td><td> TheID of the withdraw account                                                                         </td></tr>
+<tr><td> subAccountId     </td><td> <a href="../basic-types.md#subaccountid">SubAccountId</a>    </td><td> yes       </td><td> The ID of the withdraw subaccount                                                                     </td></tr>
 <tr><td> to               </td><td> String          </td><td> yes       </td><td> The target address of the withdrawal                                                                  </td></tr>
-<tr><td> l2SourceToken    </td><td> <a href="../data_types.md#TokenId">TokenId</a>         </td><td> yes       </td><td> The source token to be deducted from the Layer3 account and used as the fee token                     </td></tr>
-<tr><td> l1TargetToken    </td><td> <a href="../data_types.md#TokenId">TokenId</a>         </td><td> yes       </td><td> The target token to be sent to the to_address on Layer1                                               </td></tr>
+<tr><td> l2SourceToken    </td><td> <a href="../basic-types.md#TokenId">TokenId</a>         </td><td> yes       </td><td> The source token to be deducted from the Layer3 account and used as the fee token                     </td></tr>
+<tr><td> l1TargetToken    </td><td> <a href="../basic-types.md#TokenId">TokenId</a>         </td><td> yes       </td><td> The target token to be sent to the to_address on Layer1                                               </td></tr>
 <tr><td> amount           </td><td> BigUint         </td><td> yes       </td><td> Withdrawal amount, the value does not have to be packable                                             </td></tr>
 <tr><td> fee              </td><td> BigUint         </td><td> yes       </td><td> Fee requested via <code>estimateTransactionFee</code> API, the value should be packable               </td></tr>
 <tr><td> withdrawToL1     </td><td> u8              </td><td> yes       </td><td> 1: true, 0: false. Withdraw to L1 or not                                                              </td></tr>
 <tr><td> withdrawFeeRatio </td><td> u8              </td><td> yes       </td><td> Transaction fee for fast withdraw, 100 as 1%, 10000 as 100%, If ratio is not zero means fast withdraw </td></tr>
 <tr><td> ts               </td><td> u32             </td><td> yes       </td><td> Timestamp of the API call, used as front-end request id to generate transaction hash                  </td></tr>
-<tr><td> nonce            </td><td> <a href="../data_types.md#nonce">Nonce</a>           </td><td> yes       </td><td> Current nonce of the account                                                                          </td></tr>
-<tr><td> signature        </td><td> <a href="../data_types.md#zklinksignature">ZkLinkSignature</a> </td><td> yes       </td><td> the public key hash corresponding to the signature must be aligned with the withdraw account          </td></tr>
+<tr><td> nonce            </td><td> <a href="../basic-types.md#nonce">Nonce</a>           </td><td> yes       </td><td> Current nonce of the account                                                                          </td></tr>
+<tr><td> signature        </td><td> <a href="../basic-types.md#zklinksignature">ZkLinkSignature</a> </td><td> yes       </td><td> the public key hash corresponding to the signature must be aligned with the withdraw account          </td></tr>
 </tbody>
 </table>
 

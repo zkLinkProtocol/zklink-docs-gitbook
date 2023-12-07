@@ -5,18 +5,18 @@ Forced withdraw from Layer3
 <thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
 <tbody>
 <tr><td> type                  </td><td> String          </td><td> yes       </td><td> The value is "ForcedExit"                                                                     </td></tr>
-<tr><td> toChainId             </td><td> <a href="../data_types.md#chainid">ChainId</a> </td><td> yes       </td><td> The target chain of the withdrawal                                                            </td></tr>
-<tr><td> initiatorAccountId    </td><td> <a href="../data_types.md#accountid">AccountId</a></td><td> yes       </td><td> Account ID of the transaction initiator                                                       </td></tr>
-<tr><td> initiatorSubAccountId </td><td> <a href="../data_types.md#subaccountid">SubAccountId</a></td><td> yes       </td><td> Subaccount ID of the transaction initiator                                                    </td></tr>
-<tr><td> initiatorNonce        </td><td> <a href="../data_types.md#nonce">Nonce</a></td><td> yes       </td><td> Nonce of the transaction initiator's subaccount                                               </td></tr>
+<tr><td> toChainId             </td><td> <a href="../basic-types.md#chainid">ChainId</a> </td><td> yes       </td><td> The target chain of the withdrawal                                                            </td></tr>
+<tr><td> initiatorAccountId    </td><td> <a href="../basic-types.md#accountid">AccountId</a></td><td> yes       </td><td> Account ID of the transaction initiator                                                       </td></tr>
+<tr><td> initiatorSubAccountId </td><td> <a href="../basic-types.md#subaccountid">SubAccountId</a></td><td> yes       </td><td> Subaccount ID of the transaction initiator                                                    </td></tr>
+<tr><td> initiatorNonce        </td><td> <a href="../basic-types.md#nonce">Nonce</a></td><td> yes       </td><td> Nonce of the transaction initiator's subaccount                                               </td></tr>
 <tr><td> target                </td><td> String          </td><td> yes       </td><td> The account address of the forced withdraw, the token on Layer 1 is also sent to this address </td></tr>
-<tr><td> targetSubAccountId    </td><td> <a href="../data_types.md#accountid">AccountId</a></td><td> yes       </td><td> Subaccount ID of the account of the forced withdraw                                           </td></tr>
-<tr><td> l2SourceToken         </td><td> <a href="../data_types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token deducted from the account of the forced withdraw                                    </td></tr>
-<tr><td> l1TargetToken         </td><td> <a href="../data_types.md#tokenid">TokenId</a></td><td> yes       </td><td> This token sent to the to_address on L1                                                       </td></tr>
+<tr><td> targetSubAccountId    </td><td> <a href="../basic-types.md#accountid">AccountId</a></td><td> yes       </td><td> Subaccount ID of the account of the forced withdraw                                           </td></tr>
+<tr><td> l2SourceToken         </td><td> <a href="../basic-types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token deducted from the account of the forced withdraw                                    </td></tr>
+<tr><td> l1TargetToken         </td><td> <a href="../basic-types.md#tokenid">TokenId</a></td><td> yes       </td><td> This token sent to the to_address on L1                                                       </td></tr>
 <tr><td> exitAmount            </td><td> BigUint         </td><td> yes       </td><td> Withdrawal amount                                                                             </td></tr>
 <tr><td> withdrawToL1          </td><td> u8              </td><td> yes       </td><td> 1: true, 0: false. withdraw to L1 or not                                                      </td></tr>
 <tr><td> ts                    </td><td> u32             </td><td> yes       </td><td> Timestamp of the API call, used as front-end request id to generate transaction hash          </td></tr>
-<tr><td> signature             </td><td> <a href="../data_types.md#zklinksignature">ZkLinkSignature </a></td><td> yes       </td><td> the public key hash corresponding to the signature must be aligned with the initiator account </td></tr>
+<tr><td> signature             </td><td> <a href="../basic-types.md#zklinksignature">ZkLinkSignature </a></td><td> yes       </td><td> the public key hash corresponding to the signature must be aligned with the initiator account </td></tr>
 </tbody>
 </table>
 
