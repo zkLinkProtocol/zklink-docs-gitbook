@@ -1,9 +1,4 @@
 # API & SDK
-## Change Log
-
-**2023-12-07**
-* Initialize SDK documentation
-
 ## Introduction
 Welcome to the zkLink SDK documentation. This document is a guide to help developers access the services offered by zkLink protocol via SDK.
 

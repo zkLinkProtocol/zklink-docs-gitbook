@@ -1,0 +1,3 @@
+# Create Account
+创建Account的任务是由zkLink在
+用户创建Account不需要在DEX上做任何操作，用户在首次充值时，zkLink会自动为其创建
