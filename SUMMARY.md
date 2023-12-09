@@ -8,12 +8,11 @@
 
 * [Protocol Overview](welcome/Architecture.md)
 
-
 ## 🛠 Developer
 
 * [Developer Overview](developer/overview.md)
 * [Get Started](developer/get-started.md)
-* [JSON RPC & Websocket]
+* [JSON RPC & Websocket](developer/json-rpc-and-websocket/README.md)
   * [JSON-RPC API](developer/api-and-sdk/json-rpc/json-rpc-api.md)
   * [JSON-RPC Errors](developer/api-and-sdk/json-rpc/json-rpc-errors.md)
   * [Websocket](developer/api-and-sdk/websocket/README.md)
