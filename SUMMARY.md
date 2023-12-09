@@ -1,32 +1,11 @@
 # Table of contents
 
-## Welcome
+## 🙂 Welcome
 
 * [Introduction](README.md)
 * [Protocol Overview](welcome/Architecture.md)
 
-## Network Information
-
-* [Connected Networks](network-information/connected-networks/README.md)
-  * [Mainnet](networks/mainnet\_networks.md)
-  * [Testnet](networks/testnet\_networks.md)
-* [DApps & Deployment Addresses](network-information/dapps-and-deployment-addresses/README.md)
-  * [Mainnet](networks/mainnet\_addresses.md)
-  * [Testnet](networks/testnet\_addresses.md)
-
-## Wallet & User Fund Streamline
-
-* [Withdraw](streamline/withdraw.md)
-* [Wallet Integration & AA Wallet](streamline/wallet.md)
-* [Deposit](streamline/deposit.md)
-
-## Integration Cases
-
-* [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](IntegrationArchitecture/Derivatives.md)
-* [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
-* [Lightweight Integration](IntegrationArchitecture/zkjump.md)
-
-## Developer
+## 🛠 Developer
 
 * [Developer Overview](developer/overview.md)
 * [Get Started](developer/get-started.md)
@@ -61,6 +40,27 @@
       * [Funding](developer/api-and-sdk/private-key-and-signature/encode/funding.md)
       * [Liquidation](developer/api-and-sdk/private-key-and-signature/encode/liquidation.md)
       * [UpdateGlobalVar](developer/api-and-sdk/private-key-and-signature/encode/update\_global\_var.md)
+
+## ⚙ Network Information
+
+* [Connected Networks](network-information/connected-networks/README.md)
+  * [Mainnet](networks/mainnet\_networks.md)
+  * [Testnet](networks/testnet\_networks.md)
+* [DApps & Deployment Addresses](network-information/dapps-and-deployment-addresses/README.md)
+  * [Mainnet](networks/mainnet\_addresses.md)
+  * [Testnet](networks/testnet\_addresses.md)
+
+## Wallet & User Fund Streamline
+
+* [Withdraw](streamline/withdraw.md)
+* [Wallet Integration & AA Wallet](streamline/wallet.md)
+* [Deposit](streamline/deposit.md)
+
+## Integration Cases
+
+* [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](IntegrationArchitecture/Derivatives.md)
+* [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
+* [Lightweight Integration](IntegrationArchitecture/zkjump.md)
 
 ## Tokenomics
 
