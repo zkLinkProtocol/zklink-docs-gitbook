@@ -3,43 +3,44 @@
 ## 🙂 Welcome
 
 * [Introduction](README.md)
+
+## Protocol
+
 * [Protocol Overview](welcome/Architecture.md)
+
 
 ## 🛠 Developer
 
 * [Developer Overview](developer/overview.md)
 * [Get Started](developer/get-started.md)
-* [API & SDK](developer/api-and-sdk/README.md)
-  * [Change Log](developer/api-and-sdk/changelog.md)
-  * [Json Rpc](developer/api-and-sdk/json-rpc/README.md)
-    * [JSON-RPC API](developer/api-and-sdk/json-rpc/json-rpc-api.md)
-    * [JSON-RPC Errors](developer/api-and-sdk/json-rpc/json-rpc-errors.md)
+* [JSON RPC & Websocket]
+  * [JSON-RPC API](developer/api-and-sdk/json-rpc/json-rpc-api.md)
+  * [JSON-RPC Errors](developer/api-and-sdk/json-rpc/json-rpc-errors.md)
   * [Websocket](developer/api-and-sdk/websocket/README.md)
-  * [Data Types](developer/api-and-sdk/data-types/README.md)
-    * [Basic Types](developer/api-and-sdk/data-types/basic-types.md)
-    * [State Update](developer/api-and-sdk/data-types/state-update.md)
-    * [Transaction](developer/api-and-sdk/data-types/transaction/README.md)
-      * [Deposit](developer/api-and-sdk/data-types/transaction/deposit.md)
-      * [FullExit](developer/api-and-sdk/data-types/transaction/full\_exit.md)
-      * [ChangePubKey](developer/api-and-sdk/data-types/transaction/change\_pubkey.md)
-      * [Withdraw](developer/api-and-sdk/data-types/transaction/withdraw.md)
-      * [ForcedExit](developer/api-and-sdk/data-types/transaction/forced\_exit.md)
-      * [OrderMatching](developer/api-and-sdk/data-types/transaction/order\_matching.md)
-      * [AutoDeleveraging](developer/api-and-sdk/data-types/transaction/auto\_deleveraging.md)
-      * [ContractMatching](developer/api-and-sdk/data-types/transaction/contract\_matching.md)
-      * [Funding](developer/api-and-sdk/data-types/transaction/funding.md)
-      * [Liquidation](developer/api-and-sdk/data-types/transaction/liquidation.md)
-      * [UpdateGlobalVar](developer/api-and-sdk/data-types/transaction/update\_global\_var.md)
+* [Transactions](developer/api-and-sdk/README.md)
+  * [Basic Types](developer/api-and-sdk/data-types/basic-types.md)
+  * [State Update](developer/api-and-sdk/data-types/state-update.md)
+  * [Transaction](developer/api-and-sdk/data-types/transaction/README.md)
+    * [Deposit](developer/api-and-sdk/data-types/transaction/deposit.md)
+    * [FullExit](developer/api-and-sdk/data-types/transaction/full\_exit.md)
+    * [ChangePubKey](developer/api-and-sdk/data-types/transaction/change\_pubkey.md)
+    * [Withdraw](developer/api-and-sdk/data-types/transaction/withdraw.md)
+    * [ForcedExit](developer/api-and-sdk/data-types/transaction/forced\_exit.md)
+    * [OrderMatching](developer/api-and-sdk/data-types/transaction/order\_matching.md)
+    * [AutoDeleveraging](developer/api-and-sdk/data-types/transaction/auto\_deleveraging.md)
+    * [ContractMatching](developer/api-and-sdk/data-types/transaction/contract\_matching.md)
+    * [Funding](developer/api-and-sdk/data-types/transaction/funding.md)
+    * [Liquidation](developer/api-and-sdk/data-types/transaction/liquidation.md)
+    * [UpdateGlobalVar](developer/api-and-sdk/data-types/transaction/update\_global\_var.md)
   * [Private Key & Signature](developer/api-and-sdk/private-key-and-signature/private\_key.md)
-    * [Encode](developer/api-and-sdk/private-key-and-signature/encode/README.md)
-      * [ChangePubKey](developer/api-and-sdk/private-key-and-signature/encode/chaneg\_pubkey.md)
-      * [Withdraw](developer/api-and-sdk/private-key-and-signature/encode/withdraw.md)
-      * [ForcedExit](developer/api-and-sdk/private-key-and-signature/encode/forced\_exit.md)
-      * [OrderMatching](developer/api-and-sdk/private-key-and-signature/encode/order\_matching.md)
-      * [ContractMatching](developer/api-and-sdk/private-key-and-signature/encode/contract\_matching.md)
-      * [Funding](developer/api-and-sdk/private-key-and-signature/encode/funding.md)
-      * [Liquidation](developer/api-and-sdk/private-key-and-signature/encode/liquidation.md)
-      * [UpdateGlobalVar](developer/api-and-sdk/private-key-and-signature/encode/update\_global\_var.md)
+    * [ChangePubKey](developer/api-and-sdk/private-key-and-signature/encode/chaneg\_pubkey.md)
+    * [Withdraw](developer/api-and-sdk/private-key-and-signature/encode/withdraw.md)
+    * [ForcedExit](developer/api-and-sdk/private-key-and-signature/encode/forced\_exit.md)
+    * [OrderMatching](developer/api-and-sdk/private-key-and-signature/encode/order\_matching.md)
+    * [ContractMatching](developer/api-and-sdk/private-key-and-signature/encode/contract\_matching.md)
+    * [Funding](developer/api-and-sdk/private-key-and-signature/encode/funding.md)
+    * [Liquidation](developer/api-and-sdk/private-key-and-signature/encode/liquidation.md)
+    * [UpdateGlobalVar](developer/api-and-sdk/private-key-and-signature/encode/update\_global\_var.md)
 
 ## ⚙ Network Information
 
