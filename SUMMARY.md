@@ -61,7 +61,6 @@
 
 * [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](IntegrationArchitecture/Derivatives.md)
 * [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
-* [Lightweight Integration](IntegrationArchitecture/zkjump.md)
 
 ## Tokenomics
 
