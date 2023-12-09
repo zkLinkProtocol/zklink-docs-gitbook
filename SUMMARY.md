@@ -40,6 +40,7 @@
     * [Funding](developer/api-and-sdk/private-key-and-signature/encode/funding.md)
     * [Liquidation](developer/api-and-sdk/private-key-and-signature/encode/liquidation.md)
     * [UpdateGlobalVar](developer/api-and-sdk/private-key-and-signature/encode/update\_global\_var.md)
+* [SDK](developer/sdk.md)
 
 ## ⚙ Network Information
 
