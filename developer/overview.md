@@ -11,25 +11,27 @@ description: >-
 
 The Difference Between zkLink Origin and zkLink Nexus.\[go to zkLink Origin and zkLink Nexus.]
 
-#### L1 and Layer1
-
+{% tabs %}
+{% tab title="L1 and Layer1" %}
 zkLink Origin can be deployed on top of different Layer 1s such as Ethereum, Polygon, and BSC, among others. In addition, when referring to Layer 1 (L1) in this article, we’re referring to the chain of which zkLink’s contract is deployed.
 
 In addition, when mentioning “onChain Tx”, we’re specifically referring to transactions made by users (developers) on the Layer 1 base chain.
 
 The chain zkLink is deployed upon and it’s subsequent native token can also be deployed to the zkLink Layer. However, this scenario isn’t a cross-chain bridge, but rather a Rollup Bridge.
+{% endtab %}
 
-#### **L2 and Layer2**
-
+{% tab title="L2 and Layer2" %}
 The deployment networks for both zkLink Origin and zkLink Nexus include Layer 2 networks such as StarkNet, zkSync, Linea, and Arbitrum, among others.
 
 When mentioning Layer2 (L2) in this article, we’re referring to the Rollup Network deployed by the zkLink contract and the onChain Tx specifically refers to transactions made by users (developers) on the Layer 2 network.
 
 The Rollup to which zkLink is connected and its token can be natively deposited to the zkLink Layer.
+{% endtab %}
 
-#### **L3 and Layer3**
-
+{% tab title="L3 and zkLink Layer3" %}
 Because zkLink’s deployment scenarios are mostly Layer2 networks, we define zkLink as a Layer 3. Therefore, in this article, when the term zkLink Layer is mentioned, it’s the same meaning as Layer 3.
+{% endtab %}
+{% endtabs %}
 
 ## Integrate Architecture
 
