@@ -4,7 +4,7 @@
 
 * [Introduction](README.md)
 
-## Protocol
+## ⚖ Protocol
 
 * [Protocol Overview](welcome/Architecture.md)
 
