@@ -1537,7 +1537,7 @@ Get all the information about the Ethereum property.
 <table><thead><tr>
 <th width="284.6573875802998">Field</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td>chainId</td><td>Chain Id</td></tr>
+<tr><td>chainId</td><td>Chain id defined by zkLink</td></tr>
 <tr><td>layerOneChainId</td><td>The layer 1 chain id</td></tr>
 <tr><td>gateways</td><td>The list of GateWayInfo</td></tr>
 </tbody></table>
