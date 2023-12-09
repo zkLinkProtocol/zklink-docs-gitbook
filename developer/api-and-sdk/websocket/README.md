@@ -1,7 +1,9 @@
 # Websocket
+
 Currently, there is only public channel.
 
 ## Connect
+
 In the public channel, when the client successfully connects to the ZkLink node, the server will return a message with ID 0, which contains the `listen_key` automatically created by the server for the connection:
 
 ```json
@@ -22,7 +24,6 @@ The server will send `ping` frame to the client every two minutes, and the clien
 * Topic of transaction execution results: `txExecuteResult@{sub_account_id}`, for example when `sub_account_id` is `1`, the topic will be `txExecuteResult@1`;
 * full exit event： `fullExitEvent@{sub_account_id}`, for example when `sub_account_id` is `1`， the topic will be `fullExitEvent@1`.
 
-
 ## Subscribe & Unsubscribe Topics
 
 The client can subscribe and unsubscribe to topics at any time after connecting, and only needs to send a request to the service:
@@ -34,6 +35,7 @@ The client can subscribe and unsubscribe to topics at any time after connecting,
     "id": 1
 }
 ```
+
 where the value of `method` can be `subscribe` or `unSubscribe`. The id in the response content is an unsigned integer, which serves as the unique identifier of the communication. It also contains the value of the currently subscribed topic list.
 
 ```json
@@ -63,22 +65,21 @@ When the Websocket connection corresponding to `listen_key` is disconnected, `nu
 
 ### Transaction Execution Results
 
- topic: `txExecuteResult@{sub_account_id}`
+topic: `txExecuteResult@{sub_account_id}`
 
-| Name                 | Type                                        | Describe                                                                                               |
-|----------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| type                 | String                                      | Event type                                                                                             |
-| tx_hash              | [TxHash](../data_types.md#TxHash)           | The tx hash on L1                                                                                      |
-| tx                   | [ZklinkTx](../transaction)                  | [Transaction](../transaction) detail                                                                   |
-| receipt              | struct                                      | The transaction status after received                                                                  |
-| \> executed          | bool                                        | The transaction finished executing or not                                                              |
-| \> executedTimestamp | Option<u64>                                 | The Unix microsecond timestamp when transaction excute, when executed is false, the value will be null |
-| \> success           | bool                                        | The transaction executed successfull or not                                                            |
-| \> failReason        | Option<String>                              | The reason that transaction execute fail, the value will be null if transaction execute success        |
-| \> block             | Option<u32>                                 | Block height that contains the transaction, it will be null if success is false                        |
-| \> index             | Option<u32>                                 | The transaction index in the block, if value will be null if success is false                          |
-| updates              | [StateUpdateResp](../state-update.md) array | Update event                                                                                           |
-
+| Name                | Type                                          | Describe                                                                                               |
+| ------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| type                | String                                        | Event type                                                                                             |
+| tx\_hash            | [TxHash](../data-types/basic-types.md#TxHash) | The tx hash on L1                                                                                      |
+| tx                  | [ZklinkTx](../data-types/transaction/)        | [Transaction](../data-types/transaction/) detail                                                       |
+| receipt             | struct                                        | The transaction status after received                                                                  |
+| > executed          | bool                                          | The transaction finished executing or not                                                              |
+| > executedTimestamp | Option                                        | The Unix microsecond timestamp when transaction excute, when executed is false, the value will be null |
+| > success           | bool                                          | The transaction executed successfull or not                                                            |
+| > failReason        | Option                                        | The reason that transaction execute fail, the value will be null if transaction execute success        |
+| > block             | Option                                        | Block height that contains the transaction, it will be null if success is false                        |
+| > index             | Option                                        | The transaction index in the block, if value will be null if success is false                          |
+| updates             | [StateUpdateResp](broken-reference) array     | Update event                                                                                           |
 
 ```json
 {
@@ -148,13 +149,13 @@ When the Websocket connection corresponding to `listen_key` is disconnected, `nu
 
 ### Full Exit Event
 
-topic: fullExitEvent@{sub_account_id}
+topic: fullExitEvent@{sub\_account\_id}
 
-| Name    | Type                              | Description          |
-|---------|-----------------------------------|----------------------|
-| type    | String                            | Event type           |
-| tx_hash | [TxHash](../data_types.md#TxHash) | The tx hash on L1    |
-| tx      | [Transaction](../transaction)     | FullExit transaction |
+| Name     | Type                                          | Description          |
+| -------- | --------------------------------------------- | -------------------- |
+| type     | String                                        | Event type           |
+| tx\_hash | [TxHash](../data-types/basic-types.md#TxHash) | The tx hash on L1    |
+| tx       | [Transaction](../data-types/transaction/)     | FullExit transaction |
 
 For example:
 
@@ -175,4 +176,3 @@ For example:
    }
 }
 ```
-

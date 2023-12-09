@@ -28,10 +28,10 @@
 
 ## Developer
 
-* [Overview](developer/overview.md)
+* [Developer Overview](developer/overview.md)
 * [Get Started](developer/get-started.md)
 * [API & SDK](developer/api-and-sdk/README.md)
-  * [Change Log](./developer/api-and-sdk/changelog.md)
+  * [Change Log](developer/api-and-sdk/changelog.md)
   * [Json Rpc](developer/api-and-sdk/json-rpc/README.md)
     * [JSON-RPC API](developer/api-and-sdk/json-rpc/json-rpc-api.md)
     * [JSON-RPC Errors](developer/api-and-sdk/json-rpc/json-rpc-errors.md)
