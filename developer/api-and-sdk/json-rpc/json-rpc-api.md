@@ -1531,6 +1531,88 @@ zkLink will scan the `maxTxs` number of executed withdraw transactions, and retu
 
 In the first scan, `lastTxTimestamp` can be set as 0 to scan from the beginning. Then the `executedTimestamp` of the last record can be used as the `lastTxTimestamp` of the next scan.
 
+### getEthProperty
+Get all the information about the Ethereum property.
+
+<table><thead><tr>
+<th width="284.6573875802998">Field</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>chainId</td><td>Chain Id</td></tr>
+<tr><td>layerOneChainId</td><td>The layer 1 chain id</td></tr>
+<tr><td>gateways</td><td>The list of GateWayInfo</td></tr>
+</tbody></table>
+
+#### GateWayInfo
+
+<table><thead><tr>
+<th width="284.6573875802998">Field</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>chainId</td></td><td>the chain id</td></tr>
+<tr><td>chainId</td></td><td>the chain id</td></tr>
+<tr><td>l1GatewayContract</td><td>the layer 1 gateway contract address</td></tr>
+<tr><td>l2GatewayContract</td><td>the layer 2 gateway contract address</td></tr>
+<tr><td>tokens</td><td>the list that all the TokenInfo on the gateway</td></tr>
+</tbody></table>
+
+#### TokenInfo
+
+<table><thead><tr>
+<th width="284.6573875802998">Field</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>tokenId</td></td><td>The token id</td></tr>
+<tr><td>tokenAddress</td></td><td>token address</td></tr>
+<tr><td>decimal</td><td>the token amount decimal</td></tr>
+<tr><td>fastWithdraw</td><td>support fast withdraw or not</td></tr>
+</tbody></table>
+
+```json
+{
+  "chainId": 4,
+  "layerOneChainId": "0x1",
+  "gateways": [
+    {
+      "chainId": 5,
+      "l1GatewayContract": "0x3498f456645270ee003441df82c718b56c0e6666",
+      "l2GatewayContract": "0x3498f456645270ee003441df82c718b56c0e6666",
+      "tokens": [
+        {
+          "tokenId": 1,
+          "tokenAddress":"0x3498f456645270ee003441df82c718b56c0e6666",
+          "decimal": 6,
+          "fastWithdraw": true
+        },
+        {
+          "tokenId": 3,
+          "tokenAddress":"0x3498f456645270ee003441df82c718b56c0e6666",
+          "decimal": 7,
+          "fastWithdraw": false
+        }
+      ]
+    },
+    {
+      "chainId": 7,
+      "l1GatewayContract": "0x3498f456645270ee003441df82c718b56c0e6666",
+      "l2GatewayContract": "0x3498f456645270ee003441df82c718b56c0e6666",
+      "tokens": [
+        {
+          "tokenId": 1,
+          "tokenAddress":"0x3498f456645270ee003441df82c718b56c0e6666",
+          "decimal": 6,
+          "fastWithdraw": true
+        },
+        {
+          "tokenId": 3,
+          "tokenAddress":"0x3498f456645270ee003441df82c718b56c0e6666",
+          "decimal": 6,
+          "fastWithdraw": false
+        }
+      ]
+    }
+  ]
+}
+```
+
+
 ### sendTransaction
 
 Submit L2 transaction and return transaction hash.
