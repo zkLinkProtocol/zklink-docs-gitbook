@@ -61,6 +61,8 @@ There are two on-chain protocols that are currently supported by zkLink: EVM and
 * **zkLink Validator**: The zkLink Validator is responsible for receiving and processing transactions from the DApp, and checking whether the transactions comply with the rules defined by the Circuit. The Validator is also responsible for organizing the Prover to generate a zk-proof and submit the zk-proof to the zkLink Contract. When in development, the developer does not need to care about the details of how the Validator operates, instead, the developer only needs to refer to the SDK provided by zkLink in order to quickly integrate the services provided by the Validator. In the end, this saves the developer tremendous effort.
 * **Prover**: The Prover is responsible for generating the zero-knowledge proof.
 
+***
+
 ## Quickly Understand Interaction Flows
 
 In the following section we’ll describe the basic development process for building on zkLink Infra for users and DApp developers.
