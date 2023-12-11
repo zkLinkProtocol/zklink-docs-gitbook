@@ -15,7 +15,9 @@ Deposit from Layer 1 to [zkLink layer](deposit.md).
 <tr></tr><td> l2TargetToken </td><td> <a href="../basic-types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token received by the recipient on zkLink Layer 3                                           </td></tr>
 <tr></tr><td> amount        </td><td> BigUint                                </td><td> yes       </td><td> The amount of deposit                                                                           </td></tr>
 <tr></tr><td> serialId      </td><td> u64                                    </td><td> yes       </td><td> The serial number of the event, used as nonce                                                   </td></tr>
-<tr></tr><td> ethHash       </td><td> <a href="../basic-types.md#txhash">TxHash</a>                                 </td><td> yes       </td><td> The transaction that generated this event on Layer 1                                            </td></tr>
+<tr></tr><td> l2Hash       </td><td> <a href="../basic-types.md#txhash">TxHash</a>                                 </td><td> no       </td><td> Transaction hash of linea/zksync/starket</td></tr>
+<tr></tr><td> ethHash       </td><td> <a href="../basic-types.md#txhash">TxHash</a>                                 </td><td> no       </td><td> Transaction hash of ethereum, exist when deposit from Ethereum bridge to linea/zksync/starket </td></tr>
+
 </tbody>
 </table>
 
@@ -32,6 +34,6 @@ For example:
     "amount": "4000000000000000000000",
     "to": "0x76920dfacad4f28f97d6209977c1057b9e3e5cad",
     "serialId": 53,
-    "ethHash": "0xaaa1e7a5bc48e7cfaa562a4d1a5abc1d6dc5e7f7683e89eb00e895d438f0acab"
+    "l2Hash": "0xaaa1e7a5bc48e7cfaa562a4d1a5abc1d6dc5e7f7683e89eb00e895d438f0acab"
 }
 ```
