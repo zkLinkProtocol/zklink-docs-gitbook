@@ -99,7 +99,7 @@ For example
 
 {% tab title="contractInfo" %}
 
-Modify the info of every prepatual contract pair.
+Modify the info of every perpetual contract pair.
 
 | Name                  | Type     | Required         | Description                                             |
 |-----------------------|-------------------|------------|---------------------------------------------------------|

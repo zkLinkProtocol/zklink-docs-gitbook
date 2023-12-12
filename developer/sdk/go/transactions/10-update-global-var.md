@@ -9,6 +9,7 @@ type ParameterFeeAccount struct {
 	AccountId AccountId
 }
 ```
+This parameter is used to modify the collect-fee account.
 
 ### type ParameterInsuranceFundAccount
 
@@ -17,6 +18,7 @@ type ParameterInsuranceFundAccount struct {
 	AccountId AccountId
 }
 ```
+This parameter is used to modify the insurance fund account.
 
 ### type ParameterMarginInfo
 
@@ -27,6 +29,7 @@ type ParameterMarginInfo struct {
 	Ratio    uint8
 }
 ```
+This parameter is used to modify the margin info in the specified index.
 
 ### type ParameterFundingInfos 
 
@@ -35,7 +38,17 @@ type ParameterFundingInfos struct {
 	Infos []FundingInfo
 }
 ```
+This parameter is used to ppdate the funding rates to accumulated funding rates of the Global Vars for all position(contract pair) in this period.
 
+#### type FundingInfo
+
+```go
+type FundingInfo struct {
+	PairId      PairId
+	Price       BigUint
+	FundingRate int16
+}
+```
 
 ### type ParameterContractInfo
 
@@ -47,6 +60,7 @@ type ParameterContractInfo struct {
 	MaintenanceMarginRate uint16
 }
 ```
+This parameter is used to modify the info of every perpetual contract pair.
 
 ## type UpdateGlobalVarBuilder
 
