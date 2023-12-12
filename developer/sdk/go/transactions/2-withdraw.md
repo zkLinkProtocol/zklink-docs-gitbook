@@ -21,7 +21,7 @@ type WithdrawBuilder struct {
 The builder is used to build the [Withdraw](./#type-withdraw) transaction.
 
 ## type Withdraw
-[Withdraw](../../../api-and-sdk/data-types/transaction/withdraw.md) transaction type, it a opaque data type.
+[Withdraw](../../../api-and-sdk/data-types/transaction/withdraw.md) transaction type, it's a opaque data type.
 
 ### func (*Withdraw) GetSignature
 
@@ -51,7 +51,7 @@ Get the transaction hash of [Withdraw](#type-withdraw) transaction
 func (*Withdraw) IsValid() bool
 ```
 
-Check if all the fields in Withdraw are valid. For example, if the `ChainId` is largger than the max ChainId, it will return false.
+Check if all the fields in Withdraw are valid. For example, if the `ChainId` is exceeded the maximum ChainId, it will return false.
 
 
 ### func (*Withdraw) IsSignatureValid

@@ -16,7 +16,7 @@ type TransferBuilder struct {
 Builder is used to build [Transfer](#type-transfer) transaction
 
 ## type Transfer
-[Transfer](../../../api-and-sdk/data-types/transaction/transfer.md) transaction type, it a opaque data type.
+[Transfer](../../../api-and-sdk/data-types/transaction/transfer.md) transaction type, it's a opaque data type.
 
 ### func NewTransfer(builder TransferBuilder)
 
@@ -65,7 +65,7 @@ Get the json string of the [Transfer](#type-transfer) transaction.
 func (*Transfer) IsValid() bool
 ```
 
-Check if all the fields in Withdraw are valid. For example, if the `ChainId` is largger than the max ChainId, it will return false.
+Check if all the fields in Withdraw are valid. For example, if the `ChainId` is exceeded the maximum ChainId, it will return false.
 
 
 ### func (*Transfer) IsSignatureValid
@@ -74,7 +74,7 @@ Check if all the fields in Withdraw are valid. For example, if the `ChainId` is 
 func (*Transfer) IsSignatureValid() bool
 ```
 
-Check if the L3 signature in the Transfer transaction is valid or not.
+Check if the L3 signature in the transaction is valid or not.
 
 ### func (*Transfer) GetEthSignMsg
 

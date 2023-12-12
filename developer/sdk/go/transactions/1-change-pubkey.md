@@ -59,7 +59,7 @@ type ChangePubKeyBuilder struct {
 ```
 
 ## type ChangePubKey
-[ChangePubkey](../../../api-and-sdk/data-types/transaction/change_pubkey.md) transaction type, it a opaque data type.
+[ChangePubkey](../../../api-and-sdk/data-types/transaction/change_pubkey.md) transaction type, it's a opaque data type.
 
 ### func NewChangePubKey
 Create a [ChangePubkey](#type-changepubkey)
@@ -110,7 +110,7 @@ Get the json str of [ChangePubKey](#type-changepubkey)
 func (*ChangePubKey) IsValid() bool
 ```
 
-Check if all the fields in ChangePubKey are valid. For example, if the `ChainId` is largger than the max ChainId, it will return false.
+Check if all the fields in ChangePubKey are valid. For example, if the `ChainId` is exceeded the maximum ChainId, it will return false.
 
 ### func (*ChangePubKey) IsOnchain
 

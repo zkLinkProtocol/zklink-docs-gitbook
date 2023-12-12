@@ -19,7 +19,7 @@ type ForcedExitBuilder struct {
 Builder used to create ForcedExit transaction.
 
 ## type ForcedExit
-[ForcedExit](../../../api-and-sdk/data-types/transaction/forced_exit.md) transaction type, it a opaque data type.
+[ForcedExit](../../../api-and-sdk/data-types/transaction/forced_exit.md) transaction type, it's a opaque data type.
 
 
 ### func NewForcedExit
@@ -63,7 +63,7 @@ Get the json string of the [ForcedExit](#type-forcedexit) transaction.
 ```go
 func (_self *ForcedExit) IsValid() bool
 ```
-Check if all the fields in Withdraw are valid. For example, if the `ChainId` is largger than the max ChainId, it will return false.
+Check if all the fields in Withdraw are valid. For example, if the `ChainId` is exceeded the maximum ChainId, it will return false.
 
 ### func (*ForcedExit) IsSignatureValid
 
