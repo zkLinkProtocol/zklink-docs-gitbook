@@ -11,7 +11,7 @@
 ## 🛠 Developer
 
 * [Developer Overview](developer/overview.md)
-* [Get Started](developer/get-started.md)
+* [Get Started](developer/quick-start/README.md)
 * [JSON RPC & Websocket](developer/json-rpc-and-websocket/README.md)
   * [JSON-RPC API](developer/api-and-sdk/json-rpc/json-rpc-api.md)
   * [JSON-RPC Errors](developer/api-and-sdk/json-rpc/json-rpc-errors.md)
