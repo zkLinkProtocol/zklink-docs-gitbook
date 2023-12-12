@@ -1,15 +1,4 @@
 # Quick Start
-It's great to hear that you are eager to dive into creating a DEX and exploring the zkLink SDK. It is essential to follow the suggested order of topics and make sure to have a solid understanding of zkLink's architecture by reading the overview beforehand. Additionally, to receive notifications from zkLink, you will need to prepare the WebSocket.
-
-Assuming there are two traders, Alice and Bob, the steps to be covered include:
-
-Depositing and creating accounts for Alice and Bob
-Alice using USDT to buy BTC from Bob
-Alice withdrawing half of the BTC she just acquired
-Alice transferring the remaining BTC to another subaccount
-I can assist you with any specific questions or details related to these steps. Feel free to ask!
-
-
 In this quick start, you'll lean how to create a DEX and take a short tour through the zkLink SDK. 
 It is essential to follow the suggested order of topics and make sure to have a solid understanding of zkLink's architecture by reading the [overview](../overview.md) beforehand.
 Additionally, to receive notifications from zkLink server, you will need to prepare the WebSocket.
