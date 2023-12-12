@@ -109,7 +109,7 @@ Create the submitter signature.
 ### func (*Transfer) CreateSignedTx
 
 ```go
-func (*Transfer) CreateSignedTx(signer *ZkLinkSigner) (*Transfer, error) {
+func (*Transfer) CreateSignedTx(signer *ZkLinkSigner) (*Transfer, error)
 ```
 
 Sign the Transfer transaction with the [ZkLinkSigner](../signer.md#type-zklinksigner), L1 signature and L3 signature will be created.

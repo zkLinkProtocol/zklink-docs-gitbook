@@ -132,7 +132,7 @@ Check if the L3 signature is valid or not.
 ### func (*ChangePubKey) SubmitterSignature
 
 ```go
-func (*ChangePubKey) SubmitterSignature(signer *ZkLinkSigner) (ZkLinkSignature, error) {
+func (*ChangePubKey) SubmitterSignature(signer *ZkLinkSigner) (ZkLinkSignature, error)
 ```
 Create the submitter signature.
 

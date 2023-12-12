@@ -77,14 +77,14 @@ Get the Order signature.
 ### func (*Order) GetBytes
 
 ```go
-func (*Order) GetBytes() []uint8 {
+func (*Order) GetBytes() []uint8
 ```
 Get the encoded bytes to create the L3 signature.
 
 ### func  *Order) JsonStr
 
 ```go
-func (*Order) JsonStr() string {
+func (*Order) JsonStr() string
 ```
 Get the json string of the Order.
 

@@ -41,7 +41,7 @@ Return true if the contract opens a short position.
 
 ### func (*Contract) GetSignature
 ```go
-func (_self *Contract) GetSignature() ZkLinkSignature {
+func (_self *Contract) GetSignature() ZkLinkSignature
 ```
 Get the L3 signature of the contract.
 
@@ -96,7 +96,7 @@ Create a new ContractMatching transaction.
 ### func (*ContractMatching) GetBytes
 
 ```go
-func (_self *ContractMatching) GetBytes() []uint8 {
+func (_self *ContractMatching) GetBytes() []uint8
 ```
 Get the encoded bytes that used to create the L3 signature. See more in [Private Key and Signature](../../../api-and-sdk/private-key-and-signature/encode/contract_matching.md).
 
