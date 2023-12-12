@@ -56,13 +56,13 @@ Check if the transaction is valid.
 ```go
 func (*AutoDeleveraging) GetSignature() ZkLinkSignature
 ```
-Get signature of the transaction.
+Get L3 signature of the transaction.
 
 ### func (*AutoDeleveraging) IsSignatureValid
 ```go
 func (*AutoDeleveraging) IsSignatureValid() bool
 ```
-Check if the inside signature is valid or not.
+Check if the inside L3 signature is valid or not.
 
 ### func  *AutoDeleveraging) ToZklinkTx
 ```go
@@ -75,3 +75,6 @@ Change the transaction to the [ZkLinkTx](../basic_types.md#zklinktx)
 func (*AutoDeleveraging) CreateSignedTx(signer *ZkLinkSigner) (*AutoDeleveraging, error)
 ```
 Create a new AutoDeleveraging transaction with L3 signature inside.
+
+**input:**
+* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)

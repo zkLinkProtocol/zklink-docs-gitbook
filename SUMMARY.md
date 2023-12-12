@@ -52,6 +52,8 @@
       * [OrderMatching](developer/sdk/go/transactions/5-order-matching.md)
       * [ContractMatching](developer/sdk/go/transactions/6-contract-matching.md)
       * [AutoDeleveraging](developer/sdk/go/transactions/7-auto-deleveraging.md)
+      * [Funding](developer/sdk/go/transactions/8-funding.md)
+      * [Liquidation](developer/sdk/go/transactions/9-liquidation.md)
   * [Js](developer/sdk/js/changelog.md)
 
 ## ⚙ Network Information
