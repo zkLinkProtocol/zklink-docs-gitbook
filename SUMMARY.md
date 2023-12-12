@@ -40,7 +40,17 @@
     * [Funding](developer/api-and-sdk/private-key-and-signature/encode/funding.md)
     * [Liquidation](developer/api-and-sdk/private-key-and-signature/encode/liquidation.md)
     * [UpdateGlobalVar](developer/api-and-sdk/private-key-and-signature/encode/update\_global\_var.md)
-* [SDK](developer/sdk.md)
+* [SDK](developer/sdk/sdk.md)
+  * [Go](developer/sdk/go/changelog.md)
+    * [Types](developer/sdk/go/basic_types.md)
+    * [Signature](developer/sdk/go/signer.md)
+    * [Transactions](developer/sdk/go/transactions)
+      * [ChangePubKey](developer/sdk/go/transactions/1-change-pubkey.md)
+      * [Withdraw](developer/sdk/go/transactions/2-withdraw.md)
+      * [Transfer](developer/sdk/go/transactions/3-transfer.md)
+      * [ForcedExit](developer/sdk/go/transactions/4-forced-exit.md)
+      * [OrderMatching](developer/sdk/go/transactions/5-order-matching.md)
+  * [Js](developer/sdk/js/changelog.md)
 
 ## ⚙ Network Information
 
