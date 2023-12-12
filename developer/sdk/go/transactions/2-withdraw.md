@@ -23,12 +23,14 @@ The builder is used to build the [Withdraw](./#type-withdraw) transaction.
 ## type Withdraw
 [Withdraw](../../../api-and-sdk/data-types/transaction/withdraw.md) transaction type, it's a opaque data type.
 
-### func (*Withdraw) GetSignature
-
+### func NewWithdraw(builder WithdrawBuilder)
 ```go
-func (_self *Withdraw) GetSignature() ZkLinkSignature
+func NewWithdraw(builder WithdrawBuilder) *Withdraw
 ```
 Create a new [Withdraw](#type-withdraw) transaction.
+
+**input:**
+builder: [WithdrawBuilder](#type-withdrawbuilder)
 
 ### func (*Withdraw) GetBytes
 
@@ -51,7 +53,25 @@ Get the transaction hash of [Withdraw](#type-withdraw) transaction
 func (*Withdraw) IsValid() bool
 ```
 
-Check if all the fields in Withdraw are valid. For example, if the `ChainId` is exceeded the maximum ChainId, it will return false.
+Check if all the fields in [Withdraw](#type-withdraw) are valid. For example, if the `ChainId` is exceeded the maximum ChainId, it will return false.
+
+### func (*Withdraw) CreateSignedTx
+
+```go
+func (*Withdraw) CreateSignedTx(signer *ZkLinkSigner) (*Withdraw, error)
+```
+The ZkLinkSigner will sign the [Withdraw] transaction, replace the default signature in the transaction.
+
+**input:**
+* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
+
+
+### func (*Withdraw) GetSignature
+
+```go
+func (_self *Withdraw) GetSignature() ZkLinkSignature
+```
+Get L3 signature inside the transaction.
 
 
 ### func (*Withdraw) IsSignatureValid
@@ -79,16 +99,6 @@ Create the Ethereum signature.
 func (_self *Withdraw) SubmitterSignature(signer *ZkLinkSigner) (ZkLinkSignature, error)
 ```
 Create a submitter signature.
-
-**input:**
-* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
-
-### func (*Withdraw) CreateSignedTx
-
-```go
-func (*Withdraw) CreateSignedTx(signer *ZkLinkSigner) (*Withdraw, error)
-```
-The ZkLinkSigner will sign the Withdraw transaction, replace the default signature in the transaction.
 
 **input:**
 * signer: [ZkLinkSigner](../signer.md#type-zklinksigner)

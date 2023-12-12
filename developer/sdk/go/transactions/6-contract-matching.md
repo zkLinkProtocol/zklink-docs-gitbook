@@ -122,6 +122,17 @@ func (*ContractMatching) IsValid() bool
 ```
 Check if the transaction is valid or not.
 
+### func (*ContractMatching) CreateSignedTx
+
+```go
+func (*ContractMatching) CreateSignedTx(signer *ZkLinkSigner) (*ContractMatching, error)
+```
+Create a new transaction with L3 signature.
+
+**input:**
+* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
+
+
 ### func (*ContractMatching) GetSignature
 
 ```go
@@ -135,16 +146,6 @@ Get the L3 signature of the transaction.
 func (*ContractMatching) IsSignatureValid() bool
 ```
 Check if the inside L3 signature is valid or not.
-
-### func (*ContractMatching) CreateSignedTx
-
-```go
-func (*ContractMatching) CreateSignedTx(signer *ZkLinkSigner) (*ContractMatching, error)
-```
-Create a new transaction with L3 signature.
-
-**input:**
-* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
 
 ### func (*ContractMatching) ToZklinkTx
 

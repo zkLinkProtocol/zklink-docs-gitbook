@@ -1,7 +1,7 @@
 ## type AutoDeleveragingBuilder
 
 ```go
-type AutoDeleveragingBuilder struct
+type AutoDeleveragingBuilder struct {
 	AccountId       AccountId
 	SubAccountId    SubAccountId
 	SubAccountNonce Nonce
@@ -52,6 +52,15 @@ func (*AutoDeleveraging) IsValid() bool
 ```
 Check if the transaction is valid.
 
+### func (*AutoDeleveraging) CreateSignedTx
+```go
+func (*AutoDeleveraging) CreateSignedTx(signer *ZkLinkSigner) (*AutoDeleveraging, error)
+```
+Create a new AutoDeleveraging transaction with L3 signature inside.
+
+**input:**
+* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
+
 ### func (*AutoDeleveraging) GetSignature
 ```go
 func (*AutoDeleveraging) GetSignature() ZkLinkSignature
@@ -70,11 +79,3 @@ func (*AutoDeleveraging) ToZklinkTx() ZkLinkTx
 ```
 Change the transaction to the [ZkLinkTx](../basic_types.md#zklinktx)
 
-### func (*AutoDeleveraging) CreateSignedTx
-```go
-func (*AutoDeleveraging) CreateSignedTx(signer *ZkLinkSigner) (*AutoDeleveraging, error)
-```
-Create a new AutoDeleveraging transaction with L3 signature inside.
-
-**input:**
-* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)

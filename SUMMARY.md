@@ -54,6 +54,7 @@
       * [AutoDeleveraging](developer/sdk/go/transactions/7-auto-deleveraging.md)
       * [Funding](developer/sdk/go/transactions/8-funding.md)
       * [Liquidation](developer/sdk/go/transactions/9-liquidation.md)
+      * [UpdateGlobalVar](developer/sdk/go/transactions/10-update-global-var.md)
   * [Js](developer/sdk/js/changelog.md)
 
 ## ⚙ Network Information

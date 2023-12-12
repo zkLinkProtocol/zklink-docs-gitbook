@@ -26,12 +26,6 @@ func NewTransfer(builder TransferBuilder) *Transfer
 
 Create a new [Transfer](#type-transfer) transaction.
 
-### func (*Transfer) GetSignature
-
-```go
-func (*Transfer) GetSignature() ZkLinkSignature
-```
-
 Get the signature in the [Transfer](#type-transfer) transaction.
 
 ### func (*Transfer) GetBytes
@@ -66,6 +60,23 @@ func (*Transfer) IsValid() bool
 ```
 
 Check if all the fields in Withdraw are valid. For example, if the `ChainId` is exceeded the maximum ChainId, it will return false.
+
+### func (*Transfer) CreateSignedTx
+
+```go
+func (*Transfer) CreateSignedTx(signer *ZkLinkSigner) (*Transfer, error)
+```
+
+Sign the Transfer transaction with the [ZkLinkSigner](../signer.md#type-zklinksigner), L1 signature and L3 signature will be created.
+
+**input:**
+* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
+  
+### func (*Transfer) GetSignature
+
+```go
+func (*Transfer) GetSignature() ZkLinkSignature
+```
 
 
 ### func (*Transfer) IsSignatureValid
@@ -102,17 +113,6 @@ func (*Transfer) SubmitterSignature(signer *ZkLinkSigner) (ZkLinkSignature, erro
 ```
 
 Create the submitter signature.
-
-**input:**
-* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
-
-### func (*Transfer) CreateSignedTx
-
-```go
-func (*Transfer) CreateSignedTx(signer *ZkLinkSigner) (*Transfer, error)
-```
-
-Sign the Transfer transaction with the [ZkLinkSigner](../signer.md#type-zklinksigner), L1 signature and L3 signature will be created.
 
 **input:**
 * signer: [ZkLinkSigner](../signer.md#type-zklinksigner)

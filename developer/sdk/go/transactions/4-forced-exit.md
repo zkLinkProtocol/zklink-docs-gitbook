@@ -30,13 +30,6 @@ func NewForcedExit(builder ForcedExitBuilder) *ForcedExit
 
 Create a new [ForcedExit](#type-forcedexit) transaction.
 
-### func (*ForcedExit) GetSignature
-
-```go
-func (*ForcedExit) GetSignature() ZkLinkSignature
-```
-Get the signature in the [Transfer](#type-transfer) transaction.
-
 ### func (*ForcedExit) GetBytes
 
 ```go
@@ -65,6 +58,21 @@ func (_self *ForcedExit) IsValid() bool
 ```
 Check if all the fields in Withdraw are valid. For example, if the `ChainId` is exceeded the maximum ChainId, it will return false.
 
+### func (*ForcedExit) CreateSignedTx
+
+```go
+func (*ForcedExit) CreateSignedTx(signer *ZkLinkSigner) (*ForcedExit, error)
+```
+Sign the Transfer transaction with the [ZkLinkSigner](../signer.md#type-zklinksigner), L1 signature and L3 signature will be created.
+
+### func (*ForcedExit) GetSignature
+
+```go
+func (*ForcedExit) GetSignature() ZkLinkSignature
+```
+Get the signature in the [Transfer](#type-transfer) transaction.
+
+
 ### func (*ForcedExit) IsSignatureValid
 
 ```go
@@ -83,13 +91,6 @@ Create the submitter signature.
 
 **input:**
 * signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
-
-### func (*ForcedExit) CreateSignedTx
-
-```go
-func (*ForcedExit) CreateSignedTx(signer *ZkLinkSigner) (*ForcedExit, error)
-```
-Sign the Transfer transaction with the [ZkLinkSigner](../signer.md#type-zklinksigner), L1 signature and L3 signature will be created.
 
 ### func (*ForcedExit) ToZklinkTx
 

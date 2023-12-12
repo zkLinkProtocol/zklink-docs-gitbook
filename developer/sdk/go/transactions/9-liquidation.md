@@ -1,7 +1,7 @@
 ## type LiquidationBuilder
 
 ```go
-type LiquidationBuilder struct
+type LiquidationBuilder struct {
     AccountId            AccountId
     SubAccountId         SubAccountId
     SubAccountNonce      Nonce
@@ -49,6 +49,14 @@ func (*Liquidation) IsValid() bool
 ```
 Check if the transaction is valid.
 
+### func (*Liquidation) CreateSignedTx
+```go
+func (*Liquidation) CreateSignedTx(signer *ZkLinkSigner) (*Liquidation, error)
+```
+Create a new Liquidation transaction with L3 signature inside.
+**input:**
+* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
+
 ### func (*Liquidation) GetSignature
 ```go
 func (*Liquidation) GetSignature() ZkLinkSignature
@@ -66,11 +74,3 @@ Check if the inside L3 signature is valid or not.
 func (*Liquidation) ToZklinkTx() ZkLinkTx
 ```
 Change the transaction to the [ZkLinkTx](../basic_types.md#zklinktx)
-
-### func (*Liquidation) CreateSignedTx
-```go
-func (*Liquidation) CreateSignedTx(signer *ZkLinkSigner) (*Liquidation, error)
-```
-Create a new Liquidation transaction with L3 signature inside.
-**input:**
-* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)

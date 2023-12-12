@@ -168,6 +168,16 @@ func (*OrderMatching) IsValid() bool
 ```
 Check if all the fields in OrderMatching are valid. For example, if the `ChainId` is exceeded the maximum ChainId, it will return false.
 
+### func (*OrderMatching) CreateSignedTx
+
+```go
+func (*OrderMatching) CreateSignedTx(signer *ZkLinkSigner) (*OrderMatching, error)
+```
+Sign the Transfer transaction with the [ZkLinkSigner](../signer.md#type-zklinksigner), L1 signature and L3 signature will be created.
+
+**input:**
+* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
+
 ### func (*OrderMatching) GetSignature
 
 ```go
@@ -181,16 +191,6 @@ Get the L3 signature of OrderMatching transaction.
 func (*OrderMatching) IsSignatureValid() bool
 ```
 Check if the L3 signature in the transaction is valid or not.
-
-### func (*OrderMatching) CreateSignedTx
-
-```go
-func (*OrderMatching) CreateSignedTx(signer *ZkLinkSigner) (*OrderMatching, error)
-```
-Sign the Transfer transaction with the [ZkLinkSigner](../signer.md#type-zklinksigner), L1 signature and L3 signature will be created.
-
-**input:**
-* signer: [ZkLinkSigner](../signer.md#type-zklinksigner)
 
 ### func (*OrderMatching) ToZklinkTx
 
