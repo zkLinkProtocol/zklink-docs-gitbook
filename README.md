@@ -1,28 +1,62 @@
+---
+description: 'zkLink: A Multi-Chain Rollup Infrastructure Based on Zero-Knowledge Technology'
+---
+
 # Introduction
 
-zkLink is a unified multi-chain trading infrastructure secured with zk-SNARKS, empowering the next-generation of decentralized trading products such as order book DEX, NFT marketplaces, and more.
+As the blockchain space undergoes rapid advancement, there is an increasing number of layer 1 blockchains such as Ethereum, Solana, Avalanche, and Ethereum layer 2 scaling solutions including ZK-Rollups and Optimistic Rollups. Therefore, an intricate multi-chain, multi-layer landscape has emerged as the current reality and is deemed the inescapable future of the crypto ecosystem where users navigate between the different L1 chains and L2 rollups to satisfy their particular requirements, utilizing a diverse range of crypto tokens.
 
-zkLink builds a ZK-Rollup middleware that natively connects to various L1s and L2s, and provides an array of high-level APIs. Developers can easily deploy trading dApps with high customizability and access to aggregated liquidity, while their end users can benefit from a seamless multi-chain trading experience. Moreover, zkLink also supports OFT (Omnichain Fungible Token) issuing and bridging.
+Despite this multi-chain, multi-layer landscape creating considerable value for crypto users worldwide, it has also brought about unforeseen challenges. These challenges include liquidity silos that are isolated to specific chains, increased trading costs for multichain assets, fragmented user experience, and a complex application development environment.
 
-## What problems does zkLink solve?
+1.  **Liquidity fragmentation.**
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><h3><strong>Liquidity Fragmentation</strong></h3></td><td>The emergence of high-performance chains and zkEVMs has resulted in liquidity silos as a side-effect, leading to low capital utilization rates and making it hard for users to hold or trade across distinct ecosystems.</td><td></td></tr><tr><td><h3><strong>Navigation Complexity</strong></h3></td><td>Currently the process to trade multi-chain tokens is laborious and costly, involving stablecoins as an intermediary and cross-chain bridges. The unwieldy user experience often deters traders from investigating new DeFi projects and applications.</td><td></td></tr><tr><td><h3><strong>Security Risks During Inter-Chain Transactions</strong></h3></td><td>Data transmission have emerged as the most vulnerable component of cross-chain trading, including bridges and chain-interoperability process whose security depends on a multi-sig committees. Security concern hinders users enthusiasm to explore new ecosystems other than Ethereum.</td><td></td></tr></tbody></table>
+    The rise of various new blockchain and rollup networks has led to fragmented liquidity. As a result, this situation of liquidity fragmentation makes it difficult for users to manage their assets and carry out transactions across chains, resulting in lower capital use rates.
+2.  **Multi-chain product deployment challenge**.
 
-## Benefits of using zkLink infra
+    As the Ethereum Layer 2 ecosystems and alternative Layer 1 chains continue to grow, they form liquidity silos. Developers, therefore, need to deploy their products on various networks in order to attract users and liquidity. However, different programming languages and tools, such as EVM, CairoVM, and Solana VM, present notable challenges to developers. Even entirely compatible protocols like multiple EVM compatible chains (Rollups) have many subtle differences.
+3.  **Navigation complexity and high cost.**
 
-### Asset Aggregation
+    Previously, users found it difficult and expensive to navigate between blockchains, for example, to swap tokenA on chainA for tokenB on chainB through a DEX. This procedure turned out to be quite intricate and involves multiple fees.
 
-* **Multi-chain Token Listing and Trading:** list and trade tokens across various L1s and L2s, including FTs and NFTs, without a bridge to mitigate cross-chain risks and fees.
-* **Multi-chain Token Portfolio Management:** a single wallet to manage multi-chain portfolios, just as in a centralized exchange.
+    * First, it requires the installation of a wallet and purchase of the gas token for chainB.
+    * Next, users need to trade tokenA for a stablecoin or another intermediary token which can be bridged to chainB.
+    * Then, users need to purchase tokenB on a local DEX.
 
-### Liquidity Aggregation
+    The emergence of numerous cross-chain asset bridge applications has improved this experience to an extent. However, the cost of cross-chain token exchange remains high, and users still struggle with conducting affordable and seamless token interactions across different chains.
+4.  **Security risks during inter-chain transactions.**
 
-* **Token Merge:** tokens issued on different blockchains by the same entity (e.g., USDT ERC20, USDT SPL, USDT BEP20) will be merged into a single token (USDT) within the zkLink rollup network.
-* **Stablecoin Liquidity Unification:** USD, a unified pricing currency, is introduced within the zkLink system, which eliminates disparities among fiat-backed stablecoins from different chains. The auto-conversion from selected stablecoins (USDC, USDP, BUSD, etc.) to USD is optional for dApps.
+    Preserving asset security poses a formidable technical challenge in cross-chain transactions. For example, in recent years, cross-chain asset bridges have been one of the most susceptible components to hacks in the crypto ecosystem.
 
-### App-specific Zero-knowledge Circuit
+zkLink addresses the above challenges of blockchain interoperability and standardization by building a multi-chain rollup infra protocol to simplify multi-chain dApp deployment, and resolve liquidity fragmentation. It leverages zero-knowledge proof technology to provide a high throughput, low-cost App Rollup deployment solution.
 
-* **High customizability:** developers can choose which networks to connect, which to put DA on, and tailor specific functions.
-* **High performance:** 1000+ TPS to bridge the gap between high-frequency traders' needs and on-chain products.
-* **High efficiency:** the app-specific circuit is considerably smaller than general-purpose zk circuits, resulting in lower computational resource and on-chain gas consumption.
+By harnessing the potential of zero-knowledge proof technology, the zkLink protocol features key functionalities such as:
+
+* Multi-chain liquidity aggregation across L1 blockchains and L2 rollups.
+* Quick multi-chain product deployment with SDK and APIs.
+* A trading-specific-zkVM, empowering high-throughput, low-cost App Rollup solution for high performance financial applications such as Order Book DEX.
+
+## Key Features of zkLink Protocol
+
+### Native Asset Aggregation
+
+Applications using zkLink rollup infra solution will be able to access and list the native tokens across the connected L1s and L2s, including FTs and NFTs, allowing users to trade multi-chain assets on a unified user interface. Cross-chain asset bridges are not needed in the process, thus avoiding cross-chain asset bridging risks and bridging fees.
+
+At the same time, multi-chain token portfolios can be managed with a single wallet. For instance, Alice deposits 2 UNI from her Metamask wallet to zkLink on Ethereum, and then deposits 3 BNB from BNB Chain to zkLink from the same wallet address — as a result, Alice will receive 2 UNI + 3 BNB under the same wallet address on the zkLink rollup network. This hypothetical example applies the same to tokens from Polygon, Starknet, zkSync, Linea, Arbitrum, Optimism, Scroll, and Solana, etc. Therefore, users can easily manage their multi-chain token portfolios using a single wallet with a simplified user experience.
+
+### Liquidity Aggregation and Unification
+
+Tokens issued on different L1 chains and L2 rollups by the same entity, for instance, USDT ERC20, USDT BEP20, USDT ARB, etc — will be merged into a single USDT token in the zkLink App Rollups and zkLink L3 network.
+
+The same applies for ETH. As ETH is the native asset for Ethereum and all the Ethereum layer 2 networks, ETH from Ethereum, zkSync, and Starknet, etc., will be merged into a single ETH token, thus eliminating chain disparities.
+
+In summary, tokens of the same kind but issued on various chains will be merged into one single token, fostering unified and aggregated liquidity.
+
+### Customizable App Rollup Deployment
+
+zkLink protocol decouples the four layers of the rollup framework and provides fast and customizable rollup deployment solution. zkLink is focused on the development of execution layer plus settlement layer, and will integrate third party modular solutions for DA layer and sequencing layer, allowing developers to customize the key components to meet diverse demands of different use cases.
+
+* **Network Collections and Settlement Layer Solution**. Developers can choose which chains the App Rollup can access to, including but not limited to: ETH, BNB Chain, Avalanche, Polygon PoS, Solana, zkSync, Starknet, Scroll, Polygon zkEVM, Linea, Taiko, Arbitrum, Optimism, Base, etc.
+* **Execution Environment**: TS-zkVM.
+* **Decentralized Sequencer**: Espresso, Astria, Fairblock, etc.
+* **Modular DA Solutions**: In addition to Ethereum, developers can choose Celestia, EigenDA, Polygon Avail, DAC organized by zkLink, etc.
 
