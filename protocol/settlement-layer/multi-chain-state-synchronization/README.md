@@ -20,7 +20,7 @@ Thirdly, the Ethereum contract will compare the sync hash from Linea with the sy
 
 This messaging mechanism allows for a secure and effective synchronization of states cross-L2s, ensuring that deposit fraud issues on the secondary chains are prevented.
 
-<figure><img src="../../.gitbook/assets/figure6.png" alt=""><figcaption><p>zkLink Nexus cross-rollup states synchronization process</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/figure6.png" alt=""><figcaption><p>zkLink Nexus cross-rollup states synchronization process</p></figcaption></figure>
 
 ## 3. Origin solution: cross-chain state synchronization via Light Oracle Network
 
@@ -36,4 +36,4 @@ Through the process described above, the cross-chain states are synchronized fas
 
 In addition, a user that deploys significant capital to a zkLink Orgin Rollup could apply to run a node service of the light oracle network, which will completely eliminate the risk of multi-chain deposit fraud.
 
-<figure><img src="../../.gitbook/assets/figure7.png" alt=""><figcaption><p>zkLink Origin cross-chain state synchronization process</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/figure7.png" alt=""><figcaption><p>zkLink Origin cross-chain state synchronization process</p></figcaption></figure>
