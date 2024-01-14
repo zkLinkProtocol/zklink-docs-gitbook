@@ -15,6 +15,17 @@
 
 {% tab title="Nexus Alpha" %}
 
+
+* `Deploy Time`: Dec-22-2023 11:06:37 AM +UTC
+* `Tag`: Nexus Alpha
+* `zkLink Version`: [faf9ffb403ad6f76b1603e437ce78ea6233c38de](https://github.com/zkLinkProtocol/zklink-periphery/commit/faf9ffb403ad6f76b1603e437ce78ea6233c38de)
+
+|    Network    |              Contract Address              |
+| :-----------: | :----------------------------------------: |
+|     zkSync    | 0xE999bb14881e48934A489cC9B35A4f9449EE87fb |
+|     Scroll    | 0x18575a2c92fC59634F16b799D256FC045735D3f9 |
+|     Linea     | 0x8394C8F71847f7EA488D2c256E6063FFC6Bfa896 |
+| polygon zkEVM | 0xB5b7644a0e8F1Fd12040298eacF8012AE96158A2 |
 {% endtab %}
 
 {% tab title="Nexus Beta" %}
@@ -25,9 +36,9 @@
 | Ethereum Mainnet   | Arbitrator            | 0x683669E5B6cDc6636673a5f7ddB68E20812216F5 |
 | Ethereum Mainnet   | Linea L1 Gateway      | 0xaD5d729291C0d6A299E370814CA6Ce1c8C25b51c |
 | Ethereum Mainnet   | zkSync Era L1 Gateway | 0x98CEDA04E4a1FDc0fd025FB73e48e609AD00673B |
-| Linea Mainnet      | zkLink Main           | 0xdE1Ce751405Fe6D836349226EEdCDFFE1C3BE269 |
+| Linea Mainnet      | zkLink Main Contract  | 0xdE1Ce751405Fe6D836349226EEdCDFFE1C3BE269 |
 | Linea Mainnet      | Linea L2 Gateway      | 0xb6B96964633F558980e454953474cc7435c3D78B |
-| zkSync Era Mainnet | zkLink Main           | 0x0669ef7718376591AE0756A56255c75D2e712d87 |
+| zkSync Era Mainnet | zkLink Main Contract  | 0x0669ef7718376591AE0756A56255c75D2e712d87 |
 | zkSync Era Mainnet | zkSync L2 Gateway     | 0xF180DD47ad7681335c82a592EA62Fdb92446F300 |
 
 
