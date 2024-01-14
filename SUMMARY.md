@@ -12,7 +12,7 @@
   * [Nexus: Settlement on ETH ZK-L2s](protocol/settlement-layer/nexus-settlement-on-eth-zk-l2s.md)
   * [Origin: Settlement on ETH and Alt-L1s](protocol/settlement-layer/origin-settlement-on-eth-and-alt-l1s.md)
   * [Multi-Chain State Synchronization](protocol/settlement-layer/multi-chain-state-synchronization/README.md)
-    * [Detailed Explanation of Nexus Multi-Chain State Synchronization](protocol/settlement-layer/multi-chain-state-synchronization/detailed-explanation-of-nexus-multi-chain-state-synchronization.md)
+    * [same good In Depth](protocol/settlement-layer/multi-chain-state-synchronization/same-good-in-depth.md)
   * [Supported Networks of zkLink Nexus and Origin](protocol/settlement-layer/supported-networks-of-zklink-nexus-and-origin.md)
   * [Security Assumptions of zkLink Nexus and Origin](protocol/settlement-layer/security-assumptions-of-zklink-nexus-and-origin.md)
 * [Execution Layer](protocol/execution-layer/README.md)
