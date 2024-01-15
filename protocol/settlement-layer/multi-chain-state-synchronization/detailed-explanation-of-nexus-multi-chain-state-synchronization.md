@@ -2,7 +2,7 @@
 
 In zkLink's Nexus mode, multi-chain state synchronization is achieved by transmitting sync hashes. This process is facilitated by an official message bridge, also known as a canonical message service, which is deployed by the Layer2 Network team. Once these sync hashes from various chains are received on the Ethereum mainnet, they undergo a consistency check. Upon successful verification, the confirmation information is relayed back to the Layer2 network via the same official message bridge.
 
-<figure><img src="../../../.gitbook/assets/photo_2024-01-14 15.01.23.jpeg" alt=""><figcaption><p>Nexus Multi-Chain State Synchronization</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Img14 (3).png" alt="Nexus Multi-Chain State Synchronization"><figcaption><p>Nexus Multi-Chain State Synchronization</p></figcaption></figure>
 
 {% hint style="warning" %}
 For simplicity and ease of understanding, the above diagram uses only two zkRollup Layer2s as examples and does not represent the actual network deployment scenario.
