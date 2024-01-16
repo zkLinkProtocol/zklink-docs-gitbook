@@ -1,6 +1,6 @@
 # Protocol Overview
 
-<figure><img src="../.gitbook/assets/zkLink Protocol Overview.jpg" alt=""><figcaption><p>zkLink Protocol Architecture Overview </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/figure1 (1).png" alt="zkLink Protocol Architecture Overview "><figcaption><p>zkLink Protocol Architecture Overview </p></figcaption></figure>
 
 As shown in the figure above, zkLink Protocol is a multi-chain ZK-Rollup Infrastructure composed of four layers: the settlement layer, the execution layer, the sequencing layer, and the DA layer. These four layers are decoupled for customizable App Rollup deployment.
 
