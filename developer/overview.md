@@ -1,6 +1,6 @@
 ---
 description: >-
-  This article is primarily aimed at DApp developers. It’s purpose is to give
+  This article is primarily aimed at DApp developers. Its purpose is to give
   developers  a quick and basic understanding of zkLink Infra and to help
   facilitate DApp development and integration.
 ---
@@ -39,7 +39,7 @@ Because zkLink’s deployment scenarios are mostly Layer2 networks, we define zk
 
 The zkLink protocol’s core is its Multi-Chain ZK-Rollup technology, which is composed of both on-chain and off-chain components.
 
-The off-chain component is termed the Off-chain State Tree, and all account states are stored in the Offchain State Tree. The zkLink Validator plays the role of maintaining the Offchain State Tree. Any change that occurs in the account state, a corresponding zero-knowledge proof (zk-proof) must be generated. A Prover (orange color below) is responsible for generating the zk-proof.
+The off-chain component is termed the Off-chain State Tree, and all account states are stored in the Offchain State Tree. The zkLink Validator plays the role of maintaining the Offchain State Tree. Any change that occurs in the account state, a corresponding zero-knowledge proof (zk-proof) must be generated. A Prover is responsible for generating the zk-proof.
 
 The on-chain component is the smart contract that’s deployed on the different chains, which is referred to as the zkLink Contract. In addition to being responsible for verifying the zero-knowledge proof, the on-chain smart contract also needs to coordinate the user’s Deposit and Withdraw actions.
 
@@ -57,7 +57,7 @@ There are two on-chain protocols that are currently supported by zkLink: EVM and
 
 ### OffChain Component
 
-* **DApp Back-end Service**: Depending on the DApp’s business type, the functions of this module will vary. For example, regarding commonly used Central Limited Order Book (CLOB) exchange, the most critical function of the DApp’s back-end service is to maintain the orderbook and the matching engine.
+* **DApp Back-end Service**: Depending on the DApp’s business type, the functions of this module will vary. For example, regarding commonly used Central Limited Order Book (CLOB) exchange, the most critical function of the DApp’s back-end service is to maintain the order book and the matching engine.
 * **zkLink Validator**: The zkLink Validator is responsible for receiving and processing transactions from the DApp, and checking whether the transactions comply with the rules defined by the Circuit. The Validator is also responsible for organizing the Prover to generate a zk-proof and submit the zk-proof to the zkLink Contract. When in development, the developer does not need to care about the details of how the Validator operates, instead, the developer only needs to refer to the SDK provided by zkLink in order to quickly integrate the services provided by the Validator. In the end, this saves the developer tremendous effort.
 * **Prover**: The Prover is responsible for generating the zero-knowledge proof.
 
@@ -91,7 +91,7 @@ Since users interact directly with the chain, they will need to pay gas fees. Ho
 
 In addition, zkLink supports Passkey-based account solutions.
 
-#### 3. User Withdraw Asset to Layer1(Layer2)
+#### 3. User Withdraw Asset to Layer1 (Layer2)
 
 The user is required to personally sign Withdraw Transaction (note: this is not an onChain tx, and there is no need for the user to consider gas fee issues). The user submits the Signature to the DApp, and after the DApps confirms the Signature, it is sent to the zkLink Validator.
 
@@ -101,7 +101,7 @@ The DApp can customize the rules for the Withdrawal Fee.
 
 #### 4. User Place Order
 
-Taking a trading DApp as an example. The DApp maintains the Orderbook and the user can sign a maker (or taker) order. The DApp’s Matching Engine then is responsible for matching orders from different users. Once the matching is successful, the DApp will initiate a `ContractMatching Transaction` based on the order information from the taker and maker, and send it to the zkLink Validator.
+Taking a trading DApp as an example. The DApp maintains the Order book and the user can sign a maker (or taker) order. The DApp’s Matching Engine then is responsible for matching orders from different users. Once the matching is successful, the DApp will initiate a `ContractMatching Transaction` based on the order information from the taker and maker, and send it to the zkLink Validator.
 
 User Place Order does not need to interact with the chain, which means that similar to Withdraw, users do not need to consider issues related to gas costs. Moreover, DApps can customize their trading fee rules and ration (zkLink Circuit will constrain the upper limit of handling fees).
 
