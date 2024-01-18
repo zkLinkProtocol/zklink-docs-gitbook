@@ -77,7 +77,7 @@ The Offchain State Tree maintained by the Validator records all account and asse
 
 After creating a zkLink Account, the next step is the activation process.
 
-Activate means that a user generate a zkLink key (refer to zkLink key chapter) to operate the zkLink Account. The operation of specifying the zkLink key is called `ChangePubkey` . The user generates a pubkey hash based on the zkLink key and signs a `ChangePubkey` transaction by controlling the zkLink Account wallet (EOA or Passkey). The signature states: “the zkLink key corresponding to this pubkey hash can control my account.”
+Activate means that a user generate a zkLink key to operate the zkLink Account. The operation of specifying the zkLink key is called `ChangePubkey` . The user generates a pubkey hash based on the zkLink key and signs a `ChangePubkey` transaction by controlling the zkLink Account wallet (EOA or Passkey). The signature states: “the zkLink key corresponding to this pubkey hash can control my account.”
 
 After a zkLink Validator receives the `ChangePubKey` transaction, the Circuit will verify and record the pubkey hash in the Offchain State Tree.
 
