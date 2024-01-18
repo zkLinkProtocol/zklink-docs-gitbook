@@ -7,7 +7,7 @@ description: >-
 
 # TS-zkVM for App Rollup
 
-zkLink Trading-Specific-zkVM (TS-zkVM) is based on tailored core ZK circuits and Risc0 zkVM extension ZK circuits, of which the details are specified in the flow section. The TS-zkVM offers high-throughput and low-cost execution for App Rollup developers. It supports various order book product features, including but not limited to spot trading, derivatives trading, NFT trading, etc.
+zkLink Trading-Specific-zkVM (TS-zkVM) is based on tailored core ZK circuits and Risc0 zkVM extension ZK circuits. The TS-zkVM offers high-throughput and low-cost execution for App Rollup developers. It supports various order book product features, including but not limited to spot trading, derivatives trading, NFT trading, etc.
 
 Different developers and applications may have varying requirements for cost and security, zkLink App Rollup developers are able to compose the key components including DA, Sequencer, and Settlement layer.
 
