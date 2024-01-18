@@ -24,6 +24,8 @@
 
 * [Developer Overview](developer/overview.md)
 * [Get Started](developer/quick-start/README.md)
+* [Examples](developer/examples/README.md)
+  * [Base Demo](developer/examples/base-demo.md)
 * [JSON RPC & Websocket](developer/json-rpc-and-websocket/README.md)
   * [JSON-RPC API](developer/api-and-sdk/json-rpc/json-rpc-api.md)
   * [JSON-RPC Errors](developer/api-and-sdk/json-rpc/json-rpc-errors.md)
