@@ -1,8 +1,8 @@
 ---
 description: >-
-  This article is primarily aimed at DApp developers. Its purpose is to give
-  developers  a quick and basic understanding of zkLink Infra and to help
-  facilitate DApp development and integration.
+  This section is designed for dApp developers, offering a concise overview of
+  zkLink's infra to streamline the understanding of zkLink's features for
+  efficient dApp development and integration.
 ---
 
 # Developer Overview
