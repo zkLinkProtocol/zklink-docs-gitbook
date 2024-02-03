@@ -9,7 +9,7 @@
 * [Protocol Overview](welcome/Architecture.md)
 * [Settlement Layer](protocol/settlement-layer/README.md)
   * [Working Principal of A Multi-Chain ZK-Rollup](protocol/settlement-layer/working-principal-of-a-multi-chain-zk-rollup.md)
-  * [Nexus: Settlement on ETH ZK-L2s](protocol/settlement-layer/nexus-settlement-on-eth-zk-l2s.md)
+  * [Nexus: Settlement on ETH L2s](protocol/settlement-layer/nexus-settlement-on-eth-l2s.md)
   * [Origin: Settlement on ETH and Alt-L1s](protocol/settlement-layer/origin-settlement-on-eth-and-alt-l1s.md)
   * [Multi-Chain State Synchronization](protocol/settlement-layer/multi-chain-state-synchronization/README.md)
     * [In-Detail: Nexus Multi-Chain State Synchronization](protocol/settlement-layer/multi-chain-state-synchronization/detailed-explanation-of-nexus-multi-chain-state-synchronization.md)
