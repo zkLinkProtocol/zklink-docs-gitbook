@@ -10,11 +10,11 @@ The challenge centers on guaranteeing the states consistency between the primary
 
 ## 2. Nexus solution: multi-chain state synchronization via Ethereum
 
-All networks connected with zkLink Nexus have to be a Rollup L2 deployed on Ethereum, which ensures a fast communication with Ethereum through the official rollup bridges.
+All networks connected with zkLink Nexus have to be Rollup L2s deployed on Ethereum, which communicates with Ethereum through the official rollup bridges.
 
-Firstly, zkLink Nexus L3 sequencer will commit state and proof to the primary chain(assuming Linea is the primary chain) in step 1, 2, 3, as is shown in the figure below.
+Firstly, zkLink Nexus L3 sequencer will commit state and proof to the primary chain(assuming Linea is the primary chain) in step 1, 2, 3, as is shown in the figure below.&#x20;
 
-Secondly, the primary chain Linea computes the sync hash of Starknet and zkSync and posts it to the Ethereum contract in step 4. In the meantime, the secondary chains, Starknet and zkSync will compute and post their sync hashes representing the deposit history to the Ethereum contract in steps 5 and 6.
+Secondly, the primary chain Linea computes the sync hash of Starknet and zkSync (secondary chains) and posts it to the Ethereum contract in step 4. In the meantime, the secondary chains, Starknet and zkSync will compute and post their sync hashes representing the deposit history to the Ethereum contract in steps 5 and 6.
 
 Thirdly, the Ethereum contract will compare the sync hash from Linea with the sync hashes from Starknet and zkSync. If they match, confirmation messages will be sent to the contract on the three L2s through their official Ethereum rollup bridges in steps 7, 8, and 9.
 

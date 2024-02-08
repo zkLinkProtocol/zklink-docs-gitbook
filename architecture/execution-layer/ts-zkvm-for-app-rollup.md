@@ -2,7 +2,7 @@
 description: >-
   The TS-zkVM is a high-efficiency ZKP execution environment specifically
   designed for high-performance financial products such as CLOBs, and it is
-  constructed by zkLink. TS-zkVM extends and integrates
+  constructed by zkLink.
 ---
 
 # TS-zkVM for App Rollup
