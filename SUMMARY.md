@@ -4,21 +4,21 @@
 
 * [Introduction](README.md)
 
-## ⚖ Protocol
+## ⚖ Architecture
 
-* [Protocol Overview](welcome/Architecture.md)
-* [Settlement Layer](protocol/settlement-layer/README.md)
-  * [Working Principal of A Multi-Chain ZK-Rollup](protocol/settlement-layer/working-principal-of-a-multi-chain-zk-rollup.md)
-  * [Nexus: Settlement on ETH L2s](protocol/settlement-layer/nexus-settlement-on-eth-l2s.md)
-  * [Origin: Settlement on ETH and Alt-L1s](protocol/settlement-layer/origin-settlement-on-eth-and-alt-l1s.md)
-  * [Multi-Chain State Synchronization](protocol/settlement-layer/multi-chain-state-synchronization/README.md)
-    * [In-Detail: Nexus Multi-Chain State Synchronization](protocol/settlement-layer/multi-chain-state-synchronization/detailed-explanation-of-nexus-multi-chain-state-synchronization.md)
-  * [Supported Networks of zkLink Nexus and Origin](protocol/settlement-layer/supported-networks-of-zklink-nexus-and-origin.md)
-  * [Security Assumptions of zkLink Nexus and Origin](protocol/settlement-layer/security-assumptions-of-zklink-nexus-and-origin.md)
-* [Execution Layer](protocol/execution-layer/README.md)
-  * [TS-zkVM for App Rollup](protocol/execution-layer/ts-zkvm-for-app-rollup.md)
-* [Sequencing Layer](protocol/sequencing-layer.md)
-* [DA Layer](protocol/da-layer.md)
+* [Overview](architecture/architecture.md)
+* [Settlement Layer](architecture/settlement-layer/README.md)
+  * [Working Principal of A Multi-Chain ZK-Rollup](architecture/settlement-layer/working-principal-of-a-multi-chain-zk-rollup.md)
+  * [Nexus: Settlement on ETH L2s](architecture/settlement-layer/nexus-settlement-on-eth-l2s.md)
+  * [Origin: Settlement on ETH and Alt-L1s](architecture/settlement-layer/origin-settlement-on-eth-and-alt-l1s.md)
+  * [Multi-Chain State Synchronization](architecture/settlement-layer/multi-chain-state-synchronization/README.md)
+    * [In-Detail: Nexus Multi-Chain State Synchronization](architecture/settlement-layer/multi-chain-state-synchronization/in-detail-nexus-multi-chain-state-synchronization.md)
+  * [Supported Networks of zkLink Nexus and Origin](architecture/settlement-layer/supported-networks-of-zklink-nexus-and-origin.md)
+  * [Security Assumptions of zkLink Nexus and Origin](architecture/settlement-layer/security-assumptions-of-zklink-nexus-and-origin.md)
+* [Execution Layer](architecture/execution-layer/README.md)
+  * [TS-zkVM for App Rollup](architecture/execution-layer/ts-zkvm-for-app-rollup.md)
+* [Sequencing Layer](architecture/sequencing-layer.md)
+* [DA Layer](architecture/da-layer.md)
 
 ## 🛠 Developer
 
