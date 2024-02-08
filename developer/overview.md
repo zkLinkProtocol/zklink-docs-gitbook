@@ -37,13 +37,13 @@ Because zkLink’s deployment scenarios are mostly Layer2 networks, we define zk
 
 <figure><img src="../.gitbook/assets/rollup (9) (1).jpg" alt=""><figcaption><p>figure. 1</p></figcaption></figure>
 
-The zkLink protocol’s core is its Multi-Chain ZK-Rollup technology, which is composed of both on-chain and off-chain components.
+zkLink X's Multi-Chain ZK-Rollup technology is composed of both on-chain and off-chain components.
 
 The off-chain component is termed the Off-chain State Tree, and all account states are stored in the Offchain State Tree. The zkLink Validator plays the role of maintaining the Offchain State Tree. Any change that occurs in the account state, a corresponding zero-knowledge proof (zk-proof) must be generated. A Prover is responsible for generating the zk-proof.
 
 The on-chain component is the smart contract that’s deployed on the different chains, which is referred to as the zkLink Contract. In addition to being responsible for verifying the zero-knowledge proof, the on-chain smart contract also needs to coordinate the user’s Deposit and Withdraw actions.
 
-Different from the zkEVM Layer 2, zkLink is an application-specific Rollup. So under normal circumstances, users will not directly interact with a zkLink Validator.
+Different from the zkEVM rollup, zkLink X is an application-specific Rollup. So under normal circumstances, users will not directly interact with a zkLink Validator.
 
 ### OnChain Component
 
