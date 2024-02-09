@@ -45,9 +45,9 @@ Applications using zkLink X App-Rollup infra solution will be able to access and
 
 At the same time, multi-chain token portfolios can be managed with a single wallet. For instance, Alice deposits 2 UNI from her Metamask wallet to zkLink on Ethereum, and then deposits 3 BNB from BNB Chain to zkLink from the same wallet address — as a result, Alice will receive 2 UNI + 3 BNB under the same wallet address on the zkLink rollup network. This hypothetical example applies the same to tokens from Polygon, Starknet, zkSync, Linea, Arbitrum, Optimism, Scroll, and Solana, etc. Therefore, users can easily manage their multi-chain token portfolios using a single wallet with a simplified user experience.
 
-### Liquidity Aggregation and Unification
+### Liquidity Unification
 
-Tokens issued on different L1 chains and L2 rollups by the same entity, for instance, USDT ERC20, USDT BEP20, USDT ARB, etc — will be merged into a single USDT token in the zkLink App Rollups and zkLink L3 network.
+Tokens issued on different L1 chains and L2 rollups by the same entity, for instance, USDT ERC20, USDT BEP20, USDT ARB, etc — will be merged into a single USDT token in the zkLink App Rollups.
 
 The same applies for ETH. As ETH is the native asset for Ethereum and all the Ethereum layer 2 networks, ETH from Ethereum, zkSync, and Starknet, etc., will be merged into a single ETH token, thus eliminating chain disparities.
 
@@ -57,7 +57,7 @@ In summary, tokens of the same kind but issued on various chains will be merged 
 
 zkLink X decouples the four layers of the rollup framework and provides fast and customized rollup deployment solution. zkLink is focused on the development of execution layer plus settlement layer, and will integrate third party modular solutions for DA layer and sequencing layer, allowing developers to customize the key components to meet diverse demands of different use cases.
 
-* **Network Collections and Settlement Layer Solution:** Developers can choose which chains the App Rollup can access to, including but not limited to: ETH, BNB Chain, Avalanche, Polygon PoS, Solana, zkSync, Starknet, Scroll, Polygon zkEVM, Linea, Taiko, Arbitrum, Optimism, Base, etc. Two settlement schemes (i.e. Nexus and Origin) are available to meet requirements on chain selection, finality speed, and security.
+* **Network Collections and Settlement Layer Solution:** Developers can choose which chains the App Rollup can access to. Two settlement schemes (i.e. Nexus and Origin) are available to meet specific requirements on chain selection, finality speed, and security.
 * **Execution Environment**: TS-zkVM.
 * **Decentralized Sequencer**: Espresso, Astria, Fairblock, etc.
 * **Modular DA Solutions**: In addition to Ethereum, developers can choose Celestia, EigenDA, Polygon Avail, DAC organized by zkLink, etc.
