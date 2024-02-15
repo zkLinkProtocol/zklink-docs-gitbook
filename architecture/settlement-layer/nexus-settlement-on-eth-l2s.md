@@ -1,6 +1,6 @@
 # Nexus: Settlement on ETH L2s
 
-A zkLink Nexus L3 rollup settles the transactions and transition of states directly on Ethereum's L2s, and the L2s settle on Ethereum. The finality of the transactions on a zkLink Nexus L3 rollup will be ultimately achieved on Ethereum layer1.
+A zkLink Nexus L3 rollup settles the transactions and transition of states on Ethereum's L2s, and the L2s settle on Ethereum. The smart contract on Ethereum plays the key role to check if sync hashes from different rollups are consistent.&#x20;
 
 <figure><img src="../../.gitbook/assets/figure3.png" alt=""><figcaption><p>Security inheritance of zkLink Nexus</p></figcaption></figure>
 

@@ -10,10 +10,10 @@ The working principal of a classic ZK-Rollup settlement typically contains three
 
 The 4 stages are briefly described as below:
 
-**1. Commit:** The sequencer submits all rollup data (excluding actual transaction data in Validium mode) to the primary chain, where the contract on the primary chain processes zero knowledge proof verification. For multi-chain ZK-Rollup, the sequencer will additionally commit the state root and the transactions related to that secondary chain.
+**1. Commit:** The sequencer submits the rollup data (excluding off-chain transaction data in Validium mode) to the primary chain, where the contract on the primary chain processes zero knowledge proof verification. Transactions related to secondary chains will be submitted to the primary chain as well.
 
 **2. Prove:** ZKPs are submitted to the primary chain and verified by the smart contract. This process occurs only on the primary chain (Please note the primary chain is required to have the capability to verify zk-SNARKs proofs). For multi-chain ZK-Rollup, the transaction information related to all secondary chains will also be used by the smart contract for proof verification.
 
-**3. Synchronize:** The purpose of the Synchronize stage is to achieve states synchronization across the connected chains. The secondary chains use the cross-chain messaging mechanism to send their respective sync hashes to the primary chain. Once the primary chain receives all the sync hashes from the secondary chains, it compares them with its own calculated sync hashes. If they are consistent, the secondary chains will be notified that they can proceed with transaction settlement and asset withdrawal.
+**3. Synchronize:** The purpose of the Synchronize stage is to achieve states synchronization across the connected chains.  After completing ZKP verification, the primary chain calculates the sync hashes for the different secondary chains, based on their transaction information received from the sequencer. Each secondary chain also calculates its own sync hash. If the sync hashes calculated from different sources are consistent, all connected chains will be notified that they can proceed with transaction settlement and asset withdrawal.
 
 **4.Execute:** This step aligns with the typical process found in a classic ZK-Rollup, which involves approving requests for fund withdrawals.
