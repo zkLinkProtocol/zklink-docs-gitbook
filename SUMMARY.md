@@ -4,7 +4,7 @@
 
 * [Introduction](README.md)
 
-## ⚖ Architecture
+## ⚖️ Architecture
 
 * [Overview](architecture/architecture.md)
 * [Settlement Layer](architecture/settlement-layer/README.md)
@@ -20,7 +20,7 @@
 * [Sequencing Layer](architecture/sequencing-layer.md)
 * [DA Layer](architecture/da-layer.md)
 
-## 🛠 Developer
+## 🛠️ Developer
 
 * [Developer Overview](developer/overview.md)
 * [Get Started](developer/quick-start/README.md)
@@ -71,7 +71,7 @@
       * [UpdateGlobalVar](developer/sdk/go/transactions/10-update-global-var.md)
   * [Js](developer/sdk/js/changelog.md)
 
-## ⚙ Network Information
+## ⚙️ Network Information
 
 * [Connected Networks](network-information/connected-networks/README.md)
   * [Mainnet](networks/mainnet\_networks.md)
@@ -90,10 +90,6 @@
 
 * [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](IntegrationArchitecture/Derivatives.md)
 * [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
-
-## Tokenomics
-
-* [Tokenomics](tokenomics.md)
 
 ## Appendix
 
