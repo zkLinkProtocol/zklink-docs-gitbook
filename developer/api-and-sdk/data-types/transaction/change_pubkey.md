@@ -75,6 +75,8 @@ For Example:
 | saltArg        | String | yes       | The salt argument when create address, H256 hex string |
 | codeHash       | String | yes       | code hash, H256 hex string                             |
 
+Refer to [EIP1271](https://eips.ethereum.org/EIPS/eip-1271) to create a contract address, then the ChangePubKey is executed by the account that can successfully call the contract's isValidSignature method.
+
 For Example:
 
 ```json
@@ -108,6 +110,8 @@ For Example:
 | Name | Type   | Required | Description            |
 |------|--------|-----------|------------------------|
 | type | String | yes       | The value is "Onchain" |
+
+Before sending the transaction, you must use the layer1 address of the account to call the `setAuthPubkeyHash` interface of the ZkLink contract to pre-set the PubkeyHash for your layer2 account (the ChangePubKey tx will be checked against the ZkLink contract after on-chain).
 
 For Example:
 
