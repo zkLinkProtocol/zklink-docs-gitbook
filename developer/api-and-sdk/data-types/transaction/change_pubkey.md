@@ -111,7 +111,7 @@ For Example:
 |------|--------|-----------|------------------------|
 | type | String | yes       | The value is "Onchain" |
 
-Before sending the transaction, you must use the layer1 address of the account to call the `setAuthPubkeyHash` interface of the ZkLink contract to pre-set the PubkeyHash for your layer2 account (the ChangePubKey tx will be checked against the ZkLink contract after on-chain).
+Before sending the transaction, you must use the layer1 address of the account to call the `setAuthPubkeyHash` interface(by call the `setAuthPubkeyHash` function of Wallet in sdk) of the ZkLink contract to pre-set the PubkeyHash for your layer2 account (the ChangePubKey tx will be checked against the ZkLink contract after on-chain).
 
 For Example:
 
