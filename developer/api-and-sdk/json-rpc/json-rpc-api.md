@@ -16,7 +16,7 @@ The zkLink API follows the JSON-RPC standard and is accessed via POST.
 
 {% tab title="Block" %}
 * [getBlockByNumber](json-rpc-api.md#getblockbynumber): get the block info by block height.
-* [getBlockOnChainNumber](json-rpc-api.md#getblockonchainnumber): get the transaction information in a block that is executed on L1 blockchains.
+* [getBlockOnChainByNumber](json-rpc-api.md#getBlockOnChainByNumber): get the transaction information in a block that is executed on L1 blockchains.
   {% endtab %}
 
 {% tab title="Account" %}
@@ -29,7 +29,7 @@ The zkLink API follows the JSON-RPC standard and is accessed via POST.
 {% tab title="Transaction" %}
 * [getTransactionByHash](json-rpc-api.md#gettransactionbyhash): get transaction info.
 * [getAccountTransactionHistory](json-rpc-api.md#getaccounttransactionhistory): get account history in descending order of the transaction id in the database.
-* [getFastWithdrawTxs](json-rpc-api.md#getfastwithdrawtxs): get transaction info of fast\_withdraw transactions.
+* [getWithdrawTxs](json-rpc-api.md#getwithdrawtxs): get transaction info of fast\_withdraw transactions.
 * [sendTransaction](json-rpc-api.md#sendtransaction): submit L2 transaction and return transaction hash.
   {% endtab %}
   {% endtabs %}
@@ -904,7 +904,7 @@ Get info of transactions waiting to be batched.
 {% endtab %}
 {% endtabs %}
 
-### getBlockOnChainNumber
+### getBlockOnChainByNumber
 
 Get transaction information in a block executed on L1 blockchains. Every block will be submitted to and executed on every L1 chain.
 
@@ -918,7 +918,7 @@ Get transaction information in a block executed on L1 blockchains. Every block w
 {
     "id": 1,
     "jsonrpc": "2.0",
-    "method": "getBlockOnChainNumber",
+    "method": "getBlockOnChainByNumber",
     "params": [4906]
 }
 ```
@@ -1350,10 +1350,12 @@ Get account history in descending order of the transaction id in the database. C
 {
     "id": 1,
     "jsonrpc": "2.0",
-    "method": "getTransactionByHash",
+    "method": "getAccountTransactionHistory",
     "params": [
-        "0x3210bb3d6719d730b30c4c9a0086d507040e25f83bea4ff4b8c2c91bf8e8c4f9",
-      	true
+        "Deposit",
+        "0xdc9c9863167ee865edd5216964b8b99d43ee7a81",
+      	0,
+        100
     ]
 }
 ```
@@ -1460,22 +1462,22 @@ Withdraw: returns the transaction history of which the account address equals fr
 Transfer: returns the transaction history of which the account address equals either to\_address or from\_address.
 {% endhint %}
 
-### getFastWithdrawTxs
+### getWithdrawTxs
 
-Get transaction info of fast\_withdraw transactions.
+Get transaction info of withdraw transactions.
 
 {% tabs %}
 {% tab title="Request" %}
 **Parameters:**
 
 * `lastTxTimestamp`: ISO 8601 standard with date, time, and time zone;
-* `maxTxs`: the max value of the number of fast\_withdraw in the return.
+* `maxTxs`: the max value of the number of Withdraw in the return.
 
 ```json
 {
     "id": 1,
     "jsonrpc": "2.0",
-    "method": "getFastWithdrawTxs",
+    "method": "getWithdrawTxs",
     "params": [
         "2023-02-03T16:41:10.744899Z",
         10

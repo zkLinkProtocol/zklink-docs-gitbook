@@ -14,6 +14,7 @@
 | nonce            | 4 bytes                                                                                          |
 | withdrawToL1     | 1 byte                                                                                           |
 | withdrawFeeRatio | 2 bytes                                                                                          |
+| callData         | No limit, be used to send to layer1 to call a smart contract                                     |
 | ts               | 4 bytes                                                                                          |
 
 72 bytes in total.
@@ -22,24 +23,24 @@
 
 ```json
 {
-  "type": "Withdraw",
   "toChainId": 1,
-  "accountId": 7,
-  "subAccountId": 2,
-  "to": "0x3498f456645270ee003441df82c718b56c0e6666",
-  "l2SourceToken": 1,
-  "l1TargetToken": 17,
-  "amount": "995900000000000000",
-  "fee": "4100000000000000",
-  "withdrawToL1": 1,
-  "withdrawFeeRatio": 50,
-  "ts": 1646102148,
-  "nonce": 0,
+  "accountId": 10,
+  "subAccountId": 1,
+  "to": "0xafaff3ad1a0425d792432d9ecd1c3e26ef2c42e9",
+  "l2SourceToken": 18,
+  "l1TargetToken": 18,
+  "amount": "10000",
+  "callData": null,
+  "fee": "3",
+  "nonce": 1,
   "signature": {
-    "pubKey": "0x0dd4f603531bd78bbecd005d9e7cc62a794dcfadceffe03e269fbb6b72e9c724",
-    "signature": "a8719d0f771f34a177bbf199ab7b0decd03b5db29edf173ed980d19c7864c5a3761111620ab1982ef1bb7459d5a919727e51b895799e2706ddd5a5328146eb01"
-  }
+    "pubKey": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "signature": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "withdrawToL1": 0,
+  "withdrawFeeRatio": 0,
+  "ts": 1693472232
 }
-encode_bytes = [3, 1, 0, 0, 0, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52, 152, 244, 86, 100, 82, 112, 238, 0, 52, 65, 223, 130, 199, 24, 181, 108, 14, 102, 102, 0, 1, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 13, 210, 37, 198, 3, 207, 192, 0, 51, 77, 0, 0, 0, 0, 1, 0, 50, 98, 29, 134, 132]
+excode_bytes = [35, 38, 100, 21, 162, 218, 169, 88, 46, 176, 84, 204, 61, 64, 69, 248, 70, 224, 44, 240, 208, 221, 29, 8, 236, 225, 227, 255, 131, 200, 226, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ```
 
