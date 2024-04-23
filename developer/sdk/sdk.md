@@ -1,4 +1,4 @@
 # SDK
 
-[Go](./go)
-[Javascript](./js.md)
+[Go](./go/changelog.md)
+[Javascript](./js/changelog.md)
