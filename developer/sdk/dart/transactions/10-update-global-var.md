@@ -102,3 +102,14 @@ String toJson()
 ```
 
 Get the json str of [UpdateGlobalVar](#type-UpdateGlobalVar)
+
+### Example
+```dart
+var tx = UpdateGlobalVar(
+	fromChainId: 1,
+	subAccountId: 2,
+	parameter: Parameter.feeAccount(accountId: 8),
+	serialId: 101
+);
+print(tx.toJson());
+```
