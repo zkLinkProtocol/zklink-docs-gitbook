@@ -74,6 +74,19 @@
       * [Liquidation](developer/sdk/go/transactions/9-liquidation.md)
       * [UpdateGlobalVar](developer/sdk/go/transactions/10-update-global-var.md)
   * [Js](developer/sdk/js/changelog.md)
+  * [Dart](developer/sdk/dart/changelog.md)
+    * [Signature](developer/sdk/dart/signer.md)
+    * [Transactions](developer/sdk/changelog/transactions/README.md)
+      * [ChangePubKey](developer/sdk/dart/transactions/1-change-pubkey.md)
+      * [Withdraw](developer/sdk/dart/transactions/2-withdraw.md)
+      * [Transfer](developer/sdk/dart/transactions/3-transfer.md)
+      * [ForcedExit](developer/sdk/dart/transactions/4-forced-exit.md)
+      * [OrderMatching](developer/sdk/dart/transactions/5-order-matching.md)
+      * [ContractMatching](developer/sdk/dart/transactions/6-contract-matching.md)
+      * [AutoDeleveraging](developer/sdk/dart/transactions/7-auto-deleveraging.md)
+      * [Funding](developer/sdk/dart/transactions/8-funding.md)
+      * [Liquidation](developer/sdk/dart/transactions/9-liquidation.md)
+      * [UpdateGlobalVar](developer/sdk/dart/transactions/10-update-global-var.md)
 
 ## ⚙️ Network Information
 
