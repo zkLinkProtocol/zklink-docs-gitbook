@@ -70,6 +70,7 @@
       * [Liquidation](developer/sdk/go/transactions/9-liquidation.md)
       * [UpdateGlobalVar](developer/sdk/go/transactions/10-update-global-var.md)
   * [Js](developer/sdk/js/changelog.md)
+* [Kafka](developer/api-and-sdk/kafka/README.md)
 
 ## ⚙️ Network Information
 

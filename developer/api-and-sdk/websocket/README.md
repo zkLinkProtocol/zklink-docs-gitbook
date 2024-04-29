@@ -1,7 +1,5 @@
 # Websocket
 
-Currently, there is only public channel.
-
 ## Connect
 
 In the public channel, when the client successfully connects to the ZkLink node, the server will return a message with ID 0, which contains the `listen_key` automatically created by the server for the connection:
