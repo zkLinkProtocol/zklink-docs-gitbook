@@ -26,10 +26,11 @@
 * [Get Started](developer/quick-start/README.md)
 * [Examples](developer/examples/README.md)
   * [Base Demo](developer/examples/base-demo.md)
-* [JSON RPC & Websocket](developer/json-rpc-and-websocket/README.md)
+* [JSON RPC & Websocket & Kafka](developer/json-rpc-and-websocket-and-kafka/README.md)
   * [JSON-RPC API](developer/api-and-sdk/json-rpc/json-rpc-api.md)
   * [JSON-RPC Errors](developer/api-and-sdk/json-rpc/json-rpc-errors.md)
   * [Websocket](developer/api-and-sdk/websocket/README.md)
+  * [Kafka](developer/api-and-sdk/kafka/README.md)
 * [Transactions](developer/api-and-sdk/README.md)
   * [Basic Types](developer/api-and-sdk/data-types/basic-types.md)
   * [State Update](developer/api-and-sdk/data-types/state-update.md)
@@ -70,7 +71,6 @@
       * [Liquidation](developer/sdk/go/transactions/9-liquidation.md)
       * [UpdateGlobalVar](developer/sdk/go/transactions/10-update-global-var.md)
   * [Js](developer/sdk/js/changelog.md)
-* [Kafka](developer/api-and-sdk/kafka/README.md)
 
 ## ⚙️ Network Information
 
