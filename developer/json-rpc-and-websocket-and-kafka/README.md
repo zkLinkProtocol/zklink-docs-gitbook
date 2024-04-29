@@ -5,5 +5,5 @@ description: >-
   update via websocket to dApp.
 ---
 
-# JSON RPC & Websocket
+# JSON RPC & Websocket & Kafka
 
