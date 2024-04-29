@@ -54,7 +54,7 @@ feeAccount(int accountId)
 ```dart
 marginInfo(
 	int marginId,
-	String symbol,
+	String? symbol,
 	int tokenId,
 	int ratio,
 )
