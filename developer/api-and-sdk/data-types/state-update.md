@@ -1,6 +1,10 @@
 # State Update
 
-Updates are generated after zkLinkTx execution, details can be found in [StateUpdateResp](./json-rpc/json-rpc-api.md#txresp). Parsing the updates can get some data that is only known after the transaction is executed, such as the actual withdraw amount of FullExit. There are 4 types of Update:
+Updates are generated after zkLinkTx execution, details can be found in [StateUpdateResp](../json-rpc/json-rpc-api.md#txresp).
+Parsing the updates can get some data that is only known after the transaction is executed, such as the actual withdraw amount of FullExit
+
+## AccountUpdate. 
+There are 4 types of AccountUpdate:
 
 1. `AccountCreate`: A new account created on the state tree;
 2. `AccountChangePubkeyUpdate`: The `pubkey` and `nonce` changed;
@@ -90,6 +94,11 @@ Transaction that generate `BalanceUpdate`:
 * [Transfer](./transaction/transfer.md)
 * [Withdraw](./transaction/withdraw.md)
 * [OrderMatching](./transaction/order_matching.md)
+* [ContractMatching](./transaction/contract_matching.md)
+* [Liquidation](./transaction/liquidation.md)
+* [AutoDeleveraging](./transaction/auto_deleveraging.md)
+* [funding](./transaction/funding.md)
+* [update_global_var](./transaction/update_global_var.md)
 
 For example
 
@@ -149,6 +158,165 @@ For Example:
     "nonce": 14,
     "residue": "4233800000000000000000"
   }
+}
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+## GlobalVarUpdate
+
+`GlobalVarsUpdate` is an enumeration type used to represent the update status of global variables. It includes the following 4 types:
+
+1. `FeeAccountUpdate`: The fee account of global variables changed
+2. `InsuranceFundAccountUpdate`: The Insurance fund account of global variables changed
+3. `MarginParamsUpdate`: The margin parameter of global variables changed
+4. `ContractParamsUpdate`: The contract parameter of global variables changed
+
+{% tabs %}
+{% tab title="FeeAccountUpdate" %}
+
+| Field              | Type                                        | Description        |
+|--------------------|---------------------------------------------|--------------------|
+| type               | String                                      | The update name    |
+| update_id          | i32                                         | update index       |
+| sub_account_id     | [SubAccountId](basic-types.md#SubAccountId) | sub-account ID     |
+| old_fee_account_id | [AccountId](basic_type.md#AccountId)        | Old fee account ID |
+| new_fee_account_id | [AccountId](basic_type.md#AccountId)        | New fee account ID |
+
+The transactions that create `FeeAccountUpdate`:
+
+* [UpdateGlobalVar](./transaction/update_global_var.md)
+
+For Example:
+
+```json
+{
+  "stateUpdateType": "GlobalVarsUpdate",
+  "globalVarUpdate": "FeeAccountUpdate",
+  "updateId": 0,
+  "subAccountId": 0,
+  "oldFeeAccountId": 0,
+  "newFeeAccountId": 3
+}
+```
+
+{% endtab %}
+
+{% tab title="InsuranceFundAccountUpdate" %}
+
+| Field                         | Type                                        | Description                   |
+|-------------------------------|---------------------------------------------|-------------------------------|
+| type                          | String                                      | The update name               |
+| update_id                     | i32                                         | update index                  |
+| sub_account_id                | [SubAccountId](basic-types.md#SubAccountId) | sub-account id                |
+| old_insurance_fund_account_id | [AccountId](basic_type.md#AccountId)        | old insurance fund account id |
+| new_insurance_fund_account_id | [AccountId](basic_type.md#AccountId)        | new insurance fund account id |
+
+The transactions that create `InsuranceFundAccountUpdate`:
+
+* [UpdateGlobalVar](./transaction/update_global_var.md)
+
+For example:
+
+```json
+{
+  "stateUpdateType": "GlobalVarsUpdate",
+  "globalVarUpdate": "InsuranceFundAccountUpdate",
+  "updateId": 0,
+  "subAccountId": 0,
+  "oldInsuranceFundAccountId": 4,
+  "newInsuranceFundAccountId": 6
+}
+```
+  
+{% endtab %}
+
+{% tab title="MarginParamsUpdate" %}
+
+| Field           | Type                                        | Description                          |
+|-----------------|---------------------------------------------|--------------------------------------|
+| type            | String                                      | The update name                      |
+| update_id       | i32                                         | update index                         |
+| sub_account_id  | [SubAccountId](basic-types.md#SubAccountId) | sub-account id                       |
+| margin_id       | [MarginId](basic-types.md#MarginId)         | margin index                         |
+| old_symbol      | String                                      | Old symbol of the margin token       |
+| new_symbol      | String                                      | New symbol of the margin token       |
+| old_index_price | String                                      | Old index price of the margin token  |
+| new_index_price | String                                      | New index price of the margin token  |
+| old_token_id    | [TokenId](basic-types.md#TokenId)           | Old margin token id of the margin_id |
+| new_token_id    | [TokenId](basic-types.md#TokenId)           | New margin token id of the margin_id |
+| old_ratio       | u8                                          | Old margin ratio of the margin token |
+| new_ratio       | u8                                          | New margin ratio of the margin token |
+
+Transaction that generate `MarginParamsUpdate`:
+
+* [UpdateGlobalVar](./transaction/update_global_var.md)
+
+For example
+
+```json
+{
+  "stateUpdateType": "GlobalVarsUpdate",
+  "globalVarUpdate": "MarginParamsUpdate",
+  "updateId": 0,
+  "subAccountId": 0,
+  "marginId": 2,
+  "oldSymbol": "",
+  "newSymbol": "BTC",
+  "oldIndexPrice": "0",
+  "newIndexPrice": "0",
+  "oldTokenId": 0,
+  "newTokenId": 142,
+  "oldRatio": 0,
+  "newRatio": 90
+}
+```
+
+{% endtab %}
+
+{% tab title="ContractParamsUpdate" %}
+
+| Field                       | Type                                        | Description                                      |
+|-----------------------------|---------------------------------------------|--------------------------------------------------|
+| update_id                   | i32                                         | update id                                        |
+| sub_account_id              | [SubAccountId](basic-types.md#SubAccountId) | sub-account id                                   |
+| pair_id                     | [PairId](basic-types.md#PairId)             | contract pair id                                 |
+| old_symbol                  | String                                      | old symbol of the contract pair                  |
+| new_symbol                  | String                                      | new symbol of the contract pair                  |
+| old_maintenance_margin_rate | u16                                         | old maintenance margin rate of the contract pair |
+| new_maintenance_margin_rate | u16                                         | new maintenance margin rate of the contract pair |
+| old_initial_margin_rate     | u16                                         | old initial margin rate of the contract pair     |
+| new_initial_margin_rate     | u16                                         | new initial margin rate of the contract pair     |
+| old_acc_funding_price       | String                                      | old accumulated funding price the contract pair  |
+| new_acc_funding_price       | String                                      | new accumulative funding price the contract pair |
+| old_mark_price              | String                                      | old mark price of the contract pair              |
+| new_mark_price              | String                                      | new mark price of the contract pair              |
+
+Transaction that generate `ContractParamsUpdate`:
+
+* [UpdateGlobalVar](./transaction/update_global_var.md)
+
+For Example:
+
+```json
+{
+  "stateUpdateType": "GlobalVarsUpdate",
+  "globalVarUpdate": "ContractParamsUpdate",
+  "updateId": 0,
+  "subAccountId": 0,
+  "pairId": 0,
+  "oldSymbol": "",
+  "newSymbol": "BTC/USDT",
+  "oldMaintenanceMarginRate": 0,
+  "newMaintenanceMarginRate": 5,
+  "oldInitialMarginRate": 0,
+  "newInitialMarginRate": 10,
+  "oldAccFundingPrice": "0",
+  "newAccFundingPrice": "0",
+  "oldMarkPrice": "0",
+  "newMarkPrice": "0"
 }
 ```
 
@@ -610,7 +778,737 @@ BalanceUpdate(fee)
 ]
 ```
 
+### ContractMatching
 
+Updates generated by ContractMatching:
 
-`version: 4457a91`
+```
+OrderUpdate(maker), PositionUpdate(maker), BalanceUpdate(maker),
+OrderUpdate(taker), PositionUpdate(taker), BalanceUpdate(taker),
+BalanceUpdate(submitter), BalanceUpdate(fee), BalanceUpdate(submitter),
+```
 
+### Example
+
+```json
+"updates": [
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "OrderUpdate",
+    "updateId": 9,
+    "accountId": 14,
+    "subAccountId": 0,
+    "slotId": 61089,
+    "oldTidyOrder": {
+      "nonce": 0,
+      "residue": "0"
+    },
+    "newTidyOrder": {
+      "nonce": 1,
+      "residue": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 10,
+    "accountId": 14,
+    "subAccountId": 0,
+    "pairId": 0,
+    "oldPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": true,
+      "price": "70000000000000000000000",
+      "value": "70000000000000000000000",
+      "size": "1000000000000000000",
+      "accFundingPrice": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 11,
+    "accountId": 14,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "9981900000000000000000",
+    "newBalance": "9911900000000000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "OrderUpdate",
+    "updateId": 12,
+    "accountId": 14,
+    "subAccountId": 0,
+    "slotId": 62895,
+    "oldTidyOrder": {
+      "nonce": 0,
+      "residue": "0"
+    },
+    "newTidyOrder": {
+      "nonce": 1,
+      "residue": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 13,
+    "accountId": 14,
+    "subAccountId": 0,
+    "pairId": 0,
+    "oldPosition": {
+      "direction": true,
+      "price": "70000000000000000000000",
+      "value": "70000000000000000000000",
+      "size": "1000000000000000000",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 14,
+    "accountId": 14,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "9911900000000000000000",
+    "newBalance": "9771900000000000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 15,
+    "accountId": 3,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "18100000000000000000",
+    "newBalance": "228100000000000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 16,
+    "accountId": 2,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "0",
+    "newBalance": "0",
+    "oldNonce": 0,
+    "newNonce": 0
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 17,
+    "accountId": 3,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "228100000000000000000",
+    "newBalance": "228100000000000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  }
+]
+```
+
+### Liquidation
+
+Updates generated by Liquidation:
+
+```
+PositionUpdate(liquidator), ......,
+PositionUpdate(insurance fund account), ......,
+BalanceUpdate(liquidator), 
+BalanceUpdate(insurance fund account),
+BalanceUpdate(submitter), BalanceUpdate(fee account), 
+```
+#### Example
+
+```json
+"updates": [
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 0,
+    "accountId": 21,
+    "subAccountId": 0,
+    "pairId": 0,
+    "oldPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "-113682873499983950000"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "-113682873499983950000"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 1,
+    "accountId": 21,
+    "subAccountId": 0,
+    "pairId": 1,
+    "oldPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 2,
+    "accountId": 21,
+    "subAccountId": 0,
+    "pairId": 2,
+    "oldPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 3,
+    "accountId": 21,
+    "subAccountId": 0,
+    "pairId": 3,
+    "oldPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 4,
+    "accountId": 21,
+    "subAccountId": 0,
+    "pairId": 4,
+    "oldPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 5,
+    "accountId": 21,
+    "subAccountId": 0,
+    "pairId": 5,
+    "oldPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 6,
+    "accountId": 21,
+    "subAccountId": 0,
+    "pairId": 6,
+    "oldPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "0"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 7,
+    "accountId": 21,
+    "subAccountId": 0,
+    "pairId": 7,
+    "oldPosition": {
+      "direction": true,
+      "price": "3560007803000000000000",
+      "value": "35600078030000000000000",
+      "size": "10000000000000000000",
+      "accFundingPrice": "400710000000000000000"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "400710000000000000000"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 8,
+    "accountId": 21,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "570283843940000000000",
+    "newBalance": "0",
+    "oldNonce": 1,
+    "newNonce": 1
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 9,
+    "accountId": 21,
+    "subAccountId": 0,
+    "coinId": 17,
+    "oldBalance": "1000000000000000000000",
+    "newBalance": "0",
+    "oldNonce": 1,
+    "newNonce": 1
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 10,
+    "accountId": 21,
+    "subAccountId": 0,
+    "coinId": 142,
+    "oldBalance": "10099800000000000000",
+    "newBalance": "0",
+    "oldNonce": 1,
+    "newNonce": 1
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 11,
+    "accountId": 6,
+    "subAccountId": 0,
+    "pairId": 7,
+    "oldPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "400710000000000000000"
+    },
+    "newPosition": {
+      "direction": true,
+      "price": "3560007803000000000000",
+      "value": "35600078030000000000000",
+      "size": "10000000000000000000",
+      "accFundingPrice": "400710000000000000000"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 12,
+    "accountId": 6,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "0",
+    "newBalance": "570283843940000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 13,
+    "accountId": 6,
+    "subAccountId": 0,
+    "coinId": 17,
+    "oldBalance": "1000000000000000000000",
+    "newBalance": "2000000000000000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 14,
+    "accountId": 6,
+    "subAccountId": 0,
+    "coinId": 142,
+    "oldBalance": "0",
+    "newBalance": "10099800000000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 15,
+    "accountId": 2,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "0",
+    "newBalance": "0",
+    "oldNonce": 0,
+    "newNonce": 1
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 16,
+    "accountId": 3,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "1298848471059090000000000",
+    "newBalance": "1298848471059090000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  }
+]
+```
+
+### AutoDeleveraging
+
+Updates generated by AutoDeleveraging:
+
+```
+PositionUpdate(insurance fund account), BalanceUpdate(insurance fund account),
+PositionUpdate(ADL account), BalanceUpdate(ADL account),
+BalanceUpdate(submitter), BalanceUpdate(fee),
+```
+#### Example
+
+```json
+"updates": [
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 17,
+    "accountId": 6,
+    "subAccountId": 0,
+    "pairId": 7,
+    "oldPosition": {
+      "direction": true,
+      "price": "3560007803000000000000",
+      "value": "35600078030000000000000",
+      "size": "10000000000000000000",
+      "accFundingPrice": "400710000000000000000"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "0",
+      "value": "0",
+      "size": "0",
+      "accFundingPrice": "400710000000000000000"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 18,
+    "accountId": 6,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "570283843940000000000",
+    "newBalance": "-24986787496060000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 19,
+    "accountId": 126,
+    "subAccountId": 0,
+    "pairId": 7,
+    "oldPosition": {
+      "direction": false,
+      "price": "3559280996274044968406",
+      "value": "238450471064383368613418",
+      "size": "66994000000000000000",
+      "accFundingPrice": "400710000000000000000"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "3559280996274044968406",
+      "value": "202857661101642918929355",
+      "size": "56994000000000000000",
+      "accFundingPrice": "400710000000000000000"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 20,
+    "accountId": 126,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "1005451189769616631386582",
+    "newBalance": "1031000993042357081070645",
+    "oldNonce": 0,
+    "newNonce": 0
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 21,
+    "accountId": 2,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "0",
+    "newBalance": "0",
+    "oldNonce": 1,
+    "newNonce": 2
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 22,
+    "accountId": 3,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "1298848471059090000000000",
+    "newBalance": "1298848471059090000000000",
+    "oldNonce": 0,
+    "newNonce": 0
+  }
+]
+```
+
+### funding
+
+Updates generated by funding:
+
+```
+PositionUpdate(funding account), PositionUpdate(funding account), 
+BalanceUpdate(funding account), BalanceUpdate(fee account),
+```
+#### Example
+
+```json
+[
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 2,
+    "accountId": 20,
+    "subAccountId": 0,
+    "pairId": 0,
+    "oldPosition": {
+      "direction": true,
+      "price": "70726400000000000000000",
+      "value": "240469760000000000000000",
+      "size": "3400000000000000000",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": true,
+      "price": "70726400000000000000000",
+      "value": "240469760000000000000000",
+      "size": "3400000000000000000",
+      "accFundingPrice": "14149851999998000000"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "PositionUpdate",
+    "updateId": 7,
+    "accountId": 20,
+    "subAccountId": 0,
+    "pairId": 7,
+    "oldPosition": {
+      "direction": false,
+      "price": "3581685331905781584582",
+      "value": "5017941150000000000000",
+      "size": "1401000000000000000",
+      "accFundingPrice": "0"
+    },
+    "newPosition": {
+      "direction": false,
+      "price": "3581685331905781584582",
+      "value": "5017941150000000000000",
+      "size": "1401000000000000000",
+      "accFundingPrice": "5374000000000000000"
+    }
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 8,
+    "accountId": 20,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "294694153026870000000000",
+    "newBalance": "294653572504070006800000",
+    "oldNonce": 2,
+    "newNonce": 2
+  },
+  {
+    "stateUpdateType": "AccountUpdate",
+    "accountUpdateType": "BalanceUpdate",
+    "updateId": 9,
+    "accountId": 4,
+    "subAccountId": 0,
+    "coinId": 140,
+    "oldBalance": "0",
+    "newBalance": "0",
+    "oldNonce": 4,
+    "newNonce": 5
+  }
+]
+```
+
+### update_global_var
+
+All updates that may be generated by update_global_var:
+
+#### Example
+```
+FeeAccountUpdate(global)
+```
+```json
+{
+  "stateUpdateType": "GlobalVarsUpdate",
+  "globalVarUpdate": "FeeAccountUpdate",
+  "updateId": 0,
+  "subAccountId": 0,
+  "oldFeeAccountId": 0,
+  "newFeeAccountId": 3
+}
+```
+
+```
+InsuranceFundAccountUpdate(global)
+```
+```json
+{
+  "stateUpdateType": "GlobalVarsUpdate",
+  "globalVarUpdate": "InsuranceFundAccountUpdate",
+  "updateId": 0,
+  "subAccountId": 0,
+  "oldInsuranceFundAccountId": 4,
+  "newInsuranceFundAccountId": 6
+}
+```
+
+```
+MarginParamsUpdate(global)
+```
+```json
+{
+  "stateUpdateType": "GlobalVarsUpdate",
+  "globalVarUpdate": "MarginParamsUpdate",
+  "updateId": 0,
+  "subAccountId": 0,
+  "marginId": 2,
+  "oldSymbol": "",
+  "newSymbol": "BTC",
+  "oldIndexPrice": "0",
+  "newIndexPrice": "0",
+  "oldTokenId": 0,
+  "newTokenId": 142,
+  "oldRatio": 0,
+  "newRatio": 90
+}
+```
+
+```
+ContractParamsUpdate(global)
+```
+```json
+{
+  "stateUpdateType": "GlobalVarsUpdate",
+  "globalVarUpdate": "ContractParamsUpdate",
+  "updateId": 0,
+  "subAccountId": 0,
+  "pairId": 0,
+  "oldSymbol": "",
+  "newSymbol": "BTC/USDT",
+  "oldMaintenanceMarginRate": 0,
+  "newMaintenanceMarginRate": 5,
+  "oldInitialMarginRate": 0,
+  "newInitialMarginRate": 10,
+  "oldAccFundingPrice": "0",
+  "newAccFundingPrice": "0",
+  "oldMarkPrice": "0",
+  "newMarkPrice": "0"
+}
+```
+
+`version: fa4618`
