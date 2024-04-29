@@ -1,6 +1,6 @@
 # State Update
 
-Updates are generated after zkLinkTx execution, details can be found in [StateUpdateResp](../json-rpc/json-rpc-api.md#txresp).
+Updates are generated after zkLinkTx execution, details can be found in [StateUpdateResp](../json-rpc/json-rpc-api.md#txresp).  
 Parsing the updates can get some data that is only known after the transaction is executed, such as the actual withdraw amount of FullExit
 
 ## AccountUpdate. 
@@ -21,7 +21,7 @@ There are 4 types of AccountUpdate:
 | accountId | [AccountId](basic-types.md#AccountId) | The new accout id   |
 | address   | String                               | The account address |
 
-The transactions that create `AccountCreate`:
+Transaction that generate `AccountCreate`:
 
 * [Deposit](./transaction/deposit.md)
 * [Transfer](./transaction/transfer.md)
@@ -51,9 +51,9 @@ For Example:
 | oldNonce      | [Nonce](basic-types.md#Nonce)           | The old nonce      |
 | newNonce      | [Nonce](basic-types.md#Nonce)           | The new nonce      |
 
-The transactions that create `AccountChangePubkeyUpdate`:
+Transaction that generate `AccountChangePubkeyUpdate`:
 
-* [ChangePubKey](transaction#changepubkey)
+* [ChangePubKey](./transaction/change\_pubkey.md)
 
 For example:
 
@@ -87,18 +87,18 @@ For example:
 
 Transaction that generate `BalanceUpdate`:
 
-* [ChangePubKey](./transaction/change_pubkey.md)
+* [ChangePubKey](./transaction/change\_pubkey.md)
 * [Deposit](./transaction/deposit.md)
-* [ForcedExit](./transaction/forced_exit.md)
-* [FullExit](./transaction/full_exit.md)
+* [ForcedExit](./transaction/forced\_exit.md)
+* [FullExit](./transaction/full\_exit.md)
 * [Transfer](./transaction/transfer.md)
 * [Withdraw](./transaction/withdraw.md)
-* [OrderMatching](./transaction/order_matching.md)
-* [ContractMatching](./transaction/contract_matching.md)
+* [OrderMatching](./transaction/order\_matching.md)
+* [ContractMatching](./transaction/contract\_matching.md)
 * [Liquidation](./transaction/liquidation.md)
-* [AutoDeleveraging](./transaction/auto_deleveraging.md)
-* [funding](./transaction/funding.md)
-* [update_global_var](./transaction/update_global_var.md)
+* [AutoDeleveraging](./transaction/auto\_deleveraging.md)
+* [Funding](./transaction/funding.md)
+* [UpdateGlobalVar](./transaction/update\_global\_var.md)
 
 For example
 
@@ -139,7 +139,7 @@ where ResponseTidyOrder is
 
 Transaction that generate `OrderUpdate`:
 
-* [OrderMatching](./transaction/order_matching.md)
+* [OrderMatching](./transaction/order\_matching.md)
 
 For Example:
 
@@ -185,9 +185,9 @@ For Example:
 | old_fee_account_id | [AccountId](basic_type.md#AccountId)        | Old fee account ID |
 | new_fee_account_id | [AccountId](basic_type.md#AccountId)        | New fee account ID |
 
-The transactions that create `FeeAccountUpdate`:
+Transaction that generate `FeeAccountUpdate`:
 
-* [UpdateGlobalVar](./transaction/update_global_var.md)
+* [UpdateGlobalVar](./transaction/update\_global\_var.md)
 
 For Example:
 
@@ -214,9 +214,9 @@ For Example:
 | old_insurance_fund_account_id | [AccountId](basic_type.md#AccountId)        | old insurance fund account id |
 | new_insurance_fund_account_id | [AccountId](basic_type.md#AccountId)        | new insurance fund account id |
 
-The transactions that create `InsuranceFundAccountUpdate`:
+Transaction that generate `InsuranceFundAccountUpdate`:
 
-* [UpdateGlobalVar](./transaction/update_global_var.md)
+* [UpdateGlobalVar](./transaction/update\_global\_var.md)
 
 For example:
 
@@ -252,7 +252,7 @@ For example:
 
 Transaction that generate `MarginParamsUpdate`:
 
-* [UpdateGlobalVar](./transaction/update_global_var.md)
+* [UpdateGlobalVar](./transaction/update\_global\_var.md)
 
 For example
 
@@ -296,7 +296,7 @@ For example
 
 Transaction that generate `ContractParamsUpdate`:
 
-* [UpdateGlobalVar](./transaction/update_global_var.md)
+* [UpdateGlobalVar](./transaction/update\_global\_var.md)
 
 For Example:
 
