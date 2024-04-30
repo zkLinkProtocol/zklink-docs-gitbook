@@ -35,6 +35,13 @@ String getPubkeyHash()
 ```
 Return hex string of public key hash.
 
+### func signMusig
+
+```dart
+ZkLinkSignature signMusig(List<int> msg)
+```
+Sign and create [ZkLinkSignature](../../api-and-sdk/data-types/basic-types.md#zklinksignature) from raw message.
+
 ## Type Signer
 L1 private key.
 

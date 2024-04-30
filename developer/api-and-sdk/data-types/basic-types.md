@@ -1,6 +1,6 @@
 # Basic types
 
-* [ChainId](#ChainId)
+* [ChainId](#chainid)
 * [AccountId](#accountid)
 * [SubAccountId](#subaccountid)
 * [TokenId](#tokenid)
@@ -16,7 +16,7 @@
 # Basic structures
 
 * [TxLayer1Signature](#txlayer1signature)
-* [ZkLinkSignature](#ZkLinkSignature)
+* [ZkLinkSignature](#zklinksignature)
 
 
 ### ChainId
@@ -46,7 +46,7 @@ Conversely, when withdrawing USD, users can choose to withdraw an equivalent amo
 
 
 ### SlotId
-The id of slot in [Order](#Order), the type is `u32`.
+The id of slot in [Order](#order), the type is `u32`.
 
 ### PairId
 The trading pair ID of the pertetual contract, the type is `u16`. The PairId is defined by decentralized exchange, not defined by ZkLink.

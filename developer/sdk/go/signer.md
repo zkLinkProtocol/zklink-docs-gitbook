@@ -204,7 +204,7 @@ func (*Signer) SignChangePubkeyWithEthEcdsaAuth(tx *ChangePubKey) (TxSignature, 
 ```
 
 **input:**
-tx: [ChangePubKey](./transactions/change_pubkey.md#ChangePubkey)
+tx: [ChangePubKey](./transactions/1-change-pubkey.md#changepubkey)
 
 Sign the `ChangePubkey` and get the `TxSignature` result, for example:
 
@@ -282,7 +282,7 @@ pubkey_hash := sdk.GetPublicKeyHash(pub_key)
 ```go
 func EthSignatureOfChangePubkey (tx *ChangePubKey, ethSigner *EthSigner) (PackedEthSignature, error)
 ```
-Create the Ethereum signature of [ChangePubKey](../../api-and-sdk/data-types/transaction/change_pubkey.md)
+Create the Ethereum signature of [ChangePubKey](../../api-and-sdk/data-types/transaction/change\_pubkey.md)
 
 
 ### func ZklinkMainNetUrl

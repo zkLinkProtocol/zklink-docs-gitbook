@@ -41,4 +41,4 @@ Sign transaction with given `ZkLinkSigner`
 String toJson()
 ```
 
-Get the json str of [Withdraw](#type-Withdraw)
+Get the json str of [Withdraw](#type-withdraw)

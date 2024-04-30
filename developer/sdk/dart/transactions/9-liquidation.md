@@ -57,4 +57,4 @@ Sign transaction with given `ZkLinkSigner`
 String toJson()
 ```
 
-Get the json str of [Liquidation](#type-Liquidation)
+Get the json str of [Liquidation](#type-liquidation)

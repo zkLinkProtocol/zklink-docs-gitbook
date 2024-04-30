@@ -24,7 +24,7 @@
 
 | Name        | Type              | Description                     |
 |-------------|-------------------|---------------------------------|
-| pairId      | [PairId](#PairId) | The pair id                     |
+| pairId      | [PairId](#pairid) | The pair id                     |
 | marketPrice | BigUint           | The market price of the pair id |
 
 {% endtab  %}
@@ -33,7 +33,7 @@
 
 | Name       | Type                | Description                   |
 |------------|---------------------|-------------------------------|
-| tokenId    | [TokenId](#tokenId) | The token id                  |
+| tokenId    | [TokenId](#tokenid) | The token id                  |
 | marketPrice | BigUint             | The market price of the token |
 
 {% endtab %}

@@ -9,9 +9,9 @@
 | oraclePrices    | 31 bytes, encode the `ContractPrice` and `MarginPrice` in order, pass the bytes to Rust SDK `rescue_hash` method |
 | adlAccountId    | 4 bytes                                                                                                                |
 | pairId          | 1 byte                                                                                                                 |
-| adlSize         | 5 bytes, refer to `amount` pack method in [BigUint pack algorithm](../algorithm.md#BigUint-pack-algorithm)             |
+| adlSize         | 5 bytes, refer to `amount` pack method in [BigUint pack algorithm](../algorithm.md#biguint-pack-algorithm)             |
 | adlPrice        | 15 bytes, encode to big endian bytes, then pass to the`pad_front` function in Rust SDK                                 |
-| fee             | 2 bytes, refer to `fee` pack method in [BigUint pack algorithm](../algorithm.md#BigUint-pack-algorithm)                |
+| fee             | 2 bytes, refer to `fee` pack method in [BigUint pack algorithm](../algorithm.md#biguint-pack-algorithm)                |
 | feeToken        | 2 bytes                                                                                                                |
 
 

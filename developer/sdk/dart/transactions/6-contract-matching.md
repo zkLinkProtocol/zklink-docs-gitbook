@@ -25,7 +25,7 @@ SpotPriceInfo(
 * price: The spot price of the token.
 
 ## type Contract
-The [Contract](../../../api-and-sdk/data-types/transaction/contract_matching.md) struct of taker and maker in perpetual contract.
+The [Contract](../../../api-and-sdk/data-types/transaction/contract\_matching.md) struct of taker and maker in perpetual contract.
 
 ```dart
 Contract(
@@ -44,7 +44,7 @@ Contract(
 ```
 
 ## type ContractMatching
-[ContractMatching](../../../api-and-sdk/data-types/transaction/contract_matching.md) transaction type.
+[ContractMatching](../../../api-and-sdk/data-types/transaction/contract\_matching.md) transaction type.
 
 ```dart
 ContractMatching(
@@ -73,4 +73,4 @@ Sign transaction with given `ZkLinkSigner`
 String toJson()
 ```
 
-Get the json str of [ContractMatching](#type-ContractMatching)
+Get the json str of [ContractMatching](#type-contractmatching)

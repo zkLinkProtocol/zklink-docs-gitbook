@@ -18,7 +18,7 @@ There are 4 types of AccountUpdate:
 |-----------|--------------------------------------|---------------------|
 | type      | String                               | Update Name         |
 | updateId  | i32                                  | Update id           |
-| accountId | [AccountId](basic-types.md#AccountId) | The new accout id   |
+| accountId | [AccountId](basic-types.md#accountid) | The new accout id   |
 | address   | String                               | The account address |
 
 Transaction that generate `AccountCreate`:
@@ -45,11 +45,11 @@ For Example:
 |-----------|----------------------------------------|--------------------|
 | type          | String                                 | Update name        |
 | updateId      | i32                                    | Update Id          |
-| accountId     | [AccountId](basic-types.md#AccountId)   | Account id         |
-| oldPubkeyHash | [PubkeyHash](basic-types.md#PubkeyHash) | The old pubkeyHash |
-| newPubkeyHash | [PubkeyHash](basic-types.md#PubkeyHash) | The new pubkeyHash |
-| oldNonce      | [Nonce](basic-types.md#Nonce)           | The old nonce      |
-| newNonce      | [Nonce](basic-types.md#Nonce)           | The new nonce      |
+| accountId     | [AccountId](basic-types.md#accountid)   | Account id         |
+| oldPubkeyHash | [PubkeyHash](basic-types.md#pubkeyhash) | The old pubkeyHash |
+| newPubkeyHash | [PubkeyHash](basic-types.md#pubkeyhash) | The new pubkeyHash |
+| oldNonce      | [Nonce](basic-types.md#nonce)           | The old nonce      |
+| newNonce      | [Nonce](basic-types.md#nonce)           | The new nonce      |
 
 Transaction that generate `AccountChangePubkeyUpdate`:
 
@@ -77,13 +77,13 @@ For example:
 |--------------|--------------------------------------------|-------------------------------|
 | type         | String                                     | The update name               |
 | updateId     | i32                                        | The update id                 |
-| accountId    | [AccountId](data_tpes.md#AccountId)        | The account id                |
-| subAccountId | [SubAccountId](basic-types.md#SubAccountId) | The subaccount id             |
-| coinId       | [TokenId](basic-types.md#TokenId)           | The token id                  |
+| accountId    | [AccountId](data_tpes.md#accountid)        | The account id                |
+| subAccountId | [SubAccountId](basic-types.md#subaccountid) | The subaccount id             |
+| coinId       | [TokenId](basic-types.md#tokenid)           | The token id                  |
 | oldBalance   | String                                     | The old balance of subaccount |
 | newBalance   | String                                     | The new balance of subaccount |
-| oldNonce     | [Nonce](basic-types.md#Nonce)               | The old nonce of subaccount   |
-| newNonce     | [Nonce](basic-types.md#Nonce)               | The new nonce of subaccount   |
+| oldNonce     | [Nonce](basic-types.md#nonce)               | The old nonce of subaccount   |
+| newNonce     | [Nonce](basic-types.md#nonce)               | The new nonce of subaccount   |
 
 Transaction that generate `BalanceUpdate`:
 
@@ -124,17 +124,17 @@ For example
 |--------------|--------------------------------------------|-----------------|
 | type         | String                                     | Update name     |
 | updateId     | i32                                        | Update id       |
-| accountId    | [AccountId](basic_type.md#AccountId)       | Account id      |
-| subAccountId | [SubAccountId](basic-types.md#SubAccountId) | Subaccount id   |
-| slotId       | [SlotId](basic-types.md#SlotId)             | Slot id         |
-| oldTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | Old`TidyOrder`  |
-| newTidyOrder | [ResponseTidyOrder](#ResponseTidyOrder)    | New `TidyOrder` |
+| accountId    | [AccountId](basic_type.md#accountid)       | Account id      |
+| subAccountId | [SubAccountId](basic-types.md#subaccountid) | Subaccount id   |
+| slotId       | [SlotId](basic-types.md#slotid)             | Slot id         |
+| oldTidyOrder | [ResponseTidyOrder](#responsetidyorder)    | Old`TidyOrder`  |
+| newTidyOrder | [ResponseTidyOrder](#responsetidyorder)    | New `TidyOrder` |
 
 where ResponseTidyOrder is
 
 | Name         | Type                                       | Description                                                  |
 |--------------|--------------------------------------------|--------------------------------------------------------------|
-| nonce   | [Nonce](#Nonce) | The slot nonce of order                                      |
+| nonce   | [Nonce](#nonce) | The slot nonce of order                                      |
 | residue | String          | The string format of BigDecimal, the residue balance of slot |
 
 Transaction that generate `OrderUpdate`:
@@ -181,9 +181,9 @@ For Example:
 |--------------------|---------------------------------------------|--------------------|
 | type               | String                                      | The update name    |
 | update_id          | i32                                         | update index       |
-| sub_account_id     | [SubAccountId](basic-types.md#SubAccountId) | sub-account ID     |
-| old_fee_account_id | [AccountId](basic_type.md#AccountId)        | Old fee account ID |
-| new_fee_account_id | [AccountId](basic_type.md#AccountId)        | New fee account ID |
+| sub_account_id     | [SubAccountId](basic-types.md#subaccountid) | sub-account ID     |
+| old_fee_account_id | [AccountId](basic_type.md#accountid)        | Old fee account ID |
+| new_fee_account_id | [AccountId](basic_type.md#accountid)        | New fee account ID |
 
 Transaction that generate `FeeAccountUpdate`:
 
@@ -210,9 +210,9 @@ For Example:
 |-------------------------------|---------------------------------------------|-------------------------------|
 | type                          | String                                      | The update name               |
 | update_id                     | i32                                         | update index                  |
-| sub_account_id                | [SubAccountId](basic-types.md#SubAccountId) | sub-account id                |
-| old_insurance_fund_account_id | [AccountId](basic_type.md#AccountId)        | old insurance fund account id |
-| new_insurance_fund_account_id | [AccountId](basic_type.md#AccountId)        | new insurance fund account id |
+| sub_account_id                | [SubAccountId](basic-types.md#subaccountid) | sub-account id                |
+| old_insurance_fund_account_id | [AccountId](basic_type.md#accountid)        | old insurance fund account id |
+| new_insurance_fund_account_id | [AccountId](basic_type.md#accountid)        | new insurance fund account id |
 
 Transaction that generate `InsuranceFundAccountUpdate`:
 
@@ -239,14 +239,14 @@ For example:
 |-----------------|---------------------------------------------|--------------------------------------|
 | type            | String                                      | The update name                      |
 | update_id       | i32                                         | update index                         |
-| sub_account_id  | [SubAccountId](basic-types.md#SubAccountId) | sub-account id                       |
-| margin_id       | [MarginId](basic-types.md#MarginId)         | margin index                         |
+| sub_account_id  | [SubAccountId](basic-types.md#subaccountid) | sub-account id                       |
+| margin_id       | [MarginId](basic-types.md#marginid)         | margin index                         |
 | old_symbol      | String                                      | Old symbol of the margin token       |
 | new_symbol      | String                                      | New symbol of the margin token       |
 | old_index_price | String                                      | Old index price of the margin token  |
 | new_index_price | String                                      | New index price of the margin token  |
-| old_token_id    | [TokenId](basic-types.md#TokenId)           | Old margin token id of the margin_id |
-| new_token_id    | [TokenId](basic-types.md#TokenId)           | New margin token id of the margin_id |
+| old_token_id    | [TokenId](basic-types.md#tokenid)           | Old margin token id of the margin_id |
+| new_token_id    | [TokenId](basic-types.md#tokenid)           | New margin token id of the margin_id |
 | old_ratio       | u8                                          | Old margin ratio of the margin token |
 | new_ratio       | u8                                          | New margin ratio of the margin token |
 
@@ -281,8 +281,8 @@ For example
 | Field                       | Type                                        | Description                                      |
 |-----------------------------|---------------------------------------------|--------------------------------------------------|
 | update_id                   | i32                                         | update id                                        |
-| sub_account_id              | [SubAccountId](basic-types.md#SubAccountId) | sub-account id                                   |
-| pair_id                     | [PairId](basic-types.md#PairId)             | contract pair id                                 |
+| sub_account_id              | [SubAccountId](basic-types.md#subaccountid) | sub-account id                                   |
+| pair_id                     | [PairId](basic-types.md#pairid)             | contract pair id                                 |
 | old_symbol                  | String                                      | old symbol of the contract pair                  |
 | new_symbol                  | String                                      | new symbol of the contract pair                  |
 | old_maintenance_margin_rate | u16                                         | old maintenance margin rate of the contract pair |

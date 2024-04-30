@@ -35,7 +35,7 @@ FundingInfo(
 ```
 
 ## type Parameter
-The [Parameter](../../../api-and-sdk/data-types/transaction/update_global_var.md) struct of [UpdateGlobalVar](#type-UpdateGlobalVar).
+The [Parameter](../../../api-and-sdk/data-types/transaction/update\_global\_var.md) struct of [UpdateGlobalVar](#type-updateglobalvar).
 
 ### func insuranceFundAccount
 
@@ -84,7 +84,7 @@ fundingInfos(List<FundingInfo> infos)
 ```
 
 ## type UpdateGlobalVar
-[UpdateGlobalVar](../../../api-and-sdk/data-types/transaction/update_global_var.md) transaction type.
+[UpdateGlobalVar](../../../api-and-sdk/data-types/transaction/update\_global\_var.md) transaction type.
 
 ```dart
 UpdateGlobalVar(
@@ -101,7 +101,7 @@ UpdateGlobalVar(
 String toJson()
 ```
 
-Get the json str of [UpdateGlobalVar](#type-UpdateGlobalVar)
+Get the json str of [UpdateGlobalVar](#type-updateglobalvar)
 
 ### Example
 ```dart

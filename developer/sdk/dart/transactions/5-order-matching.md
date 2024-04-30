@@ -25,7 +25,7 @@ SpotPriceInfo(
 * price: The spot price of the token.
 
 ## type Order
-The [Order](../../../api-and-sdk/data-types/transaction/order_matching.md) struct of taker and maker.
+The [Order](../../../api-and-sdk/data-types/transaction/order\_matching.md) struct of taker and maker.
 
 ```dart
 Order(
@@ -45,7 +45,7 @@ Order(
 ```
 
 ## type OrderMatching
-[OrderMatching](../../../api-and-sdk/data-types/transaction/order_matching.md) transaction type.
+[OrderMatching](../../../api-and-sdk/data-types/transaction/order\_matching.md) transaction type.
 
 ```dart
 OrderMatching(
@@ -76,4 +76,4 @@ Sign transaction with given `ZkLinkSigner`
 String toJson()
 ```
 
-Get the json str of [OrderMatching](#type-OrderMatching)
+Get the json str of [OrderMatching](#type-ordermatching)

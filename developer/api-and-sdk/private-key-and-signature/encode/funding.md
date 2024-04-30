@@ -8,7 +8,7 @@
 | subAccountId      | 1 byte                                                 |
 | accountIdNonce | 4 bytes                                                |
 | fundingAccountIds | 4 bytes(when length is 1) or 31 bytes(when length > 1) |
-| fee | 2 bytes, refer to `fee` pack method in [BigUint pack algorithm](#BigUint-pack-algorithm)                |
+| fee | 2 bytes, refer to `fee` pack method in [BigUint pack algorithm](#biguint-pack-algorithm)                |
 | feeToken | 2 bytes                                                |
 
 The encoding process of `fundingAccountIds` is as blew:

@@ -25,7 +25,7 @@ SpotPriceInfo(
 * price: The spot price of the token.
 
 ## type AutoDeleveraging
-[AutoDeleveraging](../../../api-and-sdk/data-types/transaction/auto_deleveraging.md) transaction type.
+[AutoDeleveraging](../../../api-and-sdk/data-types/transaction/auto\_deleveraging.md) transaction type.
 
 ```dart
 AutoDeleveraging(
@@ -57,4 +57,4 @@ Sign transaction with given `ZkLinkSigner`
 String toJson()
 ```
 
-Get the json str of [AutoDeleveraging](#type-AutoDeleveraging)
+Get the json str of [AutoDeleveraging](#type-autodeleveraging)

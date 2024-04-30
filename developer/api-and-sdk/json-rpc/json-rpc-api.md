@@ -16,7 +16,7 @@ The zkLink API follows the JSON-RPC standard and is accessed via POST.
 
 {% tab title="Block" %}
 * [getBlockByNumber](json-rpc-api.md#getblockbynumber): get the block info by block height.
-* [getBlockOnChainByNumber](json-rpc-api.md#getBlockOnChainByNumber): get the transaction information in a block that is executed on L1 blockchains.
+* [getBlockOnChainByNumber](json-rpc-api.md#getblockonchainbynumber): get the transaction information in a block that is executed on L1 blockchains.
   {% endtab %}
 
 {% tab title="Account" %}

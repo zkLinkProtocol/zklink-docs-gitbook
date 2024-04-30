@@ -23,7 +23,7 @@
 | accountId    | 4 bytes                                 |
 | subAccountId | 1 byte                                  |
 | maker,taker  | 31 bytes                                |
-| fee          | 2 bytes, refer to `fee` pack method in [BigUint pack algorithm](#BigUint-pack-algorithm) |
+| fee          | 2 bytes, refer to `fee` pack method in [BigUint pack algorithm](#biguint-pack-algorithm) |
 | feeToken     | 2 bytes                                 |
 
 41 bytes in total, where the `maker` and `taker` encode as bellow:

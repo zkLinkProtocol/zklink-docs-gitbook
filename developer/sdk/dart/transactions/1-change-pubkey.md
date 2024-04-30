@@ -1,5 +1,5 @@
 ## type ChangePubKey
-[ChangePubkey](../../../api-and-sdk/data-types/transaction/change_pubkey.md) transaction type.
+[ChangePubkey](../../../api-and-sdk/data-types/transaction/change\_pubkey.md) transaction type.
 
 ```dart
 ChangePubkey(
@@ -37,7 +37,7 @@ Sign transaction with given `ZkLinkSigner`
 String toJson()
 ```
 
-Get the json str of [ChangePubKey](#type-ChangePubkey)
+Get the json str of [ChangePubKey](#type-changepubkey)
 
 ### func toEip712RequestPayload
 
@@ -45,7 +45,7 @@ Get the json str of [ChangePubKey](#type-ChangePubkey)
 String toEip712RequestPayload(int chainId, String address)
 ```
 
-Get the EIP-712 structured data of [ChangePubKey](#type-ChangePubkey)
+Get the EIP-712 structured data of [ChangePubKey](#type-changepubkey)
 
 ### func setEthAuthData
 

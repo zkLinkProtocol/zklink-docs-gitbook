@@ -9,8 +9,8 @@
 | to               | 32 bytes, extend to 32 bytes with `0x00` prefix                                                  |
 | l2SourceToken    | 2 bytes                                                                                          |
 | l1TargetToken    | 2 bytes                                                                                          |
-| amount           | 16 bytes, refer to the `amount` pack method in [BigUint pack algorithm](#BigUint-pack-algorithm) |
-| fee              | 2 bytes, refer to the `fee` pack method in [BigUint pack algorithm](#BigUint-pack-algorithm)     |
+| amount           | 16 bytes, refer to the `amount` pack method in [BigUint pack algorithm](#biguint-pack-algorithm) |
+| fee              | 2 bytes, refer to the `fee` pack method in [BigUint pack algorithm](#biguint-pack-algorithm)     |
 | nonce            | 4 bytes                                                                                          |
 | withdrawToL1     | 1 byte                                                                                           |
 | withdrawFeeRatio | 2 bytes                                                                                          |

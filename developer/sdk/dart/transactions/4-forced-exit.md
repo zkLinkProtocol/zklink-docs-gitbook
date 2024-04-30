@@ -1,5 +1,5 @@
 ## type ForcedExit
-[ForcedExit](../../../api-and-sdk/data-types/transaction/forced_exit.md) transaction type.
+[ForcedExit](../../../api-and-sdk/data-types/transaction/forced\_exit.md) transaction type.
 
 ```dart
 ForcedExit(
@@ -31,4 +31,4 @@ Sign transaction with given `ZkLinkSigner`
 String toJson()
 ```
 
-Get the json str of [ForcedExit](#type-ForcedExit)
+Get the json str of [ForcedExit](#type-forcedexit)

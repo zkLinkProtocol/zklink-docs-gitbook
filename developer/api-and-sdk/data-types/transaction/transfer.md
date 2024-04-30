@@ -12,7 +12,7 @@ L3 transfer
 <tr><td> amount                                     </td><td> BigUint                            </td><td> yes                              </td><td> Token amount, the value must be packable                                                                                                        </td></tr>
 <tr><td> fee                                        </td><td> BugUint                            </td><td> yes                              </td><td> Fee returned by <code>estimateTransactionFee</code> API, the value should be packable                                                           </td></tr>
 <tr><td> nonce </td><td> <a href="../basic-types.md#nonce">Nonce</a> </td><td> yes </td><td> Current nonce of the account                                                                                                                    |
-<tr><td>signature </td><td> <a href="../basic-types.md#ZkLinkSignature">ZkLinkSignature</a> </td><td> yes </td><td> the public key hash corresponding to the signature must be aligned with the from_account </td></tr>
+<tr><td>signature </td><td> <a href="../basic-types.md#zklinksignature">ZkLinkSignature</a> </td><td> yes </td><td> the public key hash corresponding to the signature must be aligned with the from_account </td></tr>
 <tr><td> ts                                         </td><td> u32                                </td><td> yes                              </td><td> Timestamp of the API call, used as front-end request id to generate transaction hash                                                            </td></tr>
 </tbody>
 </table>
@@ -80,7 +80,7 @@ func SignTransfer() {
 For more details please refer to [Golang example](https://github.com/zkLinkProtocol/zklink_sdk/tree/main/examples/Golang) in SDK
 {% endtab %}
 
-{% tab title="Javascript" }
+{% tab title="Javascript" %}
 
 ```javascript
 import init, *  as wasm  from "./web-dist/zklink-sdk-web.js";
