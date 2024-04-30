@@ -20,7 +20,7 @@ This configuration ensures that the client can locate and connect to the Kafka s
 
 ### Topic Description
 
-This document describes the event type `TxEventMsg` and its associated data structures consumed in the Kafka `CONSUME_L2_SUBMIT_TX_TOPIC` topic. This topic is specifically used for handling events related to transaction submissions.
+This document describes the event type `TxEventMsg` and its associated data structures consumed in the Kafka `SUBMIT_TX_TOPIC` topic. This topic is specifically used for handling events related to transaction submissions.
 
 ### Event type
 
@@ -93,11 +93,11 @@ The `Submit` event carries a `BatchSubmitMessages` structure, which represents a
 
 ### Topic Description
 
-This document provides details about the event types and data structures associated with the `PRODUCE_TX_RESULT_TOPIC` topic in Kafka. It is designed to guide producers on how to format messages that consumers will process.
+This document provides details about the event types and data structures associated with the `TX_RESULT_TOPIC` topic in Kafka. It is designed to guide producers on how to format messages that consumers will process.
 
 ### Consumer Usage Guide
 
-To ensure that consumers can effectively process messages received from the `PRODUCE_TX_RESULT_TOPIC` topic, here are the data and structures that consumers need to be familiar with:
+To ensure that consumers can effectively process messages received from the `TX_RESULT_TOPIC` topic, here are the data and structures that consumers need to be familiar with:
 
 ### data structure
 
