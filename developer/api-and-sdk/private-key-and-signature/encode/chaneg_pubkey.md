@@ -9,7 +9,7 @@
 | subAccountId | 1 byte                                                                                       |
 | newPkHash    | 20 bytes                                                                                     |
 | feeToken     | 2 bytes                                                                                      |
-| fee          | 2 bytes, refer to the `fee` pack method in [BigUint pack algorithm](#BigUint-pack-algorithm) |
+| fee          | 2 bytes, refer to the `fee` pack method in [BigUint pack algorithm](#biguint-pack-algorithm) |
 | nonce        | 4 bytes                                                                                      |
 | ts           | 4 bytes                                                                                      |
 

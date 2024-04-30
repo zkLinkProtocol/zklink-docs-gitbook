@@ -68,7 +68,7 @@ topic: `txExecuteResult@{sub_account_id}`
 | Name                | Type                                          | Describe                                                                                               |
 | ------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | type                | String                                        | Event type                                                                                             |
-| tx\_hash            | [TxHash](../data-types/basic-types.md#TxHash) | The tx hash on L1                                                                                      |
+| tx\_hash            | [TxHash](../data-types/basic-types.md#txhash) | The tx hash on L1                                                                                      |
 | tx                  | [ZklinkTx](../data-types/transaction/)        | [Transaction](../data-types/transaction/) detail                                                       |
 | receipt             | struct                                        | The transaction status after received                                                                  |
 | > executed          | bool                                          | The transaction finished executing or not                                                              |
@@ -152,7 +152,7 @@ topic: fullExitEvent@{sub\_account\_id}
 | Name     | Type                                          | Description          |
 | -------- | --------------------------------------------- | -------------------- |
 | type     | String                                        | Event type           |
-| tx\_hash | [TxHash](../data-types/basic-types.md#TxHash) | The tx hash on L1    |
+| tx\_hash | [TxHash](../data-types/basic-types.md#txhash) | The tx hash on L1    |
 | tx       | [Transaction](../data-types/transaction/)     | FullExit transaction |
 
 For example:

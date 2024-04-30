@@ -23,7 +23,7 @@
 | accountIdNonce | 4 bytes                                 |
 | oraclePrices | 31 bytes                                |
 | liquidationAccountId | 4 bytes                                 |
-| fee | 2 bytes, refer to `fee` pack method in [BigUint pack algorithm](#BigUint-pack-algorithm) |
+| fee | 2 bytes, refer to `fee` pack method in [BigUint pack algorithm](#biguint-pack-algorithm) |
 | feeToken | 2 bytes                                 |
 
 49 bytes in total, where the `oraclePrices` encode process is as blew:

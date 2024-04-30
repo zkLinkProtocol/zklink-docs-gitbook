@@ -13,7 +13,7 @@
 | isSell       | 1 byte                                                                                          |
 | feeRates     | 2 bytes                                                                                         |
 | hasSubsidy   | 1 byte                                                                                          |
-| amount       | 5 bytes, refer to the `amount` pack method in [BigUint pack algorithm](#BigUint-pack-algorithm) |
+| amount       | 5 bytes, refer to the `amount` pack method in [BigUint pack algorithm](#biguint-pack-algorithm) |
 
 39 bytes in total.
 
@@ -26,7 +26,7 @@
 | subAccountId      | 1 byte                                                                                       |
 | orderBytesHash    | 32 bytes, refer to Rust SDK `rescue_hash_orders`                                             |
 | feeToken          | 2 bytes                                                                                      |
-| fee               | 2 bytes, refer to the `fee` pack method in [BigUint pack algorithm](#BigUint-pack-algorithm) |
+| fee               | 2 bytes, refer to the `fee` pack method in [BigUint pack algorithm](#biguint-pack-algorithm) |
 | expectBaseAmount  | 16 bytes                                                                                     |
 | expectQuoteAmount | 16 bytes                                                                                     |
 

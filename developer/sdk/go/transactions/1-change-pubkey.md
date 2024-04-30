@@ -35,15 +35,15 @@ type ChangePubKeyAuthDataOnchain struct {}
 ```go
 func CreateSignedChangePubkey(zklinkSigner *ZkLinkSigner, tx *ChangePubKey, ethAuthData ChangePubKeyAuthData) (*ChangePubKey, error)
 ```
-Create a signed [ChangePubkey](../../api-and-sdk/data-types/transaction/change_pubkey.md)
+Create a signed [ChangePubkey](../../../api-and-sdk/data-types/transaction/change\_pubkey.md)
 
 **input:**
 * zklinkSigner: zklink [signer](#type-zklinksigner)
-* tx: unsigned transaction [ChangePubkey](../../api-and-sdk/data-types/transaction/change_pubkey.md)
-* ethAuthData: `ChangePubKeyAuthData` is a interface which can be [ChangePubKeyAuthDataOnchain](#ChangePubKeyAuthDataOnchain), [ChangePubKeyAuthDataEthCreate2](#ChangePubKeyAuthDataEthCreate2) or [ChangePubKeyAuthDataEthEcdsa](#ChangePubKeyAuthDataEthEcdsa)
+* tx: unsigned transaction [ChangePubkey](../../../api-and-sdk/data-types/transaction/change\_pubkey.md)
+* ethAuthData: `ChangePubKeyAuthData` is a interface which can be [ChangePubKeyAuthDataOnchain](#changepubkeyauthdataonchain), [ChangePubKeyAuthDataEthCreate2](#changepubkeyauthdataethcreate2) or [ChangePubKeyAuthDataEthEcdsa](#changepubkeyauthdataethecdsa)
 
 ## type ChangePubKeyBuilder
-The ChangePubKeyBuilder is used to build the type [ChangePubKey](#ChangePubKey)
+The ChangePubKeyBuilder is used to build the type [ChangePubKey](#changepubkey)
 ```go
 type ChangePubKeyBuilder struct {
 	ChainId       ChainId
@@ -59,7 +59,7 @@ type ChangePubKeyBuilder struct {
 ```
 
 ## type ChangePubKey
-[ChangePubkey](../../../api-and-sdk/data-types/transaction/change_pubkey.md) transaction type, it's a opaque data type.
+[ChangePubkey](../../../api-and-sdk/data-types/transaction/change\_pubkey.md) transaction type, it's a opaque data type.
 
 ### func NewChangePubKey
 Create a [ChangePubkey](#type-changepubkey)

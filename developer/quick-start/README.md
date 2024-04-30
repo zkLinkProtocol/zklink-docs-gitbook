@@ -177,7 +177,7 @@ And Alice, as the taker, will create the taker order:
     console.log(taker);
 ```
 
-You can obtain the user's Nonce and SlotId by using the RPC [getUser](../api-and-sdk/json-rpc/json-rpc-api.md#getAccount) and [getAccountOrderSlots](../api-and-sdk/json-rpc/json-rpc-api.md#getaccountorderslots) respectively.
+You can obtain the user's Nonce and SlotId by using the RPC [getUser](../api-and-sdk/json-rpc/json-rpc-api.md#getaccount) and [getAccountOrderSlots](../api-and-sdk/json-rpc/json-rpc-api.md#getaccountorderslots) respectively.
 
 # Prepare submitter private key
 

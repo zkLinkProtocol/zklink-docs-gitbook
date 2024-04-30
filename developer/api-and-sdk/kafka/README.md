@@ -36,13 +36,13 @@ The `Submit` event carries a `BatchSubmitMessages` structure, which represents a
 
 | eventType | Type                                        | Description                             |
 |-----------|---------------------------------------------|-----------------------------------------|
-| Submit    | [BatchSubmitMessages](#BatchSubmitMessages) | Submitted transaction batch information |
+| Submit    | [BatchSubmitMessages](#batchsubmitmessages) | Submitted transaction batch information |
 
 #### BatchSubmitMessages
 
 | Field     | Type                       | Description                |
 |-----------|----------------------------|----------------------------|
-| messages  | Vec<[TxParams](#TxParams)> | Transaction parameter list |
+| messages  | Vec<[TxParams](#txparams)> | Transaction parameter list |
 | messageId | `i64`                      | message id                 |
 | id        | `i64`                      | batch id                   |
 | createdAt | `i64`                      | Creation timestamp         |
@@ -52,7 +52,7 @@ The `Submit` event carries a `BatchSubmitMessages` structure, which represents a
 | Field              | Type                                                                | Description         |
 |--------------------|---------------------------------------------------------------------|---------------------|
 | tx                 | [ZkLinkTx](../data-types/transaction)                               | Transaction details |
-| ethSignature       | [TxLayer1Signature](../data-types/basic-types.md#TxLayer1Signature) | layer1 signature    |
+| ethSignature       | [TxLayer1Signature](../data-types/basic-types.md#txlayer1signature) | layer1 signature    |
 | submitterSignature | [ZkLinkSignature](../data-types/basic-types.md#zklinksignature)     | Submitter signature |
 
 ### JSON example
@@ -105,16 +105,16 @@ To ensure that consumers can effectively process messages received from the `TX_
 
 | stage    | Type                              | Description                                                                                                      |
 |----------|-----------------------------------|------------------------------------------------------------------------------------------------------------------|
-| ready    | [TxReadyResp](#TxReadyResp)       | This is for FullExit, Deposit, means layer2 is ready, not yet executed(be executed after [submit](#Event-type)). |
-| submit   | [TxExecutedResp](#TxExecutedResp) | This is the result for a failed tx(all tx type).                                                                 |
-| executed | [TxExecutedResp](#TxExecutedResp) | This is the result for a successfully executed tx(all tx type).                                                  |
+| ready    | [TxReadyResp](#txreadyresp)       | This is for FullExit, Deposit, means layer2 is ready, not yet executed(be executed after [submit](#event-type)). |
+| submit   | [TxExecutedResp](#txexecutedresp) | This is the result for a failed tx(all tx type).                                                                 |
+| executed | [TxExecutedResp](#txexecutedresp) | This is the result for a successfully executed tx(all tx type).                                                  |
 
 #### TxReadyResp
 
 | Field   | Type                                          | Description       |
 |---------|-----------------------------------------------|-------------------|
 | txInput | Vec<[ZkLinkTx](../data-types/transaction)>    | Transaction input |
-| txHash  | [TxHash](../data-types/basic-types.md#TxHash) | Transaction Hash  |
+| txHash  | [TxHash](../data-types/basic-types.md#txhash) | Transaction Hash  |
 
 #### TxExecutedResp
 
@@ -123,7 +123,7 @@ To ensure that consumers can effectively process messages received from the `TX_
 | txInput   | Vec<[ZkLinkTx](../data-types/transaction)> | Transaction input   |
 | messageId | `Option<i64>`                              | message ID          |
 | id        | `Option<i64>`                              | Transaction ID      |
-| txResults | Vec<[TxResult](#TxResult)>                 | Transaction results |
+| txResults | Vec<[TxResult](#txresult)>                 | Transaction results |
 
 #### TxResult
 
@@ -133,7 +133,7 @@ To ensure that consumers can effectively process messages received from the `TX_
 
 | Field   | Type                                                       | Description      |
 |---------|------------------------------------------------------------|------------------|
-| txHash  | [TxHash](../data-types/basic-types.md#TxHash)              | Transaction Hash |
+| txHash  | [TxHash](../data-types/basic-types.md#txhash)              | Transaction Hash |
 | updates | Vec<[StateUpdateResp](../json-rpc/json-rpc-api.md#txresp)> | Status updates   |
 
 ##### Failed
