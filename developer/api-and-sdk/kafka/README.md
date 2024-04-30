@@ -34,26 +34,26 @@ The `Submit` event carries a `BatchSubmitMessages` structure, which represents a
 
 #### TxEventMsg
 
-| Field  | Type                      | Description                             |
-|--------|---------------------------|-----------------------------------------|
-| Submit | `BatchSubmitMessages`     | Submitted transaction batch information |
+| eventType | Type                                        | Description                             |
+|-----------|---------------------------------------------|-----------------------------------------|
+| Submit    | [BatchSubmitMessages](#BatchSubmitMessages) | Submitted transaction batch information |
 
 #### BatchSubmitMessages
 
-| Field     | Type            | Description                |
-|-----------|-----------------|----------------------------|
-| messages  | `Vec<TxParams>` | Transaction parameter list |
-| messageId | `i64`           | message ID                 |
-| id        | `i64`           | batch ID                   |
-| createdAt | `i64`           | Creation timestamp         |
+| Field     | Type                       | Description                |
+|-----------|----------------------------|----------------------------|
+| messages  | Vec<[TxParams](#TxParams)> | Transaction parameter list |
+| messageId | `i64`                      | message id                 |
+| id        | `i64`                      | batch id                   |
+| createdAt | `i64`                      | Creation timestamp         |
 
 #### TxParams
 
-| Field              | Type                | Description         |
-|--------------------|---------------------|---------------------|
-| tx                 | `ZkLinkTx`          | Transaction details |
-| ethSignature       | `TxLayer1Signature` | Ethereum signature  |
-| submitterSignature | `ZkLinkSignature`   | Submitter signature |
+| Field              | Type                                                                | Description         |
+|--------------------|---------------------------------------------------------------------|---------------------|
+| tx                 | [ZkLinkTx](../data-types/transaction)                               | Transaction details |
+| ethSignature       | [TxLayer1Signature](../data-types/basic-types.md#TxLayer1Signature) | layer1 signature    |
+| submitterSignature | [ZkLinkSignature](../data-types/basic-types.md#zklinksignature)     | Submitter signature |
 
 ### JSON example
 
@@ -101,29 +101,29 @@ To ensure that consumers can effectively process messages received from the `TX_
 
 ### data structure
 
-#### TxMsgResp
+#### TxMsgResp(stage)
 
-| Field    | Type             | Description                        |
-|----------|------------------|------------------------------------|
-| Ready    | `TxReadyResp`    | Transaction ready                  |
-| Submit   | `TxExecutedResp` | Transaction submitted successfully |
-| Executed | `TxExecutedResp` | Transaction execution completed    |
+| stage    | Type                              | Description                                                                                                      |
+|----------|-----------------------------------|------------------------------------------------------------------------------------------------------------------|
+| ready    | [TxReadyResp](#TxReadyResp)       | This is for FullExit, Deposit, means layer2 is ready, not yet executed(be executed after [submit](#Event-type)). |
+| submit   | [TxExecutedResp](#TxExecutedResp) | This is the result for a failed tx(all tx type).                                                                 |
+| executed | [TxExecutedResp](#TxExecutedResp) | This is the result for a successfully executed tx(all tx type).                                                  |
 
 #### TxReadyResp
 
-| Field   | Type            | Description       |
-|---------|-----------------|-------------------|
-| txInput | `Vec<ZkLinkTx>` | Transaction input |
-| txHash  | `TxHash`        | Transaction Hash  |
+| Field   | Type                                          | Description       |
+|---------|-----------------------------------------------|-------------------|
+| txInput | Vec<[ZkLinkTx](../data-types/transaction)>    | Transaction input |
+| txHash  | [TxHash](../data-types/basic-types.md#TxHash) | Transaction Hash  |
 
 #### TxExecutedResp
 
-| Field     | Type            | Description         |
-|-----------|-----------------|---------------------|
-| txInput   | `Vec<ZkLinkTx>` | Transaction input   |
-| messageId | `Option<i64>`   | message ID          |
-| id        | `Option<i64>`   | Transaction ID      |
-| txResults | `Vec<TxResult>` | Transaction results |
+| Field     | Type                                       | Description         |
+|-----------|--------------------------------------------|---------------------|
+| txInput   | Vec<[ZkLinkTx](../data-types/transaction)> | Transaction input   |
+| messageId | `Option<i64>`                              | message ID          |
+| id        | `Option<i64>`                              | Transaction ID      |
+| txResults | Vec<[TxResult](#TxResult)>                 | Transaction results |
 
 #### TxResult
 
@@ -131,10 +131,10 @@ To ensure that consumers can effectively process messages received from the `TX_
 
 ##### Succeed
 
-| Field   | Type                   | Description      |
-|---------|------------------------|------------------|
-| txHash  | `TxHash`               | Transaction Hash |
-| updates | `Vec<StateUpdateResp>` | Status updates   |
+| Field   | Type                                                       | Description      |
+|---------|------------------------------------------------------------|------------------|
+| txHash  | [TxHash](../data-types/basic-types.md#TxHash)              | Transaction Hash |
+| updates | Vec<[StateUpdateResp](../json-rpc/json-rpc-api.md#txresp)> | Status updates   |
 
 ##### Failed
 
@@ -149,256 +149,401 @@ No field means the transaction was not executed.
 
 ### JSON example
 
+#### ready
 ```json
-[
-  {
-    "stage": "executed",
-    "txInput": [
-      {
-        "type": "OrderMatching",
-        "accountId": 2,
+{
+  "stage": "ready",
+  "txInput": [
+    {
+      "type": "Deposit",
+      "fromChainId": 1,
+      "from": "0x76920dfacad4f28f97d6209977c1057b9e3e5cad",
+      "subAccountId": 1,
+      "l1SourceToken": 18,
+      "l2TargetToken": 1,
+      "amount": "4000000000000000000000",
+      "to": "0x76920dfacad4f28f97d6209977c1057b9e3e5cad",
+      "serialId": 53,
+      "l2Hash": "0xaaa1e7a5bc48e7cfaa562a4d1a5abc1d6dc5e7f7683e89eb00e895d438f0acab"
+    }
+  ],
+  "txHash": "0xbb4d4852f06e143aa1451666085180a517e83f2c0a5f42fdd40e8df180b54c91"
+}
+```
+
+#### submit
+```json
+{
+  "stage": "submit",
+  "txInput": [
+    {
+      "type": "OrderMatching",
+      "accountId": 2,
+      "subAccountId": 0,
+      "taker": {
+        "accountId": 28,
         "subAccountId": 0,
-        "taker": {
-          "accountId": 28,
-          "subAccountId": 0,
-          "slotId": 9378,
-          "nonce": 6,
-          "baseTokenId": 17,
-          "quoteTokenId": 140,
-          "amount": "33000000000000000000",
-          "price": "1000000000000000000",
-          "isSell": 0,
-          "hasSubsidy": 0,
-          "feeRates": [
-            10,
-            20
-          ],
-          "signature": {
-            "pubKey": "0x06cca8fbfa06c39801f8cb0d8032539cba8491f4fdee275abf390c49ec9e8dae",
-            "signature": "a7702be3d72b3f9ea333c3da90746845a21bd9b00273f7f8363d8542d60ef22085737ea8eba0fc383edf29ebe4e0fa83b3ddc2f96f9b7f44cd29e17783efe400"
+        "slotId": 9378,
+        "nonce": 6,
+        "baseTokenId": 17,
+        "quoteTokenId": 140,
+        "amount": "33000000000000000000",
+        "price": "1000000000000000000",
+        "isSell": 0,
+        "hasSubsidy": 0,
+        "feeRates": [
+          10,
+          20
+        ],
+        "signature": {
+          "pubKey": "0x06cca8fbfa06c39801f8cb0d8032539cba8491f4fdee275abf390c49ec9e8dae",
+          "signature": "a7702be3d72b3f9ea333c3da90746845a21bd9b00273f7f8363d8542d60ef22085737ea8eba0fc383edf29ebe4e0fa83b3ddc2f96f9b7f44cd29e17783efe400"
+        }
+      },
+      "maker": {
+        "accountId": 100,
+        "subAccountId": 0,
+        "slotId": 14381,
+        "nonce": 4,
+        "baseTokenId": 17,
+        "quoteTokenId": 140,
+        "amount": "31000000000000000000",
+        "price": "1000000000000000000",
+        "isSell": 1,
+        "hasSubsidy": 0,
+        "feeRates": [
+          10,
+          20
+        ],
+        "signature": {
+          "pubKey": "0x9953827fc901dd57718d464ddc5db23445474e9f87f6f554c81176c5d93a760b",
+          "signature": "f43675557eb4f581a97bf1662ce2b0058f56f718569fbcafb6b2c53fe7efc2971ebe906f7185daab8f2b3e363f8281b91027189eb51bc65491a54e1a7944c004"
+        }
+      },
+      "oraclePrices": {
+        "contractPrices": [
+          {
+            "pairId": 0,
+            "marketPrice": "69407038011000000000000"
+          },
+          {
+            "pairId": 1,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 2,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 3,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 4,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 5,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 6,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 7,
+            "marketPrice": "1000085417000000000000"
           }
-        },
-        "maker": {
+        ],
+        "marginPrices": [
+          {
+            "tokenId": 140,
+            "price": "1000000000000000000"
+          },
+          {
+            "tokenId": 17,
+            "price": "999500000000000000"
+          },
+          {
+            "tokenId": 142,
+            "price": "1000000000000000000000"
+          },
+          {
+            "tokenId": 0,
+            "price": "0"
+          }
+        ]
+      },
+      "fee": "0",
+      "feeToken": 140,
+      "expectBaseAmount": "0",
+      "expectQuoteAmount": "0",
+      "signature": {
+        "pubKey": "0x51ab37221738f1b013233e07b4d502abed0562060689b3ccc7b7766999dfc681",
+        "signature": "7b41379292f91b77cd2ce1b750c9e18fdaf569cbbe6f33b4f89ce3cca3b8d7a9ccbf6d364bdd61bf7d590d0e30997b325e7dda4091b7d225529a7a8fe67c9001"
+      }
+    }
+  ],
+  "messageId": null,
+  "id": null,
+  "txResults": [
+    {
+      "code": 213,
+      "message": "Duplicate tx"
+    }
+  ]
+}
+```
+
+#### executed
+```json
+{
+  "stage": "executed",
+  "txInput": [
+    {
+      "type": "OrderMatching",
+      "accountId": 2,
+      "subAccountId": 0,
+      "taker": {
+        "accountId": 28,
+        "subAccountId": 0,
+        "slotId": 9378,
+        "nonce": 6,
+        "baseTokenId": 17,
+        "quoteTokenId": 140,
+        "amount": "33000000000000000000",
+        "price": "1000000000000000000",
+        "isSell": 0,
+        "hasSubsidy": 0,
+        "feeRates": [
+          10,
+          20
+        ],
+        "signature": {
+          "pubKey": "0x06cca8fbfa06c39801f8cb0d8032539cba8491f4fdee275abf390c49ec9e8dae",
+          "signature": "a7702be3d72b3f9ea333c3da90746845a21bd9b00273f7f8363d8542d60ef22085737ea8eba0fc383edf29ebe4e0fa83b3ddc2f96f9b7f44cd29e17783efe400"
+        }
+      },
+      "maker": {
+        "accountId": 100,
+        "subAccountId": 0,
+        "slotId": 14381,
+        "nonce": 4,
+        "baseTokenId": 17,
+        "quoteTokenId": 140,
+        "amount": "31000000000000000000",
+        "price": "1000000000000000000",
+        "isSell": 1,
+        "hasSubsidy": 0,
+        "feeRates": [
+          10,
+          20
+        ],
+        "signature": {
+          "pubKey": "0x9953827fc901dd57718d464ddc5db23445474e9f87f6f554c81176c5d93a760b",
+          "signature": "f43675557eb4f581a97bf1662ce2b0058f56f718569fbcafb6b2c53fe7efc2971ebe906f7185daab8f2b3e363f8281b91027189eb51bc65491a54e1a7944c004"
+        }
+      },
+      "oraclePrices": {
+        "contractPrices": [
+          {
+            "pairId": 0,
+            "marketPrice": "69407038011000000000000"
+          },
+          {
+            "pairId": 1,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 2,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 3,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 4,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 5,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 6,
+            "marketPrice": "0"
+          },
+          {
+            "pairId": 7,
+            "marketPrice": "1000085417000000000000"
+          }
+        ],
+        "marginPrices": [
+          {
+            "tokenId": 140,
+            "price": "1000000000000000000"
+          },
+          {
+            "tokenId": 17,
+            "price": "999500000000000000"
+          },
+          {
+            "tokenId": 142,
+            "price": "1000000000000000000000"
+          },
+          {
+            "tokenId": 0,
+            "price": "0"
+          }
+        ]
+      },
+      "fee": "0",
+      "feeToken": 140,
+      "expectBaseAmount": "0",
+      "expectQuoteAmount": "0",
+      "signature": {
+        "pubKey": "0x51ab37221738f1b013233e07b4d502abed0562060689b3ccc7b7766999dfc681",
+        "signature": "7b41379292f91b77cd2ce1b750c9e18fdaf569cbbe6f33b4f89ce3cca3b8d7a9ccbf6d364bdd61bf7d590d0e30997b325e7dda4091b7d225529a7a8fe67c9001"
+      }
+    }
+  ],
+  "messageId": null,
+  "id": null,
+  "txResults": [
+    {
+      "txHash": "0xbb4d4852f06e143aa1451666085180a517e83f2c0a5f42fdd40e8df180b54c91",
+      "updates": [
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "OrderUpdate",
+          "updateId": 0,
           "accountId": 100,
           "subAccountId": 0,
           "slotId": 14381,
-          "nonce": 4,
-          "baseTokenId": 17,
-          "quoteTokenId": 140,
-          "amount": "31000000000000000000",
-          "price": "1000000000000000000",
-          "isSell": 1,
-          "hasSubsidy": 0,
-          "feeRates": [
-            10,
-            20
-          ],
-          "signature": {
-            "pubKey": "0x9953827fc901dd57718d464ddc5db23445474e9f87f6f554c81176c5d93a760b",
-            "signature": "f43675557eb4f581a97bf1662ce2b0058f56f718569fbcafb6b2c53fe7efc2971ebe906f7185daab8f2b3e363f8281b91027189eb51bc65491a54e1a7944c004"
+          "oldTidyOrder": {
+            "nonce": 4,
+            "residue": "0"
+          },
+          "newTidyOrder": {
+            "nonce": 4,
+            "residue": "25000000000000000000"
           }
         },
-        "oraclePrices": {
-          "contractPrices": [
-            {
-              "pairId": 0,
-              "marketPrice": "69407038011000000000000"
-            },
-            {
-              "pairId": 1,
-              "marketPrice": "0"
-            },
-            {
-              "pairId": 2,
-              "marketPrice": "0"
-            },
-            {
-              "pairId": 3,
-              "marketPrice": "0"
-            },
-            {
-              "pairId": 4,
-              "marketPrice": "0"
-            },
-            {
-              "pairId": 5,
-              "marketPrice": "0"
-            },
-            {
-              "pairId": 6,
-              "marketPrice": "0"
-            },
-            {
-              "pairId": 7,
-              "marketPrice": "1000085417000000000000"
-            }
-          ],
-          "marginPrices": [
-            {
-              "tokenId": 140,
-              "price": "1000000000000000000"
-            },
-            {
-              "tokenId": 17,
-              "price": "999500000000000000"
-            },
-            {
-              "tokenId": 142,
-              "price": "1000000000000000000000"
-            },
-            {
-              "tokenId": 0,
-              "price": "0"
-            }
-          ]
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "BalanceUpdate",
+          "updateId": 1,
+          "accountId": 100,
+          "subAccountId": 0,
+          "coinId": 17,
+          "oldBalance": "68498000000000000000",
+          "newBalance": "62498000000000000000",
+          "oldNonce": 0,
+          "newNonce": 0
         },
-        "fee": "0",
-        "feeToken": 140,
-        "expectBaseAmount": "0",
-        "expectQuoteAmount": "0",
-        "signature": {
-          "pubKey": "0x51ab37221738f1b013233e07b4d502abed0562060689b3ccc7b7766999dfc681",
-          "signature": "7b41379292f91b77cd2ce1b750c9e18fdaf569cbbe6f33b4f89ce3cca3b8d7a9ccbf6d364bdd61bf7d590d0e30997b325e7dda4091b7d225529a7a8fe67c9001"
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "BalanceUpdate",
+          "updateId": 2,
+          "accountId": 100,
+          "subAccountId": 0,
+          "coinId": 140,
+          "oldBalance": "39306373000000000000",
+          "newBalance": "45300373000000000000",
+          "oldNonce": 0,
+          "newNonce": 0
+        },
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "OrderUpdate",
+          "updateId": 3,
+          "accountId": 28,
+          "subAccountId": 0,
+          "slotId": 9378,
+          "oldTidyOrder": {
+            "nonce": 6,
+            "residue": "6000000000000000000"
+          },
+          "newTidyOrder": {
+            "nonce": 7,
+            "residue": "0"
+          }
+        },
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "BalanceUpdate",
+          "updateId": 4,
+          "accountId": 28,
+          "subAccountId": 0,
+          "coinId": 140,
+          "oldBalance": "67593004000000000000",
+          "newBalance": "61593004000000000000",
+          "oldNonce": 0,
+          "newNonce": 0
+        },
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "BalanceUpdate",
+          "updateId": 5,
+          "accountId": 28,
+          "subAccountId": 0,
+          "coinId": 17,
+          "oldBalance": "35333000000000000000",
+          "newBalance": "41321000000000000000",
+          "oldNonce": 0,
+          "newNonce": 0
+        },
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "BalanceUpdate",
+          "updateId": 6,
+          "accountId": 2,
+          "subAccountId": 0,
+          "coinId": 140,
+          "oldBalance": "0",
+          "newBalance": "0",
+          "oldNonce": 6,
+          "newNonce": 6
+        },
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "BalanceUpdate",
+          "updateId": 7,
+          "accountId": 3,
+          "subAccountId": 0,
+          "coinId": 17,
+          "oldBalance": "6761781393480000000000",
+          "newBalance": "6761793393480000000000",
+          "oldNonce": 0,
+          "newNonce": 0
+        },
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "BalanceUpdate",
+          "updateId": 8,
+          "accountId": 3,
+          "subAccountId": 0,
+          "coinId": 140,
+          "oldBalance": "1307544014198290000000000",
+          "newBalance": "1307544020198290000000000",
+          "oldNonce": 0,
+          "newNonce": 0
+        },
+        {
+          "stateUpdateType": "AccountUpdate",
+          "accountUpdateType": "BalanceUpdate",
+          "updateId": 9,
+          "accountId": 3,
+          "subAccountId": 0,
+          "coinId": 140,
+          "oldBalance": "1307544020198290000000000",
+          "newBalance": "1307544020198290000000000",
+          "oldNonce": 0,
+          "newNonce": 0
         }
-      }
-    ],
-    "messageId": null,
-    "id": null,
-    "txResults": [
-      {
-        "txHash": "0xbb4d4852f06e143aa1451666085180a517e83f2c0a5f42fdd40e8df180b54c91",
-        "updates": [
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "OrderUpdate",
-            "updateId": 0,
-            "accountId": 100,
-            "subAccountId": 0,
-            "slotId": 14381,
-            "oldTidyOrder": {
-              "nonce": 4,
-              "residue": "0"
-            },
-            "newTidyOrder": {
-              "nonce": 4,
-              "residue": "25000000000000000000"
-            }
-          },
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "BalanceUpdate",
-            "updateId": 1,
-            "accountId": 100,
-            "subAccountId": 0,
-            "coinId": 17,
-            "oldBalance": "68498000000000000000",
-            "newBalance": "62498000000000000000",
-            "oldNonce": 0,
-            "newNonce": 0
-          },
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "BalanceUpdate",
-            "updateId": 2,
-            "accountId": 100,
-            "subAccountId": 0,
-            "coinId": 140,
-            "oldBalance": "39306373000000000000",
-            "newBalance": "45300373000000000000",
-            "oldNonce": 0,
-            "newNonce": 0
-          },
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "OrderUpdate",
-            "updateId": 3,
-            "accountId": 28,
-            "subAccountId": 0,
-            "slotId": 9378,
-            "oldTidyOrder": {
-              "nonce": 6,
-              "residue": "6000000000000000000"
-            },
-            "newTidyOrder": {
-              "nonce": 7,
-              "residue": "0"
-            }
-          },
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "BalanceUpdate",
-            "updateId": 4,
-            "accountId": 28,
-            "subAccountId": 0,
-            "coinId": 140,
-            "oldBalance": "67593004000000000000",
-            "newBalance": "61593004000000000000",
-            "oldNonce": 0,
-            "newNonce": 0
-          },
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "BalanceUpdate",
-            "updateId": 5,
-            "accountId": 28,
-            "subAccountId": 0,
-            "coinId": 17,
-            "oldBalance": "35333000000000000000",
-            "newBalance": "41321000000000000000",
-            "oldNonce": 0,
-            "newNonce": 0
-          },
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "BalanceUpdate",
-            "updateId": 6,
-            "accountId": 2,
-            "subAccountId": 0,
-            "coinId": 140,
-            "oldBalance": "0",
-            "newBalance": "0",
-            "oldNonce": 6,
-            "newNonce": 6
-          },
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "BalanceUpdate",
-            "updateId": 7,
-            "accountId": 3,
-            "subAccountId": 0,
-            "coinId": 17,
-            "oldBalance": "6761781393480000000000",
-            "newBalance": "6761793393480000000000",
-            "oldNonce": 0,
-            "newNonce": 0
-          },
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "BalanceUpdate",
-            "updateId": 8,
-            "accountId": 3,
-            "subAccountId": 0,
-            "coinId": 140,
-            "oldBalance": "1307544014198290000000000",
-            "newBalance": "1307544020198290000000000",
-            "oldNonce": 0,
-            "newNonce": 0
-          },
-          {
-            "stateUpdateType": "AccountUpdate",
-            "accountUpdateType": "BalanceUpdate",
-            "updateId": 9,
-            "accountId": 3,
-            "subAccountId": 0,
-            "coinId": 140,
-            "oldBalance": "1307544020198290000000000",
-            "newBalance": "1307544020198290000000000",
-            "oldNonce": 0,
-            "newNonce": 0
-          }
-        ]
-      }
-    ]
-  }
-]
+      ]
+    }
+  ]
+}
 ```
