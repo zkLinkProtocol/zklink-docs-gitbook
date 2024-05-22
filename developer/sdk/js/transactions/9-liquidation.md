@@ -59,3 +59,15 @@ LiquidationBuilder(account_id, sub_account_id, sub_account_nonce, contract_price
 */
 newLiquidation(builder)
 ```
+
+### func sign
+
+```javascript
+/**
+* @param {ZkLinkSigner} signer
+* @returns {any}
+*/
+sign(signer)
+```
+
+Sign transaction with given [ZkLinkSigner](../signer.md#type-zklinksigner)

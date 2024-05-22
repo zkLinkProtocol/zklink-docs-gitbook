@@ -291,3 +291,43 @@ signAutoDeleveraging(tx)
 * @returns {json object} json string of tx
 */
 ```
+
+### func getZkLinkSigner
+
+```javascript
+/**
+* @returns {ZkLinkSigner}
+*/
+getZkLinkSigner()
+```
+
+## Type ZkLinkSigner
+`ZkLinkSigner` includes the L1 private key(Eth or Starknet) and L3 private key.
+
+### func ethSig
+
+```javascript
+/**
+* @param {string} sig
+* @returns {ZkLinkSigner}
+*/
+ethSig(sig)
+```
+Creat a [ZkLinkSigner](#type-zklinksigner) from eth personal sign.
+
+**input:**
+* sig: hex string of eth personal sign(with or without `0x` prefix)
+
+### func starknetSig
+
+```javascript
+/**
+* @param {string} sig
+* @returns {ZkLinkSigner}
+*/
+starknetSig(sig)
+```
+Creat a [ZkLinkSigner](#type-zklinksigner) from starknet signature.
+
+**input:**
+* sig: hex string of starknet signature(with or without `0x` prefix)

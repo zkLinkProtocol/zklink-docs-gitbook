@@ -6,7 +6,7 @@
 ```dart
 ZkLinkSigner ethSig(String sig)
 ```
-Creat a `ZkLinkSigner` from eth personal sign.
+Creat a [ZkLinkSigner](#type-zklinksigner) from eth personal sign.
 
 **input:**
 * sig: hex string of eth personal sign(with or without `0x` prefix)
@@ -16,7 +16,7 @@ Creat a `ZkLinkSigner` from eth personal sign.
 ```dart
 ZkLinkSigner starknetSig(String sig)
 ```
-Creat a `ZkLinkSigner` from starknet signature.
+Creat a [ZkLinkSigner](#type-zklinksigner) from starknet signature.
 
 **input:**
 * sig: hex string of starknet signature(with or without `0x` prefix)

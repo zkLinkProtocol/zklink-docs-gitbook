@@ -30,3 +30,15 @@ ForcedExitBuilder(to_chain_id, initiator_account_id, initiator_sub_account_id, t
 */
 newForcedExit(builder)
 ```
+
+### func sign
+
+```javascript
+/**
+* @param {ZkLinkSigner} signer
+* @returns {any}
+*/
+sign(signer)
+```
+
+Sign transaction with given [ZkLinkSigner](../signer.md#type-zklinksigner)

@@ -68,7 +68,7 @@ OrderMatching(
 void sign(ZkLinkSigner zkLinkSigner)
 ```
 
-Sign transaction with given `ZkLinkSigner`
+Sign transaction with given [ZkLinkSigner](../signer.md#type-zklinksigner)
 
 ### func toJson
 

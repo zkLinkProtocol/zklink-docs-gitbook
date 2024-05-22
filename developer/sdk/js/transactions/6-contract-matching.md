@@ -92,3 +92,15 @@ ContractMatchingBuilder(account_id, sub_account_id, taker, maker, fee, fee_token
 */
 newContractMatching(builder)
 ```
+
+### func sign
+
+```javascript
+/**
+* @param {ZkLinkSigner} signer
+* @returns {any}
+*/
+sign(signer)
+```
+
+Sign transaction with given [ZkLinkSigner](../signer.md#type-zklinksigner)

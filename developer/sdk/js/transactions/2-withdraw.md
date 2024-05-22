@@ -32,3 +32,27 @@ WithdrawBuilder(account_id, sub_account_id, to_chain_id, to_address, l2_source_t
 */
 newWithdraw(builder)
 ```
+
+### func getEthSignMsg
+
+```javascript
+/**
+* @param {string} token_symbol
+* @returns {string}
+*/
+getEthSignMsg(token_symbol)
+```
+
+Get the Ethereum sign message
+
+### func sign
+
+```javascript
+/**
+* @param {ZkLinkSigner} signer
+* @returns {any}
+*/
+sign(signer)
+```
+
+Sign transaction with given [ZkLinkSigner](../signer.md#type-zklinksigner)
