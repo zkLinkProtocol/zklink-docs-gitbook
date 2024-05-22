@@ -28,3 +28,27 @@ TransferBuilder(account_id, to_address, from_sub_account_id, to_sub_account_id, 
 */
 newTransfer(builder)
 ```
+
+### func getEthSignMsg
+
+```javascript
+/**
+* @param {string} token_symbol
+* @returns {string}
+*/
+getEthSignMsg(token_symbol)
+```
+
+Get the Ethereum sign message
+
+### func sign
+
+```javascript
+/**
+* @param {ZkLinkSigner} signer
+* @returns {any}
+*/
+sign(signer)
+```
+
+Sign transaction with given [ZkLinkSigner](../signer.md#type-zklinksigner)
