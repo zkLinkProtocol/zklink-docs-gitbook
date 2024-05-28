@@ -43,6 +43,22 @@ Contract(
 )
 ```
 
+### func sign
+
+```dart
+void sign(ZkLinkSigner zkLinkSigner)
+```
+
+Sign contract with given [ZkLinkSigner](../signer.md#type-zklinksigner)
+
+### func toJson
+
+```dart
+String toJson()
+```
+
+Get the json str of [Contract](#type-contract)
+
 ## type ContractMatching
 [ContractMatching](../../../api-and-sdk/data-types/transaction/contract\_matching.md) transaction type.
 

@@ -63,6 +63,18 @@ The [Contract](../../../api-and-sdk/data-types/transaction/contract\_matching.md
 newContract(builder)
 ```
 
+### func sign
+
+```javascript
+/**
+* @param {ZkLinkSigner} signer
+* @returns {any}
+*/
+sign(signer)
+```
+
+Sign contract with given [ZkLinkSigner](../signer.md#type-zklinksigner)
+
 ## type ContractMatchingBuilder
 
 ### constructor
