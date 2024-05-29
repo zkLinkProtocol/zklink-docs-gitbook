@@ -53,6 +53,18 @@ The [Order](../../../api-and-sdk/data-types/transaction/order\_matching.md) stru
 Order(account_id, sub_account_id, slot_id, nonce, base_token_id, quote_token_id, amount, price, is_sell, maker_fee_rate, taker_fee_rate, has_subsidy)
 ```
 
+### func sign
+
+```javascript
+/**
+* @param {ZkLinkSigner} signer
+* @returns {any}
+*/
+sign(signer)
+```
+
+Sign order with given [ZkLinkSigner](../signer.md#type-zklinksigner)
+
 ## type OrderMatchingBuilder
 
 ### constructor

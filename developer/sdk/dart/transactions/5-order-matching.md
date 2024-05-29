@@ -44,6 +44,22 @@ Order(
 )
 ```
 
+### func sign
+
+```dart
+void sign(ZkLinkSigner zkLinkSigner)
+```
+
+Sign order with given [ZkLinkSigner](../signer.md#type-zklinksigner)
+
+### func toJson
+
+```dart
+String toJson()
+```
+
+Get the json str of [Order](#type-order)
+
 ## type OrderMatching
 [OrderMatching](../../../api-and-sdk/data-types/transaction/order\_matching.md) transaction type.
 
