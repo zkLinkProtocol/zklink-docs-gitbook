@@ -18,9 +18,8 @@ This configuration ensures that the client can locate and connect to the Kafka s
 
 ## Consumer Topics
 
-### Topic Description
-
-This document describes the event type `TxEventMsg` and its associated data structures consumed in the Kafka `SUBMIT_TX_TOPIC` topic. This topic is specifically used for handling events related to transaction submissions.
+### Common consumer topics
+The event type [`TxEventMsg`](#txeventmsg) and its associated data structures consumed in the Kafka `SUBMIT_TX_TOPIC` topic. This topic is specifically used for receiving l2 submit transactions, as well as FullExit ready message.
 
 ### Event type
 
@@ -88,6 +87,9 @@ The `Submit` event carries a `BatchSubmitMessages` structure, which represents a
  ]
 }
 ```
+
+### Special consumer topics
+The `SYSTEM` topic, be used for stopping consuming messages.
 
 ## Producer Topics
 
