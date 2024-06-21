@@ -47,8 +47,7 @@ where the `ContractPrice` and `SpotPriceInfo` defined as below:
 
 
 {% endtab %}
-
-{% end tabs %}
+{% endtabs %}
 
 For example:
 
