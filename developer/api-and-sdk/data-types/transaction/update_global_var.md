@@ -72,8 +72,8 @@ Modify the margin info in the specified index.
 
 | Name     | Type                       | Required | Description        |
 |----------|----------------------------|-----|---------------------------|
-| marginId | [MarginId](#marginid)      | yes | The margin id             |
-| tokenId  | [TokenId](#tokenid)        | yes | The Token id              |
+| marginId | <a href="../basic-types.md#marginid">MarginId</a> | yes | The margin id             |
+| tokenId  | <a href="../basic-types.md#tokenid">TokenId</a>        | yes | The Token id              |
 | ratio    | u8                         | yes |the ratio, 100 means 1.0% |
 
 For example 
@@ -103,7 +103,7 @@ Modify the info of every perpetual contract pair.
 
 | Name                  | Type     | Required         | Description                                             |
 |-----------------------|-------------------|------------|---------------------------------------------------------|
-| pairId                | [PairId](#pairid) | yes | The pair id                                             |
+| pairId                | <a href="../basic-types.md#pairid">PairId</a> | yes | The pair id                                             |
 | symbol                | String            | yes | The symbol of the contract                              |
 | initialMarginRate     | u16               | yes | The initial margin rate of the contract, 100 means 0.1% |
 | maintenanceMarginRate | u16               | yes | The maintenance margin rate, 100 means 0.1%             |
@@ -134,8 +134,8 @@ Update the funding rates to accumulated funding rates of the Global Vars for all
 | Name          | Type  | Required | Description       |
 |---------------|-------|-----------|-------------------|
 | infos         | array | yes       | funding info list |
-| > pairId      | [PairId](#pairid) | yes       | The pair id                                                           |
-| > price       | BigUint          | yes       | the mark price of the trade pair                                      |
+| > pairId      | <a href="../basic-types.md#pairid">PairId</a> | yes       | The pair id                                                           |
+| > price       | <a href="../basic-types.md#price">BigUint</a>          | yes       | the mark price of the trade pair                                      |
 | > fundingRate | i16         | yes       | the fee funding rate, the actual result needs to be divided by `10^6` |
 
 For example:
