@@ -21,13 +21,13 @@
 
 ### ChainId
 
-The chain id defined by ZkLink, the type is `u8`
+The chain id defined by ZkLink, the type is `u8`, Value range: [0, 31]
 
 ### AccountId
-The account id defined by ZkLink, the type is `u32`
+The account id defined by ZkLink, the type is `u32`, Value range: 0 or [2, 2^24 - 1]
 
 ### SubAccountId
-The subaccount id defined by ZkLink, the type is`u8`
+The subaccount id defined by ZkLink, the type is`u8`, Value range: [0, 31]
 
 ### TokenId
 The type is`u32`, different token contract addresses correspond to different token ids.
@@ -46,16 +46,19 @@ Conversely, when withdrawing USD, users can choose to withdraw an equivalent amo
 
 
 ### SlotId
-The id of slot in [Order](#order), the type is `u32`.
+The id of slot in [Order](#order), the type is `u32`, Value range: [0, 2^16 - 1]
 
 ### PairId
-The trading pair ID of the pertetual contract, the type is `u16`. The PairId is defined by decentralized exchange, not defined by ZkLink.
+The trading pair ID of the pertetual contract, the type is `u16`. The PairId is defined by decentralized exchange, not defined by ZkLink, Value range: [0, 8]
 
 ### MarginId
-The margin ID of the pertetual contract, the type is `u8`.
+The margin ID of the pertetual contract, the type is `u8`, Value range: [0, 3]
 
 ### Nonce
-The nonce type in transaction and account, the type is `u32`
+The nonce type in transaction and account, the type is `u32`, Value range: [0, 2^32 - 1]
+
+### Price
+The price in transaction, the type is `BigUint`, Value range: [0, (2^120 - 1) / 10^18 - 1]
 
 ### ChainType
 

@@ -10,34 +10,42 @@
 <tr><td> > contractPrices     </td><td> array           </td><td> yes       </td><td> <a name="a1" href="#">ContractPrice</a> array                                       </td></tr>                                  
 <tr><td> > marginPrices       </td><td> array           </td><td> yes       </td><td> <a name="a2" href="#">SpotPriceInfo</a> array                                       </td></tr>                                 
 <tr><td> liquidationAccountId </td><td> <a href="../basic-types.md#accountid">AccountId</a></td><td> yes       </td><td> The account id of liquidation                                 </td></tr>
-<tr><td> fee                  </td><td> BugUint         </td><td> yes       </td><td> The fee amount                                                </td></tr>
+<tr><td> fee                  </td><td> <a href="../../private-key-and-signature/encode/algorithm.md">BigUint</a> </td><td> yes       </td><td> The fee amount                                                </td></tr>
 <tr><td> feeToken             </td><td> <a href="../basic-types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token id of the fee                                       </td></tr>
 <tr><td> signature            </td><td> <a href="../basic-types.md#zklinksignature">ZkLinkSignature</a></td><td> yes       </td><td> The ZkLink L3 signature of Liquidation                        </td></tr>
 
 </tbody>
 </table>
 
-<p id="a1">where the type ContractPrice and SpotPriceInfo are as follows:</p>
+where the `ContractPrice` and `SpotPriceInfo` defined as below:
 
 {% tabs %}
 {% tab title="ContractPrice" %}
 
-| Name        | Type              | Description                     |
-|-------------|-------------------|---------------------------------|
-| pairId      | [PairId](#pairid) | The pair id                     |
-| marketPrice | BigUint           | The market price of the pair id |
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody><tr>
+<td>pairId</td><td><a href="../basic-types.md#pairid">PairId</a></td><td>yes</td><td>The pair id of trade pair, for example the id of BTC-USDT pair</td></tr>
+<td>marketPrice </td><td><a href="../basic-types.md#price">BigUint</a></td><td>yes</td><td> The market price of the associated pair</td></tr>
+</tbody>
+</table>
 
-{% endtab  %}
+{% endtab %}
 
 {% tab title="SpotPriceInfo" %}
 
-| Name       | Type                | Description                   |
-|------------|---------------------|-------------------------------|
-| tokenId    | [TokenId](#tokenid) | The token id                  |
-| marketPrice | BigUint             | The market price of the token |
+<table>
+<thead><tr><th width="20">Name</th><th width="20">Type</th><th width="10">Required</th><th width="250">Description</th></tr></thead>
+<tbody>
+<tr><td>tokenId</td><td><a href="../basic-types.md#tokenid">TokenId</a></td><td>yes</td><td>The pair id of trade pair, for example the id of BTC-USDT pair</td></tr>
+<tr><td>price</td><td><a href="../basic-types.md#price">BigUint</a></td><td>yes</td><td>The spot price</td></tr>
+</tbody>
+</table>
+
 
 {% endtab %}
-{% endtabs %}
+
+{% end tabs %}
 
 For example:
 

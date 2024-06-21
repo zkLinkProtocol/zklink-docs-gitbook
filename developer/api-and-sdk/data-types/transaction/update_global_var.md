@@ -20,7 +20,7 @@ Modify the collect-fee account.
 
 | Name       | Type                    | Required | Description        |
 |------------|-------------------------|-----------|--------------------|
-| feeAccount | [AccountId](#accountid)| yes       | The fee account id |
+| feeAccount | <a href="../basic-types.md#accountid">AccountId</a> | yes       | The fee account id |
  
 For example:
 
@@ -46,7 +46,7 @@ Modify the insurance fund account
 
 | Name       | Type                     | Required | Description        |
 |-----------|--------------------------|-----------|--------------------|
-| accountId | [AccountId](#accountid)  | yes       | The account id of  insuranceFundAccount|
+| accountId | <a href="../basic-types.md#accountid">AccountId</a>  | yes       | The account id of  insuranceFundAccount|
 
 For Example:
 
