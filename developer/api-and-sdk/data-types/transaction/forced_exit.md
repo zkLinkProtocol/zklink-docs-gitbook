@@ -13,7 +13,7 @@ Forced withdraw from Layer3
 <tr><td> targetSubAccountId    </td><td> <a href="../basic-types.md#accountid">AccountId</a></td><td> yes       </td><td> Subaccount ID of the account of the forced withdraw                                           </td></tr>
 <tr><td> l2SourceToken         </td><td> <a href="../basic-types.md#tokenid">TokenId</a></td><td> yes       </td><td> The token deducted from the account of the forced withdraw                                    </td></tr>
 <tr><td> l1TargetToken         </td><td> <a href="../basic-types.md#tokenid">TokenId</a></td><td> yes       </td><td> This token sent to the to_address on L1                                                       </td></tr>
-<tr><td> exitAmount            </td><td> BigUint         </td><td> yes       </td><td> Withdrawal amount                                                                             </td></tr>
+<tr><td> exitAmount            </td><td> <a href="../../private-key-and-signature/encode/algorithm.md">BigUint</a> </td><td> yes       </td><td> Withdrawal amount                                                                             </td></tr>
 <tr><td> withdrawToL1          </td><td> u8              </td><td> yes       </td><td> 1: true, 0: false. withdraw to L1 or not                                                      </td></tr>
 <tr><td> ts                    </td><td> u32             </td><td> yes       </td><td> Timestamp of the API call, used as front-end request id to generate transaction hash          </td></tr>
 <tr><td> signature             </td><td> <a href="../basic-types.md#zklinksignature">ZkLinkSignature </a></td><td> yes       </td><td> the public key hash corresponding to the signature must be aligned with the initiator account </td></tr>
