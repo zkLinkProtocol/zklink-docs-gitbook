@@ -18,10 +18,10 @@ users can withdraw the balance of any token from a specific sub-account on L2,
 and the funds will be withdrawn to the user's L1 address.
 Forced Withdraw is a type of withdrawal operation, and it is the only withdrawal operation initiated by L1. 
 The other two operations are withdrawals of L2.
+
+
 **_Note_**: The accountId passed in must be the Account ID obtained by the caller msg.sender when registered on zklink-X L2.
-By using the **[getAccount](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getaccount)** 
-and the **[getSupportTokens](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getSupportTokens)** 
-and the **[getAccountBalances](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getaccountbalances)** 3 RPC interfaces of the zklink-x layer 2 service,
+By using the **[getAccount](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getaccount)** and the **[getSupportTokens](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getSupportTokens)** and the **[getAccountBalances](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getaccountbalances)** three json-rpc interfaces of the zklink-x layer 2 service,
 you can find the Account_id corresponding to a given address and the token_id for tokens with a balance.
 
 #### Permissions
