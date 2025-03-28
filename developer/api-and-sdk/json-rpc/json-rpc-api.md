@@ -15,7 +15,7 @@ The zkLink API follows the JSON-RPC standard and is accessed via POST.
   {% endtab %}
 
 {% tab title="SubAccount" %}
-* [getSubAccountGlobalVars](json-rpc-api.md#getSubAccountGlobalVars): get the params of the subaccount.
+* [getSubAccountGlobalVars](json-rpc-api.md#getsubaccountglobalvars): get the params of the subaccount.
 {% endtab %}
 
 {% tab title="Block" %}
@@ -167,8 +167,8 @@ var amount_to_call_contract = amount_of_user_input * 10 ** token.decimals // the
 // A user deposits 2 USDC, the parameter is 2 * 10^6
 // A user deposits 5 ZKL, the parameter is 5 * 10^18
 ```
-### getSubAccountGlobalVars
 
+### getSubAccountGlobalVars
 Get the global variables information of a specific sub-account.
 
 {% tabs %}
@@ -224,7 +224,6 @@ Get the global variables information of a specific sub-account.
 {% endtabs %}
 
 #### **GlobalVarsResp**
-
 | Field                | Type              | Description                                                                                                                                                                            |
 |----------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | subAccountId         | SubAccountId      | The ID of the queried sub-account.                                                                                                                                                     |
