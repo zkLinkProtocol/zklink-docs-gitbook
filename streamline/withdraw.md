@@ -10,6 +10,74 @@ There are 4 types of withdraw functions: withdraw, forced withdraw (permissionle
 `proxy withdraw` applies to accounts that can not generate pubkeyhash. For example, a user mistakenly transfers tokens to a smart contract address that does not support pubkeyhash generation. To withdraw the token from Layer2 to Layer1 in such a case, a third-party proxy is required to send the withdrawal request. Noted that the to\_address must be THE smart contract address.
 {% endhint %}
 
+## Forced Withdraw
+### Function name
+#### requestFullExit
+Through this interface, users can withdraw the balance of tokens on a sub-account **from L2 to L1**.
+Forced Withdraw is a type of withdrawal operation, and it is the only withdrawal operation initiated by L1. 
+The other two operations are withdrawals of L2.
+
+#### Permissions
+none
+
+#### Parameters
+| Name          | Type   | Description                                                                   |
+|---------------|--------|-------------------------------------------------------------------------------|
+| _accountId    | uint32 | Account ID that initiated the withdrawal                                      |
+| _subAccountId | uint8  | SubAccountId                                                                  |
+| _tokenId      | uint16 | token id to withdraw                                                          |
+| _mapping      | bool   | If true, the balance of the mapping token of the account is reduced in the L2 |
+
+#### Return value
+none
+
+#### Constraints
+| Name                                   | Type       | Description                                                                   |
+|----------------------------------------|------------|-------------------------------------------------------------------------------|
+| _accountId                             | Parameters | [0,MAX_ACCOUNT_ID]                                                            |
+| _subAccountId                          | Parameters | [0,MAX_SUB_ACCOUNT_ID]                                                        |
+| exodusMode                             | Status     | false                                                                         |
+| token verification                     | Status     | token must be registered, and it has no effect on whether token is prohibited |
+| totalOpenPriorityRequests Verification | Status     | [0,MAX_PRIORITY_REQUESTS)                                                     |
+
+ExodusMode is true to indicate that ZkLink is in the exit state. In this state, the user is not allowed to perform FullExit.
+
+#### Example
+```
+const { ethers } = require('ethers');
+const contractABI = [
+    {
+        "inputs": [
+            { "internalType": "uint32", "name": "_accountId", "type": "uint32" },
+            { "internalType": "uint8", "name": "_subAccountId", "type": "uint8" },
+            { "internalType": "uint16", "name": "_tokenId", "type": "uint16" },
+            { "internalType": "bool", "name": "_mapping", "type": "bool" }
+        ],
+        "name": "requestFullExit",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+];
+
+const contractAddress = '0xzklinkXContractAddressHere';
+const contract = new ethers.Contract(contractAddress, contractABI, wallet);
+
+async function callRequestFullExit(accountId, subAccountId, tokenId, mapping) {
+    try {
+        const tx = await contract.requestFullExit(accountId, subAccountId, tokenId, mapping);
+
+        const receipt = await tx.wait();
+
+        console.log('Transaction successful:', receipt);
+    } catch (error) {
+        console.error('Error calling requestFullExit:', error);
+    }
+}
+
+callRequestFullExit(10, 1, 100, true);
+```
+
 ## Fast Withdraw
 
 > 💡 **Fast Withdraw** is not a Layer2 function, but a supplementary feature to Layer2 withdraw function.

@@ -14,6 +14,10 @@ The zkLink API follows the JSON-RPC standard and is accessed via POST.
 * [getTokenReserve](json-rpc-api.md#gettokenreserve): get the withdrawable limit of a token on a certain L1 chain.
   {% endtab %}
 
+{% tab title="SubAccount" %}
+* [getSubAccountGlobalVars](json-rpc-api.md#getSubAccountGlobalVars): get the params of the subaccount.
+{% endtab %}
+
 {% tab title="Block" %}
 * [getBlockByNumber](json-rpc-api.md#getblockbynumber): get the block info by block height.
 * [getBlockOnChainByNumber](json-rpc-api.md#getblockonchainbynumber): get the transaction information in a block that is executed on L1 blockchains.
@@ -163,6 +167,72 @@ var amount_to_call_contract = amount_of_user_input * 10 ** token.decimals // the
 // A user deposits 2 USDC, the parameter is 2 * 10^6
 // A user deposits 5 ZKL, the parameter is 5 * 10^18
 ```
+### getSubAccountGlobalVars
+
+Get the global variables information of a specific sub-account.
+
+{% tabs %}
+{% tab title="Request" %}
+**Parameters**
+
+| Name              | Type         | Description                         |
+|-------------------|--------------|-------------------------------------|
+| sub_account_query | SubAccountId | The ID of the sub-account to query. |
+
+```json
+{ 
+  "id": 1, 
+  "jsonrpc": "2.0", 
+  "method": "getSubAccountGlobalVars", 
+  "params": [1]
+}
+```
+{% endtab %}
+
+{% tab title="Response" %}
+**Returns**
+
+`GlobalVarsResp`
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "subAccountId": 1,
+    "feeAccount": 100,
+    "insuranceFundAccount": 101,
+    "marginParams": {
+      "1": {
+        "token_id": 1,
+        "symbol": "USDC",
+        "index_price": "1000000000000000000",
+        "ratio": 50
+      }
+    },
+    "contractParams": {
+      "1": {
+        "symbol": "BTC-USDC",
+        "mark_price": "30000000000000000000000",
+        "initial_margin_rate": 1000,
+        "maintenance_margin_rate": 500,
+        "acc_funding_price": "-1000000000000000000",
+      }
+    }
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+#### **GlobalVarsResp**
+
+| Field                | Type              | Description                                                                                                                                                                            |
+|----------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| subAccountId         | SubAccountId      | The ID of the queried sub-account.                                                                                                                                                     |
+| feeAccount           | AccountId \| null | The ID of the fee account associated with the sub-account, if any.                                                                                                                     |
+| insuranceFundAccount | AccountId \| null | The ID of the insurance fund account associated with the sub-account, if any.                                                                                                          |
+| marginParams         | MarginParams      | A map of margin parameters for different margin IDs. Each entry contains details like token ID, symbol, index price, and ratio.                                                        |
+| contractParams       | ContractParams    | A map of contract parameters for different pair IDs. Each entry contains details like symbol, mark price, initial margin rate, maintenance margin rate, and accumulated funding price. |
+
 
 ### getLatestBlockNumber
 
