@@ -13,9 +13,16 @@ There are 4 types of withdraw functions: withdraw, forced withdraw (permissionle
 ## Forced Withdraw
 ### Function name
 #### requestFullExit
-Through this interface, users can withdraw the balance of tokens on a sub-account **from L2 to L1**.
+Through the **requestFullExit** interface of the **zklink-X L1 contract**,
+users can withdraw the balance of any token from a specific sub-account on L2,
+and the funds will be withdrawn to the user's L1 address.
 Forced Withdraw is a type of withdrawal operation, and it is the only withdrawal operation initiated by L1. 
 The other two operations are withdrawals of L2.
+**_Note_**: The accountId passed in must be the Account ID obtained by the caller msg.sender when registered on zklink-X L2.
+By using the **[getAccount](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getaccount)** 
+and the **[getSupportTokens](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getSupportTokens)** 
+and the **[getAccountBalances](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getaccountbalances)** 3 RPC interfaces of the zklink-x layer 2 service,
+you can find the Account_id corresponding to a given address and the token_id for tokens with a balance.
 
 #### Permissions
 none
@@ -23,9 +30,9 @@ none
 #### Parameters
 | Name          | Type   | Description                                                                   |
 |---------------|--------|-------------------------------------------------------------------------------|
-| _accountId    | uint32 | Account ID that initiated the withdrawal                                      |
-| _subAccountId | uint8  | SubAccountId                                                                  |
-| _tokenId      | uint16 | token id to withdraw                                                          |
+| _accountId    | uint32 | Account ID registered by the user in L2                                       |
+| _subAccountId | uint8  | SubAccountId of the withdrawal                                                |
+| _tokenId      | uint16 | Token id of the withdrawal                                                    |
 | _mapping      | bool   | If true, the balance of the mapping token of the account is reduced in the L2 |
 
 #### Return value
