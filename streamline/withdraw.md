@@ -20,6 +20,19 @@ Forced Withdraw is a type of withdrawal operation, and it is the only withdrawal
 **_Note_**: The accountId passed in must be the Account ID obtained by the caller msg.sender when registered on zklink-X L2.
 By using the **[getAccount](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getaccount)** and the **[getSupportTokens](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getSupportTokens)** and the **[getAccountBalances](../developer/api-and-sdk/json-rpc/json-rpc-api.md#getaccountbalances)** three json-rpc interfaces of the zklink-x layer 2 service, you can find the Account_id corresponding to a given address and the token_id for tokens with a balance.
 
+#### Principle Design
+The FullExit instruction is an L1 priority instruction,
+requiring zklink-X L2 to execute all L1 instructions in the exact order received from L1.
+After L2 completes each L1 instruction and submits the zero-knowledge proof to the chain,
+the zklink-X L1 contract will check the order and existence of each submitted priority instruction.
+Any erroneous order or instruction will result in a rejection of L2's submission (commitBlocks) until it is corrected.
+(In fact, there is a timeout set;
+If there is no correct submission for too long, it will enter the **Dunkirk Exit** phase:
+The [open-source reps](#https://github.com/zkLinkProtocol/recover_state_server)
+allowing users to submit proofs to withdraw their own funds.)
+![img.png](img.png)
+
+
 #### Permissions
 none
 
