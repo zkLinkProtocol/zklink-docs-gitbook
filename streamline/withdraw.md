@@ -22,6 +22,7 @@ By using the **[getAccount](../developer/api-and-sdk/json-rpc/json-rpc-api.md#ge
 
 #### Principle Design
 The FullExit instruction is an L1 priority instruction, requiring zklink-X L2 to execute all L1 instructions in the exact order received from L1. After L2 completes each L1 instruction and submits the zero-knowledge proof to the chain, the zklink-X L1 contract will check the order and existence of each submitted priority instruction. Any erroneous order or instruction will result in a rejection of L2's submission (commitBlocks) until it is corrected.(In fact, there is a timeout set; If there is no correct submission for too long, it will enter the **Dunkirk Exit** phase: The [open-source reps](#https://github.com/zkLinkProtocol/recover_state_server) allowing users to submit proofs to withdraw their own funds.)
+
 ![img.png](img.png)
 
 
