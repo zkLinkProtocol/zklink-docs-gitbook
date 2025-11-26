@@ -7,6 +7,7 @@
 ## ⚖️ Architecture
 
 * [Overview](architecture/architecture.md)
+* [TransactionFlow](architecture/transactionFlow.md)
 * [Settlement Layer](architecture/settlement-layer/README.md)
   * [Working Principal of A Multi-Chain ZK-Rollup](architecture/settlement-layer/working-principal-of-a-multi-chain-zk-rollup.md)
   * [Nexus: Settlement on ETH L2s](architecture/settlement-layer/nexus-settlement-on-eth-l2s.md)
@@ -123,6 +124,12 @@
 
 * [Heavyweight Integration (Multi-Chain Derivatives & Spot Exchange)](IntegrationArchitecture/Derivatives.md)
 * [Simple Integration (Multi-Chain Spot Exchange)](IntegrationArchitecture/spot.md)
+
+## Security
+
+* [Outline](security/outline.md)
+  * [External Application Failure](security/refund.md)
+  * [ZkLink-X Failure](security/recovery.md)
 
 ## Appendix
 
